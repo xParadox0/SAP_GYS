@@ -2860,7 +2860,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n  \"Number\": \"001\",\n  \"NoSimplify\": \"X\",\n  \"changePRHeaderSet\": {\n    \"PrType\": \"GSVC\"\n  },\n  \"changePRItemSet\": [\n    {\n      \"PreqItem\": \"00010\",\n      \"PurGroup\": \"\",\n      \"PreqName\": \"Yona\",\n      \"ShortText\": \"\",\n      \"Material\": \"\",\n      \"Plant\": \"\",\n      \"StoreLoc\": \"\",\n      \"Trackingno\": \"\",\n      \"MatlGroup\": \"\",\n      \"Quantity\": \"5\",\n      \"Unit\": \"\",\n      \"Currency\": \"\",\n      \"DelDatcatExt\": \"\",\n      \"DelivDate\": \"2026-03-22T00:00:00\",\n      \"ItemCat\": \"\",\n      \"Acctasscat\": \"\",\n      \"PckgNo\": \"\"\n    }\n  ],\n  \"changePRItemXSet\": [\n    {\n      \"PreqItem\": \"00010\",\n      \"PreqItemx\": \"X\",\n      \"PurGroup\": \"\",\n      \"PreqName\": \"X\",\n      \"ShortText\": \"\",\n      \"Material\": \"\",\n      \"Plant\": \"\",\n      \"StoreLoc\": \"\",\n      \"Trackingno\": \"\",\n      \"MatlGroup\": \"\",\n      \"Quantity\": \"X\",\n      \"Unit\": \"\",\n      \"Currency\": \"\",\n      \"DelDatcatExt\": \"\",\n      \"DelivDate\": \"X\",\n      \"ItemCat\": \"\",\n      \"Acctasscat\": \"\",\n      \"PckgNo\": \"\"\n    }\n  ],\n  \"changePRServiceLinesSet\": [\n    {\n      \"DocItem\": \"00010\",\n      \"Outline\": \"0000000001\",\n      \"SrvLine\": \"0000000010\",\n      \"ShortText\": \"\",\n      \"Quantity\": \"0\",\n      \"Uom\": \"\",\n      \"GrossPrice\": \"10000\"\n    },\n    {\n      \"DocItem\": \"00010\",\n      \"Outline\": \"0000000001\",\n      \"SrvLine\": \"0000000020\",\n      \"ShortText\": \"\",\n      \"Quantity\": \"0\",\n      \"Uom\": \"\",\n      \"GrossPrice\": \"20000\"\n    },\n    {\n      \"DocItem\": \"00010\",\n      \"Outline\": \"0000000001\",\n      \"SrvLine\": \"0000000030\",\n      \"ShortText\": \"\",\n      \"Quantity\": \"0\",\n      \"Uom\": \"\",\n      \"GrossPrice\": \"30000\"\n    }\n  ],\n  \"changePRServiceLinesXSet\": [\n    {\n      \"DocItem\": \"00010\",\n      \"Outline\": \"0000000001\",\n      \"SrvLine\": \"0000000010\",\n      \"ShortText\": \"\",\n      \"Quantity\": \"X\",\n      \"Uom\": \"\",\n      \"GrossPrice\": \"X\"\n    },\n    {\n      \"DocItem\": \"00010\",\n      \"Outline\": \"0000000001\",\n      \"SrvLine\": \"0000000020\",\n      \"ShortText\": \"\",\n      \"Quantity\": \"X\",\n      \"Uom\": \"\",\n      \"GrossPrice\": \"X\"\n    },\n    {\n      \"DocItem\": \"00010\",\n      \"Outline\": \"0000000001\",\n      \"SrvLine\": \"0000000030\",\n      \"ShortText\": \"\",\n      \"Quantity\": \"X\",\n      \"Uom\": \"\",\n      \"GrossPrice\": \"X\"\n    }\n  ],\n  \"changePRReturnSet\": [\n    {}\n  ]\n}",
+							"raw": "{\n  \"Number\": \"1200004791\",\n  \"NoSimplify\": \"X\",\n  \"changePRHeaderSet\": {\n    \"PrType\": \"GSVC\"\n  },\n  \"changePRItemSet\": [\n    {\n      \"PreqItem\": \"00010\",\n      \"PurGroup\": \"\",\n      \"PreqName\": \"Yona\",\n      \"ShortText\": \"\",\n      \"Material\": \"\",\n      \"Plant\": \"\",\n      \"StoreLoc\": \"\",\n      \"Trackingno\": \"\",\n      \"MatlGroup\": \"\",\n      \"Quantity\": \"5\",\n      \"Unit\": \"\",\n      \"Currency\": \"\",\n      \"DelDatcatExt\": \"\",\n      \"DelivDate\": \"2026-03-22T00:00:00\",\n      \"ItemCat\": \"\",\n      \"Acctasscat\": \"\",\n      \"PckgNo\": \"\"\n    }\n  ],\n  \"changePRItemXSet\": [\n    {\n      \"PreqItem\": \"00010\",\n      \"PreqItemx\": \"X\",\n      \"PurGroup\": \"\",\n      \"PreqName\": \"X\",\n      \"ShortText\": \"\",\n      \"Material\": \"\",\n      \"Plant\": \"\",\n      \"StoreLoc\": \"\",\n      \"Trackingno\": \"\",\n      \"MatlGroup\": \"\",\n      \"Quantity\": \"X\",\n      \"Unit\": \"\",\n      \"Currency\": \"\",\n      \"DelDatcatExt\": \"\",\n      \"DelivDate\": \"X\",\n      \"ItemCat\": \"\",\n      \"Acctasscat\": \"\",\n      \"PckgNo\": \"\"\n    }\n  ],\n  \"changePRServiceLinesSet\": [\n    {\n      \"DocItem\": \"00010\",\n      \"Outline\": \"0000000001\",\n      \"SrvLine\": \"0000000010\",\n      \"ShortText\": \"\",\n      \"Quantity\": \"0\",\n      \"Uom\": \"\",\n      \"GrossPrice\": \"10000\"\n    },\n    {\n      \"DocItem\": \"00010\",\n      \"Outline\": \"0000000001\",\n      \"SrvLine\": \"0000000020\",\n      \"ShortText\": \"\",\n      \"Quantity\": \"0\",\n      \"Uom\": \"\",\n      \"GrossPrice\": \"20000\"\n    },\n    {\n      \"DocItem\": \"00010\",\n      \"Outline\": \"0000000001\",\n      \"SrvLine\": \"0000000030\",\n      \"ShortText\": \"\",\n      \"Quantity\": \"0\",\n      \"Uom\": \"\",\n      \"GrossPrice\": \"30000\"\n    }\n  ],\n  \"changePRServiceLinesXSet\": [\n    {\n      \"DocItem\": \"00010\",\n      \"Outline\": \"0000000001\",\n      \"SrvLine\": \"0000000010\",\n      \"ShortText\": \"\",\n      \"Quantity\": \"X\",\n      \"Uom\": \"\",\n      \"GrossPrice\": \"X\"\n    },\n    {\n      \"DocItem\": \"00010\",\n      \"Outline\": \"0000000001\",\n      \"SrvLine\": \"0000000020\",\n      \"ShortText\": \"\",\n      \"Quantity\": \"X\",\n      \"Uom\": \"\",\n      \"GrossPrice\": \"X\"\n    },\n    {\n      \"DocItem\": \"00010\",\n      \"Outline\": \"0000000001\",\n      \"SrvLine\": \"0000000030\",\n      \"ShortText\": \"\",\n      \"Quantity\": \"X\",\n      \"Uom\": \"\",\n      \"GrossPrice\": \"X\"\n    }\n  ],\n  \"changePRReturnSet\": [\n    {}\n  ]\n}",
 							"options": {
 								"raw": {
 									"headerFamily": "json",
@@ -2868,7 +2868,7 @@
 								}
 							}
 						},
-						"url": "{{baseUrl}}/srm/change-pr"
+						"url": "{{dev}}/srm/change-pr"
 					},
 					"response": [
 						{
@@ -4017,7 +4017,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n  \"Testrun\": \"\",\n  \"Purchaseorder\": \"4100035209\",\n  \"PoRelCode\": \"AA\",\n  \"PoRelInd\": \"X\",\n  \"ReturnType\": \"\",\n  \"Msgtx\": \"\",\n  \"releasePOReturnSet\": []\n}",
+							"raw": "{\n  \"Testrun\": \"\",\n  \"Purchaseorder\": \"4100035208\",\n  \"PoRelCode\": \"AA\",\n  \"PoRelInd\": \"X\",\n  \"ReturnType\": \"\",\n  \"Msgtx\": \"\",\n  \"releasePOReturnSet\": []\n}",
 							"options": {
 								"raw": {
 									"headerFamily": "json",
@@ -4357,7 +4357,6 @@
 							"listen": "test",
 							"script": {
 								"id": "744b91d4-881a-45b9-a82a-6fb3347b6070",
-								"type": "text/javascript",
 								"exec": [
 									"### Purpose",
 									"Submit a Down Payment (DP) request via SRM.",
@@ -4374,7 +4373,10 @@
 									"### Body notes",
 									"- POST body contains the DP request payload (see **Body** tab).",
 									""
-								]
+								],
+								"type": "text/javascript",
+								"packages": {},
+								"requests": {}
 							}
 						}
 					],
@@ -4398,7 +4400,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n  \"Testrun\": \"\",\n  \"postDPHeaderSet\": {\n    \"HeaderTxt\": \"Testing 1\",\n    \"CompCode\": \"1000\",\n    \"DocDate\": \"2026-03-02T00:00:00\",\n    \"PstngDate\": \"2026-03-02T00:00:00\",\n    \"DocType\": \"VD\",\n    \"RefDocNo\": \"4100034233\"\n  },\n  \"postDPAccountPaySet\": [\n    {\n      \"ItemnoAcc\": \"0000000001\",\n      \"VendorNo\": \"2101000136\",\n      \"CompCode\": \"1000\",\n      \"BlineDate\": \"2026-03-02T00:00:00\",\n      \"AllocNmbr\": \"4100034233\",\n      \"ItemText\": \"ABCD\",\n      \"PoSubNo\": \"10\",\n      \"PoRefNo\": \"4100034233\",\n      \"TaxCode\": \"0D\"\n    }\n  ],\n  \"postDPCurrAmtSet\": [\n    {\n      \"ItemnoAcc\": \"0000000001\",\n      \"Currency\": \"IDR\",\n      \"CurrencyIso\": \"IDR\",\n      \"AmtDoccur\": \"125000\"\n    }\n  ],\n  \"postDPReturnSet\": []\n}",
+							"raw": "{\n  \"Testrun\": \"\",\n  \"postDPHeaderSet\": {\n    \"HeaderTxt\": \"Testing 1\",\n    \"CompCode\": \"1000\",\n    \"DocDate\": \"2026-03-02T00:00:00\",\n    \"PstngDate\": \"2026-03-02T00:00:00\",\n    \"DocType\": \"VD\",\n    \"RefDocNo\": \"4100035208\"\n  },\n  \"postDPAccountPaySet\": [\n    {\n      \"ItemnoAcc\": \"0000000001\",\n      \"VendorNo\": \"2301000113\",\n      \"CompCode\": \"1000\",\n      \"BlineDate\": \"2026-03-02T00:00:00\",\n      \"AllocNmbr\": \"4100035208\",\n      \"ItemText\": \"ABCD\",\n      \"PoSubNo\": \"10\",\n      \"PoRefNo\": \"4100035208\",\n      \"TaxCode\": \"0D\"\n    }\n  ],\n  \"postDPCurrAmtSet\": [\n    {\n      \"ItemnoAcc\": \"0000000001\",\n      \"Currency\": \"IDR\",\n      \"CurrencyIso\": \"IDR\",\n      \"AmtDoccur\": \"125000\"\n    }\n  ],\n  \"postDPReturnSet\": []\n}",
 							"options": {
 								"raw": {
 									"headerFamily": "json",
@@ -4561,6 +4563,86 @@
 							"cookie": [],
 							"responseTime": null,
 							"body": "{\n    \"message\": \"Success\",\n    \"results\": {\n        \"message\": {\n            \"__metadata\": {\n                \"id\": \"http://sapdev.gyssteel.com:8000/sap/opu/odata/sap/ZGW_SAP_SRM_SRV/postDPDataSet(Bukrs='1000',Belnr='2000000111',Gjahr='2026')\",\n                \"uri\": \"http://sapdev.gyssteel.com:8000/sap/opu/odata/sap/ZGW_SAP_SRM_SRV/postDPDataSet(Bukrs='1000',Belnr='2000000111',Gjahr='2026')\",\n                \"type\": \"ZGW_SAP_SRM_SRV.postDPData\"\n            },\n            \"Testrun\": \"\",\n            \"Trndt\": \"/Date(1772582400000)/\",\n            \"Bukrs\": \"1000\",\n            \"Belnr\": \"2000000111\",\n            \"Gjahr\": \"2026\",\n            \"ReturnType\": \"S\",\n            \"Msgtx\": \"Success\",\n            \"postDPReturnSet\": {\n                \"results\": [\n                    {\n                        \"__metadata\": {\n                            \"id\": \"http://sapdev.gyssteel.com:8000/sap/opu/odata/sap/ZGW_SAP_SRM_SRV/postDPReturnSet(Type='S',Id='RW',Number='605')\",\n                            \"uri\": \"http://sapdev.gyssteel.com:8000/sap/opu/odata/sap/ZGW_SAP_SRM_SRV/postDPReturnSet(Type='S',Id='RW',Number='605')\",\n                            \"type\": \"ZGW_SAP_SRM_SRV.postDPReturn\"\n                        },\n                        \"Type\": \"S\",\n                        \"Id\": \"RW\",\n                        \"Number\": \"605\",\n                        \"Message\": \"Document posted successfully: BKPFF 200000011110002026 S4DCLNT130\",\n                        \"LogNo\": \"\",\n                        \"LogMsgNo\": \"000000\",\n                        \"MessageV1\": \"BKPFF\",\n                        \"MessageV2\": \"200000011110002026\",\n                        \"MessageV3\": \"S4DCLNT130\",\n                        \"MessageV4\": \"\",\n                        \"Parameter\": \"\",\n                        \"Row\": 0,\n                        \"Field\": \"\",\n                        \"System\": \"S4DCLNT130\"\n                    }\n                ]\n            },\n            \"postDPExtension2Set\": {\n                \"__deferred\": {\n                    \"uri\": \"http://sapdev.gyssteel.com:8000/sap/opu/odata/sap/ZGW_SAP_SRM_SRV/postDPDataSet(Bukrs='1000',Belnr='2000000111',Gjahr='2026')/postDPExtension2Set\"\n                }\n            },\n            \"postDPCurrAmtSet\": {\n                \"results\": [\n                    {\n                        \"__metadata\": {\n                            \"id\": \"http://sapdev.gyssteel.com:8000/sap/opu/odata/sap/ZGW_SAP_SRM_SRV/postDPCurrAmtSet('0000000001')\",\n                            \"uri\": \"http://sapdev.gyssteel.com:8000/sap/opu/odata/sap/ZGW_SAP_SRM_SRV/postDPCurrAmtSet('0000000001')\",\n                            \"type\": \"ZGW_SAP_SRM_SRV.postDPCurrAmt\"\n                        },\n                        \"ItemnoAcc\": \"0000000001\",\n                        \"CurrType\": \"\",\n                        \"Currency\": \"IDR\",\n                        \"CurrencyIso\": \"IDR\",\n                        \"AmtDoccur\": \"-125000.0000\",\n                        \"ExchRate\": \"0.00000\",\n                        \"ExchRateV\": \"0.00000\",\n                        \"AmtBase\": \"0.0000\",\n                        \"DiscBase\": \"0.0000\",\n                        \"DiscAmt\": \"0.0000\",\n                        \"TaxAmt\": \"-11363.6364\",\n                        \"AmtDoccurLong\": \"0.00000000\",\n                        \"AmtBaseLong\": \"0.00000000\",\n                        \"DiscBaseLong\": \"0.00000000\",\n                        \"DiscAmtLong\": \"0.00000000\",\n                        \"TaxAmtLong\": \"0.00000000\"\n                    }\n                ]\n            },\n            \"postDPAccountPaySet\": {\n                \"results\": [\n                    {\n                        \"__metadata\": {\n                            \"id\": \"http://sapdev.gyssteel.com:8000/sap/opu/odata/sap/ZGW_SAP_SRM_SRV/postDPAccountPaySet(ItemnoAcc='0000000001',VendorNo='2101000136',GlAccount='')\",\n                            \"uri\": \"http://sapdev.gyssteel.com:8000/sap/opu/odata/sap/ZGW_SAP_SRM_SRV/postDPAccountPaySet(ItemnoAcc='0000000001',VendorNo='2101000136',GlAccount='')\",\n                            \"type\": \"ZGW_SAP_SRM_SRV.postDPAccountPay\"\n                        },\n                        \"ItemnoAcc\": \"0000000001\",\n                        \"VendorNo\": \"2101000136\",\n                        \"GlAccount\": \"\",\n                        \"RefKey1\": \"\",\n                        \"RefKey2\": \"\",\n                        \"RefKey3\": \"\",\n                        \"CompCode\": \"1000\",\n                        \"BusArea\": \"\",\n                        \"Pmnttrms\": \"\",\n                        \"BlineDate\": \"/Date(1772409600000)/\",\n                        \"DsctDays1\": \"0\",\n                        \"DsctDays2\": \"0\",\n                        \"Netterms\": \"0\",\n                        \"DsctPct1\": \"0.000\",\n                        \"DsctPct2\": \"0.000\",\n                        \"PymtMeth\": \"\",\n                        \"Pmtmthsupl\": \"\",\n                        \"PmntBlock\": \"\",\n                        \"ScbankInd\": \"\",\n                        \"Supcountry\": \"\",\n                        \"SupcountryIso\": \"\",\n                        \"BllsrvInd\": \"\",\n                        \"AllocNmbr\": \"4100034233\",\n                        \"ItemText\": \"ABCD\",\n                        \"PoSubNo\": \"10\",\n                        \"PoCheckdg\": \"\",\n                        \"PoRefNo\": \"4100034233\",\n                        \"WTaxCode\": \"\",\n                        \"Businessplace\": \"\",\n                        \"Sectioncode\": \"\",\n                        \"Instr1\": \"00\",\n                        \"Instr2\": \"00\",\n                        \"Instr3\": \"00\",\n                        \"Instr4\": \"00\",\n                        \"Branch\": \"\",\n                        \"PymtCur\": \"\",\n                        \"PymtAmt\": \"0.0000\",\n                        \"PymtCurIso\": \"\",\n                        \"SpGlInd\": \"F\",\n                        \"TaxCode\": \"0D\",\n                        \"TaxDate\": null,\n                        \"Taxjurcode\": \"\",\n                        \"AltPayee\": \"\",\n                        \"AltPayeeBank\": \"\",\n                        \"PartnerBk\": \"\",\n                        \"BankId\": \"\",\n                        \"PartnerGuid\": \"\",\n                        \"ProfitCtr\": \"102999\",\n                        \"Fund\": \"\",\n                        \"GrantNbr\": \"\",\n                        \"Measure\": \"\",\n                        \"Housebankacctid\": \"\",\n                        \"BudgetPeriod\": \"\",\n                        \"PpaExInd\": false,\n                        \"PartBusinessplace\": \"\",\n                        \"PaymtRef\": \"\",\n                        \"PymtAmtLong\": \"0.00000000\",\n                        \"BdgtAccount\": \"\"\n                    }\n                ]\n            },\n            \"postDPHeaderSet\": {\n                \"__metadata\": {\n                    \"id\": \"http://sapdev.gyssteel.com:8000/sap/opu/odata/sap/ZGW_SAP_SRM_SRV/postDPHeaderSet('')\",\n                    \"uri\": \"http://sapdev.gyssteel.com:8000/sap/opu/odata/sap/ZGW_SAP_SRM_SRV/postDPHeaderSet('')\",\n                    \"type\": \"ZGW_SAP_SRM_SRV.postDPHeader\"\n                },\n                \"ObjType\": \"\",\n                \"ObjKey\": \"\",\n                \"ObjSys\": \"\",\n                \"BusAct\": \"RFST\",\n                \"Username\": \"INTERFACE\",\n                \"HeaderTxt\": \"Testing 1\",\n                \"CompCode\": \"1000\",\n                \"DocDate\": \"/Date(1772409600000)/\",\n                \"PstngDate\": \"/Date(1772409600000)/\",\n                \"TransDate\": null,\n                \"FiscYear\": \"0000\",\n                \"FisPeriod\": \"00\",\n                \"DocType\": \"VD\",\n                \"RefDocNo\": \"4100034233\",\n                \"AcDocNo\": \"\",\n                \"ObjKeyR\": \"\",\n                \"ReasonRev\": \"\",\n                \"CompoAcc\": \"\",\n                \"RefDocNoLong\": \"\",\n                \"AccPrinciple\": \"\",\n                \"NegPostng\": false,\n                \"ObjKeyInv\": \"\",\n                \"BillCategory\": \"\",\n                \"Vatdate\": null,\n                \"InvoiceRecDate\": null,\n                \"EcsEnv\": \"\",\n                \"PartialRev\": false,\n                \"DocStatus\": \"\",\n                \"TaxCalcDate\": null,\n                \"GloRef1Hd\": \"\",\n                \"GloDat1Hd\": null,\n                \"GloRef2Hd\": \"\",\n                \"GloDat2Hd\": null,\n                \"GloRef3Hd\": \"\",\n                \"GloDat3Hd\": null,\n                \"GloRef4Hd\": \"\",\n                \"GloDat4Hd\": null,\n                \"GloRef5Hd\": \"\",\n                \"GloDat5Hd\": null,\n                \"GloBp1Hd\": \"\",\n                \"GloBp2Hd\": \"\",\n                \"EvPostngCtrl\": \"\",\n                \"LedgerGroup\": \"\",\n                \"PlannedRevDate\": null\n            }\n        }\n    }\n}"
+						},
+						{
+							"id": "0f08faf0-da75-4682-a9f1-569e5b823e44",
+							"name": "Fail",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"Testrun\": \"\",\n  \"postDPHeaderSet\": {\n    \"HeaderTxt\": \"Testing 1\",\n    \"CompCode\": \"1000\",\n    \"DocDate\": \"2026-03-02T00:00:00\",\n    \"PstngDate\": \"2026-03-02T00:00:00\",\n    \"DocType\": \"VD\",\n    \"RefDocNo\": \"4100035208\"\n  },\n  \"postDPAccountPaySet\": [\n    {\n      \"ItemnoAcc\": \"0000000001\",\n      \"VendorNo\": \"2301000113\",\n      \"CompCode\": \"1000\",\n      \"BlineDate\": \"2026-03-02T00:00:00\",\n      \"AllocNmbr\": \"4100035208\",\n      \"ItemText\": \"ABCD\",\n      \"PoSubNo\": \"10\",\n      \"PoRefNo\": \"4100035208\",\n      \"TaxCode\": \"0D\"\n    }\n  ],\n  \"postDPCurrAmtSet\": [\n    {\n      \"ItemnoAcc\": \"0000000001\",\n      \"Currency\": \"IDR\",\n      \"CurrencyIso\": \"IDR\",\n      \"AmtDoccur\": \"125000\"\n    }\n  ],\n  \"postDPReturnSet\": []\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{baseUrl}}/srm/dp-request"
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "Server",
+									"value": "nginx/1.24.0 (Ubuntu)"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 05 Apr 2026 06:33:22 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.3.21"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "X-Kong-Upstream-Latency",
+									"value": "465"
+								},
+								{
+									"key": "X-Kong-Proxy-Latency",
+									"value": "1"
+								},
+								{
+									"key": "Via",
+									"value": "1.1 kong/3.9.0"
+								},
+								{
+									"key": "X-Kong-Request-Id",
+									"value": "8f3848602b98f2529ccfe1648ec32213"
+								}
+							],
+							"cookie": [],
+							"responseTime": null,
+							"body": "{\n    \"message\": \"Error\",\n    \"results\": {\n        \"d\": {\n            \"__metadata\": {\n                \"id\": \"http://sapdev.gyssteel.com:8000/sap/opu/odata/sap/ZGW_SAP_SRM_SRV/postDPDataSet(Bukrs='',Belnr='',Gjahr='0000')\",\n                \"uri\": \"http://sapdev.gyssteel.com:8000/sap/opu/odata/sap/ZGW_SAP_SRM_SRV/postDPDataSet(Bukrs='',Belnr='',Gjahr='0000')\",\n                \"type\": \"ZGW_SAP_SRM_SRV.postDPData\"\n            },\n            \"Trndt\": \"/Date(1775347200000)/\",\n            \"Testrun\": \"\",\n            \"Bukrs\": \"\",\n            \"Belnr\": \"\",\n            \"Gjahr\": \"0000\",\n            \"ReturnType\": \"E\",\n            \"Msgtx\": \"Error\",\n            \"postDPHeaderSet\": {\n                \"__metadata\": {\n                    \"id\": \"http://sapdev.gyssteel.com:8000/sap/opu/odata/sap/ZGW_SAP_SRM_SRV/postDPHeaderSet('')\",\n                    \"uri\": \"http://sapdev.gyssteel.com:8000/sap/opu/odata/sap/ZGW_SAP_SRM_SRV/postDPHeaderSet('')\",\n                    \"type\": \"ZGW_SAP_SRM_SRV.postDPHeader\"\n                },\n                \"ObjType\": \"\",\n                \"ObjKey\": \"\",\n                \"ObjSys\": \"\",\n                \"BusAct\": \"RFST\",\n                \"Username\": \"INTERFACE\",\n                \"HeaderTxt\": \"Testing 1\",\n                \"CompCode\": \"1000\",\n                \"DocDate\": \"/Date(1772409600000)/\",\n                \"PstngDate\": \"/Date(1772409600000)/\",\n                \"TransDate\": null,\n                \"FiscYear\": \"0000\",\n                \"FisPeriod\": \"00\",\n                \"DocType\": \"VD\",\n                \"RefDocNo\": \"4100035208\",\n                \"AcDocNo\": \"\",\n                \"ObjKeyR\": \"\",\n                \"ReasonRev\": \"\",\n                \"CompoAcc\": \"\",\n                \"RefDocNoLong\": \"\",\n                \"AccPrinciple\": \"\",\n                \"NegPostng\": false,\n                \"ObjKeyInv\": \"\",\n                \"BillCategory\": \"\",\n                \"Vatdate\": null,\n                \"InvoiceRecDate\": null,\n                \"EcsEnv\": \"\",\n                \"PartialRev\": false,\n                \"DocStatus\": \"\",\n                \"TaxCalcDate\": null,\n                \"GloRef1Hd\": \"\",\n                \"GloDat1Hd\": null,\n                \"GloRef2Hd\": \"\",\n                \"GloDat2Hd\": null,\n                \"GloRef3Hd\": \"\",\n                \"GloDat3Hd\": null,\n                \"GloRef4Hd\": \"\",\n                \"GloDat4Hd\": null,\n                \"GloRef5Hd\": \"\",\n                \"GloDat5Hd\": null,\n                \"GloBp1Hd\": \"\",\n                \"GloBp2Hd\": \"\",\n                \"EvPostngCtrl\": \"\",\n                \"LedgerGroup\": \"\",\n                \"PlannedRevDate\": null\n            },\n            \"postDPAccountPaySet\": {\n                \"results\": [\n                    {\n                        \"__metadata\": {\n                            \"id\": \"http://sapdev.gyssteel.com:8000/sap/opu/odata/sap/ZGW_SAP_SRM_SRV/postDPAccountPaySet(ItemnoAcc='0000000001',VendorNo='2301000113',GlAccount='')\",\n                            \"uri\": \"http://sapdev.gyssteel.com:8000/sap/opu/odata/sap/ZGW_SAP_SRM_SRV/postDPAccountPaySet(ItemnoAcc='0000000001',VendorNo='2301000113',GlAccount='')\",\n                            \"type\": \"ZGW_SAP_SRM_SRV.postDPAccountPay\"\n                        },\n                        \"ItemnoAcc\": \"0000000001\",\n                        \"VendorNo\": \"2301000113\",\n                        \"GlAccount\": \"\",\n                        \"RefKey1\": \"\",\n                        \"RefKey2\": \"\",\n                        \"RefKey3\": \"\",\n                        \"CompCode\": \"1000\",\n                        \"BusArea\": \"\",\n                        \"Pmnttrms\": \"\",\n                        \"BlineDate\": \"/Date(1772409600000)/\",\n                        \"DsctDays1\": \"0\",\n                        \"DsctDays2\": \"0\",\n                        \"Netterms\": \"0\",\n                        \"DsctPct1\": \"0.000\",\n                        \"DsctPct2\": \"0.000\",\n                        \"PymtMeth\": \"\",\n                        \"Pmtmthsupl\": \"\",\n                        \"PmntBlock\": \"\",\n                        \"ScbankInd\": \"\",\n                        \"Supcountry\": \"\",\n                        \"SupcountryIso\": \"\",\n                        \"BllsrvInd\": \"\",\n                        \"AllocNmbr\": \"4100035208\",\n                        \"ItemText\": \"ABCD\",\n                        \"PoSubNo\": \"10\",\n                        \"PoCheckdg\": \"\",\n                        \"PoRefNo\": \"4100035208\",\n                        \"WTaxCode\": \"\",\n                        \"Businessplace\": \"\",\n                        \"Sectioncode\": \"\",\n                        \"Instr1\": \"00\",\n                        \"Instr2\": \"00\",\n                        \"Instr3\": \"00\",\n                        \"Instr4\": \"00\",\n                        \"Branch\": \"\",\n                        \"PymtCur\": \"\",\n                        \"PymtAmt\": \"0.0000\",\n                        \"PymtCurIso\": \"\",\n                        \"SpGlInd\": \"F\",\n                        \"TaxCode\": \"0D\",\n                        \"TaxDate\": null,\n                        \"Taxjurcode\": \"\",\n                        \"AltPayee\": \"\",\n                        \"AltPayeeBank\": \"\",\n                        \"PartnerBk\": \"\",\n                        \"BankId\": \"\",\n                        \"PartnerGuid\": \"\",\n                        \"ProfitCtr\": \"101010\",\n                        \"Fund\": \"\",\n                        \"GrantNbr\": \"\",\n                        \"Measure\": \"\",\n                        \"Housebankacctid\": \"\",\n                        \"BudgetPeriod\": \"\",\n                        \"PpaExInd\": false,\n                        \"PartBusinessplace\": \"\",\n                        \"PaymtRef\": \"\",\n                        \"PymtAmtLong\": \"0.00000000\",\n                        \"BdgtAccount\": \"\"\n                    }\n                ]\n            },\n            \"postDPCurrAmtSet\": {\n                \"results\": [\n                    {\n                        \"__metadata\": {\n                            \"id\": \"http://sapdev.gyssteel.com:8000/sap/opu/odata/sap/ZGW_SAP_SRM_SRV/postDPCurrAmtSet('0000000001')\",\n                            \"uri\": \"http://sapdev.gyssteel.com:8000/sap/opu/odata/sap/ZGW_SAP_SRM_SRV/postDPCurrAmtSet('0000000001')\",\n                            \"type\": \"ZGW_SAP_SRM_SRV.postDPCurrAmt\"\n                        },\n                        \"ItemnoAcc\": \"0000000001\",\n                        \"CurrType\": \"\",\n                        \"Currency\": \"IDR\",\n                        \"CurrencyIso\": \"IDR\",\n                        \"AmtDoccur\": \"-125000.0000\",\n                        \"ExchRate\": \"0.00000\",\n                        \"ExchRateV\": \"0.00000\",\n                        \"AmtBase\": \"0.0000\",\n                        \"DiscBase\": \"0.0000\",\n                        \"DiscAmt\": \"0.0000\",\n                        \"TaxAmt\": \"-11363.6364\",\n                        \"AmtDoccurLong\": \"0.00000000\",\n                        \"AmtBaseLong\": \"0.00000000\",\n                        \"DiscBaseLong\": \"0.00000000\",\n                        \"DiscAmtLong\": \"0.00000000\",\n                        \"TaxAmtLong\": \"0.00000000\"\n                    }\n                ]\n            },\n            \"postDPExtension2Set\": {\n                \"__deferred\": {\n                    \"uri\": \"http://sapdev.gyssteel.com:8000/sap/opu/odata/sap/ZGW_SAP_SRM_SRV/postDPDataSet(Bukrs='',Belnr='',Gjahr='0000')/postDPExtension2Set\"\n                }\n            },\n            \"postDPReturnSet\": {\n                \"results\": [\n                    {\n                        \"__metadata\": {\n                            \"id\": \"http://sapdev.gyssteel.com:8000/sap/opu/odata/sap/ZGW_SAP_SRM_SRV/postDPReturnSet(Type='E',Id='',Number='000')\",\n                            \"uri\": \"http://sapdev.gyssteel.com:8000/sap/opu/odata/sap/ZGW_SAP_SRM_SRV/postDPReturnSet(Type='E',Id='',Number='000')\",\n                            \"type\": \"ZGW_SAP_SRM_SRV.postDPReturn\"\n                        },\n                        \"Type\": \"E\",\n                        \"Id\": \"\",\n                        \"Number\": \"000\",\n                        \"Message\": \"Purchase Order not released yet\",\n                        \"LogNo\": \"\",\n                        \"LogMsgNo\": \"000000\",\n                        \"MessageV1\": \"\",\n                        \"MessageV2\": \"\",\n                        \"MessageV3\": \"\",\n                        \"MessageV4\": \"\",\n                        \"Parameter\": \"\",\n                        \"Row\": 0,\n                        \"Field\": \"\",\n                        \"System\": \"\"\n                    }\n                ]\n            }\n        }\n    },\n    \"source\": \"Failed upload SAP data\"\n}"
 						}
 					]
 				},
@@ -4586,7 +4668,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n  \"DocumentNo\": \"2000000116\",\n  \"Year\": \"2026\",\n  \"PostingDate\": \"2026-03-04\",\n  \"ReversalReasonCode\": \"01\"\n}",
+							"raw": "{\n  \"DocumentNo\": \"4100034233\",\n  \"Year\": \"2026\",\n  \"PostingDate\": \"2026-03-04\",\n  \"ReversalReasonCode\": \"01\"\n}",
 							"options": {
 								"raw": {
 									"headerFamily": "json",
@@ -4594,7 +4676,7 @@
 								}
 							}
 						},
-						"url": "{{baseUrl}}/srm/cancel-dp-request"
+						"url": "{{dev}}/srm/cancel-dp-request"
 					},
 					"response": [
 						{
@@ -4749,6 +4831,86 @@
 							"cookie": [],
 							"responseTime": null,
 							"body": "{\n    \"message\": \"Success\",\n    \"results\": {\n        \"message\": {\n            \"__metadata\": {\n                \"id\": \"http://sapdev.gyssteel.com:8000/sap/opu/odata/sap/ZGW_SAP_SRM_SRV/postCancelJournalSet(DocumentNo='2000000117',Year='2026')\",\n                \"uri\": \"http://sapdev.gyssteel.com:8000/sap/opu/odata/sap/ZGW_SAP_SRM_SRV/postCancelJournalSet(DocumentNo='2000000117',Year='2026')\",\n                \"type\": \"ZGW_SAP_SRM_SRV.postCancelJournal\"\n            },\n            \"DocumentNo\": \"2000000117\",\n            \"Year\": \"2026\",\n            \"PostingDate\": \"2026-03-04\",\n            \"ReversalReasonCode\": \"01\",\n            \"Status\": \"SUCCESS\",\n            \"Msg\": \"\"\n        }\n    }\n}"
+						},
+						{
+							"id": "f5d65a23-cc03-4b3a-82c3-9a9fad4a6c0e",
+							"name": "Fail",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"DocumentNo\": \"4100034233\",\n  \"Year\": \"2026\",\n  \"PostingDate\": \"2026-03-04\",\n  \"ReversalReasonCode\": \"01\"\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{dev}}/srm/cancel-dp-request"
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "Server",
+									"value": "nginx/1.24.0 (Ubuntu)"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 05 Apr 2026 06:41:49 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.3.21"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "X-Kong-Upstream-Latency",
+									"value": "398"
+								},
+								{
+									"key": "X-Kong-Proxy-Latency",
+									"value": "1"
+								},
+								{
+									"key": "Via",
+									"value": "1.1 kong/3.9.0"
+								},
+								{
+									"key": "X-Kong-Request-Id",
+									"value": "2ba251298c2cf0036306c60e87e3bb19"
+								}
+							],
+							"cookie": [],
+							"responseTime": null,
+							"body": "{\n    \"message\": \"Error\",\n    \"results\": {\n        \"d\": {\n            \"__metadata\": {\n                \"id\": \"http://sapdev.gyssteel.com:8000/sap/opu/odata/sap/ZGW_SAP_SRM_SRV/postCancelJournalSet(DocumentNo='2000000116',Year='2026')\",\n                \"uri\": \"http://sapdev.gyssteel.com:8000/sap/opu/odata/sap/ZGW_SAP_SRM_SRV/postCancelJournalSet(DocumentNo='2000000116',Year='2026')\",\n                \"type\": \"ZGW_SAP_SRM_SRV.postCancelJournal\"\n            },\n            \"DocumentNo\": \"2000000116\",\n            \"Year\": \"2026\",\n            \"PostingDate\": \"2026-03-04\",\n            \"ReversalReasonCode\": \"01\",\n            \"Status\": \"FAILED\",\n            \"Msg\": \"Document was already reversed\"\n        }\n    },\n    \"source\": \"Failed upload SAP data\"\n}"
 						}
 					]
 				},
