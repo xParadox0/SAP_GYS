@@ -5657,7 +5657,7 @@
 						},
 						{
 							"id": "8ec9b36b-571b-4232-b4bf-36e833f5458a",
-							"name": "Invoice PO",
+							"name": "Invoice Non PO",
 							"originalRequest": {
 								"method": "POST",
 								"header": [
