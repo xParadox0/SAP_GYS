@@ -3967,7 +3967,7 @@
 					]
 				},
 				{
-					"name": "Post PO Release",
+					"name": "PO Release",
 					"event": [
 						{
 							"id": "34335531-9e3c-4ac5-9f7a-e7db7808e24a",
@@ -4115,7 +4115,7 @@
 						},
 						{
 							"id": "7bcf030e-4360-403a-a0d8-ff447091beee",
-							"name": "Post PO Release",
+							"name": "Success",
 							"originalRequest": {
 								"method": "POST",
 								"header": [
