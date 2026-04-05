@@ -3974,8 +3974,6 @@
 							"listen": "test",
 							"script": {
 								"id": "90fb2fea-b70e-4969-9f5e-78ae6f147ebb",
-								"type": "text/javascript",
-								"packages": {},
 								"exec": [
 									"### Purpose",
 									"Release a Purchase Order (PO) in SRM.",
@@ -3992,7 +3990,10 @@
 									"### Body notes",
 									"- POST body contains the release instruction/details (see **Body** tab).",
 									""
-								]
+								],
+								"type": "text/javascript",
+								"packages": {},
+								"requests": {}
 							}
 						}
 					],
@@ -4016,7 +4017,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n  \"Testrun\": \"\",\n  \"Purchaseorder\": \"4100035192\",\n  \"PoRelCode\": \"AA\",\n  \"PoRelInd\": \"X\",\n  \"ReturnType\": \"\",\n  \"Msgtx\": \"\",\n  \"releasePOReturnSet\": []\n}",
+							"raw": "{\n  \"Testrun\": \"\",\n  \"Purchaseorder\": \"4100035209\",\n  \"PoRelCode\": \"AA\",\n  \"PoRelInd\": \"X\",\n  \"ReturnType\": \"\",\n  \"Msgtx\": \"\",\n  \"releasePOReturnSet\": []\n}",
 							"options": {
 								"raw": {
 									"headerFamily": "json",
@@ -4265,6 +4266,86 @@
 							"cookie": [],
 							"responseTime": null,
 							"body": "{\n    \"message\": \"Success\",\n    \"results\": {\n        \"message\": {\n            \"__metadata\": {\n                \"id\": \"http://sapdev.gyssteel.com:8000/sap/opu/odata/sap/ZGW_SAP_SRM_SRV/releasePODataSet('4100035192')\",\n                \"uri\": \"http://sapdev.gyssteel.com:8000/sap/opu/odata/sap/ZGW_SAP_SRM_SRV/releasePODataSet('4100035192')\",\n                \"type\": \"ZGW_SAP_SRM_SRV.releasePOData\"\n            },\n            \"ReturnType\": \"S\",\n            \"PoRelInd\": \"X\",\n            \"Testrun\": \"\",\n            \"Msgtx\": \"Success\",\n            \"Trndt\": \"/Date(1773100800000)/\",\n            \"Purchaseorder\": \"4100035192\",\n            \"PoRelCode\": \"AA\",\n            \"releasePOReturnSet\": {\n                \"results\": []\n            }\n        }\n    }\n}"
+						},
+						{
+							"id": "795c13d9-0c52-441f-b69d-3ca1ee212e5e",
+							"name": "Fail",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"Testrun\": \"\",\n  \"Purchaseorder\": \"4100035209\",\n  \"PoRelCode\": \"AA\",\n  \"PoRelInd\": \"X\",\n  \"ReturnType\": \"\",\n  \"Msgtx\": \"\",\n  \"releasePOReturnSet\": []\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{baseUrl}}/srm/release-po"
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "Server",
+									"value": "nginx/1.24.0 (Ubuntu)"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 05 Apr 2026 06:25:49 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.3.21"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "X-Kong-Upstream-Latency",
+									"value": "427"
+								},
+								{
+									"key": "X-Kong-Proxy-Latency",
+									"value": "0"
+								},
+								{
+									"key": "Via",
+									"value": "1.1 kong/3.9.0"
+								},
+								{
+									"key": "X-Kong-Request-Id",
+									"value": "3e82d32bf9f72d75b902f36356be655b"
+								}
+							],
+							"cookie": [],
+							"responseTime": null,
+							"body": "{\n    \"message\": \"Error\",\n    \"results\": {\n        \"d\": {\n            \"__metadata\": {\n                \"id\": \"http://sapdev.gyssteel.com:8000/sap/opu/odata/sap/ZGW_SAP_SRM_SRV/releasePODataSet('4100035192')\",\n                \"uri\": \"http://sapdev.gyssteel.com:8000/sap/opu/odata/sap/ZGW_SAP_SRM_SRV/releasePODataSet('4100035192')\",\n                \"type\": \"ZGW_SAP_SRM_SRV.releasePOData\"\n            },\n            \"ReturnType\": \"E\",\n            \"PoRelInd\": \"X\",\n            \"Testrun\": \"\",\n            \"Msgtx\": \"Error\",\n            \"Trndt\": \"/Date(1775347200000)/\",\n            \"Purchaseorder\": \"4100035192\",\n            \"PoRelCode\": \"AA\",\n            \"releasePOReturnSet\": {\n                \"results\": [\n                    {\n                        \"__metadata\": {\n                            \"id\": \"http://sapdev.gyssteel.com:8000/sap/opu/odata/sap/ZGW_SAP_SRM_SRV/releasePOReturnSet(Type='E',Code='ME105',Message='Release%20not%20yet%20effected')\",\n                            \"uri\": \"http://sapdev.gyssteel.com:8000/sap/opu/odata/sap/ZGW_SAP_SRM_SRV/releasePOReturnSet(Type='E',Code='ME105',Message='Release%20not%20yet%20effected')\",\n                            \"type\": \"ZGW_SAP_SRM_SRV.releasePOReturn\"\n                        },\n                        \"Type\": \"E\",\n                        \"Code\": \"ME105\",\n                        \"Message\": \"Release not yet effected\",\n                        \"LogNo\": \"\",\n                        \"LogMsgNo\": \"000000\",\n                        \"MessageV1\": \"4100035192\",\n                        \"MessageV2\": \"\",\n                        \"MessageV3\": \"\",\n                        \"MessageV4\": \"\"\n                    }\n                ]\n            }\n        }\n    },\n    \"source\": \"Failed upload SAP data\"\n}"
 						}
 					]
 				},
