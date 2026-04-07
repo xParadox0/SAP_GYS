@@ -5515,8 +5515,6 @@
 							"listen": "test",
 							"script": {
 								"id": "19d5ccb7-61ce-4cf5-a6c0-6f74b8dc2570",
-								"type": "text/javascript",
-								"packages": {},
 								"exec": [
 									"### Purpose",
 									"Cancel a previously submitted Down Payment (DP) request.",
@@ -5533,7 +5531,10 @@
 									"### Body notes",
 									"- POST body should identify which DP request to cancel (see **Body** tab).",
 									""
-								]
+								],
+								"type": "text/javascript",
+								"packages": {},
+								"requests": {}
 							}
 						}
 					],
@@ -5557,7 +5558,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n  \"parkInvoiceNonHeader\": {\n    \"HeaderTxt\": \"Test Yona\",\n    \"CompCode\": \"1000\",\n    \"DocDate\": \"2026-03-27T00:00:00\",\n    \"PstngDate\": \"2026-03-27T00:00:00\",\n    \"RefDocNo\": \"001/KS/INV/03/26\",\n    \"DocStatus\": \"3\"\n  },\n  \"parkInvoiceNonAccGLSet\": [\n    {\n      \"ItemnoAcc\": \"2\",\n      \"ItemText\": \"Invoice Item 1\",\n      \"GlAccount\": \"20200900\",\n      \"CompCode\": \"1000\",\n      \"AllocNmbr\": \"4300000076\",\n      \"TaxCode\": \"2D\",\n      \"Costcenter\": \"\",\n      \"ProfitCtr\": \"103010\"\n    }\n  ],\n  \"parkInvoiceNonAccPaySet\": [\n    {\n      \"ItemnoAcc\": \"1\",\n      \"VendorNo\": \"2111000465\",\n      \"CompCode\": \"1000\",\n      \"Pmnttrms\": \"Z007\",\n      \"BlineDate\": \"2026-03-27T00:00:00\",\n      \"PymtMeth\": \"U\",\n      \"PartnerBk\": \"\",\n      \"BankId\": \"\",\n      \"PartnerGuid\": \"\",\n      \"AllocNmbr\": \"4300000076\",\n      \"ItemText\": \"Invoice Pay 1\",\n      \"TaxCode\": \"2D\",\n      \"ProfitCtr\": \"103010\"\n    }\n  ],\n  \"parkInvoiceNonAccTaxSet\": [\n    {\n      \"ItemnoAcc\": \"3\",\n      \"GlAccount\": \"11010010\",\n      \"TaxCode\": \"2D\"\n    }\n  ],\n  \"parkInvoiceNonCurrSet\": [\n    {\n      \"ItemnoAcc\": \"1\",\n      \"Currency\": \"IDR\",\n      \"AmtDoccur\": \"-111000\"\n    },\n    {\n      \"ItemnoAcc\": \"2\",\n      \"Currency\": \"IDR\",\n      \"AmtDoccur\": \"100000\"\n    },\n    {\n      \"ItemnoAcc\": \"3\",\n      \"Currency\": \"IDR\",\n      \"AmtDoccur\": \"11000\",\n      \"AmtBase\": \"100000\"\n    }\n  ],\n  \"parkInvoiceNonTextSet\": [\n    {\n      \"Tdformat\": \"*\",\n      \"Tdline\": \"For Long Text\"\n    }\n  ],\n  \"parkInvoiceNonReturnSet\": []\n}",
+							"raw": "{\n   \"postInvoiceDataSet\": [\n      {\n        \"IsPO\": true,\n        \"DocNumber\": \"51056230740\",\n        \"Year\": \"2026\",\n        \"postInvoiceReturnSet\": []\n      }\n   ]\n}",
 							"options": {
 								"raw": {
 									"headerFamily": "json",
@@ -5565,7 +5566,7 @@
 								}
 							}
 						},
-						"url": "{{baseUrl}}/srm/non-po/create-park-invoice"
+						"url": "{{dev}}/srm/create-post-invoice"
 					},
 					"response": [
 						{
@@ -5831,6 +5832,86 @@
 							"cookie": [],
 							"responseTime": null,
 							"body": "{\n    \"message\": \"Error\",\n    \"results\": {\n        \"error\": {\n            \"code\": \"/IWCOR/CX_DS_EDM_FACET_ERROR/005056A509B11ED1BDCCCC5E8168819D\",\n            \"message\": {\n                \"lang\": \"en\",\n                \"value\": \"Property 'DocNumber' at offset '104' has invalid value '22000003090'\"\n            },\n            \"innererror\": {\n                \"application\": {\n                    \"component_id\": \"\",\n                    \"service_namespace\": \"/SAP/\",\n                    \"service_id\": \"ZGW_SAP_SRM_SRV\",\n                    \"service_version\": \"0001\"\n                },\n                \"transactionid\": \"E899FBAA932F0270E0069D36C92158E5\",\n                \"timestamp\": \"20260407055045.6943770\",\n                \"Error_Resolution\": {\n                    \"SAP_Transaction\": \"For backend administrators: use ADT feed reader \\\"SAP Gateway Error Log\\\" or run transaction /IWFND/ERROR_LOG on SAP Gateway hub system and search for entries with the timestamp above for more details\",\n                    \"SAP_Note\": \"See SAP Note 1797736 for error analysis (https://service.sap.com/sap/support/notes/1797736)\"\n                },\n                \"errordetails\": []\n            }\n        }\n    },\n    \"source\": \"SAP response does not contain expected data\"\n}"
+						},
+						{
+							"id": "bdbea7df-6ff7-4bc5-af38-b36bafa1ddc9",
+							"name": "Fail - PO",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n   \"postInvoiceDataSet\": [\n      {\n        \"IsPO\": true,\n        \"DocNumber\": \"51056230740\",\n        \"Year\": \"2026\",\n        \"postInvoiceReturnSet\": []\n      }\n   ]\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{dev}}/srm/create-post-invoice"
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "Server",
+									"value": "nginx/1.24.0 (Ubuntu)"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 07 Apr 2026 05:51:15 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.3.21"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "X-Kong-Upstream-Latency",
+									"value": "394"
+								},
+								{
+									"key": "X-Kong-Proxy-Latency",
+									"value": "1"
+								},
+								{
+									"key": "Via",
+									"value": "1.1 kong/3.9.0"
+								},
+								{
+									"key": "X-Kong-Request-Id",
+									"value": "566f11639b54054e24d9180109df423c"
+								}
+							],
+							"cookie": [],
+							"responseTime": null,
+							"body": "{\n    \"message\": \"Error\",\n    \"results\": {\n        \"error\": {\n            \"code\": \"/IWCOR/CX_DS_EDM_FACET_ERROR/005056A509B11ED1BDCCCC5E8168819D\",\n            \"message\": {\n                \"lang\": \"en\",\n                \"value\": \"Property 'DocNumber' at offset '103' has invalid value '51056230740'\"\n            },\n            \"innererror\": {\n                \"application\": {\n                    \"component_id\": \"\",\n                    \"service_namespace\": \"/SAP/\",\n                    \"service_id\": \"ZGW_SAP_SRM_SRV\",\n                    \"service_version\": \"0001\"\n                },\n                \"transactionid\": \"E899FBAA932F0270E0069D36C92158EF\",\n                \"timestamp\": \"20260407055115.3242870\",\n                \"Error_Resolution\": {\n                    \"SAP_Transaction\": \"For backend administrators: use ADT feed reader \\\"SAP Gateway Error Log\\\" or run transaction /IWFND/ERROR_LOG on SAP Gateway hub system and search for entries with the timestamp above for more details\",\n                    \"SAP_Note\": \"See SAP Note 1797736 for error analysis (https://service.sap.com/sap/support/notes/1797736)\"\n                },\n                \"errordetails\": []\n            }\n        }\n    },\n    \"source\": \"SAP response does not contain expected data\"\n}"
 						}
 					]
 				},
@@ -6198,247 +6279,7 @@
 						"url": "{{baseUrl}}/srm/cancel-post-invoice",
 						"description": "## Purpose\n\nCreate a Purchase Order (PO) in SRM.\n\n## Endpoint\n\n`POST https://{{dev}}/srm/create-po`\n\n- `{{dev}}`: Base host for the target environment (see **GYS Dev Environment**).\n    \n\n## Authentication\n\nBearer token.\n\n``` http\nAuthorization: Bearer {{token}}\n\n ```\n\n- `{{token}}`: Access token value.\n    \n\n## Headers\n\n- `Authorization: Bearer {{token}}`\n    \n- `Content-Type: application/json`\n    \n\n## Request body (JSON)\n\nTop-level fields:\n\n- `PoNumber` _(string)_: **Auto-generated by the backend**. Do **not** fill this field; providing a value may cause an error.\n    \n- `Zzspkno` _(string)_: Custom/reference field (business-specific).\n    \n- `Zzctrno` _(string)_: Contract/reference number (business-specific).\n    \n- `Zzpurty` _(string)_: Purchase type/category (business-specific).\n    \n\nNested objects/arrays:\n\n- `postPOHeaderSet` _(object)_: PO header data (document/vendor/payment terms/org/currency/incoterms/downpayment/document dates, etc.).\n    \n- `postPOItemSet` _(array of objects)_: PO item lines (material, quantity, unit, net price, plant, storage location, tax code, tolerances, indicators, etc.).\n    \n- `postPOScheduleSet` _(array of objects)_: Delivery schedule per PO item.\n    \n- `postPOPartnerSet` _(array of objects)_: Partner data.\n    \n- `postPOAdditionalSet` _(array of objects)_: Additional/custom item-level data.\n    \n\n### Field notes\n\n- Date formats in this payload can vary by field (e.g., ISO `YYYY-MM-DDThh:mm:ss` for some date-time fields, and `DD.MM.YYYY` for `DeliveryDate`). Follow the API’s expected format per field.\n    \n- Some fields are business-specific/custom (often prefixed with `Z\\*` or `Zz\\*`). Confirm allowed values with your SRM/SAP configuration.\n    \n\n## Example request body\n\n> Inline comments removed (JSON does not support comments). Values below are illustrative. \n  \n\n``` json\n{\n  \"PoNumber\": \"001\",\n  \"Zzspkno\": \"-\",\n  \"Zzctrno\": \"002/SCRAP AGREEMENT/1/202\",\n  \"Zzpurty\": \"RM\",\n  \"postPOHeaderSet\": {\n    \"DocType\": \"IMAT\",\n    \"Vendor\": \"2301000113\",\n    \"Pmnttrms\": \"Z007\",\n    \"PurchOrg\": \"PROC\",\n    \"PurGroup\": \"SM1\",\n    \"Currency\": \"IDR\",\n    \"ExchRate\": \"1\",\n    \"Incoterms1\": \"FRA\",\n    \"OurRef\": \"\",\n    \"DownpayType\": \"M\",\n    \"DownpayAmount\": \"12900000\",\n    \"DownpayPercent\": \"20\",\n    \"DownpayDuedate\": \"2026-03-26T00:00:00\",\n    \"DocDate\": \"2026-03-11T00:00:00\"\n  },\n  \"postPOItemSet\": [\n    {\n      \"PoItem\": \"00010\",\n      \"Material\": \"RIDR11000000000036\",\n      \"ShortText\": \"\",\n      \"Quantity\": \"100\",\n      \"PoUnit\": \"KG\",\n      \"NetPrice\": \"6450\",\n      \"MatlGroup\": \"DI\",\n      \"Plant\": \"1SM0\",\n      \"StgeLoc\": \"S1R0\",\n      \"Trackingno\": \"\",\n      \"TaxCode\": \"2C\",\n      \"PrntPrice\": true,\n      \"OverDlvTol\": \"5\",\n      \"GrInd\": true,\n      \"IrInd\": true,\n      \"ConfCtrl\": \"0001\",\n      \"Incoterms1\": \"FRA\",\n      \"ItemCat\": \" \",\n      \"Acctasscat\": \"\",\n      \"PreqNo\": \"1100008061\",\n      \"PreqItem\": \"00010\",\n      \"PreqName\": \"Shiyan\",\n      \"PckgNo\": \"0000000001\"\n    }\n  ],\n  \"postPOScheduleSet\": [\n    {\n      \"PoItem\": \"00010\",\n      \"SchedLine\": \"0001\",\n      \"DeliveryDate\": \"30.04.2026\",\n      \"Quantity\": \"100\",\n      \"PreqNo\": \"1100008061\",\n      \"PreqItem\": \"00010\"\n    }\n  ],\n  \"postPOPartnerSet\": [\n    {\n      \"Partnerdesc\": \"Z2\",\n      \"Langu\": \"EN\",\n      \"Buspartno\": \"8888000284\"\n    }\n  ],\n  \"postPOAdditionalSet\": [\n    {\n      \"Ebelp\": \"00010\",\n      \"Zzeta\": \"2026-03-12T00:00:00\"\n    }\n  ]\n}\n\n ```\n\n## Example success response (placeholder)\n\n> Response shape may vary by backend implementation. \n  \n\n``` json\n{\n  \"success\": true,\n  \"message\": \"PO created\",\n  \"poNumber\": \"4500001234\"\n}\n\n ```\n\n## Common error codes\n\n- `400 Bad Request` — Validation error / invalid payload (e.g., providing a value for an auto-generated field such as `PoNumber`, invalid date formats, missing required fields).\n    \n- `401 Unauthorized` — Missing/invalid/expired `{{token}}`.\n    \n- `403 Forbidden` — Token is valid but not authorized for this action.\n    \n- `404 Not Found` — Wrong host/base URL (`{{dev}}`) or endpoint path.\n    \n- `409 Conflict` — Duplicate/conflicting data (implementation-specific).\n    \n- `500 Internal Server Error` — Unexpected backend error."
 					},
-					"response": [
-						{
-							"id": "f423ae9f-4852-4f03-88da-4d3075b1e3ec",
-							"name": "Invoice PO",
-							"originalRequest": {
-								"method": "POST",
-								"header": [],
-								"body": {
-									"mode": "raw",
-									"raw": "{\r\n    \"IsPO\": true,\r\n    \"DocNumber\": \"5105623035\",\r\n    \"Year\": \"2026\",\r\n    \"deleteParkInvoiceReturnSet\": []\r\n}",
-									"options": {
-										"raw": {
-											"language": "json"
-										}
-									}
-								},
-								"url": "https://{{dev}}/srm/delete-park-invoice"
-							},
-							"status": "OK",
-							"code": 200,
-							"_postman_previewlanguage": "Text",
-							"header": [
-								{
-									"key": "Server",
-									"value": "nginx/1.24.0 (Ubuntu)"
-								},
-								{
-									"key": "Date",
-									"value": "Fri, 13 Mar 2026 08:40:24 GMT"
-								},
-								{
-									"key": "Content-Type",
-									"value": "application/json"
-								},
-								{
-									"key": "Transfer-Encoding",
-									"value": "chunked"
-								},
-								{
-									"key": "Connection",
-									"value": "keep-alive"
-								},
-								{
-									"key": "X-Powered-By",
-									"value": "PHP/8.3.21"
-								},
-								{
-									"key": "Cache-Control",
-									"value": "no-cache, private"
-								},
-								{
-									"key": "Access-Control-Allow-Origin",
-									"value": "*"
-								},
-								{
-									"key": "X-Frame-Options",
-									"value": "SAMEORIGIN"
-								},
-								{
-									"key": "X-XSS-Protection",
-									"value": "1; mode=block"
-								},
-								{
-									"key": "X-Content-Type-Options",
-									"value": "nosniff"
-								},
-								{
-									"key": "X-Kong-Upstream-Latency",
-									"value": "702"
-								},
-								{
-									"key": "X-Kong-Proxy-Latency",
-									"value": "0"
-								},
-								{
-									"key": "Via",
-									"value": "1.1 kong/3.9.0"
-								},
-								{
-									"key": "X-Kong-Request-Id",
-									"value": "159b6d4ffa314d2fd81c130390f7d338"
-								}
-							],
-							"cookie": [],
-							"responseTime": null,
-							"body": "{\n    \"message\": \"Success\",\n    \"results\": {\n        \"message\": {\n            \"__metadata\": {\n                \"id\": \"http://sapdev.gyssteel.com:8000/sap/opu/odata/sap/ZGW_SAP_SRM_SRV/deleteParkInvoiceSet(DocNumber='5105623035',Year='2026')\",\n                \"uri\": \"http://sapdev.gyssteel.com:8000/sap/opu/odata/sap/ZGW_SAP_SRM_SRV/deleteParkInvoiceSet(DocNumber='5105623035',Year='2026')\",\n                \"type\": \"ZGW_SAP_SRM_SRV.deleteParkInvoice\"\n            },\n            \"DocNumber\": \"5105623035\",\n            \"Year\": \"2026\",\n            \"IsPO\": true,\n            \"Trndt\": \"/Date(1773360000000)/\",\n            \"ReturnType\": \"S\",\n            \"Msgtx\": \"Success\",\n            \"deleteParkInvoiceReturnSet\": {\n                \"results\": []\n            }\n        }\n    }\n}"
-						},
-						{
-							"id": "c193c929-ab99-43e9-99a0-e1c0ceed66dc",
-							"name": "Invoice PO",
-							"originalRequest": {
-								"method": "POST",
-								"header": [
-									{
-										"key": "Content-Type",
-										"value": "application/json"
-									},
-									{
-										"description": "Added as a part of security scheme: bearer",
-										"key": "Authorization",
-										"value": "Bearer <token>"
-									}
-								],
-								"body": {
-									"mode": "raw",
-									"raw": "{\n  \"IsPO\": false,\n  \"DocumentNo\": \"5105623077\",\n  \"Year\": \"2026\",\n  \"PostingDate\": \"2026-03-27\",\n  \"ReversalReasonCode\": \"01\"\n}",
-									"options": {
-										"raw": {
-											"headerFamily": "json",
-											"language": "json"
-										}
-									}
-								},
-								"url": "{{baseUrl}}/srm/cancel-post-invoice"
-							},
-							"status": "OK",
-							"code": 200,
-							"_postman_previewlanguage": "Text",
-							"header": [
-								{
-									"description": {
-										"content": "",
-										"type": "text/plain"
-									},
-									"key": "Server",
-									"value": "nginx/1.24.0 (Ubuntu)"
-								},
-								{
-									"description": {
-										"content": "",
-										"type": "text/plain"
-									},
-									"key": "Date",
-									"value": "Tue, 31 Mar 2026 15:43:12 GMT"
-								},
-								{
-									"description": {
-										"content": "",
-										"type": "text/plain"
-									},
-									"key": "Transfer-Encoding",
-									"value": "chunked"
-								},
-								{
-									"description": {
-										"content": "",
-										"type": "text/plain"
-									},
-									"key": "Connection",
-									"value": "keep-alive"
-								},
-								{
-									"description": {
-										"content": "",
-										"type": "text/plain"
-									},
-									"key": "X-Powered-By",
-									"value": "PHP/8.3.21"
-								},
-								{
-									"description": {
-										"content": "",
-										"type": "text/plain"
-									},
-									"key": "Cache-Control",
-									"value": "no-cache, private"
-								},
-								{
-									"description": {
-										"content": "",
-										"type": "text/plain"
-									},
-									"key": "Access-Control-Allow-Origin",
-									"value": "*"
-								},
-								{
-									"description": {
-										"content": "",
-										"type": "text/plain"
-									},
-									"key": "X-Frame-Options",
-									"value": "SAMEORIGIN"
-								},
-								{
-									"description": {
-										"content": "",
-										"type": "text/plain"
-									},
-									"key": "X-XSS-Protection",
-									"value": "1; mode=block"
-								},
-								{
-									"description": {
-										"content": "",
-										"type": "text/plain"
-									},
-									"key": "X-Content-Type-Options",
-									"value": "nosniff"
-								},
-								{
-									"description": {
-										"content": "",
-										"type": "text/plain"
-									},
-									"key": "X-Kong-Upstream-Latency",
-									"value": "477"
-								},
-								{
-									"description": {
-										"content": "",
-										"type": "text/plain"
-									},
-									"key": "X-Kong-Proxy-Latency",
-									"value": "0"
-								},
-								{
-									"description": {
-										"content": "",
-										"type": "text/plain"
-									},
-									"key": "Via",
-									"value": "1.1 kong/3.9.0"
-								},
-								{
-									"description": {
-										"content": "",
-										"type": "text/plain"
-									},
-									"key": "X-Kong-Request-Id",
-									"value": "b8814d08aa85961c42480c76c59ddd1a"
-								},
-								{
-									"key": "Content-Type",
-									"value": "application/json"
-								}
-							],
-							"cookie": [],
-							"responseTime": null,
-							"body": "{\n    \"message\": \"Success\",\n    \"results\": {\n        \"message\": {\n            \"__metadata\": {\n                \"id\": \"http://sapdev.gyssteel.com:8000/sap/opu/odata/sap/ZGW_SAP_SRM_SRV/deleteParkInvoiceSet(DocNumber='2200000309',Year='2026')\",\n                \"uri\": \"http://sapdev.gyssteel.com:8000/sap/opu/odata/sap/ZGW_SAP_SRM_SRV/deleteParkInvoiceSet(DocNumber='2200000309',Year='2026')\",\n                \"type\": \"ZGW_SAP_SRM_SRV.deleteParkInvoice\"\n            },\n            \"DocNumber\": \"2200000309\",\n            \"Year\": \"2026\",\n            \"IsPO\": false,\n            \"Trndt\": \"/Date(1774915200000)/\",\n            \"ReturnType\": \"S\",\n            \"Msgtx\": \"Success\",\n            \"deleteParkInvoiceReturnSet\": {\n                \"results\": []\n            }\n        }\n    }\n}"
-						}
-					]
+					"response": []
 				},
 				{
 					"name": "Approve PV Status",
