@@ -5219,8 +5219,6 @@
 							"listen": "test",
 							"script": {
 								"id": "19d5ccb7-61ce-4cf5-a6c0-6f74b8dc2570",
-								"type": "text/javascript",
-								"packages": {},
 								"exec": [
 									"### Purpose",
 									"Cancel a previously submitted Down Payment (DP) request.",
@@ -5237,7 +5235,10 @@
 									"### Body notes",
 									"- POST body should identify which DP request to cancel (see **Body** tab).",
 									""
-								]
+								],
+								"type": "text/javascript",
+								"packages": {},
+								"requests": {}
 							}
 						}
 					],
@@ -5261,7 +5262,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n  \"parkInvoiceNonHeader\": {\n    \"HeaderTxt\": \"Test Yona\",\n    \"CompCode\": \"1000\",\n    \"DocDate\": \"2026-03-27T00:00:00\",\n    \"PstngDate\": \"2026-03-27T00:00:00\",\n    \"RefDocNo\": \"001/KS/INV/03/26\",\n    \"DocStatus\": \"3\"\n  },\n  \"parkInvoiceNonAccGLSet\": [\n    {\n      \"ItemnoAcc\": \"2\",\n      \"ItemText\": \"Invoice Item 1\",\n      \"GlAccount\": \"20200900\",\n      \"CompCode\": \"1000\",\n      \"AllocNmbr\": \"4300000076\",\n      \"TaxCode\": \"2D\",\n      \"Costcenter\": \"\",\n      \"ProfitCtr\": \"103010\"\n    }\n  ],\n  \"parkInvoiceNonAccPaySet\": [\n    {\n      \"ItemnoAcc\": \"1\",\n      \"VendorNo\": \"2111000465\",\n      \"CompCode\": \"1000\",\n      \"Pmnttrms\": \"Z007\",\n      \"BlineDate\": \"2026-03-27T00:00:00\",\n      \"PymtMeth\": \"U\",\n      \"PartnerBk\": \"\",\n      \"BankId\": \"\",\n      \"PartnerGuid\": \"\",\n      \"AllocNmbr\": \"4300000076\",\n      \"ItemText\": \"Invoice Pay 1\",\n      \"TaxCode\": \"2D\",\n      \"ProfitCtr\": \"103010\"\n    }\n  ],\n  \"parkInvoiceNonAccTaxSet\": [\n    {\n      \"ItemnoAcc\": \"3\",\n      \"GlAccount\": \"11010010\",\n      \"TaxCode\": \"2D\"\n    }\n  ],\n  \"parkInvoiceNonCurrSet\": [\n    {\n      \"ItemnoAcc\": \"1\",\n      \"Currency\": \"IDR\",\n      \"AmtDoccur\": \"-111000\"\n    },\n    {\n      \"ItemnoAcc\": \"2\",\n      \"Currency\": \"IDR\",\n      \"AmtDoccur\": \"100000\"\n    },\n    {\n      \"ItemnoAcc\": \"3\",\n      \"Currency\": \"IDR\",\n      \"AmtDoccur\": \"11000\",\n      \"AmtBase\": \"100000\"\n    }\n  ],\n  \"parkInvoiceNonTextSet\": [\n    {\n      \"Tdformat\": \"*\",\n      \"Tdline\": \"For Long Text\"\n    }\n  ],\n  \"parkInvoiceNonReturnSet\": []\n}",
+							"raw": "{\n  \"parkInvoiceNonHeader\": {\n    \"HeaderTxt\": \"Test Yona\",\n    \"CompCode\": \"1000\",\n    \"DocDate\": \"2026-03-27T00:00:00\",\n    \"PstngDate\": \"2026-03-27T00:00:00\",\n    \"RefDocNo\": \"\",\n    \"DocStatus\": \"3\"\n  },\n  \"parkInvoiceNonAccGLSet\": [\n    {\n      \"ItemnoAcc\": \"2\",\n      \"ItemText\": \"Invoice Item 1\",\n      \"GlAccount\": \"20200900\",\n      \"CompCode\": \"1000\",\n      \"AllocNmbr\": \"4300000076\",\n      \"TaxCode\": \"2D\",\n      \"Costcenter\": \"\",\n      \"ProfitCtr\": \"103010\"\n    }\n  ],\n  \"parkInvoiceNonAccPaySet\": [\n    {\n      \"ItemnoAcc\": \"1\",\n      \"VendorNo\": \"2111000465\",\n      \"CompCode\": \"1000\",\n      \"Pmnttrms\": \"Z007\",\n      \"BlineDate\": \"2026-03-27T00:00:00\",\n      \"PymtMeth\": \"U\",\n      \"PartnerBk\": \"\",\n      \"BankId\": \"\",\n      \"PartnerGuid\": \"\",\n      \"AllocNmbr\": \"4300000076\",\n      \"ItemText\": \"Invoice Pay 1\",\n      \"TaxCode\": \"2D\",\n      \"ProfitCtr\": \"103010\"\n    }\n  ],\n  \"parkInvoiceNonAccTaxSet\": [\n    {\n      \"ItemnoAcc\": \"3\",\n      \"GlAccount\": \"11010010\",\n      \"TaxCode\": \"2D\"\n    }\n  ],\n  \"parkInvoiceNonCurrSet\": [\n    {\n      \"ItemnoAcc\": \"1\",\n      \"Currency\": \"IDR\",\n      \"AmtDoccur\": \"-111000\"\n    },\n    {\n      \"ItemnoAcc\": \"2\",\n      \"Currency\": \"IDR\",\n      \"AmtDoccur\": \"100000\"\n    },\n    {\n      \"ItemnoAcc\": \"3\",\n      \"Currency\": \"IDR\",\n      \"AmtDoccur\": \"11000\",\n      \"AmtBase\": \"100000\"\n    }\n  ],\n  \"parkInvoiceNonTextSet\": [\n    {\n      \"Tdformat\": \"*\",\n      \"Tdline\": \"For Long Text\"\n    }\n  ],\n  \"parkInvoiceNonReturnSet\": []\n}",
 							"options": {
 								"raw": {
 									"headerFamily": "json",
@@ -5269,7 +5270,7 @@
 								}
 							}
 						},
-						"url": "{{baseUrl}}/srm/non-po/create-park-invoice"
+						"url": "{{dev}}/srm/non-po/create-park-invoice"
 					},
 					"response": [
 						{
