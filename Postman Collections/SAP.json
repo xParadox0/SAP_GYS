@@ -6822,9 +6822,9 @@
 										"value": "application/json"
 									},
 									{
-										"description": "Added as a part of security scheme: bearer",
 										"key": "Authorization",
-										"value": "Bearer <token>"
+										"value": "Bearer <token>",
+										"description": "Added as a part of security scheme: bearer"
 									}
 								],
 								"body": {
@@ -6837,123 +6837,123 @@
 										}
 									}
 								},
-								"url": "{{baseUrl}}/srm/gr-quantity-update"
+								"url": "{{dev}}/srm/gr-quantity-update"
 							},
 							"status": "OK",
 							"code": 200,
 							"_postman_previewlanguage": "Text",
 							"header": [
 								{
-									"description": {
-										"content": "",
-										"type": "text/plain"
-									},
 									"key": "Server",
-									"value": "nginx/1.24.0 (Ubuntu)"
-								},
-								{
+									"value": "nginx/1.24.0 (Ubuntu)",
 									"description": {
 										"content": "",
 										"type": "text/plain"
-									},
+									}
+								},
+								{
 									"key": "Date",
-									"value": "Wed, 04 Mar 2026 07:39:21 GMT"
-								},
-								{
+									"value": "Wed, 04 Mar 2026 07:39:21 GMT",
 									"description": {
 										"content": "",
 										"type": "text/plain"
-									},
+									}
+								},
+								{
 									"key": "Transfer-Encoding",
-									"value": "chunked"
-								},
-								{
+									"value": "chunked",
 									"description": {
 										"content": "",
 										"type": "text/plain"
-									},
+									}
+								},
+								{
 									"key": "Connection",
-									"value": "keep-alive"
-								},
-								{
+									"value": "keep-alive",
 									"description": {
 										"content": "",
 										"type": "text/plain"
-									},
+									}
+								},
+								{
 									"key": "X-Powered-By",
-									"value": "PHP/8.3.21"
-								},
-								{
+									"value": "PHP/8.3.21",
 									"description": {
 										"content": "",
 										"type": "text/plain"
-									},
+									}
+								},
+								{
 									"key": "Cache-Control",
-									"value": "no-cache, private"
-								},
-								{
+									"value": "no-cache, private",
 									"description": {
 										"content": "",
 										"type": "text/plain"
-									},
+									}
+								},
+								{
 									"key": "Access-Control-Allow-Origin",
-									"value": "*"
-								},
-								{
+									"value": "*",
 									"description": {
 										"content": "",
 										"type": "text/plain"
-									},
+									}
+								},
+								{
 									"key": "X-Frame-Options",
-									"value": "SAMEORIGIN"
-								},
-								{
+									"value": "SAMEORIGIN",
 									"description": {
 										"content": "",
 										"type": "text/plain"
-									},
+									}
+								},
+								{
 									"key": "X-XSS-Protection",
-									"value": "1; mode=block"
-								},
-								{
+									"value": "1; mode=block",
 									"description": {
 										"content": "",
 										"type": "text/plain"
-									},
+									}
+								},
+								{
 									"key": "X-Content-Type-Options",
-									"value": "nosniff"
-								},
-								{
+									"value": "nosniff",
 									"description": {
 										"content": "",
 										"type": "text/plain"
-									},
+									}
+								},
+								{
 									"key": "X-Kong-Upstream-Latency",
-									"value": "134"
-								},
-								{
+									"value": "134",
 									"description": {
 										"content": "",
 										"type": "text/plain"
-									},
+									}
+								},
+								{
 									"key": "X-Kong-Proxy-Latency",
-									"value": "0"
-								},
-								{
+									"value": "0",
 									"description": {
 										"content": "",
 										"type": "text/plain"
-									},
+									}
+								},
+								{
 									"key": "Via",
-									"value": "1.1 kong/3.9.0"
-								},
-								{
+									"value": "1.1 kong/3.9.0",
 									"description": {
 										"content": "",
 										"type": "text/plain"
-									},
+									}
+								},
+								{
 									"key": "X-Kong-Request-Id",
-									"value": "612d000dfbcddf3461b62344a6a98652"
+									"value": "612d000dfbcddf3461b62344a6a98652",
+									"description": {
+										"content": "",
+										"type": "text/plain"
+									}
 								},
 								{
 									"key": "Content-Type",
