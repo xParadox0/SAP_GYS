@@ -5567,7 +5567,100 @@
 						},
 						"url": "{{baseUrl}}/srm/non-po/create-park-invoice"
 					},
-					"response": []
+					"response": [
+						{
+							"id": "8c93c0ef-1f4a-46c6-83fc-605187839568",
+							"name": "Success",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n   \"postInvoiceDataSet\": [\n      {\n        \"IsPO\": true,\n        \"DocNumber\": \"5105623074\",\n        \"Year\": \"2026\",\n        \"postInvoiceReturnSet\": []\n      }\n   ]\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{dev}}/srm/create-post-invoice"
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "Server",
+									"value": "nginx/1.24.0 (Ubuntu)"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 07 Apr 2026 03:04:02 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.3.21"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1; mode=block"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-Kong-Upstream-Latency",
+									"value": "658"
+								},
+								{
+									"key": "X-Kong-Proxy-Latency",
+									"value": "0"
+								},
+								{
+									"key": "Via",
+									"value": "1.1 kong/3.9.0"
+								},
+								{
+									"key": "X-Kong-Request-Id",
+									"value": "5673bd29558599595ed0473de8680163"
+								}
+							],
+							"cookie": [],
+							"responseTime": null,
+							"body": "{\n    \"message\": \"Error\",\n    \"results\": {\n        \"d\": {\n            \"__metadata\": {\n                \"id\": \"http://sapdev.gyssteel.com:8000/sap/opu/odata/sap/ZGW_SAP_SRM_SRV/postInvoiceSet('')\",\n                \"uri\": \"http://sapdev.gyssteel.com:8000/sap/opu/odata/sap/ZGW_SAP_SRM_SRV/postInvoiceSet('')\",\n                \"type\": \"ZGW_SAP_SRM_SRV.postInvoice\"\n            },\n            \"Key\": \"\",\n            \"postInvoiceDataSet\": {\n                \"results\": [\n                    {\n                        \"__metadata\": {\n                            \"id\": \"http://sapdev.gyssteel.com:8000/sap/opu/odata/sap/ZGW_SAP_SRM_SRV/postInvoiceDataSet('E')\",\n                            \"uri\": \"http://sapdev.gyssteel.com:8000/sap/opu/odata/sap/ZGW_SAP_SRM_SRV/postInvoiceDataSet('E')\",\n                            \"type\": \"ZGW_SAP_SRM_SRV.postInvoiceData\"\n                        },\n                        \"DocNumber\": \"5105623074\",\n                        \"Year\": \"2026\",\n                        \"Trndt\": \"/Date(1775520000000)/\",\n                        \"ReturnType\": \"E\",\n                        \"Msgtx\": \"Error\",\n                        \"IsPO\": true,\n                        \"postInvoiceReturnSet\": {\n                            \"results\": [\n                                {\n                                    \"__metadata\": {\n                                        \"id\": \"http://sapdev.gyssteel.com:8000/sap/opu/odata/sap/ZGW_SAP_SRM_SRV/postInvoiceReturnSet(Type='E',Id='M8',Number='255',Message='Document%205105623074%20has%20been%20posted')\",\n                                        \"uri\": \"http://sapdev.gyssteel.com:8000/sap/opu/odata/sap/ZGW_SAP_SRM_SRV/postInvoiceReturnSet(Type='E',Id='M8',Number='255',Message='Document%205105623074%20has%20been%20posted')\",\n                                        \"type\": \"ZGW_SAP_SRM_SRV.postInvoiceReturn\"\n                                    },\n                                    \"Type\": \"E\",\n                                    \"Id\": \"M8\",\n                                    \"Number\": \"255\",\n                                    \"Message\": \"Document 5105623074 has been posted\",\n                                    \"LogNo\": \"\",\n                                    \"LogMsgNo\": \"000000\",\n                                    \"MessageV1\": \"5105623074\",\n                                    \"MessageV2\": \"2026\",\n                                    \"MessageV3\": \"\",\n                                    \"MessageV4\": \"\",\n                                    \"Parameter\": \"\",\n                                    \"Row\": 0,\n                                    \"Field\": \"\",\n                                    \"System\": \"S4DCLNT130\"\n                                }\n                            ]\n                        }\n                    }\n                ]\n            }\n        }\n    }\n}"
+						}
+					]
 				},
 				{
 					"name": "Delete Park Invoice (PO and Non PO)",
