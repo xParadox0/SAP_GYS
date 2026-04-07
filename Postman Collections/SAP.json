@@ -5751,6 +5751,86 @@
 							"cookie": [],
 							"responseTime": null,
 							"body": "{\n    \"message\": \"Error\",\n    \"results\": {\n        \"d\": {\n            \"__metadata\": {\n                \"id\": \"http://sapdev.gyssteel.com:8000/sap/opu/odata/sap/ZGW_SAP_SRM_SRV/postInvoiceSet('')\",\n                \"uri\": \"http://sapdev.gyssteel.com:8000/sap/opu/odata/sap/ZGW_SAP_SRM_SRV/postInvoiceSet('')\",\n                \"type\": \"ZGW_SAP_SRM_SRV.postInvoice\"\n            },\n            \"Key\": \"\",\n            \"postInvoiceDataSet\": {\n                \"results\": [\n                    {\n                        \"__metadata\": {\n                            \"id\": \"http://sapdev.gyssteel.com:8000/sap/opu/odata/sap/ZGW_SAP_SRM_SRV/postInvoiceDataSet('E')\",\n                            \"uri\": \"http://sapdev.gyssteel.com:8000/sap/opu/odata/sap/ZGW_SAP_SRM_SRV/postInvoiceDataSet('E')\",\n                            \"type\": \"ZGW_SAP_SRM_SRV.postInvoiceData\"\n                        },\n                        \"DocNumber\": \"2200000309\",\n                        \"Year\": \"2026\",\n                        \"Trndt\": \"/Date(1775520000000)/\",\n                        \"ReturnType\": \"E\",\n                        \"Msgtx\": \"Error\",\n                        \"IsPO\": false,\n                        \"postInvoiceReturnSet\": {\n                            \"results\": [\n                                {\n                                    \"__metadata\": {\n                                        \"id\": \"http://sapdev.gyssteel.com:8000/sap/opu/odata/sap/ZGW_SAP_SRM_SRV/postInvoiceReturnSet(Type='E',Id='FP',Number='031',Message='Parked%20document%202200000309%201000%202026%20does%20not%20exist')\",\n                                        \"uri\": \"http://sapdev.gyssteel.com:8000/sap/opu/odata/sap/ZGW_SAP_SRM_SRV/postInvoiceReturnSet(Type='E',Id='FP',Number='031',Message='Parked%20document%202200000309%201000%202026%20does%20not%20exist')\",\n                                        \"type\": \"ZGW_SAP_SRM_SRV.postInvoiceReturn\"\n                                    },\n                                    \"Type\": \"E\",\n                                    \"Id\": \"FP\",\n                                    \"Number\": \"031\",\n                                    \"Message\": \"Parked document 2200000309 1000 2026 does not exist\",\n                                    \"LogNo\": \"\",\n                                    \"LogMsgNo\": \"000000\",\n                                    \"MessageV1\": \"2200000309\",\n                                    \"MessageV2\": \"1000\",\n                                    \"MessageV3\": \"2026\",\n                                    \"MessageV4\": \"\",\n                                    \"Parameter\": \"\",\n                                    \"Row\": 0,\n                                    \"Field\": \"\",\n                                    \"System\": \"\"\n                                }\n                            ]\n                        }\n                    }\n                ]\n            }\n        }\n    }\n}"
+						},
+						{
+							"id": "a23a22d4-d34f-4305-8df3-fc333af5e653",
+							"name": "Fail - Non PO",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n   \"postInvoiceDataSet\": [\n      {\n        \"IsPO\": false,\n        \"DocNumber\": \"22000003090\",\n        \"Year\": \"2026\",\n        \"postInvoiceReturnSet\": []\n      }\n   ]\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{dev}}/srm/create-post-invoice"
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "Server",
+									"value": "nginx/1.24.0 (Ubuntu)"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 07 Apr 2026 05:50:45 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.3.21"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "X-Kong-Upstream-Latency",
+									"value": "483"
+								},
+								{
+									"key": "X-Kong-Proxy-Latency",
+									"value": "1"
+								},
+								{
+									"key": "Via",
+									"value": "1.1 kong/3.9.0"
+								},
+								{
+									"key": "X-Kong-Request-Id",
+									"value": "1b75b3365cf0b152b13dad4271e87060"
+								}
+							],
+							"cookie": [],
+							"responseTime": null,
+							"body": "{\n    \"message\": \"Error\",\n    \"results\": {\n        \"error\": {\n            \"code\": \"/IWCOR/CX_DS_EDM_FACET_ERROR/005056A509B11ED1BDCCCC5E8168819D\",\n            \"message\": {\n                \"lang\": \"en\",\n                \"value\": \"Property 'DocNumber' at offset '104' has invalid value '22000003090'\"\n            },\n            \"innererror\": {\n                \"application\": {\n                    \"component_id\": \"\",\n                    \"service_namespace\": \"/SAP/\",\n                    \"service_id\": \"ZGW_SAP_SRM_SRV\",\n                    \"service_version\": \"0001\"\n                },\n                \"transactionid\": \"E899FBAA932F0270E0069D36C92158E5\",\n                \"timestamp\": \"20260407055045.6943770\",\n                \"Error_Resolution\": {\n                    \"SAP_Transaction\": \"For backend administrators: use ADT feed reader \\\"SAP Gateway Error Log\\\" or run transaction /IWFND/ERROR_LOG on SAP Gateway hub system and search for entries with the timestamp above for more details\",\n                    \"SAP_Note\": \"See SAP Note 1797736 for error analysis (https://service.sap.com/sap/support/notes/1797736)\"\n                },\n                \"errordetails\": []\n            }\n        }\n    },\n    \"source\": \"SAP response does not contain expected data\"\n}"
 						}
 					]
 				},
