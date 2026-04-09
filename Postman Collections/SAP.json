@@ -1141,7 +1141,6 @@
 							"listen": "test",
 							"script": {
 								"id": "9a4744fe-b2e0-467b-984d-b33a5e92feb9",
-								"type": "text/javascript",
 								"exec": [
 									"### Purpose",
 									"Obtain an authentication token from the GYS backend.",
@@ -1159,7 +1158,10 @@
 									"- This request should be run **first**.",
 									"- Expected behavior: stores the access token into the active environment variable `token` (used as `{{token}}` by other requests).",
 									""
-								]
+								],
+								"type": "text/javascript",
+								"packages": {},
+								"requests": {}
 							}
 						}
 					],
@@ -1191,7 +1193,7 @@
 								}
 							}
 						},
-						"url": "{{baseUrl}}/auth-token"
+						"url": "{{dev}}/auth-token"
 					},
 					"response": [
 						{
