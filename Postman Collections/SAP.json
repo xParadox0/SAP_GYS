@@ -2,7 +2,7 @@
 	"info": {
 		"_postman_id": "26af8014-bf15-49ba-b884-b3fdbf0a424b",
 		"name": "SAP_GYS",
-		"description": "# SAP GYS\n\nPostman collection for **SAP GYS** integration endpoints.\n\n## Environment setup\n\n- **Base URL**: `{{dev}}`\n    \n- **Auth token variable**: `{{token}}`\n    \n    - Run **Token** first to generate/refresh the token and store it in the active environment.\n\n        \n\n## Authentication\n\nUnless otherwise stated, requests require **Bearer Token** authentication:\n\n``` http\nAuthorization: Bearer {{token}}\n\n ```\n\n## Folder overview\n\n- **GET Schema**: Master-data / reference lookups (read-only)\n    \n- **POST Schema**: SRM-style actions and submissions (create/change/release/cancel/update)\n    \n\n## Notes\n\n- This collection does **not** change URLs or methods; it documents existing requests only.\n    \n- Query parameters shown in URLs are examples/defaults and can be adjusted per use case.",
+		"description": "# SAP GYS\n\nPostman collection for **SAP GYS** integration endpoints.\n\n## Environment setup\n\n- **Base URL**: `https://{{dev}}`\n    \n- **Auth token variable**: `{{token}}`\n    \n    - Run **Token** first to generate/refresh the token and store it in the active environment.\n        \n\n## Authentication\n\nUnless otherwise stated, requests require **Bearer Token** authentication:\n\n``` http\nAuthorization: Bearer {{token}}\n\n ```\n\n## Folder overview\n\n- **GET Schema**: Master-data / reference lookups (read-only)\n    \n- **POST Schema**: SRM-style actions and submissions (create/change/release/cancel/update)\n    \n\n## Notes\n\n- This collection does **not** change URLs or methods; it documents existing requests only.\n    \n- Query parameters shown in URLs are examples/defaults and can be adjusted per use case.",
 		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
 	},
 	"item": [
@@ -15,6 +15,7 @@
 						{
 							"listen": "test",
 							"script": {
+								"id": "f53e78a8-5c98-47bc-806d-39d0e5158fc6",
 								"type": "text/javascript",
 								"exec": [
 									"### Purpose\nFetch Material Master data with example filters prefilled in the URL.\n\n### Auth\n```http\nAuthorization: Bearer {{token}}\n```\n\n### Key headers\n- `Authorization: Bearer {{token}}`\n\n### Example query params (from URL)\n- `MatCode` (example: `''`)\n- `MatGroup` (example: `''`)\n- `MatType` (example: `'ZGCR'`)\n- `MRPContrl` (example: `''`)\n- `Plant` (example: `''`)\n"
@@ -33,9 +34,9 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{dev}}/sap/material-master?MatCode=''&MatGroup=''&MatType='ZGCR'&MRPContrl=''&Plant=''",
+							"raw": "{{baseUrl}}/sap/material-master?MatCode=''&MatGroup=''&MatType='ZGCR'&MRPContrl=''&Plant=''",
 							"host": [
-								"{{dev}}"
+								"{{baseUrl}}"
 							],
 							"path": [
 								"sap",
@@ -73,6 +74,7 @@
 						{
 							"listen": "test",
 							"script": {
+								"id": "4ebf288e-ecef-470a-82f0-650a246a29b4",
 								"type": "text/javascript",
 								"exec": [
 									"### Purpose\nFetch Cost Center master data.\n\n### Auth\n```http\nAuthorization: Bearer {{token}}\n```\n\n### Key headers\n- `Authorization: Bearer {{token}}`\n"
@@ -90,7 +92,7 @@
 						},
 						"method": "GET",
 						"header": [],
-						"url": "{{dev}}/sap/cost-center"
+						"url": "{{baseUrl}}/sap/cost-center"
 					},
 					"response": []
 				},
@@ -100,6 +102,7 @@
 						{
 							"listen": "test",
 							"script": {
+								"id": "796cc776-1541-41c1-94e1-47cca133ae76",
 								"type": "text/javascript",
 								"exec": [
 									"### Purpose\nFetch GL Account master data.\n\n### Auth\n```http\nAuthorization: Bearer {{token}}\n```\n\n### Key headers\n- `Authorization: Bearer {{token}}`\n"
@@ -117,7 +120,7 @@
 						},
 						"method": "GET",
 						"header": [],
-						"url": "{{dev}}/sap/gl-account"
+						"url": "{{baseUrl}}/sap/gl-account"
 					},
 					"response": []
 				},
@@ -127,6 +130,7 @@
 						{
 							"listen": "test",
 							"script": {
+								"id": "892959bf-e73e-4074-a641-1de4e394a95c",
 								"type": "text/javascript",
 								"exec": [
 									"### Purpose\nFetch Material Group & Service Group master data.\n\n### Auth\n```http\nAuthorization: Bearer {{token}}\n```\n\n### Key headers\n- `Authorization: Bearer {{token}}`\n"
@@ -144,7 +148,7 @@
 						},
 						"method": "GET",
 						"header": [],
-						"url": "{{dev}}/sap/material-group"
+						"url": "{{baseUrl}}/sap/material-group"
 					},
 					"response": []
 				},
@@ -154,6 +158,7 @@
 						{
 							"listen": "test",
 							"script": {
+								"id": "72c7c131-0fe2-42ec-a721-2edb0f0585cc",
 								"type": "text/javascript",
 								"exec": [
 									"### Purpose\nFetch Plant & Storage Location master data.\n\n### Auth\n```http\nAuthorization: Bearer {{token}}\n```\n\n### Key headers\n- `Authorization: Bearer {{token}}`\n"
@@ -171,7 +176,7 @@
 						},
 						"method": "GET",
 						"header": [],
-						"url": "{{dev}}/sap/plant-location"
+						"url": "{{baseUrl}}/sap/plant-location"
 					},
 					"response": []
 				},
@@ -181,6 +186,7 @@
 						{
 							"listen": "test",
 							"script": {
+								"id": "8f595569-30cc-481a-aac5-505e7d1f889e",
 								"type": "text/javascript",
 								"exec": [
 									"### Purpose\nFetch Order Master Data.\n\n### Auth\n```http\nAuthorization: Bearer {{token}}\n```\n\n### Key headers\n- `Authorization: Bearer {{token}}`\n"
@@ -198,7 +204,7 @@
 						},
 						"method": "GET",
 						"header": [],
-						"url": "{{dev}}/sap/order-master"
+						"url": "{{baseUrl}}/sap/order-master"
 					},
 					"response": []
 				},
@@ -208,6 +214,7 @@
 						{
 							"listen": "test",
 							"script": {
+								"id": "0c8dd485-db36-4419-b0df-d5693ea53648",
 								"type": "text/javascript",
 								"exec": [
 									"### Purpose\nFetch Network & Activity Master data.\n\n### Auth\n```http\nAuthorization: Bearer {{token}}\n```\n\n### Key headers\n- `Authorization: Bearer {{token}}`\n"
@@ -225,7 +232,7 @@
 						},
 						"method": "GET",
 						"header": [],
-						"url": "{{dev}}/sap/network-activity"
+						"url": "{{baseUrl}}/sap/network-activity"
 					},
 					"response": []
 				},
@@ -235,6 +242,7 @@
 						{
 							"listen": "test",
 							"script": {
+								"id": "612c109e-41b2-4584-934f-5f0361372d1e",
 								"type": "text/javascript",
 								"exec": [
 									"### Purpose\nFetch Asset Master Data.\n\n### Auth\n```http\nAuthorization: Bearer {{token}}\n```\n\n### Key headers\n- `Authorization: Bearer {{token}}`\n"
@@ -252,7 +260,7 @@
 						},
 						"method": "GET",
 						"header": [],
-						"url": "{{dev}}/sap/asset-data-master"
+						"url": "{{baseUrl}}/sap/asset-data-master"
 					},
 					"response": []
 				},
@@ -262,6 +270,7 @@
 						{
 							"listen": "test",
 							"script": {
+								"id": "44b9869d-7001-4d35-b93a-061f13d29ccf",
 								"type": "text/javascript",
 								"exec": [
 									"### Purpose\nFetch Master Purchasing Group data.\n\n### Auth\n```http\nAuthorization: Bearer {{token}}\n```\n\n### Key headers\n- `Authorization: Bearer {{token}}`\n"
@@ -279,7 +288,7 @@
 						},
 						"method": "GET",
 						"header": [],
-						"url": "{{dev}}/sap/purch-group"
+						"url": "{{baseUrl}}/sap/purch-group"
 					},
 					"response": []
 				},
@@ -289,6 +298,7 @@
 						{
 							"listen": "test",
 							"script": {
+								"id": "2d51e5a9-ad80-4373-b11f-3e030d253bbe",
 								"type": "text/javascript",
 								"exec": [
 									"### Purpose\nFetch Master Bank Key data.\n\n### Auth\n```http\nAuthorization: Bearer {{token}}\n```\n\n### Key headers\n- `Authorization: Bearer {{token}}`\n"
@@ -306,7 +316,7 @@
 						},
 						"method": "GET",
 						"header": [],
-						"url": "{{dev}}/sap/bank-key"
+						"url": "{{baseUrl}}/sap/bank-key"
 					},
 					"response": []
 				},
@@ -316,6 +326,7 @@
 						{
 							"listen": "test",
 							"script": {
+								"id": "1b706d16-5d84-46e4-a8b2-297add1f4be8",
 								"type": "text/javascript",
 								"exec": [
 									"### Purpose\nFetch Master Unit of Measure (UoM) data.\n\n### Auth\n```http\nAuthorization: Bearer {{token}}\n```\n\n### Key headers\n- `Authorization: Bearer {{token}}`\n"
@@ -333,7 +344,7 @@
 						},
 						"method": "GET",
 						"header": [],
-						"url": "{{dev}}/sap/master-uom"
+						"url": "{{baseUrl}}/sap/master-uom"
 					},
 					"response": []
 				},
@@ -343,6 +354,7 @@
 						{
 							"listen": "test",
 							"script": {
+								"id": "db66cb0d-2661-483d-bbf5-71eaaefbb820",
 								"type": "text/javascript",
 								"exec": [
 									"### Purpose\nFetch Exchange Rate data.\n\n### Auth\n```http\nAuthorization: Bearer {{token}}\n```\n\n### Key headers\n- `Authorization: Bearer {{token}}`\n\n### Example query params (from URL)\n- `ValidFrom` (example: `'20260101'`)\n"
@@ -361,9 +373,9 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{dev}}/sap/exchange-rate?ValidFrom='20260101'",
+							"raw": "{{baseUrl}}/sap/exchange-rate?ValidFrom='20260101'",
 							"host": [
-								"{{dev}}"
+								"{{baseUrl}}"
 							],
 							"path": [
 								"sap",
@@ -385,6 +397,7 @@
 						{
 							"listen": "test",
 							"script": {
+								"id": "c5272a35-d386-4ddc-9d82-dde6d6f63d04",
 								"type": "text/javascript",
 								"exec": [
 									"### Purpose\nFetch Vendor Grouping Master & Account Group data.\n\n### Auth\n```http\nAuthorization: Bearer {{token}}\n```\n\n### Key headers\n- `Authorization: Bearer {{token}}`\n"
@@ -402,7 +415,7 @@
 						},
 						"method": "GET",
 						"header": [],
-						"url": "{{dev}}/sap/account-group"
+						"url": "{{baseUrl}}/sap/account-group"
 					},
 					"response": []
 				},
@@ -412,6 +425,7 @@
 						{
 							"listen": "test",
 							"script": {
+								"id": "e4730418-ec07-4388-9fd7-9e67577ae37e",
 								"type": "text/javascript",
 								"exec": [
 									"### Purpose\nFetch Currency Master Data.\n\n### Auth\n```http\nAuthorization: Bearer {{token}}\n```\n\n### Key headers\n- `Authorization: Bearer {{token}}`\n"
@@ -429,7 +443,7 @@
 						},
 						"method": "GET",
 						"header": [],
-						"url": "{{dev}}/sap/currency-master"
+						"url": "{{baseUrl}}/sap/currency-master"
 					},
 					"response": []
 				},
@@ -439,6 +453,7 @@
 						{
 							"listen": "test",
 							"script": {
+								"id": "a4e9ed16-a727-4587-9e3d-2f3fb8f67f4e",
 								"type": "text/javascript",
 								"exec": [
 									"### Purpose\nFetch WHT Type Master & WHT Tax Code data.\n\n### Auth\n```http\nAuthorization: Bearer {{token}}\n```\n\n### Key headers\n- `Authorization: Bearer {{token}}`\n"
@@ -456,7 +471,7 @@
 						},
 						"method": "GET",
 						"header": [],
-						"url": "{{dev}}/sap/wht-master"
+						"url": "{{baseUrl}}/sap/wht-master"
 					},
 					"response": []
 				},
@@ -466,6 +481,7 @@
 						{
 							"listen": "test",
 							"script": {
+								"id": "c4b220f3-7e87-472d-8ee5-c55121b7fa38",
 								"type": "text/javascript",
 								"exec": [
 									"### Purpose\nFetch Tax Code Master data.\n\n### Auth\n```http\nAuthorization: Bearer {{token}}\n```\n\n### Key headers\n- `Authorization: Bearer {{token}}`\n"
@@ -483,7 +499,7 @@
 						},
 						"method": "GET",
 						"header": [],
-						"url": "{{dev}}/sap/tax-code"
+						"url": "{{baseUrl}}/sap/tax-code"
 					},
 					"response": []
 				},
@@ -493,6 +509,7 @@
 						{
 							"listen": "test",
 							"script": {
+								"id": "5abc37a4-9427-4ba7-ba5c-ddb97a770fd8",
 								"type": "text/javascript",
 								"exec": [
 									"### Purpose\nFetch House Bank, Partner Bank Type, and Payment Method reference data.\n\n### Auth\n```http\nAuthorization: Bearer {{token}}\n```\n\n### Key headers\n- `Authorization: Bearer {{token}}`\n"
@@ -520,6 +537,7 @@
 						{
 							"listen": "test",
 							"script": {
+								"id": "f6b640bb-634d-4bb5-b5df-16d00446355c",
 								"type": "text/javascript",
 								"exec": [
 									"### Purpose\nFetch local scrap reference data for Purchase Orders (PO).\n\n### Auth\n```http\nAuthorization: Bearer {{token}}\n```\n\n### Key headers\n- `Authorization: Bearer {{token}}`\n"
@@ -547,9 +565,9 @@
 								"method": "GET",
 								"header": [
 									{
+										"description": "Added as a part of security scheme: bearer",
 										"key": "Authorization",
-										"value": "Bearer <token>",
-										"description": "Added as a part of security scheme: bearer"
+										"value": "Bearer <token>"
 									}
 								],
 								"url": "{{baseUrl}}/sap/scrap-local"
@@ -559,58 +577,114 @@
 							"_postman_previewlanguage": "text",
 							"header": [
 								{
+									"description": {
+										"content": "",
+										"type": "text/plain"
+									},
 									"key": "Server",
 									"value": "nginx/1.24.0 (Ubuntu)"
 								},
 								{
+									"description": {
+										"content": "",
+										"type": "text/plain"
+									},
 									"key": "Date",
 									"value": "Mon, 02 Mar 2026 08:52:19 GMT"
 								},
 								{
+									"description": {
+										"content": "",
+										"type": "text/plain"
+									},
 									"key": "Transfer-Encoding",
 									"value": "chunked"
 								},
 								{
+									"description": {
+										"content": "",
+										"type": "text/plain"
+									},
 									"key": "Connection",
 									"value": "keep-alive"
 								},
 								{
+									"description": {
+										"content": "",
+										"type": "text/plain"
+									},
 									"key": "X-Powered-By",
 									"value": "PHP/8.3.21"
 								},
 								{
+									"description": {
+										"content": "",
+										"type": "text/plain"
+									},
 									"key": "Cache-Control",
 									"value": "no-cache, private"
 								},
 								{
+									"description": {
+										"content": "",
+										"type": "text/plain"
+									},
 									"key": "Access-Control-Allow-Origin",
 									"value": "*"
 								},
 								{
+									"description": {
+										"content": "",
+										"type": "text/plain"
+									},
 									"key": "X-Frame-Options",
 									"value": "SAMEORIGIN"
 								},
 								{
+									"description": {
+										"content": "",
+										"type": "text/plain"
+									},
 									"key": "X-XSS-Protection",
 									"value": "1; mode=block"
 								},
 								{
+									"description": {
+										"content": "",
+										"type": "text/plain"
+									},
 									"key": "X-Content-Type-Options",
 									"value": "nosniff"
 								},
 								{
+									"description": {
+										"content": "",
+										"type": "text/plain"
+									},
 									"key": "X-Kong-Upstream-Latency",
 									"value": "754"
 								},
 								{
+									"description": {
+										"content": "",
+										"type": "text/plain"
+									},
 									"key": "X-Kong-Proxy-Latency",
 									"value": "0"
 								},
 								{
+									"description": {
+										"content": "",
+										"type": "text/plain"
+									},
 									"key": "Via",
 									"value": "1.1 kong/3.9.0"
 								},
 								{
+									"description": {
+										"content": "",
+										"type": "text/plain"
+									},
 									"key": "X-Kong-Request-Id",
 									"value": "44ca9b3b01a248145913ec557c609e3c"
 								},
@@ -631,6 +705,7 @@
 						{
 							"listen": "test",
 							"script": {
+								"id": "2c9887aa-19c9-4616-ad55-4bc15ba626c9",
 								"type": "text/javascript",
 								"exec": [
 									"### Purpose\nFetch payment status for **Payment Proposal Create & Run** flow.\n\n### Auth\n```http\nAuthorization: Bearer {{token}}\n```\n\n### Key headers\n- `Authorization: Bearer {{token}}`\n\n### Example query params (from URL)\n- `EnterOn` (example: `'20260106'`)\n"
@@ -673,6 +748,7 @@
 						{
 							"listen": "test",
 							"script": {
+								"id": "7bb48fec-0d0b-423e-a183-dab08ac026a8",
 								"type": "text/javascript",
 								"exec": [
 									"### Purpose\nFetch payment status for **Payment Proposal Create & Run** flow.\n\n### Auth\n```http\nAuthorization: Bearer {{token}}\n```\n\n### Key headers\n- `Authorization: Bearer {{token}}`\n\n### Example query params (from URL)\n- `EnterOn` (example: `'20260106'`)\n"
@@ -818,6 +894,7 @@
 				{
 					"listen": "test",
 					"script": {
+						"id": "fefd1d42-bc65-40e6-bc86-2c36634c38fb",
 						"type": "text/javascript",
 						"exec": [
 							"# GET Schema\n\nRead-only **master/reference** endpoints.\n\n## Typical usage\n- Use these requests to fetch master data (e.g., material groups, plants, GL accounts) used to validate or populate fields for SRM POST operations.\n\n## Authentication\nMost endpoints are expected to use:\n\n```http\nAuthorization: Bearer {{token}}\n```\n\n## Base URL\nAll requests use:\n\n- `https://{{dev}}`\n"
@@ -835,6 +912,7 @@
 						{
 							"listen": "test",
 							"script": {
+								"id": "fe279af8-fe46-41e8-8db2-f155b24ae375",
 								"type": "text/javascript",
 								"exec": [
 									"### Purpose\nObtain an authentication token from the GYS backend.\n\n### Auth\n- **No Bearer token required** (this is the auth endpoint).\n\n### Key headers\n- Typically `Content-Type: application/json` (depends on the request body configured).\n\n### Body notes\n- Uses a **POST** body to submit credentials (fields are defined in the request body).\n\n### Output / variables\n- This request should be run **first**.\n- Expected behavior: stores the access token into the active environment variable `token` (used as `{{token}}` by other requests).\n"
@@ -862,11 +940,12 @@
 							"raw": "{\n  \"username\": \"yona.intikom\",\n  \"password\": \"GYSVendor@2026$\"\n}",
 							"options": {
 								"raw": {
+									"headerFamily": "json",
 									"language": "json"
 								}
 							}
 						},
-						"url": "{{dev}}/auth-token"
+						"url": "{{baseUrl}}/auth-token"
 					},
 					"response": [
 						{
@@ -1063,11 +1142,12 @@
 							"raw": "{\r\n  \"Partner\" : \"\", // id dari vendor, jangan diisi karena akan error dan auto generated\r\n  \"Partnercategory\": \"2\", // ?\r\n  \"Partnergroup\": \"2301\", // ?\r\n  \"ChangeProc\": \"\", // ?\r\n  \"postPartnerCentral\": {\r\n    \"Searchterm1\": \"PT Paradox\",\r\n    \"Searchterm2\": \"Paradox\"\r\n  },\r\n  \"postPartnerCentralOrg\": { // Vendor PT\r\n    \"Name1\": \"PT Paradox\" // ?\r\n  },\r\n  \"postPartnerCentralPerson\": {  // Vendor Person\r\n    \"Firstname\": \"\", // ?\r\n    \"Lastname\": \"\", // ?\r\n    \"Correspondlanguage\": \"\" // ?\r\n  },\r\n  \"postPartnerRolesSet\":[ // ?\r\n    {\r\n      \"Task\": \"I\", // ?\r\n      \"DataKey\": \"ZMM001\" // ?\r\n    },\r\n    {\r\n      \"Task\": \"I\",\r\n      \"DataKey\": \"ZMM002\"\r\n    }\r\n  ],\r\n  \"PurchasingOrg\": \"PROC\",\r\n  \"CompanyCode\": \"1000\",\r\n  \"postPartnerAddressSet\": [\r\n    {\r\n      \"City\": \"Bandung\",\r\n      \"PostlCod1\": \"10150\",\r\n      \"Street\": \"Jalan Salemba Raya Timur\",\r\n      \"HouseNo\": \"21\",\r\n      \"Country\": \"ID\",\r\n      \"Region\": \"01\",\r\n      \"TimeZone\": \"UTC+7\",\r\n      \"Langu\": \"EN\"\r\n    }\r\n  ],\r\n  \"postPartnerTelephoneSet\": [\r\n    {\r\n      \"Country\": \"ID\",\r\n      \"Telephone\": \"628909573\",\r\n      \"R3User\": \"\" // Apakah ini indikasi untuk telephone\r\n    },\r\n       {\r\n      \"Country\": \"ID\",\r\n      \"Telephone\": \"083144568777\",\r\n      \"R3User\": \"2\" // Apakah ini indikasi untuk mobile phone\r\n    }\r\n  ],\r\n  \"postPartnerFaxSet\": [\r\n    {\r\n      \"Country\": \"ID\",\r\n      \"Fax\": \"628909673\"\r\n    }\r\n  ],\r\n  \"postPartnerSMTPSet\": [\r\n    {\r\n      \"EMail\": \"paradox@gmail.com\"\r\n    }\r\n  ],\r\n  \"postPartnerTaxSet\": [\r\n    {\r\n      \"Taxtype\": \"ID0\",\r\n      \"Taxnumber\": \"91160040031455\"\r\n    }\r\n  ],\r\n  \"postPartnerVendorCompanySet\": [\r\n    {\r\n      \"Zuawa\": \"014\",\r\n      \"Akont\": \"20100100\",\r\n      \"Zterm\": \"Z007\",\r\n      \"Reprf\": true\r\n\r\n    }\r\n  ],\r\n  \"postPartnerVendorPurchasingSet\": [\r\n    {   \r\n      \"Waers\": \"IDR\",\r\n      \"Verkf\": \"Paradox\",\r\n      \"Telf1\": \"082466772355\",\r\n      \"Zterm\": \"Z007\",\r\n      \"Webre\": true,\r\n      \"Kalsk\": \"01\",\r\n      \"Lebre\": true,\r\n      \"Bstae\": \"0001\"\r\n\r\n    }\r\n  ],\r\n  \"postPartnerBankSet\": [\r\n    {\r\n      \"BankCtry\": \"ID\",\r\n      \"BankKey\": \"CCBI-ID036\",\r\n      \"BankAcct\": \"9027190149991131\",\r\n      \"Accountholder\": \"Paradox\",\r\n      \"Externalbankid\": \"CCBI-ID036J3\",\r\n      \"Bankaccountname\": \"Paradox\"\r\n    }\r\n  ],\r\n  \"postPartnerReturnSet\": []\r\n}",
 							"options": {
 								"raw": {
+									"headerFamily": "json",
 									"language": "json"
 								}
 							}
 						},
-						"url": "{{dev}}/srm/create-vendor"
+						"url": "{{baseUrl}}/srm/create-vendor"
 					},
 					"response": [
 						{
@@ -1244,7 +1324,7 @@
 						},
 						{
 							"id": "6a636010-1ce3-498d-9518-d093c52453cf",
-							"name": "Success - Create Vendor Org Local",
+							"name": "Create Vendor Org Local",
 							"originalRequest": {
 								"method": "POST",
 								"header": [
@@ -1253,9 +1333,9 @@
 										"value": "application/json"
 									},
 									{
+										"description": "Added as a part of security scheme: bearer",
 										"key": "Authorization",
-										"value": "Bearer <token>",
-										"description": "Added as a part of security scheme: bearer"
+										"value": "Bearer <token>"
 									}
 								],
 								"body": {
@@ -1263,6 +1343,7 @@
 									"raw": "{\r\n  \"Partner\" : \"\", // id dari vendor, jangan diisi karena akan error dan auto generated\r\n  \"Partnercategory\": \"2\", // ?\r\n  \"Partnergroup\": \"2301\", // ?\r\n  \"ChangeProc\": \"\", // ?\r\n  \"postPartnerCentral\": {\r\n    \"Searchterm1\": \"PT Paradox\",\r\n    \"Searchterm2\": \"Paradox\"\r\n  },\r\n  \"postPartnerCentralOrg\": { // Vendor PT\r\n    \"Name1\": \"PT Paradox\" // ?\r\n  },\r\n  \"postPartnerCentralPerson\": {  // Vendor Person\r\n    \"Firstname\": \"\", // ?\r\n    \"Lastname\": \"\", // ?\r\n    \"Correspondlanguage\": \"\" // ?\r\n  },\r\n  \"postPartnerRolesSet\":[ // ?\r\n    {\r\n      \"Task\": \"I\", // ?\r\n      \"DataKey\": \"ZMM001\" // ?\r\n    },\r\n    {\r\n      \"Task\": \"I\",\r\n      \"DataKey\": \"ZMM002\"\r\n    }\r\n  ],\r\n  \"PurchasingOrg\": \"PROC\",\r\n  \"CompanyCode\": \"1000\",\r\n  \"postPartnerAddressSet\": [\r\n    {\r\n      \"City\": \"Bandung\",\r\n      \"PostlCod1\": \"10150\",\r\n      \"Street\": \"Jalan Salemba Raya Timur\",\r\n      \"HouseNo\": \"21\",\r\n      \"Country\": \"ID\",\r\n      \"Region\": \"01\",\r\n      \"TimeZone\": \"UTC+7\",\r\n      \"Langu\": \"EN\"\r\n    }\r\n  ],\r\n  \"postPartnerTelephoneSet\": [\r\n    {\r\n      \"Country\": \"ID\",\r\n      \"Telephone\": \"628909573\",\r\n      \"R3User\": \"\" // Apakah ini indikasi untuk telephone\r\n    },\r\n       {\r\n      \"Country\": \"ID\",\r\n      \"Telephone\": \"083144568777\",\r\n      \"R3User\": \"2\" // Apakah ini indikasi untuk mobile phone\r\n    }\r\n  ],\r\n  \"postPartnerFaxSet\": [\r\n    {\r\n      \"Country\": \"ID\",\r\n      \"Fax\": \"628909673\"\r\n    }\r\n  ],\r\n  \"postPartnerSMTPSet\": [\r\n    {\r\n      \"EMail\": \"paradox@gmail.com\"\r\n    }\r\n  ],\r\n  \"postPartnerTaxSet\": [\r\n    {\r\n      \"Taxtype\": \"ID0\",\r\n      \"Taxnumber\": \"91160040031455\"\r\n    }\r\n  ],\r\n  \"postPartnerVendorCompanySet\": [\r\n    {\r\n      \"Zuawa\": \"014\",\r\n      \"Akont\": \"20100100\",\r\n      \"Zterm\": \"Z007\",\r\n      \"Reprf\": true\r\n\r\n    }\r\n  ],\r\n  \"postPartnerVendorPurchasingSet\": [\r\n    {   \r\n      \"Waers\": \"IDR\",\r\n      \"Verkf\": \"Paradox\",\r\n      \"Telf1\": \"082466772355\",\r\n      \"Zterm\": \"Z007\",\r\n      \"Webre\": true,\r\n      \"Kalsk\": \"01\",\r\n      \"Lebre\": true,\r\n      \"Bstae\": \"0001\"\r\n\r\n    }\r\n  ],\r\n  \"postPartnerBankSet\": [\r\n    {\r\n      \"BankCtry\": \"ID\",\r\n      \"BankKey\": \"CCBI-ID036\",\r\n      \"BankAcct\": \"9027190149991131\",\r\n      \"Accountholder\": \"Paradox\",\r\n      \"Externalbankid\": \"CCBI-ID036J3\",\r\n      \"Bankaccountname\": \"Paradox\"\r\n    }\r\n  ],\r\n  \"postPartnerReturnSet\": []\r\n}",
 									"options": {
 										"raw": {
+											"headerFamily": "json",
 											"language": "json"
 										}
 									}
@@ -1274,58 +1355,114 @@
 							"_postman_previewlanguage": "text",
 							"header": [
 								{
+									"description": {
+										"content": "",
+										"type": "text/plain"
+									},
 									"key": "Server",
 									"value": "nginx/1.24.0 (Ubuntu)"
 								},
 								{
+									"description": {
+										"content": "",
+										"type": "text/plain"
+									},
 									"key": "Date",
 									"value": "Fri, 13 Mar 2026 04:17:13 GMT"
 								},
 								{
+									"description": {
+										"content": "",
+										"type": "text/plain"
+									},
 									"key": "Transfer-Encoding",
 									"value": "chunked"
 								},
 								{
+									"description": {
+										"content": "",
+										"type": "text/plain"
+									},
 									"key": "Connection",
 									"value": "keep-alive"
 								},
 								{
+									"description": {
+										"content": "",
+										"type": "text/plain"
+									},
 									"key": "X-Powered-By",
 									"value": "PHP/8.3.21"
 								},
 								{
+									"description": {
+										"content": "",
+										"type": "text/plain"
+									},
 									"key": "Cache-Control",
 									"value": "no-cache, private"
 								},
 								{
+									"description": {
+										"content": "",
+										"type": "text/plain"
+									},
 									"key": "Access-Control-Allow-Origin",
 									"value": "*"
 								},
 								{
+									"description": {
+										"content": "",
+										"type": "text/plain"
+									},
 									"key": "X-Frame-Options",
 									"value": "SAMEORIGIN"
 								},
 								{
+									"description": {
+										"content": "",
+										"type": "text/plain"
+									},
 									"key": "X-XSS-Protection",
 									"value": "1; mode=block"
 								},
 								{
+									"description": {
+										"content": "",
+										"type": "text/plain"
+									},
 									"key": "X-Content-Type-Options",
 									"value": "nosniff"
 								},
 								{
+									"description": {
+										"content": "",
+										"type": "text/plain"
+									},
 									"key": "X-Kong-Upstream-Latency",
 									"value": "15169"
 								},
 								{
+									"description": {
+										"content": "",
+										"type": "text/plain"
+									},
 									"key": "X-Kong-Proxy-Latency",
 									"value": "1"
 								},
 								{
+									"description": {
+										"content": "",
+										"type": "text/plain"
+									},
 									"key": "Via",
 									"value": "1.1 kong/3.9.0"
 								},
 								{
+									"description": {
+										"content": "",
+										"type": "text/plain"
+									},
 									"key": "X-Kong-Request-Id",
 									"value": "13a03f710a8177550df9183d9185d967"
 								},
@@ -1425,6 +1562,7 @@
 						{
 							"listen": "test",
 							"script": {
+								"id": "cac6f437-e2b8-44c1-8dc2-a7da708a5c37",
 								"type": "text/javascript",
 								"exec": [
 									"### Purpose\nCreate a vendor in SRM via the GYS integration.\n\n### Auth\n```http\nAuthorization: Bearer {{token}}\n```\n\n### Key headers\n- `Authorization: Bearer {{token}}`\n- `Content-Type: application/json` (expected for POST payloads)\n\n### Body notes\n- Request body contains the vendor data to create (see **Body** tab for exact fields).\n"
@@ -1452,11 +1590,12 @@
 							"raw": "{\n  \"Partner\": \"2301000112\",\n  \"Partnercategory\": \"2\",\n  \"Partnergroup\": \"2301\",\n  \"ChangeProc\": \"X\",\n  \"AddressTask\": \"U\",\n  \"CentralTask\": \"U\",\n  \"PersonTask\": \"\",\n  \"PurchasingOrgTask\": \"U\",\n  \"TelephoneTask\": \"\",\n  \"CompanyCodeTask\": \"U\",\n  \"FaxTask\": \"\",\n  \"SmtpTask\": \"U\",\n  \"postPartnerCentral\": {\n    \"Searchterm1\": \"PT Bernadia\",\n    \"Searchterm2\": \"Jaya\"\n  },\n  \"postPartnerCentralX\": {\n    \"Searchterm1\": \"X\",\n    \"Searchterm2\": \"X\"\n  },\n  \"PurchasingOrg\": \"PROC\",\n  \"CompanyCode\": \"1000\",\n  \"postPartnerAddressSet\": [\n    {\n      \"PostlCod1\": \"10180\",\n      \"Street\": \"Jalan Jendral Sudirman\",\n      \"HouseNo\": \"27\",\n      \"Country\": \"ID\"\n    }\n  ],\n  \"postPartnerAddressXSet\": [\n    {\n      \"PostlCod1\": \"X\",\n      \"Street\": \"X\",\n      \"HouseNo\": \"X\"\n    }\n  ],\n  \"postPartnerCentralOrg\": {\n    \"Name1\": \"PT Bernadia\"\n  },\n  \"postPartnerCentralOrgX\": {\n    \"Name1\": \"X\"\n  },\n  \"postPartnerSMTPSet\": [\n    {\n      \"EMail\": \"admin@bernadia.co.id\"\n    }\n  ],\n  \"postPartnerSMTPXSet\": [\n    {\n      \"EMail\": \"X\"\n    }\n  ],\n  \"postPartnerTaxSet\": [\n    {\n      \"Taxtype\": \"ID0\",\n      \"Taxnumber\": \"91160040031899\"\n    }\n  ],\n  \"postPartnerVendorCompanySet\": [\n    {\n      \"Zterm\": \"Z014\"\n    }\n  ],\n  \"postPartnerVendorCompanyXSet\": [\n    {\n      \"Zterm\": \"X\"\n    }\n  ],\n  \"postPartnerVendorPurchasingSet\": [\n    {\n      \"Verkf\": \"Kenaya Kort\",\n      \"Telf1\": \"082466778899\",\n      \"Zterm\": \"Z014\"\n    }\n  ],\n  \"postPartnerVendorPurchasinXSet\": [\n    {\n      \"Verkf\": \"X\",\n      \"Telf1\": \"X\",\n      \"Zterm\": \"X\"\n    }\n  ],\n  \"postPartnerReturnSet\": []\n}",
 							"options": {
 								"raw": {
+									"headerFamily": "json",
 									"language": "json"
 								}
 							}
 						},
-						"url": "{{dev}}/srm/change-vendor"
+						"url": "{{baseUrl}}/srm/change-vendor"
 					},
 					"response": [
 						{
@@ -1470,9 +1609,9 @@
 										"value": "application/json"
 									},
 									{
+										"description": "Added as a part of security scheme: bearer",
 										"key": "Authorization",
-										"value": "Bearer <token>",
-										"description": "Added as a part of security scheme: bearer"
+										"value": "Bearer <token>"
 									}
 								],
 								"body": {
@@ -1480,6 +1619,7 @@
 									"raw": "{\n  \"Partner\": \"2301000112\",\n  \"Partnercategory\": \"2\",\n  \"Partnergroup\": \"2301\",\n  \"ChangeProc\": \"X\",\n  \"AddressTask\": \"U\",\n  \"CentralTask\": \"U\",\n  \"PersonTask\": \"\",\n  \"PurchasingOrgTask\": \"U\",\n  \"TelephoneTask\": \"\",\n  \"CompanyCodeTask\": \"U\",\n  \"FaxTask\": \"\",\n  \"SmtpTask\": \"U\",\n  \"postPartnerCentral\": {\n    \"Searchterm1\": \"PT Bernadia\",\n    \"Searchterm2\": \"Jaya\"\n  },\n  \"postPartnerCentralX\": {\n    \"Searchterm1\": \"X\",\n    \"Searchterm2\": \"X\"\n  },\n  \"PurchasingOrg\": \"PROC\",\n  \"CompanyCode\": \"1000\",\n  \"postPartnerAddressSet\": [\n    {\n      \"PostlCod1\": \"10180\",\n      \"Street\": \"Jalan Jendral Sudirman\",\n      \"HouseNo\": \"27\",\n      \"Country\": \"ID\"\n    }\n  ],\n  \"postPartnerAddressXSet\": [\n    {\n      \"PostlCod1\": \"X\",\n      \"Street\": \"X\",\n      \"HouseNo\": \"X\"\n    }\n  ],\n  \"postPartnerCentralOrg\": {\n    \"Name1\": \"PT Bernadia\"\n  },\n  \"postPartnerCentralOrgX\": {\n    \"Name1\": \"X\"\n  },\n  \"postPartnerSMTPSet\": [\n    {\n      \"EMail\": \"admin@bernadia.co.id\"\n    }\n  ],\n  \"postPartnerSMTPXSet\": [\n    {\n      \"EMail\": \"X\"\n    }\n  ],\n  \"postPartnerTaxSet\": [\n    {\n      \"Taxtype\": \"ID0\",\n      \"Taxnumber\": \"91160040031899\"\n    }\n  ],\n  \"postPartnerVendorCompanySet\": [\n    {\n      \"Zterm\": \"Z014\"\n    }\n  ],\n  \"postPartnerVendorCompanyXSet\": [\n    {\n      \"Zterm\": \"X\"\n    }\n  ],\n  \"postPartnerVendorPurchasingSet\": [\n    {\n      \"Verkf\": \"Kenaya Kort\",\n      \"Telf1\": \"082466778899\",\n      \"Zterm\": \"Z014\"\n    }\n  ],\n  \"postPartnerVendorPurchasinXSet\": [\n    {\n      \"Verkf\": \"X\",\n      \"Telf1\": \"X\",\n      \"Zterm\": \"X\"\n    }\n  ],\n  \"postPartnerReturnSet\": []\n}",
 									"options": {
 										"raw": {
+											"headerFamily": "json",
 											"language": "json"
 										}
 									}
@@ -1491,58 +1631,114 @@
 							"_postman_previewlanguage": "text",
 							"header": [
 								{
+									"description": {
+										"content": "",
+										"type": "text/plain"
+									},
 									"key": "Server",
 									"value": "nginx/1.24.0 (Ubuntu)"
 								},
 								{
+									"description": {
+										"content": "",
+										"type": "text/plain"
+									},
 									"key": "Date",
 									"value": "Tue, 10 Mar 2026 03:33:57 GMT"
 								},
 								{
+									"description": {
+										"content": "",
+										"type": "text/plain"
+									},
 									"key": "Transfer-Encoding",
 									"value": "chunked"
 								},
 								{
+									"description": {
+										"content": "",
+										"type": "text/plain"
+									},
 									"key": "Connection",
 									"value": "keep-alive"
 								},
 								{
+									"description": {
+										"content": "",
+										"type": "text/plain"
+									},
 									"key": "X-Powered-By",
 									"value": "PHP/8.3.21"
 								},
 								{
+									"description": {
+										"content": "",
+										"type": "text/plain"
+									},
 									"key": "Cache-Control",
 									"value": "no-cache, private"
 								},
 								{
+									"description": {
+										"content": "",
+										"type": "text/plain"
+									},
 									"key": "Access-Control-Allow-Origin",
 									"value": "*"
 								},
 								{
+									"description": {
+										"content": "",
+										"type": "text/plain"
+									},
 									"key": "X-Frame-Options",
 									"value": "SAMEORIGIN"
 								},
 								{
+									"description": {
+										"content": "",
+										"type": "text/plain"
+									},
 									"key": "X-XSS-Protection",
 									"value": "1; mode=block"
 								},
 								{
+									"description": {
+										"content": "",
+										"type": "text/plain"
+									},
 									"key": "X-Content-Type-Options",
 									"value": "nosniff"
 								},
 								{
+									"description": {
+										"content": "",
+										"type": "text/plain"
+									},
 									"key": "X-Kong-Upstream-Latency",
 									"value": "3498"
 								},
 								{
+									"description": {
+										"content": "",
+										"type": "text/plain"
+									},
 									"key": "X-Kong-Proxy-Latency",
 									"value": "0"
 								},
 								{
+									"description": {
+										"content": "",
+										"type": "text/plain"
+									},
 									"key": "Via",
 									"value": "1.1 kong/3.9.0"
 								},
 								{
+									"description": {
+										"content": "",
+										"type": "text/plain"
+									},
 									"key": "X-Kong-Request-Id",
 									"value": "db153042e5ded653ba454a00dbc15222"
 								},
@@ -1642,6 +1838,7 @@
 						{
 							"listen": "test",
 							"script": {
+								"id": "b29755f5-092b-4c41-80d6-05079c0d134d",
 								"type": "text/javascript",
 								"exec": [
 									"### Purpose\nCreate a Purchase Requisition (PR) via SRM.\n\n### Auth\n```http\nAuthorization: Bearer {{token}}\n```\n\n### Key headers\n- `Authorization: Bearer {{token}}`\n- `Content-Type: application/json`\n\n### Body notes\n- POST body defines the PR payload (line items, account assignment, etc. as configured in the request body).\n"
@@ -1666,14 +1863,15 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"Number\": \"\", //PR Number, jangan diisi karena otomatis generated\r\n    \"postPRHeaderSet\": {\r\n        \"PrType\": \"GSVC\"\r\n    },\r\n    \"postPRItemSet\": [\r\n        {\r\n            \"PreqItem\": \"00010\",\r\n            \"PurGroup\": \"IT\",\r\n            \"PreqName\": \"Yona\",\r\n            \"ShortText\": \"Microsoft 365 (March-July) 2026\",\r\n            \"Plant\": \"1HO0\",\r\n            \"StoreLoc\": \"HOW1\",\r\n            \"Trackingno\": \"\",\r\n            \"MatlGroup\": \"S079\",\r\n            \"Quantity\": \"1\",\r\n            \"Unit\": \"AU\",\r\n            \"Currency\": \"IDR\",\r\n            \"DelDatcatExt\": \"1\",\r\n            \"DelivDate\": \"2026-03-04T00:00:00\",\r\n            \"ItemCat\": \"9\",\r\n            \"Acctasscat\": \"1\",\r\n            \"PckgNo\": \"\"\r\n        }\r\n    ],\r\n    \"postPRAccountSet\": [\r\n        {\r\n            \"PreqItem\": \"00010\",\r\n            \"CreatDate\": \"2026-02-11T00:00:00\",\r\n            \"Quantity\": \"1000\",\r\n            \"GlAccount\": \"0062900020\",\r\n            \"Costcenter\": \"10301IT003\",\r\n            \"Orderid\": \"IT003-10049\",\r\n            \"CoArea\": \"8888\"\r\n        }\r\n    ],\r\n    \"postPRServiceLinesSet\": [\r\n        {\r\n            \"DocItem\": \"00010\",\r\n            \"Outline\": \"0000000001\",\r\n            \"SrvLine\": \"0000000010\",\r\n            \"ShortText\": \"Microsoft Outlook\",\r\n            \"Quantity\": \"1\",\r\n            \"Uom\": \"MON\",\r\n            \"GrossPrice\": \"10000\"\r\n        },\r\n  \t{\r\n            \"DocItem\": \"00010\",\r\n            \"Outline\": \"0000000001\",\r\n            \"SrvLine\": \"0000000020\",\r\n            \"ShortText\": \"Microsoft PowerBI\",\r\n            \"Quantity\": \"1\",\r\n            \"Uom\": \"MON\",\r\n            \"GrossPrice\": \"20000\"\r\n        },\r\n  {\r\n            \"DocItem\": \"00010\",\r\n            \"Outline\": \"0000000001\",\r\n            \"SrvLine\": \"0000000030\",\r\n            \"ShortText\": \"Microsoft Microsoft Azure\",\r\n            \"Quantity\": \"1\",\r\n            \"Uom\": \"MON\",\r\n            \"GrossPrice\": \"30000\"\r\n        }\r\n\r\n    ],\r\n    \"postPRServiceAccSet\": [\r\n        {\r\n            \"DocItem\": \"00010\",\r\n            \"Outline\": \"0000000001\",\r\n            \"SrvLine\": \"0000000010\"\r\n        },\r\n \t{\r\n            \"DocItem\": \"00010\",\r\n            \"Outline\": \"0000000001\",\r\n            \"SrvLine\": \"0000000020\"\r\n        },\r\n \t{\r\n            \"DocItem\": \"00010\",\r\n            \"Outline\": \"0000000001\",\r\n            \"SrvLine\": \"0000000030\"\r\n        }\r\n    ],\r\n    \"postPRReturnSet\": [\r\n        {}\r\n    ]\r\n}",
+							"raw": "{\r\n    \"Number\": \"001\", //PR Number, jangan diisi karena otomatis generated\r\n    \"postPRHeaderSet\": {\r\n        \"PrType\": \"GSVC\"\r\n    },\r\n    \"postPRItemSet\": [\r\n        {\r\n            \"PreqItem\": \"00010\",\r\n            \"PurGroup\": \"IT\",\r\n            \"PreqName\": \"Yusi\",\r\n            \"ShortText\": \"Microsoft 365 (March-July) 2026\",\r\n            \"Plant\": \"1HO0\",\r\n            \"StoreLoc\": \"HOW1\",\r\n            \"Trackingno\": \"\",\r\n            \"MatlGroup\": \"S079\",\r\n            \"Quantity\": \"1\",\r\n            \"Unit\": \"AU\",\r\n            \"Currency\": \"IDR\",\r\n            \"DelDatcatExt\": \"1\",\r\n            \"DelivDate\": \"2026-03-04T00:00:00\",\r\n            \"ItemCat\": \"9\",\r\n            \"Acctasscat\": \"1\",\r\n            \"PckgNo\": \"\"\r\n        }\r\n    ],\r\n    \"postPRAccountSet\": [\r\n        {\r\n            \"PreqItem\": \"00010\",\r\n            \"CreatDate\": \"2026-02-11T00:00:00\",\r\n            \"Quantity\": \"1000\",\r\n            \"GlAccount\": \"0062900020\",\r\n            \"Costcenter\": \"10301IT003\",\r\n            \"Orderid\": \"IT003-10049\",\r\n            \"CoArea\": \"8888\"\r\n        }\r\n    ],\r\n    \"postPRServiceLinesSet\": [\r\n        {\r\n            \"DocItem\": \"00010\",\r\n            \"Outline\": \"0000000001\",\r\n            \"SrvLine\": \"0000000010\",\r\n            \"ShortText\": \"Microsoft Outlook\",\r\n            \"Quantity\": \"1\",\r\n            \"Uom\": \"MON\",\r\n            \"GrossPrice\": \"10000\"\r\n        },\r\n  \t{\r\n            \"DocItem\": \"00010\",\r\n            \"Outline\": \"0000000001\",\r\n            \"SrvLine\": \"0000000020\",\r\n            \"ShortText\": \"Microsoft PowerBI\",\r\n            \"Quantity\": \"1\",\r\n            \"Uom\": \"MON\",\r\n            \"GrossPrice\": \"20000\"\r\n        },\r\n  {\r\n            \"DocItem\": \"00010\",\r\n            \"Outline\": \"0000000001\",\r\n            \"SrvLine\": \"0000000030\",\r\n            \"ShortText\": \"Microsoft Microsoft Azure\",\r\n            \"Quantity\": \"1\",\r\n            \"Uom\": \"MON\",\r\n            \"GrossPrice\": \"30000\"\r\n        }\r\n\r\n    ],\r\n    \"postPRServiceAccSet\": [\r\n        {\r\n            \"DocItem\": \"00010\",\r\n            \"Outline\": \"0000000001\",\r\n            \"SrvLine\": \"0000000010\"\r\n        },\r\n \t{\r\n            \"DocItem\": \"00010\",\r\n            \"Outline\": \"0000000001\",\r\n            \"SrvLine\": \"0000000020\"\r\n        },\r\n \t{\r\n            \"DocItem\": \"00010\",\r\n            \"Outline\": \"0000000001\",\r\n            \"SrvLine\": \"0000000030\"\r\n        }\r\n    ],\r\n    \"postPRReturnSet\": [\r\n        {}\r\n    ]\r\n}",
 							"options": {
 								"raw": {
+									"headerFamily": "json",
 									"language": "json"
 								}
 							}
 						},
-						"url": "{{dev}}/srm/create-pr"
+						"url": "{{baseUrl}}/srm/create-pr"
 					},
 					"response": [
 						{
@@ -2031,9 +2229,9 @@
 										"value": "application/json"
 									},
 									{
+										"description": "Added as a part of security scheme: bearer",
 										"key": "Authorization",
-										"value": "Bearer <token>",
-										"description": "Added as a part of security scheme: bearer"
+										"value": "Bearer <token>"
 									}
 								],
 								"body": {
@@ -2118,13 +2316,18 @@
 						},
 						{
 							"id": "28749759-9f21-4ece-bdc6-bdc9d10f2933",
-							"name": "Success",
+							"name": "PR Asset",
 							"originalRequest": {
 								"method": "POST",
 								"header": [
 									{
 										"key": "Content-Type",
 										"value": "application/json"
+									},
+									{
+										"description": "Added as a part of security scheme: bearer",
+										"key": "Authorization",
+										"value": "Bearer <token>"
 									}
 								],
 								"body": {
@@ -2132,75 +2335,132 @@
 									"raw": "{\r\n    \"Number\": \"001\", //PR Number, jangan diisi karena otomatis generated\r\n    \"postPRHeaderSet\": {\r\n        \"PrType\": \"GSVC\"\r\n    },\r\n    \"postPRItemSet\": [\r\n        {\r\n            \"PreqItem\": \"00010\",\r\n            \"PurGroup\": \"IT\",\r\n            \"PreqName\": \"Yusi\",\r\n            \"ShortText\": \"Microsoft 365 (March-July) 2026\",\r\n            \"Plant\": \"1HO0\",\r\n            \"StoreLoc\": \"HOW1\",\r\n            \"Trackingno\": \"\",\r\n            \"MatlGroup\": \"S079\",\r\n            \"Quantity\": \"1\",\r\n            \"Unit\": \"AU\",\r\n            \"Currency\": \"IDR\",\r\n            \"DelDatcatExt\": \"1\",\r\n            \"DelivDate\": \"2026-03-04T00:00:00\",\r\n            \"ItemCat\": \"9\",\r\n            \"Acctasscat\": \"1\",\r\n            \"PckgNo\": \"\"\r\n        }\r\n    ],\r\n    \"postPRAccountSet\": [\r\n        {\r\n            \"PreqItem\": \"00010\",\r\n            \"CreatDate\": \"2026-02-11T00:00:00\",\r\n            \"Quantity\": \"1000\",\r\n            \"GlAccount\": \"0062900020\",\r\n            \"Costcenter\": \"10301IT003\",\r\n            \"Orderid\": \"IT003-10049\",\r\n            \"CoArea\": \"8888\"\r\n        }\r\n    ],\r\n    \"postPRServiceLinesSet\": [\r\n        {\r\n            \"DocItem\": \"00010\",\r\n            \"Outline\": \"0000000001\",\r\n            \"SrvLine\": \"0000000010\",\r\n            \"ShortText\": \"Microsoft Outlook\",\r\n            \"Quantity\": \"1\",\r\n            \"Uom\": \"MON\",\r\n            \"GrossPrice\": \"10000\"\r\n        },\r\n  \t{\r\n            \"DocItem\": \"00010\",\r\n            \"Outline\": \"0000000001\",\r\n            \"SrvLine\": \"0000000020\",\r\n            \"ShortText\": \"Microsoft PowerBI\",\r\n            \"Quantity\": \"1\",\r\n            \"Uom\": \"MON\",\r\n            \"GrossPrice\": \"20000\"\r\n        },\r\n  {\r\n            \"DocItem\": \"00010\",\r\n            \"Outline\": \"0000000001\",\r\n            \"SrvLine\": \"0000000030\",\r\n            \"ShortText\": \"Microsoft Microsoft Azure\",\r\n            \"Quantity\": \"1\",\r\n            \"Uom\": \"MON\",\r\n            \"GrossPrice\": \"30000\"\r\n        }\r\n\r\n    ],\r\n    \"postPRServiceAccSet\": [\r\n        {\r\n            \"DocItem\": \"00010\",\r\n            \"Outline\": \"0000000001\",\r\n            \"SrvLine\": \"0000000010\"\r\n        },\r\n \t{\r\n            \"DocItem\": \"00010\",\r\n            \"Outline\": \"0000000001\",\r\n            \"SrvLine\": \"0000000020\"\r\n        },\r\n \t{\r\n            \"DocItem\": \"00010\",\r\n            \"Outline\": \"0000000001\",\r\n            \"SrvLine\": \"0000000030\"\r\n        }\r\n    ],\r\n    \"postPRReturnSet\": [\r\n        {}\r\n    ]\r\n}",
 									"options": {
 										"raw": {
+											"headerFamily": "json",
 											"language": "json"
 										}
 									}
 								},
-								"url": "{{dev}}/srm/create-pr"
+								"url": "{{baseUrl}}/srm/create-pr"
 							},
 							"status": "OK",
 							"code": 200,
 							"_postman_previewlanguage": "text",
 							"header": [
 								{
+									"description": {
+										"content": "",
+										"type": "text/plain"
+									},
 									"key": "Server",
 									"value": "nginx/1.24.0 (Ubuntu)"
 								},
 								{
+									"description": {
+										"content": "",
+										"type": "text/plain"
+									},
 									"key": "Date",
 									"value": "Sun, 05 Apr 2026 04:52:38 GMT"
 								},
 								{
-									"key": "Content-Type",
-									"value": "application/json"
-								},
-								{
+									"description": {
+										"content": "",
+										"type": "text/plain"
+									},
 									"key": "Transfer-Encoding",
 									"value": "chunked"
 								},
 								{
+									"description": {
+										"content": "",
+										"type": "text/plain"
+									},
 									"key": "Connection",
 									"value": "keep-alive"
 								},
 								{
+									"description": {
+										"content": "",
+										"type": "text/plain"
+									},
 									"key": "X-Powered-By",
 									"value": "PHP/8.3.21"
 								},
 								{
+									"description": {
+										"content": "",
+										"type": "text/plain"
+									},
 									"key": "Cache-Control",
 									"value": "no-cache, private"
 								},
 								{
+									"description": {
+										"content": "",
+										"type": "text/plain"
+									},
 									"key": "Access-Control-Allow-Origin",
 									"value": "*"
 								},
 								{
+									"description": {
+										"content": "",
+										"type": "text/plain"
+									},
 									"key": "X-Frame-Options",
 									"value": "SAMEORIGIN"
 								},
 								{
+									"description": {
+										"content": "",
+										"type": "text/plain"
+									},
 									"key": "X-XSS-Protection",
 									"value": "1; mode=block"
 								},
 								{
+									"description": {
+										"content": "",
+										"type": "text/plain"
+									},
 									"key": "X-Content-Type-Options",
 									"value": "nosniff"
 								},
 								{
+									"description": {
+										"content": "",
+										"type": "text/plain"
+									},
 									"key": "X-Kong-Upstream-Latency",
 									"value": "1779"
 								},
 								{
+									"description": {
+										"content": "",
+										"type": "text/plain"
+									},
 									"key": "X-Kong-Proxy-Latency",
 									"value": "1"
 								},
 								{
+									"description": {
+										"content": "",
+										"type": "text/plain"
+									},
 									"key": "Via",
 									"value": "1.1 kong/3.9.0"
 								},
 								{
+									"description": {
+										"content": "",
+										"type": "text/plain"
+									},
 									"key": "X-Kong-Request-Id",
 									"value": "45ecc65ce0a04d7c30e1d57f6c59ce0e"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
 								}
 							],
 							"cookie": [],
@@ -2310,11 +2570,12 @@
 							"raw": "{\n  \"Number\": \"1200004791\",\n  \"NoSimplify\": \"X\",\n  \"changePRHeaderSet\": {\n    \"PrType\": \"GSVC\"\n  },\n  \"changePRItemSet\": [\n    {\n      \"PreqItem\": \"00010\",\n      \"PurGroup\": \"\",\n      \"PreqName\": \"Yona\",\n      \"ShortText\": \"\",\n      \"Material\": \"\",\n      \"Plant\": \"\",\n      \"StoreLoc\": \"\",\n      \"Trackingno\": \"\",\n      \"MatlGroup\": \"\",\n      \"Quantity\": \"5\",\n      \"Unit\": \"\",\n      \"Currency\": \"\",\n      \"DelDatcatExt\": \"\",\n      \"DelivDate\": \"2026-03-22T00:00:00\",\n      \"ItemCat\": \"\",\n      \"Acctasscat\": \"\",\n      \"PckgNo\": \"\"\n    }\n  ],\n  \"changePRItemXSet\": [\n    {\n      \"PreqItem\": \"00010\",\n      \"PreqItemx\": \"X\",\n      \"PurGroup\": \"\",\n      \"PreqName\": \"X\",\n      \"ShortText\": \"\",\n      \"Material\": \"\",\n      \"Plant\": \"\",\n      \"StoreLoc\": \"\",\n      \"Trackingno\": \"\",\n      \"MatlGroup\": \"\",\n      \"Quantity\": \"X\",\n      \"Unit\": \"\",\n      \"Currency\": \"\",\n      \"DelDatcatExt\": \"\",\n      \"DelivDate\": \"X\",\n      \"ItemCat\": \"\",\n      \"Acctasscat\": \"\",\n      \"PckgNo\": \"\"\n    }\n  ],\n  \"changePRServiceLinesSet\": [\n    {\n      \"DocItem\": \"00010\",\n      \"Outline\": \"0000000001\",\n      \"SrvLine\": \"0000000010\",\n      \"ShortText\": \"\",\n      \"Quantity\": \"0\",\n      \"Uom\": \"\",\n      \"GrossPrice\": \"10000\"\n    },\n    {\n      \"DocItem\": \"00010\",\n      \"Outline\": \"0000000001\",\n      \"SrvLine\": \"0000000020\",\n      \"ShortText\": \"\",\n      \"Quantity\": \"0\",\n      \"Uom\": \"\",\n      \"GrossPrice\": \"20000\"\n    },\n    {\n      \"DocItem\": \"00010\",\n      \"Outline\": \"0000000001\",\n      \"SrvLine\": \"0000000030\",\n      \"ShortText\": \"\",\n      \"Quantity\": \"0\",\n      \"Uom\": \"\",\n      \"GrossPrice\": \"30000\"\n    }\n  ],\n  \"changePRServiceLinesXSet\": [\n    {\n      \"DocItem\": \"00010\",\n      \"Outline\": \"0000000001\",\n      \"SrvLine\": \"0000000010\",\n      \"ShortText\": \"\",\n      \"Quantity\": \"X\",\n      \"Uom\": \"\",\n      \"GrossPrice\": \"X\"\n    },\n    {\n      \"DocItem\": \"00010\",\n      \"Outline\": \"0000000001\",\n      \"SrvLine\": \"0000000020\",\n      \"ShortText\": \"\",\n      \"Quantity\": \"X\",\n      \"Uom\": \"\",\n      \"GrossPrice\": \"X\"\n    },\n    {\n      \"DocItem\": \"00010\",\n      \"Outline\": \"0000000001\",\n      \"SrvLine\": \"0000000030\",\n      \"ShortText\": \"\",\n      \"Quantity\": \"X\",\n      \"Uom\": \"\",\n      \"GrossPrice\": \"X\"\n    }\n  ],\n  \"changePRReturnSet\": [\n    {}\n  ]\n}",
 							"options": {
 								"raw": {
+									"headerFamily": "json",
 									"language": "json"
 								}
 							}
 						},
-						"url": "{{dev}}/srm/change-pr"
+						"url": "{{baseUrl}}/srm/change-pr"
 					},
 					"response": [
 						{
@@ -2672,9 +2933,9 @@
 										"value": "application/json"
 									},
 									{
+										"description": "Added as a part of security scheme: bearer",
 										"key": "Authorization",
-										"value": "Bearer <token>",
-										"description": "Added as a part of security scheme: bearer"
+										"value": "Bearer <token>"
 									}
 								],
 								"body": {
@@ -2682,6 +2943,7 @@
 									"raw": "{\n  \"Number\": \"001\",\n  \"NoSimplify\": \"X\",\n  \"changePRHeaderSet\": {\n    \"PrType\": \"GSVC\"\n  },\n  \"changePRItemSet\": [\n    {\n      \"PreqItem\": \"00010\",\n      \"PurGroup\": \"\",\n      \"PreqName\": \"Yona\",\n      \"ShortText\": \"\",\n      \"Material\": \"\",\n      \"Plant\": \"\",\n      \"StoreLoc\": \"\",\n      \"Trackingno\": \"\",\n      \"MatlGroup\": \"\",\n      \"Quantity\": \"5\",\n      \"Unit\": \"\",\n      \"Currency\": \"\",\n      \"DelDatcatExt\": \"\",\n      \"DelivDate\": \"2026-03-22T00:00:00\",\n      \"ItemCat\": \"\",\n      \"Acctasscat\": \"\",\n      \"PckgNo\": \"\"\n    }\n  ],\n  \"changePRItemXSet\": [\n    {\n      \"PreqItem\": \"00010\",\n      \"PreqItemx\": \"X\",\n      \"PurGroup\": \"\",\n      \"PreqName\": \"X\",\n      \"ShortText\": \"\",\n      \"Material\": \"\",\n      \"Plant\": \"\",\n      \"StoreLoc\": \"\",\n      \"Trackingno\": \"\",\n      \"MatlGroup\": \"\",\n      \"Quantity\": \"X\",\n      \"Unit\": \"\",\n      \"Currency\": \"\",\n      \"DelDatcatExt\": \"\",\n      \"DelivDate\": \"X\",\n      \"ItemCat\": \"\",\n      \"Acctasscat\": \"\",\n      \"PckgNo\": \"\"\n    }\n  ],\n  \"changePRServiceLinesSet\": [\n    {\n      \"DocItem\": \"00010\",\n      \"Outline\": \"0000000001\",\n      \"SrvLine\": \"0000000010\",\n      \"ShortText\": \"\",\n      \"Quantity\": \"0\",\n      \"Uom\": \"\",\n      \"GrossPrice\": \"10000\"\n    },\n    {\n      \"DocItem\": \"00010\",\n      \"Outline\": \"0000000001\",\n      \"SrvLine\": \"0000000020\",\n      \"ShortText\": \"\",\n      \"Quantity\": \"0\",\n      \"Uom\": \"\",\n      \"GrossPrice\": \"20000\"\n    },\n    {\n      \"DocItem\": \"00010\",\n      \"Outline\": \"0000000001\",\n      \"SrvLine\": \"0000000030\",\n      \"ShortText\": \"\",\n      \"Quantity\": \"0\",\n      \"Uom\": \"\",\n      \"GrossPrice\": \"30000\"\n    }\n  ],\n  \"changePRServiceLinesXSet\": [\n    {\n      \"DocItem\": \"00010\",\n      \"Outline\": \"0000000001\",\n      \"SrvLine\": \"0000000010\",\n      \"ShortText\": \"\",\n      \"Quantity\": \"X\",\n      \"Uom\": \"\",\n      \"GrossPrice\": \"X\"\n    },\n    {\n      \"DocItem\": \"00010\",\n      \"Outline\": \"0000000001\",\n      \"SrvLine\": \"0000000020\",\n      \"ShortText\": \"\",\n      \"Quantity\": \"X\",\n      \"Uom\": \"\",\n      \"GrossPrice\": \"X\"\n    },\n    {\n      \"DocItem\": \"00010\",\n      \"Outline\": \"0000000001\",\n      \"SrvLine\": \"0000000030\",\n      \"ShortText\": \"\",\n      \"Quantity\": \"X\",\n      \"Uom\": \"\",\n      \"GrossPrice\": \"X\"\n    }\n  ],\n  \"changePRReturnSet\": [\n    {}\n  ]\n}",
 									"options": {
 										"raw": {
+											"headerFamily": "json",
 											"language": "json"
 										}
 									}
@@ -2693,58 +2955,114 @@
 							"_postman_previewlanguage": "text",
 							"header": [
 								{
+									"description": {
+										"content": "",
+										"type": "text/plain"
+									},
 									"key": "Server",
 									"value": "nginx/1.24.0 (Ubuntu)"
 								},
 								{
+									"description": {
+										"content": "",
+										"type": "text/plain"
+									},
 									"key": "Date",
 									"value": "Tue, 03 Mar 2026 10:08:27 GMT"
 								},
 								{
+									"description": {
+										"content": "",
+										"type": "text/plain"
+									},
 									"key": "Transfer-Encoding",
 									"value": "chunked"
 								},
 								{
+									"description": {
+										"content": "",
+										"type": "text/plain"
+									},
 									"key": "Connection",
 									"value": "keep-alive"
 								},
 								{
+									"description": {
+										"content": "",
+										"type": "text/plain"
+									},
 									"key": "X-Powered-By",
 									"value": "PHP/8.3.21"
 								},
 								{
+									"description": {
+										"content": "",
+										"type": "text/plain"
+									},
 									"key": "Cache-Control",
 									"value": "no-cache, private"
 								},
 								{
+									"description": {
+										"content": "",
+										"type": "text/plain"
+									},
 									"key": "Access-Control-Allow-Origin",
 									"value": "*"
 								},
 								{
+									"description": {
+										"content": "",
+										"type": "text/plain"
+									},
 									"key": "X-Frame-Options",
 									"value": "SAMEORIGIN"
 								},
 								{
+									"description": {
+										"content": "",
+										"type": "text/plain"
+									},
 									"key": "X-XSS-Protection",
 									"value": "1; mode=block"
 								},
 								{
+									"description": {
+										"content": "",
+										"type": "text/plain"
+									},
 									"key": "X-Content-Type-Options",
 									"value": "nosniff"
 								},
 								{
+									"description": {
+										"content": "",
+										"type": "text/plain"
+									},
 									"key": "X-Kong-Upstream-Latency",
 									"value": "504"
 								},
 								{
+									"description": {
+										"content": "",
+										"type": "text/plain"
+									},
 									"key": "X-Kong-Proxy-Latency",
 									"value": "0"
 								},
 								{
+									"description": {
+										"content": "",
+										"type": "text/plain"
+									},
 									"key": "Via",
 									"value": "1.1 kong/3.9.0"
 								},
 								{
+									"description": {
+										"content": "",
+										"type": "text/plain"
+									},
 									"key": "X-Kong-Request-Id",
 									"value": "864b4b0220fbbe2f368ac408b4cff34e"
 								},
@@ -2765,6 +3083,7 @@
 						{
 							"listen": "test",
 							"script": {
+								"id": "62466cb9-d839-4777-aba2-5e46184579e3",
 								"type": "text/javascript",
 								"exec": [
 									"### Purpose\nChange/update an existing Purchase Requisition (PR) via SRM.\n\n### Auth\n```http\nAuthorization: Bearer {{token}}\n```\n\n### Key headers\n- `Authorization: Bearer {{token}}`\n- `Content-Type: application/json`\n\n### Body notes\n- POST body should include the PR identifier and the fields to change (see **Body** tab for configured fields).\n"
@@ -2789,9 +3108,10 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n      \"PoNumber\":\"\", //PO Number, otomatis generate dan akan error jika diisi\r\n      \"Zzspkno\":\"-\", // ?\r\n      \"Zzctrno\": \"002/SCRAP AGREEMENT/1/202\", // ?\r\n      \"Zzpurty\": \"RM\", // ?\r\n      \"postPOHeaderSet\":\r\n      {\r\n      \"DocType\": \"IMAT\",\r\n      \"Vendor\": \"2301000113\",\r\n      \"Pmnttrms\": \"Z007\",\r\n      \"PurchOrg\": \"PROC\",\r\n      \"PurGroup\": \"SM1\",\r\n      \"Currency\": \"IDR\",\r\n      \"ExchRate\": \"1\",\r\n      \"Incoterms1\": \"FRA\",\r\n      \"OurRef\": \"\", // ?\r\n      \"DownpayType\": \"M\", //DP Category\r\n      \"DownpayAmount\": \"12900000\",\r\n      \"DownpayPercent\": \"20\",\r\n      \"DownpayDuedate\": \"2026-03-26T00:00:00\",\r\n      \"DocDate\": \"2026-03-11T00:00:00\" // ?\r\n\r\n    },\r\n    \"postPOItemSet\": [\r\n    {\r\n      \"PoItem\": \"00010\",\r\n      \"Material\": \"RIDR11000000000036\",\r\n      \"ShortText\": \"\", //Derived from Reference Item\r\n      \"Quantity\": \"100\",\r\n      \"PoUnit\": \"KG\",\r\n      \"NetPrice\": \"6450\",\r\n      \"MatlGroup\": \"DI\",\r\n      \"Plant\": \"1SM0\",\r\n      \"StgeLoc\": \"S1R0\",\r\n      \"Trackingno\": \"\", // ?\r\n      \"TaxCode\": \"2C\",\r\n      \"PrntPrice\" : true,\r\n      \"OverDlvTol\": \"5\",\r\n      \"GrInd\": true, // ?\r\n      \"IrInd\": true, // ?\r\n      \"ConfCtrl\": \"0001\", // ?\r\n      \"Incoterms1\": \"FRA\", // ?\r\n      \"ItemCat\": \" \", // ?\r\n      \"Acctasscat\": \"\", // ?\r\n      \"PreqNo\": \"1100008061\", // ?\r\n      \"PreqItem\": \"00010\", // ?\r\n      \"PreqName\": \"Shiyan\", // ?\r\n      \"PckgNo\": \"0000000001\" // ?\r\n    }\r\n    ],\r\n    \"postPOScheduleSet\": [ // ?\r\n  {\r\n      \"PoItem\": \"00010\",\r\n      \"SchedLine\": \"0001\", // ?\r\n      \"DeliveryDate\": \"30.04.2026\",\r\n      \"Quantity\": \"100\", // ?\r\n      \"PreqNo\": \"1100008061\", // ?\r\n      \"PreqItem\": \"00010\" // ?\r\n  }\r\n],\r\n    \"postPOPartnerSet\": [ // ?\r\n        {\r\n        \"Partnerdesc\": \"Z2\",\r\n        \"Langu\": \"EN\",\r\n        \"Buspartno\": \"8888000284\"\r\n        }\r\n    ],\r\n    \"postPOAdditionalSet\": [ // ?\r\n        {\r\n            \"Ebelp\": \"00010\", // ?\r\n            \"Zzeta\": \"2026-03-12T00:00:00\" //YYYY-MM-DDThh-mm-ss DateTime Format | ?\r\n        }\r\n    ],\r\n    \"postPOAccountSet\": [],\r\n    \"postPOServiceSet\": [],\r\n    \"postPOAccessValuesSet\": [],\r\n    \"postPOReturnSet\": []\r\n}",
+							"raw": "{\r\n      \"PoNumber\":\"001\", //PO Number, otomatis generate dan akan error jika diisi\r\n      \"Zzspkno\":\"-\", // ?\r\n      \"Zzctrno\": \"002/SCRAP AGREEMENT/1/202\", // ?\r\n      \"Zzpurty\": \"RM\", // ?\r\n      \"postPOHeaderSet\":\r\n      {\r\n      \"DocType\": \"IMAT\",\r\n      \"Vendor\": \"2301000113\",\r\n      \"Pmnttrms\": \"Z007\",\r\n      \"PurchOrg\": \"PROC\",\r\n      \"PurGroup\": \"SM1\",\r\n      \"Currency\": \"IDR\",\r\n      \"ExchRate\": \"1\",\r\n      \"Incoterms1\": \"FRA\",\r\n      \"OurRef\": \"\", // ?\r\n      \"DownpayType\": \"M\", //DP Category\r\n      \"DownpayAmount\": \"12900000\",\r\n      \"DownpayPercent\": \"20\",\r\n      \"DownpayDuedate\": \"2026-03-26T00:00:00\",\r\n      \"DocDate\": \"2026-03-11T00:00:00\" // ?\r\n\r\n    },\r\n    \"postPOItemSet\": [\r\n    {\r\n      \"PoItem\": \"00010\",\r\n      \"Material\": \"RIDR11000000000036\",\r\n      \"ShortText\": \"\", //Derived from Reference Item\r\n      \"Quantity\": \"100\",\r\n      \"PoUnit\": \"KG\",\r\n      \"NetPrice\": \"6450\",\r\n      \"MatlGroup\": \"DI\",\r\n      \"Plant\": \"1SM0\",\r\n      \"StgeLoc\": \"S1R0\",\r\n      \"Trackingno\": \"\", // ?\r\n      \"TaxCode\": \"2C\",\r\n      \"PrntPrice\" : true,\r\n      \"OverDlvTol\": \"5\",\r\n      \"GrInd\": true, // ?\r\n      \"IrInd\": true, // ?\r\n      \"ConfCtrl\": \"0001\", // ?\r\n      \"Incoterms1\": \"FRA\", // ?\r\n      \"ItemCat\": \" \", // ?\r\n      \"Acctasscat\": \"\", // ?\r\n      \"PreqNo\": \"1100008061\", // ?\r\n      \"PreqItem\": \"00010\", // ?\r\n      \"PreqName\": \"Shiyan\", // ?\r\n      \"PckgNo\": \"0000000001\" // ?\r\n    }\r\n    ],\r\n    \"postPOScheduleSet\": [ // ?\r\n  {\r\n      \"PoItem\": \"00010\",\r\n      \"SchedLine\": \"0001\", // ?\r\n      \"DeliveryDate\": \"30.04.2026\",\r\n      \"Quantity\": \"100\", // ?\r\n      \"PreqNo\": \"1100008061\", // ?\r\n      \"PreqItem\": \"00010\" // ?\r\n  }\r\n],\r\n    \"postPOPartnerSet\": [ // ?\r\n        {\r\n        \"Partnerdesc\": \"Z2\",\r\n        \"Langu\": \"EN\",\r\n        \"Buspartno\": \"8888000284\"\r\n        }\r\n    ],\r\n    \"postPOAdditionalSet\": [ // ?\r\n        {\r\n            \"Ebelp\": \"00010\", // ?\r\n            \"Zzeta\": \"2026-03-12T00:00:00\" //YYYY-MM-DDThh-mm-ss DateTime Format | ?\r\n        }\r\n    ],\r\n    \"postPOAccountSet\": [],\r\n    \"postPOServiceSet\": [],\r\n    \"postPOAccessValuesSet\": [],\r\n    \"postPOReturnSet\": []\r\n}",
 							"options": {
 								"raw": {
+									"headerFamily": "json",
 									"language": "json"
 								}
 							}
@@ -2811,9 +3131,9 @@
 										"value": "application/json"
 									},
 									{
+										"description": "Added as a part of security scheme: bearer",
 										"key": "Authorization",
-										"value": "Bearer <token>",
-										"description": "Added as a part of security scheme: bearer"
+										"value": "Bearer <token>"
 									}
 								],
 								"body": {
@@ -2821,6 +3141,7 @@
 									"raw": "{\r\n      \"PoNumber\":\"001\", //PO Number, otomatis generate dan akan error jika diisi\r\n      \"Zzspkno\":\"-\", // ?\r\n      \"Zzctrno\": \"002/SCRAP AGREEMENT/1/202\", // ?\r\n      \"Zzpurty\": \"RM\", // ?\r\n      \"postPOHeaderSet\":\r\n      {\r\n      \"DocType\": \"IMAT\",\r\n      \"Vendor\": \"2301000113\",\r\n      \"Pmnttrms\": \"Z007\",\r\n      \"PurchOrg\": \"PROC\",\r\n      \"PurGroup\": \"SM1\",\r\n      \"Currency\": \"IDR\",\r\n      \"ExchRate\": \"1\",\r\n      \"Incoterms1\": \"FRA\",\r\n      \"OurRef\": \"\", // ?\r\n      \"DownpayType\": \"M\", //DP Category\r\n      \"DownpayAmount\": \"12900000\",\r\n      \"DownpayPercent\": \"20\",\r\n      \"DownpayDuedate\": \"2026-03-26T00:00:00\",\r\n      \"DocDate\": \"2026-03-11T00:00:00\" // ?\r\n\r\n    },\r\n    \"postPOItemSet\": [\r\n    {\r\n      \"PoItem\": \"00010\",\r\n      \"Material\": \"RIDR11000000000036\",\r\n      \"ShortText\": \"\", //Derived from Reference Item\r\n      \"Quantity\": \"100\",\r\n      \"PoUnit\": \"KG\",\r\n      \"NetPrice\": \"6450\",\r\n      \"MatlGroup\": \"DI\",\r\n      \"Plant\": \"1SM0\",\r\n      \"StgeLoc\": \"S1R0\",\r\n      \"Trackingno\": \"\", // ?\r\n      \"TaxCode\": \"2C\",\r\n      \"PrntPrice\" : true,\r\n      \"OverDlvTol\": \"5\",\r\n      \"GrInd\": true, // ?\r\n      \"IrInd\": true, // ?\r\n      \"ConfCtrl\": \"0001\", // ?\r\n      \"Incoterms1\": \"FRA\", // ?\r\n      \"ItemCat\": \" \", // ?\r\n      \"Acctasscat\": \"\", // ?\r\n      \"PreqNo\": \"1100008061\", // ?\r\n      \"PreqItem\": \"00010\", // ?\r\n      \"PreqName\": \"Shiyan\", // ?\r\n      \"PckgNo\": \"0000000001\" // ?\r\n    }\r\n    ],\r\n    \"postPOScheduleSet\": [ // ?\r\n  {\r\n      \"PoItem\": \"00010\",\r\n      \"SchedLine\": \"0001\", // ?\r\n      \"DeliveryDate\": \"30.04.2026\",\r\n      \"Quantity\": \"100\", // ?\r\n      \"PreqNo\": \"1100008061\", // ?\r\n      \"PreqItem\": \"00010\" // ?\r\n  }\r\n],\r\n    \"postPOPartnerSet\": [ // ?\r\n        {\r\n        \"Partnerdesc\": \"Z2\",\r\n        \"Langu\": \"EN\",\r\n        \"Buspartno\": \"8888000284\"\r\n        }\r\n    ],\r\n    \"postPOAdditionalSet\": [ // ?\r\n        {\r\n            \"Ebelp\": \"00010\", // ?\r\n            \"Zzeta\": \"2026-03-12T00:00:00\" //YYYY-MM-DDThh-mm-ss DateTime Format | ?\r\n        }\r\n    ],\r\n    \"postPOAccountSet\": [],\r\n    \"postPOServiceSet\": [],\r\n    \"postPOAccessValuesSet\": [],\r\n    \"postPOReturnSet\": []\r\n}",
 									"options": {
 										"raw": {
+											"headerFamily": "json",
 											"language": "json"
 										}
 									}
@@ -2832,58 +3153,114 @@
 							"_postman_previewlanguage": "text",
 							"header": [
 								{
+									"description": {
+										"content": "",
+										"type": "text/plain"
+									},
 									"key": "Server",
 									"value": "nginx/1.24.0 (Ubuntu)"
 								},
 								{
+									"description": {
+										"content": "",
+										"type": "text/plain"
+									},
 									"key": "Date",
 									"value": "Fri, 13 Mar 2026 08:30:49 GMT"
 								},
 								{
+									"description": {
+										"content": "",
+										"type": "text/plain"
+									},
 									"key": "Transfer-Encoding",
 									"value": "chunked"
 								},
 								{
+									"description": {
+										"content": "",
+										"type": "text/plain"
+									},
 									"key": "Connection",
 									"value": "keep-alive"
 								},
 								{
+									"description": {
+										"content": "",
+										"type": "text/plain"
+									},
 									"key": "X-Powered-By",
 									"value": "PHP/8.3.21"
 								},
 								{
+									"description": {
+										"content": "",
+										"type": "text/plain"
+									},
 									"key": "Cache-Control",
 									"value": "no-cache, private"
 								},
 								{
+									"description": {
+										"content": "",
+										"type": "text/plain"
+									},
 									"key": "Access-Control-Allow-Origin",
 									"value": "*"
 								},
 								{
+									"description": {
+										"content": "",
+										"type": "text/plain"
+									},
 									"key": "X-Frame-Options",
 									"value": "SAMEORIGIN"
 								},
 								{
+									"description": {
+										"content": "",
+										"type": "text/plain"
+									},
 									"key": "X-XSS-Protection",
 									"value": "1; mode=block"
 								},
 								{
+									"description": {
+										"content": "",
+										"type": "text/plain"
+									},
 									"key": "X-Content-Type-Options",
 									"value": "nosniff"
 								},
 								{
+									"description": {
+										"content": "",
+										"type": "text/plain"
+									},
 									"key": "X-Kong-Upstream-Latency",
 									"value": "1949"
 								},
 								{
+									"description": {
+										"content": "",
+										"type": "text/plain"
+									},
 									"key": "X-Kong-Proxy-Latency",
 									"value": "1"
 								},
 								{
+									"description": {
+										"content": "",
+										"type": "text/plain"
+									},
 									"key": "Via",
 									"value": "1.1 kong/3.9.0"
 								},
 								{
+									"description": {
+										"content": "",
+										"type": "text/plain"
+									},
 									"key": "X-Kong-Request-Id",
 									"value": "72ebfc61b9484634ae0f9453efb6596f"
 								},
@@ -2983,6 +3360,7 @@
 						{
 							"listen": "test",
 							"script": {
+								"id": "84c2f426-b8b1-4688-968a-7da485c01e13",
 								"type": "text/javascript",
 								"exec": [
 									"### Purpose\nChange/update an existing Purchase Requisition (PR) via SRM.\n\n### Auth\n```http\nAuthorization: Bearer {{token}}\n```\n\n### Key headers\n- `Authorization: Bearer {{token}}`\n- `Content-Type: application/json`\n\n### Body notes\n- POST body should include the PR identifier and the fields to change (see **Body** tab for configured fields).\n"
@@ -3010,6 +3388,7 @@
 							"raw": "{\n  \"PoNumber\": \"4100035209\",\n  \"Zzspkno\": \"\",\n  \"Zzctrno\": \"\",\n  \"Zzpurty\": \"\",\n  \"changePOHeaderSet\": {\n    \"DocType\": \"\",\n    \"Vendor\": \"\",\n    \"Pmnttrms\": \"Z014\",\n    \"PurchOrg\": \"\",\n    \"PurGroup\": \"\",\n    \"Currency\": \"\",\n    \"Incoterms1\": \"\",\n    \"OurRef\": \"\",\n    \"DownpayType\": \"\",\n    \"DownpayAmount\": \"10000000\",\n    \"DownpayPercent\": \"15\"\n  },\n  \"changePOHeaderXSet\": {\n    \"DocType\": \"\",\n    \"Vendor\": \"\",\n    \"Pmnttrms\": \"X\",\n    \"PurchOrg\": \"\",\n    \"PurGroup\": \"\",\n    \"Currency\": \"\",\n    \"Incoterms1\": \"\",\n    \"OurRef\": \"\",\n    \"DownpayType\": \"\",\n    \"DownpayAmount\": \"X\",\n    \"DownpayPercent\": \"X\"\n  },\n  \"changePOItemSet\": [\n    {\n      \"PoItem\": \"00010\",\n      \"Material\": \"\",\n      \"ShortText\": \"\",\n      \"Quantity\": \"350\",\n      \"PoUnit\": \"\",\n      \"NetPrice\": \"6500\",\n      \"MatlGroup\": \"\",\n      \"Plant\": \"\",\n      \"StgeLoc\": \"\",\n      \"Trackingno\": \"\",\n      \"TaxCode\": \"\",\n      \"OverDlvTol\": \"10\"\n    }\n  ],\n  \"changePOItemXSet\": [\n    {\n      \"PoItem\": \"00010\",\n      \"Material\": \"\",\n      \"ShortText\": \"\",\n      \"Quantity\": \"X\",\n      \"PoUnit\": \"\",\n      \"NetPrice\": \"X\",\n      \"MatlGroup\": \"\",\n      \"Plant\": \"\",\n      \"StgeLoc\": \"\",\n      \"Trackingno\": \"\",\n      \"TaxCode\": \"\",\n      \"OverDlvTol\": \"X\"\n    }\n  ],\n  \"changePOScheduleSet\": [\n    {\n      \"PoItem\": \"00010\",\n      \"SchedLine\": \"0001\",\n      \"DeliveryDate\": \"01.05.2026\",\n      \"Quantity\": \"350\",\n      \"PreqNo\": \"\",\n      \"PreqItem\": \"\"\n    }\n  ],\n  \"changePOScheduleXSet\": [\n    {\n      \"PoItem\": \"00010\",\n      \"SchedLine\": \"0001\",\n      \"DeliveryDate\": \"X\",\n      \"Quantity\": \"X\",\n      \"PreqNo\": \"\",\n      \"PreqItem\": \"\"\n    }\n  ],\n  \"changePOPartnerSet\": [],\n  \"changePOAdditionalSet\": [],\n  \"changePOAccountSet\": [],\n  \"changePOServiceSet\": [],\n  \"changePOAccessValuesSet\": [],\n  \"changePOReturnSet\": []\n}",
 							"options": {
 								"raw": {
+									"headerFamily": "json",
 									"language": "json"
 								}
 							}
@@ -3029,9 +3408,9 @@
 										"value": "application/json"
 									},
 									{
+										"description": "Added as a part of security scheme: bearer",
 										"key": "Authorization",
-										"value": "Bearer <token>",
-										"description": "Added as a part of security scheme: bearer"
+										"value": "Bearer <token>"
 									}
 								],
 								"body": {
@@ -3039,6 +3418,7 @@
 									"raw": "{\n  \"PoNumber\": \"4100035208\",\n  \"Zzspkno\": \"\",\n  \"Zzctrno\": \"\",\n  \"Zzpurty\": \"\",\n  \"changePOHeaderSet\": {\n    \"DocType\": \"\",\n    \"Vendor\": \"\",\n    \"Pmnttrms\": \"Z014\",\n    \"PurchOrg\": \"\",\n    \"PurGroup\": \"\",\n    \"Currency\": \"\",\n    \"Incoterms1\": \"\",\n    \"OurRef\": \"\",\n    \"DownpayType\": \"\",\n    \"DownpayAmount\": \"10000000\",\n    \"DownpayPercent\": \"15\"\n  },\n  \"changePOHeaderXSet\": {\n    \"DocType\": \"\",\n    \"Vendor\": \"\",\n    \"Pmnttrms\": \"X\",\n    \"PurchOrg\": \"\",\n    \"PurGroup\": \"\",\n    \"Currency\": \"\",\n    \"Incoterms1\": \"\",\n    \"OurRef\": \"\",\n    \"DownpayType\": \"\",\n    \"DownpayAmount\": \"X\",\n    \"DownpayPercent\": \"X\"\n  },\n  \"changePOItemSet\": [\n    {\n      \"PoItem\": \"00010\",\n      \"Material\": \"\",\n      \"ShortText\": \"\",\n      \"Quantity\": \"350\",\n      \"PoUnit\": \"\",\n      \"NetPrice\": \"6500\",\n      \"MatlGroup\": \"\",\n      \"Plant\": \"\",\n      \"StgeLoc\": \"\",\n      \"Trackingno\": \"\",\n      \"TaxCode\": \"\",\n      \"OverDlvTol\": \"10\"\n    }\n  ],\n  \"changePOItemXSet\": [\n    {\n      \"PoItem\": \"00010\",\n      \"Material\": \"\",\n      \"ShortText\": \"\",\n      \"Quantity\": \"X\",\n      \"PoUnit\": \"\",\n      \"NetPrice\": \"X\",\n      \"MatlGroup\": \"\",\n      \"Plant\": \"\",\n      \"StgeLoc\": \"\",\n      \"Trackingno\": \"\",\n      \"TaxCode\": \"\",\n      \"OverDlvTol\": \"X\"\n    }\n  ],\n  \"changePOScheduleSet\": [\n    {\n      \"PoItem\": \"00010\",\n      \"SchedLine\": \"0001\",\n      \"DeliveryDate\": \"01.05.2026\",\n      \"Quantity\": \"350\",\n      \"PreqNo\": \"\",\n      \"PreqItem\": \"\"\n    }\n  ],\n  \"changePOScheduleXSet\": [\n    {\n      \"PoItem\": \"00010\",\n      \"SchedLine\": \"0001\",\n      \"DeliveryDate\": \"X\",\n      \"Quantity\": \"X\",\n      \"PreqNo\": \"\",\n      \"PreqItem\": \"\"\n    }\n  ],\n  \"changePOPartnerSet\": [],\n  \"changePOAdditionalSet\": [],\n  \"changePOAccountSet\": [],\n  \"changePOServiceSet\": [],\n  \"changePOAccessValuesSet\": [],\n  \"changePOReturnSet\": []\n}",
 									"options": {
 										"raw": {
+											"headerFamily": "json",
 											"language": "json"
 										}
 									}
@@ -3050,58 +3430,114 @@
 							"_postman_previewlanguage": "text",
 							"header": [
 								{
+									"description": {
+										"content": "",
+										"type": "text/plain"
+									},
 									"key": "Server",
 									"value": "nginx/1.24.0 (Ubuntu)"
 								},
 								{
+									"description": {
+										"content": "",
+										"type": "text/plain"
+									},
 									"key": "Date",
 									"value": "Fri, 13 Mar 2026 08:36:21 GMT"
 								},
 								{
+									"description": {
+										"content": "",
+										"type": "text/plain"
+									},
 									"key": "Transfer-Encoding",
 									"value": "chunked"
 								},
 								{
+									"description": {
+										"content": "",
+										"type": "text/plain"
+									},
 									"key": "Connection",
 									"value": "keep-alive"
 								},
 								{
+									"description": {
+										"content": "",
+										"type": "text/plain"
+									},
 									"key": "X-Powered-By",
 									"value": "PHP/8.3.21"
 								},
 								{
+									"description": {
+										"content": "",
+										"type": "text/plain"
+									},
 									"key": "Cache-Control",
 									"value": "no-cache, private"
 								},
 								{
+									"description": {
+										"content": "",
+										"type": "text/plain"
+									},
 									"key": "Access-Control-Allow-Origin",
 									"value": "*"
 								},
 								{
+									"description": {
+										"content": "",
+										"type": "text/plain"
+									},
 									"key": "X-Frame-Options",
 									"value": "SAMEORIGIN"
 								},
 								{
+									"description": {
+										"content": "",
+										"type": "text/plain"
+									},
 									"key": "X-XSS-Protection",
 									"value": "1; mode=block"
 								},
 								{
+									"description": {
+										"content": "",
+										"type": "text/plain"
+									},
 									"key": "X-Content-Type-Options",
 									"value": "nosniff"
 								},
 								{
+									"description": {
+										"content": "",
+										"type": "text/plain"
+									},
 									"key": "X-Kong-Upstream-Latency",
 									"value": "1641"
 								},
 								{
+									"description": {
+										"content": "",
+										"type": "text/plain"
+									},
 									"key": "X-Kong-Proxy-Latency",
 									"value": "0"
 								},
 								{
+									"description": {
+										"content": "",
+										"type": "text/plain"
+									},
 									"key": "Via",
 									"value": "1.1 kong/3.9.0"
 								},
 								{
+									"description": {
+										"content": "",
+										"type": "text/plain"
+									},
 									"key": "X-Kong-Request-Id",
 									"value": "d2f2b71404a7fb5c44bbb73e87fc7771"
 								},
@@ -3196,11 +3632,12 @@
 					]
 				},
 				{
-					"name": "PO Release",
+					"name": "Post PO Release",
 					"event": [
 						{
 							"listen": "test",
 							"script": {
+								"id": "02146361-3a1f-4a60-97f7-a248b53791f2",
 								"type": "text/javascript",
 								"exec": [
 									"### Purpose\nRelease a Purchase Order (PO) in SRM.\n\n### Auth\n```http\nAuthorization: Bearer {{token}}\n```\n\n### Key headers\n- `Authorization: Bearer {{token}}`\n- `Content-Type: application/json`\n\n### Body notes\n- POST body contains the release instruction/details (see **Body** tab).\n"
@@ -3228,6 +3665,7 @@
 							"raw": "{\n  \"Testrun\": \"\",\n  \"Purchaseorder\": \"4100035208\",\n  \"PoRelCode\": \"AA\",\n  \"PoRelInd\": \"X\",\n  \"ReturnType\": \"\",\n  \"Msgtx\": \"\",\n  \"releasePOReturnSet\": []\n}",
 							"options": {
 								"raw": {
+									"headerFamily": "json",
 									"language": "json"
 								}
 							}
@@ -3323,7 +3761,7 @@
 						},
 						{
 							"id": "e21a8ff7-be56-48e2-89af-ba27fb3ae35f",
-							"name": "Success",
+							"name": "Post PO Release",
 							"originalRequest": {
 								"method": "POST",
 								"header": [
@@ -3332,9 +3770,9 @@
 										"value": "application/json"
 									},
 									{
+										"description": "Added as a part of security scheme: bearer",
 										"key": "Authorization",
-										"value": "Bearer <token>",
-										"description": "Added as a part of security scheme: bearer"
+										"value": "Bearer <token>"
 									}
 								],
 								"body": {
@@ -3342,6 +3780,7 @@
 									"raw": "{\n  \"Testrun\": \"\",\n  \"Purchaseorder\": \"4100035192\",\n  \"PoRelCode\": \"AA\",\n  \"PoRelInd\": \"X\",\n  \"ReturnType\": \"\",\n  \"Msgtx\": \"\",\n  \"releasePOReturnSet\": []\n}",
 									"options": {
 										"raw": {
+											"headerFamily": "json",
 											"language": "json"
 										}
 									}
@@ -3353,58 +3792,114 @@
 							"_postman_previewlanguage": "text",
 							"header": [
 								{
+									"description": {
+										"content": "",
+										"type": "text/plain"
+									},
 									"key": "Server",
 									"value": "nginx/1.24.0 (Ubuntu)"
 								},
 								{
+									"description": {
+										"content": "",
+										"type": "text/plain"
+									},
 									"key": "Date",
 									"value": "Tue, 10 Mar 2026 04:00:19 GMT"
 								},
 								{
+									"description": {
+										"content": "",
+										"type": "text/plain"
+									},
 									"key": "Transfer-Encoding",
 									"value": "chunked"
 								},
 								{
+									"description": {
+										"content": "",
+										"type": "text/plain"
+									},
 									"key": "Connection",
 									"value": "keep-alive"
 								},
 								{
+									"description": {
+										"content": "",
+										"type": "text/plain"
+									},
 									"key": "X-Powered-By",
 									"value": "PHP/8.3.21"
 								},
 								{
+									"description": {
+										"content": "",
+										"type": "text/plain"
+									},
 									"key": "Cache-Control",
 									"value": "no-cache, private"
 								},
 								{
+									"description": {
+										"content": "",
+										"type": "text/plain"
+									},
 									"key": "Access-Control-Allow-Origin",
 									"value": "*"
 								},
 								{
+									"description": {
+										"content": "",
+										"type": "text/plain"
+									},
 									"key": "X-Frame-Options",
 									"value": "SAMEORIGIN"
 								},
 								{
+									"description": {
+										"content": "",
+										"type": "text/plain"
+									},
 									"key": "X-XSS-Protection",
 									"value": "1; mode=block"
 								},
 								{
+									"description": {
+										"content": "",
+										"type": "text/plain"
+									},
 									"key": "X-Content-Type-Options",
 									"value": "nosniff"
 								},
 								{
+									"description": {
+										"content": "",
+										"type": "text/plain"
+									},
 									"key": "X-Kong-Upstream-Latency",
 									"value": "827"
 								},
 								{
+									"description": {
+										"content": "",
+										"type": "text/plain"
+									},
 									"key": "X-Kong-Proxy-Latency",
 									"value": "0"
 								},
 								{
+									"description": {
+										"content": "",
+										"type": "text/plain"
+									},
 									"key": "Via",
 									"value": "1.1 kong/3.9.0"
 								},
 								{
+									"description": {
+										"content": "",
+										"type": "text/plain"
+									},
 									"key": "X-Kong-Request-Id",
 									"value": "dde40655b7b6eb544723a73907b0837a"
 								},
@@ -3504,6 +3999,7 @@
 						{
 							"listen": "test",
 							"script": {
+								"id": "ecb4d559-f2a0-420b-a3c7-c95a6b443941",
 								"type": "text/javascript",
 								"exec": [
 									"### Purpose\nSubmit a Down Payment (DP) request via SRM.\n\n### Auth\n```http\nAuthorization: Bearer {{token}}\n```\n\n### Key headers\n- `Authorization: Bearer {{token}}`\n- `Content-Type: application/json`\n\n### Body notes\n- POST body contains the DP request payload (see **Body** tab).\n"
@@ -3531,6 +4027,7 @@
 							"raw": "{\n  \"Testrun\": \"\",\n  \"postDPHeaderSet\": {\n    \"HeaderTxt\": \"Testing 1\",\n    \"CompCode\": \"1000\",\n    \"DocDate\": \"2026-03-02T00:00:00\",\n    \"PstngDate\": \"2026-03-02T00:00:00\",\n    \"DocType\": \"VD\",\n    \"RefDocNo\": \"4100035208\"\n  },\n  \"postDPAccountPaySet\": [\n    {\n      \"ItemnoAcc\": \"0000000001\",\n      \"VendorNo\": \"2301000113\",\n      \"CompCode\": \"1000\",\n      \"BlineDate\": \"2026-03-02T00:00:00\",\n      \"AllocNmbr\": \"4100035208\",\n      \"ItemText\": \"ABCD\",\n      \"PoSubNo\": \"10\",\n      \"PoRefNo\": \"4100035208\",\n      \"TaxCode\": \"0D\"\n    }\n  ],\n  \"postDPCurrAmtSet\": [\n    {\n      \"ItemnoAcc\": \"0000000001\",\n      \"Currency\": \"IDR\",\n      \"CurrencyIso\": \"IDR\",\n      \"AmtDoccur\": \"125000\"\n    }\n  ],\n  \"postDPReturnSet\": []\n}",
 							"options": {
 								"raw": {
+									"headerFamily": "json",
 									"language": "json"
 								}
 							}
@@ -3549,9 +4046,9 @@
 										"value": "application/json"
 									},
 									{
+										"description": "Added as a part of security scheme: bearer",
 										"key": "Authorization",
-										"value": "Bearer <token>",
-										"description": "Added as a part of security scheme: bearer"
+										"value": "Bearer <token>"
 									}
 								],
 								"body": {
@@ -3559,6 +4056,7 @@
 									"raw": "{\n  \"Testrun\": \"\",\n  \"postDPHeaderSet\": {\n    \"HeaderTxt\": \"Testing 1\",\n    \"CompCode\": \"1000\",\n    \"DocDate\": \"2026-03-02T00:00:00\",\n    \"PstngDate\": \"2026-03-02T00:00:00\",\n    \"DocType\": \"VD\",\n    \"RefDocNo\": \"4100034233\"\n  },\n  \"postDPAccountPaySet\": [\n    {\n      \"ItemnoAcc\": \"0000000001\",\n      \"VendorNo\": \"2101000136\",\n      \"CompCode\": \"1000\",\n      \"BlineDate\": \"2026-03-02T00:00:00\",\n      \"AllocNmbr\": \"4100034233\",\n      \"ItemText\": \"ABCD\",\n      \"PoSubNo\": \"10\",\n      \"PoRefNo\": \"4100034233\",\n      \"TaxCode\": \"0D\"\n    }\n  ],\n  \"postDPCurrAmtSet\": [\n    {\n      \"ItemnoAcc\": \"0000000001\",\n      \"Currency\": \"IDR\",\n      \"CurrencyIso\": \"IDR\",\n      \"AmtDoccur\": \"125000\"\n    }\n  ],\n  \"postDPReturnSet\": []\n}",
 									"options": {
 										"raw": {
+											"headerFamily": "json",
 											"language": "json"
 										}
 									}
@@ -3570,58 +4068,114 @@
 							"_postman_previewlanguage": "text",
 							"header": [
 								{
+									"description": {
+										"content": "",
+										"type": "text/plain"
+									},
 									"key": "Server",
 									"value": "nginx/1.24.0 (Ubuntu)"
 								},
 								{
+									"description": {
+										"content": "",
+										"type": "text/plain"
+									},
 									"key": "Date",
 									"value": "Wed, 04 Mar 2026 07:30:10 GMT"
 								},
 								{
+									"description": {
+										"content": "",
+										"type": "text/plain"
+									},
 									"key": "Transfer-Encoding",
 									"value": "chunked"
 								},
 								{
+									"description": {
+										"content": "",
+										"type": "text/plain"
+									},
 									"key": "Connection",
 									"value": "keep-alive"
 								},
 								{
+									"description": {
+										"content": "",
+										"type": "text/plain"
+									},
 									"key": "X-Powered-By",
 									"value": "PHP/8.3.21"
 								},
 								{
+									"description": {
+										"content": "",
+										"type": "text/plain"
+									},
 									"key": "Cache-Control",
 									"value": "no-cache, private"
 								},
 								{
+									"description": {
+										"content": "",
+										"type": "text/plain"
+									},
 									"key": "Access-Control-Allow-Origin",
 									"value": "*"
 								},
 								{
+									"description": {
+										"content": "",
+										"type": "text/plain"
+									},
 									"key": "X-Frame-Options",
 									"value": "SAMEORIGIN"
 								},
 								{
+									"description": {
+										"content": "",
+										"type": "text/plain"
+									},
 									"key": "X-XSS-Protection",
 									"value": "1; mode=block"
 								},
 								{
+									"description": {
+										"content": "",
+										"type": "text/plain"
+									},
 									"key": "X-Content-Type-Options",
 									"value": "nosniff"
 								},
 								{
+									"description": {
+										"content": "",
+										"type": "text/plain"
+									},
 									"key": "X-Kong-Upstream-Latency",
 									"value": "938"
 								},
 								{
+									"description": {
+										"content": "",
+										"type": "text/plain"
+									},
 									"key": "X-Kong-Proxy-Latency",
 									"value": "0"
 								},
 								{
+									"description": {
+										"content": "",
+										"type": "text/plain"
+									},
 									"key": "Via",
 									"value": "1.1 kong/3.9.0"
 								},
 								{
+									"description": {
+										"content": "",
+										"type": "text/plain"
+									},
 									"key": "X-Kong-Request-Id",
 									"value": "130a35500aabd31638cf276e44487f1e"
 								},
@@ -3737,11 +4291,12 @@
 							"raw": "{\n  \"DocumentNo\": \"4100034233\",\n  \"Year\": \"2026\",\n  \"PostingDate\": \"2026-03-04\",\n  \"ReversalReasonCode\": \"01\"\n}",
 							"options": {
 								"raw": {
+									"headerFamily": "json",
 									"language": "json"
 								}
 							}
 						},
-						"url": "{{dev}}/srm/cancel-dp-request"
+						"url": "{{baseUrl}}/srm/cancel-dp-request"
 					},
 					"response": [
 						{
@@ -3755,9 +4310,9 @@
 										"value": "application/json"
 									},
 									{
+										"description": "Added as a part of security scheme: bearer",
 										"key": "Authorization",
-										"value": "Bearer <token>",
-										"description": "Added as a part of security scheme: bearer"
+										"value": "Bearer <token>"
 									}
 								],
 								"body": {
@@ -3765,6 +4320,7 @@
 									"raw": "{\n  \"DocumentNo\": \"2000000116\",\n  \"Year\": \"2026\",\n  \"PostingDate\": \"2026-03-04\",\n  \"ReversalReasonCode\": \"01\"\n}",
 									"options": {
 										"raw": {
+											"headerFamily": "json",
 											"language": "json"
 										}
 									}
@@ -3776,58 +4332,114 @@
 							"_postman_previewlanguage": "text",
 							"header": [
 								{
+									"description": {
+										"content": "",
+										"type": "text/plain"
+									},
 									"key": "Server",
 									"value": "nginx/1.24.0 (Ubuntu)"
 								},
 								{
+									"description": {
+										"content": "",
+										"type": "text/plain"
+									},
 									"key": "Date",
 									"value": "Wed, 04 Mar 2026 08:44:29 GMT"
 								},
 								{
+									"description": {
+										"content": "",
+										"type": "text/plain"
+									},
 									"key": "Transfer-Encoding",
 									"value": "chunked"
 								},
 								{
+									"description": {
+										"content": "",
+										"type": "text/plain"
+									},
 									"key": "Connection",
 									"value": "keep-alive"
 								},
 								{
+									"description": {
+										"content": "",
+										"type": "text/plain"
+									},
 									"key": "X-Powered-By",
 									"value": "PHP/8.3.21"
 								},
 								{
+									"description": {
+										"content": "",
+										"type": "text/plain"
+									},
 									"key": "Cache-Control",
 									"value": "no-cache, private"
 								},
 								{
+									"description": {
+										"content": "",
+										"type": "text/plain"
+									},
 									"key": "Access-Control-Allow-Origin",
 									"value": "*"
 								},
 								{
+									"description": {
+										"content": "",
+										"type": "text/plain"
+									},
 									"key": "X-Frame-Options",
 									"value": "SAMEORIGIN"
 								},
 								{
+									"description": {
+										"content": "",
+										"type": "text/plain"
+									},
 									"key": "X-XSS-Protection",
 									"value": "1; mode=block"
 								},
 								{
+									"description": {
+										"content": "",
+										"type": "text/plain"
+									},
 									"key": "X-Content-Type-Options",
 									"value": "nosniff"
 								},
 								{
+									"description": {
+										"content": "",
+										"type": "text/plain"
+									},
 									"key": "X-Kong-Upstream-Latency",
 									"value": "655"
 								},
 								{
+									"description": {
+										"content": "",
+										"type": "text/plain"
+									},
 									"key": "X-Kong-Proxy-Latency",
 									"value": "1"
 								},
 								{
+									"description": {
+										"content": "",
+										"type": "text/plain"
+									},
 									"key": "Via",
 									"value": "1.1 kong/3.9.0"
 								},
 								{
+									"description": {
+										"content": "",
+										"type": "text/plain"
+									},
 									"key": "X-Kong-Request-Id",
 									"value": "104a7b1ee51a87673bb8792ed644df4f"
 								},
@@ -3927,6 +4539,7 @@
 						{
 							"listen": "test",
 							"script": {
+								"id": "a987acdc-9a28-45fd-89c5-fb31acce185b",
 								"type": "text/javascript",
 								"exec": [
 									"### Purpose\nCancel a previously submitted Down Payment (DP) request.\n\n### Auth\n```http\nAuthorization: Bearer {{token}}\n```\n\n### Key headers\n- `Authorization: Bearer {{token}}`\n- `Content-Type: application/json`\n\n### Body notes\n- POST body should identify which DP request to cancel (see **Body** tab).\n"
@@ -3951,14 +4564,15 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"parkInvoiceHeader\":{\n      \"InvoiceInd\": \"X\",\n      \"DocDate\": \"2026-03-31T00:00:00\",\n      \"PstngDate\": \"2026-03-31T00:00:00\",\n      \"RefDocNo\" : \"Testing 123\",\n      \"CompCode\": \"1000\",\n      \"DiffInv\" : \"2101001900\",\n      \"Currency\": \"IDR\",\n      \"GrossAmount\": \"16428000\",\n      \"CalcTaxInd\" : true,\n      \"Pmnttrms\" : \"Z030\",\n      \"BlineDate\" : \"2026-03-31T00:00:00\",\n      \"HeaderTxt\" : \"Invoice PO With GL\",\n      \"PymtMeth\" : \"U\",\n      \"PartnerBk\" : \"0031\",\n      \"Housebankid\" : \"BNI01\",\n      \"AllocNmbr\" : \"4300000649\",\n      \"ItemText\" : \"Testing\"\n    },\n    \"parkInvoiceItemSet\":[\n      {\n        \"InvoiceDocItem\": \"000001\",\n        \"PoNumber\": \"4300000649\",\n        \"PoItem\": \"00010\",\n        \"RefDoc\": \"5000069676\",\n        \"RefDocYear\": \"2026\",\n        \"RefDocIt\": \"1\",\n        \"ItemAmount\": \"14300000\",\n        \"Quantity\": \"80\",\n        \"PoUnit\": \"HR\",\n        \"TaxCode\": \"2D\"\n      }\n    ],\n    \"parkInvoiceGLAccSet\": [\n        {\n        \"InvoiceDocItem\": \"000002\",\n        \"GlAccount\": \"51300040\",\n        \"ItemAmount\": \"500000\",\n        \"DbCrInd\": \"S\",\n        \"CompCode\": \"1000\",\n        \"TaxCode\": \"2D\",\n        \"ItemText\" : \"Tambahan Custom\",\n        \"Costcenter\" : \"10101PP001\",\n        \"Orderid\" : \"\",\n        \"ProfitCtr\" : \"101010\",\n        \"Network\" : \"\",\n        \"WbsElem\" : \"\",\n        \"Quantity\" : \"0\",\n        \"BaseUom\" : \"\",\n        \"AllocNmbr\" : \"4300000649\"\n        }\n    ],\n    \"parkInvoiceTextSet\" : [\n        {\n        \"Tdformat\" : \"*\",\n        \"Tdline\" : \"Long Text PO With Account\"\n        }\n    ],\n    \"parkInvoiceReturnSet\": []\n}",
+							"raw": "{\n  \"parkInvoiceHeader\": {\n    \"InvoiceInd\": \"X\",\n    \"DocDate\": \"2026-03-31T00:00:00\",\n    \"PstngDate\": \"2026-03-31T00:00:00\",\n    \"CompCode\": \"1000\",\n    \"Currency\": \"IDR\",\n    \"GrossAmount\": \"16428000\"\n  },\n  \"parkInvoiceItemSet\": [\n    {\n      \"InvoiceDocItem\": \"000001\",\n      \"PoNumber\": \"4300000649\",\n      \"PoItem\": \"00010\",\n      \"RefDoc\": \"5000069676\",\n      \"RefDocYear\": \"2026\",\n      \"RefDocIt\": \"1\",\n      \"ItemAmount\": \"14300000\",\n      \"Quantity\": \"80\",\n      \"PoUnit\": \"HR\",\n      \"TaxCode\": \"2D\"\n    }\n  ],\n  \"parkInvoiceGLAccSet\": [\n    {\n      \"InvoiceDocItem\": \"000002\",\n      \"GlAccount\": \"51300040\",\n      \"ItemAmount\": \"500000\",\n      \"DbCrInd\": \"S\",\n      \"CompCode\": \"1000\",\n      \"TaxCode\": \"2D\",\n      \"ItemText\": \"Tambahan Custom\",\n      \"Costcenter\": \"10101PP001\",\n      \"Orderid\": \"\",\n      \"ProfitCtr\": \"101010\",\n      \"Network\": \"\",\n      \"WbsElem\": \"\",\n      \"Quantity\": \"0\",\n      \"BaseUom\": \"\",\n      \"AllocNmbr\": \"4300000649\"\n    }\n  ],\n  \"parkInvoiceReturnSet\": []\n}",
 							"options": {
 								"raw": {
+									"headerFamily": "json",
 									"language": "json"
 								}
 							}
 						},
-						"url": "{{dev}}/srm/create-park-invoice"
+						"url": "{{baseUrl}}/srm/create-park-invoice"
 					},
 					"response": [
 						{
@@ -3972,9 +4586,9 @@
 										"value": "application/json"
 									},
 									{
+										"description": "Added as a part of security scheme: bearer",
 										"key": "Authorization",
-										"value": "Bearer <token>",
-										"description": "Added as a part of security scheme: bearer"
+										"value": "Bearer <token>"
 									}
 								],
 								"body": {
@@ -3982,6 +4596,7 @@
 									"raw": "{\n  \"parkInvoiceHeader\": {\n    \"InvoiceInd\": \"X\",\n    \"DocDate\": \"2026-03-02T00:00:00\",\n    \"PstngDate\": \"2026-03-02T00:00:00\",\n    \"CompCode\": \"1000\",\n    \"Currency\": \"IDR\",\n    \"GrossAmount\": \"25000000\"\n  },\n  \"parkInvoiceItemSet\": [\n    {\n      \"InvoiceDocItem\": \"000001\",\n      \"PoNumber\": \"4300000715\",\n      \"PoItem\": \"00010\",\n      \"RefDoc\": \"5000069648\",\n      \"RefDocYear\": \"2026\",\n      \"RefDocIt\": \"1\",\n      \"ItemAmount\": \"25000000\",\n      \"Quantity\": \"1\",\n      \"PoUnit\": \"UNT\",\n      \"TaxCode\": \"0D\"\n    }\n  ],\n  \"parkInvoiceGLAccSet\": [],\n  \"parkInvoiceReturnSet\": []\n}",
 									"options": {
 										"raw": {
+											"headerFamily": "json",
 											"language": "json"
 										}
 									}
@@ -3993,58 +4608,114 @@
 							"_postman_previewlanguage": "text",
 							"header": [
 								{
+									"description": {
+										"content": "",
+										"type": "text/plain"
+									},
 									"key": "Server",
 									"value": "nginx/1.24.0 (Ubuntu)"
 								},
 								{
+									"description": {
+										"content": "",
+										"type": "text/plain"
+									},
 									"key": "Date",
 									"value": "Tue, 10 Mar 2026 03:41:58 GMT"
 								},
 								{
+									"description": {
+										"content": "",
+										"type": "text/plain"
+									},
 									"key": "Transfer-Encoding",
 									"value": "chunked"
 								},
 								{
+									"description": {
+										"content": "",
+										"type": "text/plain"
+									},
 									"key": "Connection",
 									"value": "keep-alive"
 								},
 								{
+									"description": {
+										"content": "",
+										"type": "text/plain"
+									},
 									"key": "X-Powered-By",
 									"value": "PHP/8.3.21"
 								},
 								{
+									"description": {
+										"content": "",
+										"type": "text/plain"
+									},
 									"key": "Cache-Control",
 									"value": "no-cache, private"
 								},
 								{
+									"description": {
+										"content": "",
+										"type": "text/plain"
+									},
 									"key": "Access-Control-Allow-Origin",
 									"value": "*"
 								},
 								{
+									"description": {
+										"content": "",
+										"type": "text/plain"
+									},
 									"key": "X-Frame-Options",
 									"value": "SAMEORIGIN"
 								},
 								{
+									"description": {
+										"content": "",
+										"type": "text/plain"
+									},
 									"key": "X-XSS-Protection",
 									"value": "1; mode=block"
 								},
 								{
+									"description": {
+										"content": "",
+										"type": "text/plain"
+									},
 									"key": "X-Content-Type-Options",
 									"value": "nosniff"
 								},
 								{
+									"description": {
+										"content": "",
+										"type": "text/plain"
+									},
 									"key": "X-Kong-Upstream-Latency",
 									"value": "1508"
 								},
 								{
+									"description": {
+										"content": "",
+										"type": "text/plain"
+									},
 									"key": "X-Kong-Proxy-Latency",
 									"value": "1"
 								},
 								{
+									"description": {
+										"content": "",
+										"type": "text/plain"
+									},
 									"key": "Via",
 									"value": "1.1 kong/3.9.0"
 								},
 								{
+									"description": {
+										"content": "",
+										"type": "text/plain"
+									},
 									"key": "X-Kong-Request-Id",
 									"value": "2acb7c25ff8a440a73ffa10896212574"
 								},
@@ -4144,6 +4815,7 @@
 						{
 							"listen": "test",
 							"script": {
+								"id": "8a0c6417-757f-44bc-a099-62b7bb22b81e",
 								"type": "text/javascript",
 								"exec": [
 									"### Purpose\nCancel a previously submitted Down Payment (DP) request.\n\n### Auth\n```http\nAuthorization: Bearer {{token}}\n```\n\n### Key headers\n- `Authorization: Bearer {{token}}`\n- `Content-Type: application/json`\n\n### Body notes\n- POST body should identify which DP request to cancel (see **Body** tab).\n"
@@ -4171,11 +4843,12 @@
 							"raw": "{\n  \"parkInvoiceNonHeader\": {\n    \"HeaderTxt\": \"Test Yona\",\n    \"CompCode\": \"1000\",\n    \"DocDate\": \"2026-03-27T00:00:00\",\n    \"PstngDate\": \"2026-03-27T00:00:00\",\n    \"RefDocNo\": \"\",\n    \"DocStatus\": \"3\"\n  },\n  \"parkInvoiceNonAccGLSet\": [\n    {\n      \"ItemnoAcc\": \"2\",\n      \"ItemText\": \"Invoice Item 1\",\n      \"GlAccount\": \"20200900\",\n      \"CompCode\": \"1000\",\n      \"AllocNmbr\": \"4300000076\",\n      \"TaxCode\": \"2D\",\n      \"Costcenter\": \"\",\n      \"ProfitCtr\": \"103010\"\n    }\n  ],\n  \"parkInvoiceNonAccPaySet\": [\n    {\n      \"ItemnoAcc\": \"1\",\n      \"VendorNo\": \"2111000465\",\n      \"CompCode\": \"1000\",\n      \"Pmnttrms\": \"Z007\",\n      \"BlineDate\": \"2026-03-27T00:00:00\",\n      \"PymtMeth\": \"U\",\n      \"PartnerBk\": \"\",\n      \"BankId\": \"\",\n      \"PartnerGuid\": \"\",\n      \"AllocNmbr\": \"4300000076\",\n      \"ItemText\": \"Invoice Pay 1\",\n      \"TaxCode\": \"2D\",\n      \"ProfitCtr\": \"103010\"\n    }\n  ],\n  \"parkInvoiceNonAccTaxSet\": [\n    {\n      \"ItemnoAcc\": \"3\",\n      \"GlAccount\": \"11010010\",\n      \"TaxCode\": \"2D\"\n    }\n  ],\n  \"parkInvoiceNonCurrSet\": [\n    {\n      \"ItemnoAcc\": \"1\",\n      \"Currency\": \"IDR\",\n      \"AmtDoccur\": \"-111000\"\n    },\n    {\n      \"ItemnoAcc\": \"2\",\n      \"Currency\": \"IDR\",\n      \"AmtDoccur\": \"100000\"\n    },\n    {\n      \"ItemnoAcc\": \"3\",\n      \"Currency\": \"IDR\",\n      \"AmtDoccur\": \"11000\",\n      \"AmtBase\": \"100000\"\n    }\n  ],\n  \"parkInvoiceNonTextSet\": [\n    {\n      \"Tdformat\": \"*\",\n      \"Tdline\": \"For Long Text\"\n    }\n  ],\n  \"parkInvoiceNonReturnSet\": []\n}",
 							"options": {
 								"raw": {
+									"headerFamily": "json",
 									"language": "json"
 								}
 							}
 						},
-						"url": "{{dev}}/srm/non-po/create-park-invoice"
+						"url": "{{baseUrl}}/srm/non-po/create-park-invoice"
 					},
 					"response": [
 						{
@@ -4189,9 +4862,9 @@
 										"value": "application/json"
 									},
 									{
+										"description": "Added as a part of security scheme: bearer",
 										"key": "Authorization",
-										"value": "Bearer <token>",
-										"description": "Added as a part of security scheme: bearer"
+										"value": "Bearer <token>"
 									}
 								],
 								"body": {
@@ -4199,6 +4872,7 @@
 									"raw": "{\n  \"parkInvoiceNonHeader\": {\n    \"HeaderTxt\": \"Testing Header 1\",\n    \"CompCode\": \"1000\",\n    \"DocDate\": \"2026-03-27T00:00:00\",\n    \"PstngDate\": \"2026-03-27T00:00:00\",\n    \"RefDocNo\": \"001/KS/INV/03/26\",\n    \"DocStatus\": \"3\"\n  },\n  \"parkInvoiceNonAccGLSet\": [\n    {\n      \"ItemnoAcc\": \"2\",\n      \"ItemText\": \"Invoice Item 1\",\n      \"GlAccount\": \"20200900\",\n      \"CompCode\": \"1000\",\n      \"AllocNmbr\": \"4300000076\",\n      \"TaxCode\": \"2D\",\n      \"Costcenter\": \"\",\n      \"ProfitCtr\": \"103010\"\n    }\n  ],\n  \"parkInvoiceNonAccPaySet\": [\n    {\n      \"ItemnoAcc\": \"1\",\n      \"VendorNo\": \"2111000465\",\n      \"CompCode\": \"1000\",\n      \"Pmnttrms\": \"Z007\",\n      \"BlineDate\": \"2026-03-27T00:00:00\",\n      \"PymtMeth\": \"U\",\n      \"PartnerBk\": \"\",\n      \"BankId\": \"\",\n      \"PartnerGuid\": \"\",\n      \"AllocNmbr\": \"4300000076\",\n      \"ItemText\": \"Invoice Pay 1\",\n      \"TaxCode\": \"2D\",\n      \"ProfitCtr\": \"103010\"\n    }\n  ],\n  \"parkInvoiceNonAccTaxSet\": [\n    {\n      \"ItemnoAcc\": \"3\",\n      \"GlAccount\": \"11010010\",\n      \"TaxCode\": \"2D\"\n    }\n  ],\n  \"parkInvoiceNonCurrSet\": [\n    {\n      \"ItemnoAcc\": \"1\",\n      \"Currency\": \"IDR\",\n      \"AmtDoccur\": \"-111000\"\n    },\n    {\n      \"ItemnoAcc\": \"2\",\n      \"Currency\": \"IDR\",\n      \"AmtDoccur\": \"100000\"\n    },\n    {\n      \"ItemnoAcc\": \"3\",\n      \"Currency\": \"IDR\",\n      \"AmtDoccur\": \"11000\",\n      \"AmtBase\": \"100000\"\n    }\n  ],\n  \"parkInvoiceNonTextSet\": [\n    {\n      \"Tdformat\": \"*\",\n      \"Tdline\": \"For Long Text\"\n    }\n  ],\n  \"parkInvoiceNonReturnSet\": []\n}",
 									"options": {
 										"raw": {
+											"headerFamily": "json",
 											"language": "json"
 										}
 									}
@@ -4210,58 +4884,114 @@
 							"_postman_previewlanguage": "text",
 							"header": [
 								{
+									"description": {
+										"content": "",
+										"type": "text/plain"
+									},
 									"key": "Server",
 									"value": "nginx/1.24.0 (Ubuntu)"
 								},
 								{
+									"description": {
+										"content": "",
+										"type": "text/plain"
+									},
 									"key": "Date",
 									"value": "Tue, 31 Mar 2026 15:38:40 GMT"
 								},
 								{
+									"description": {
+										"content": "",
+										"type": "text/plain"
+									},
 									"key": "Transfer-Encoding",
 									"value": "chunked"
 								},
 								{
+									"description": {
+										"content": "",
+										"type": "text/plain"
+									},
 									"key": "Connection",
 									"value": "keep-alive"
 								},
 								{
+									"description": {
+										"content": "",
+										"type": "text/plain"
+									},
 									"key": "X-Powered-By",
 									"value": "PHP/8.3.21"
 								},
 								{
+									"description": {
+										"content": "",
+										"type": "text/plain"
+									},
 									"key": "Cache-Control",
 									"value": "no-cache, private"
 								},
 								{
+									"description": {
+										"content": "",
+										"type": "text/plain"
+									},
 									"key": "Access-Control-Allow-Origin",
 									"value": "*"
 								},
 								{
+									"description": {
+										"content": "",
+										"type": "text/plain"
+									},
 									"key": "X-Frame-Options",
 									"value": "SAMEORIGIN"
 								},
 								{
+									"description": {
+										"content": "",
+										"type": "text/plain"
+									},
 									"key": "X-XSS-Protection",
 									"value": "1; mode=block"
 								},
 								{
+									"description": {
+										"content": "",
+										"type": "text/plain"
+									},
 									"key": "X-Content-Type-Options",
 									"value": "nosniff"
 								},
 								{
+									"description": {
+										"content": "",
+										"type": "text/plain"
+									},
 									"key": "X-Kong-Upstream-Latency",
 									"value": "1144"
 								},
 								{
+									"description": {
+										"content": "",
+										"type": "text/plain"
+									},
 									"key": "X-Kong-Proxy-Latency",
 									"value": "0"
 								},
 								{
+									"description": {
+										"content": "",
+										"type": "text/plain"
+									},
 									"key": "Via",
 									"value": "1.1 kong/3.9.0"
 								},
 								{
+									"description": {
+										"content": "",
+										"type": "text/plain"
+									},
 									"key": "X-Kong-Request-Id",
 									"value": "0fc0fa3aa7b4aa65f118562a2964931c"
 								},
@@ -4361,6 +5091,7 @@
 						{
 							"listen": "test",
 							"script": {
+								"id": "6263b95e-6489-441b-911d-d242e05a4422",
 								"type": "text/javascript",
 								"exec": [
 									"### Purpose\nCancel a previously submitted Down Payment (DP) request.\n\n### Auth\n```http\nAuthorization: Bearer {{token}}\n```\n\n### Key headers\n- `Authorization: Bearer {{token}}`\n- `Content-Type: application/json`\n\n### Body notes\n- POST body should identify which DP request to cancel (see **Body** tab).\n"
@@ -4743,6 +5474,7 @@
 						{
 							"listen": "test",
 							"script": {
+								"id": "e6f4e0cf-0774-44f5-a7d5-c7800a4a408d",
 								"type": "text/javascript",
 								"exec": [
 									"### Purpose\nChange/update an existing Purchase Requisition (PR) via SRM.\n\n### Auth\n```http\nAuthorization: Bearer {{token}}\n```\n\n### Key headers\n- `Authorization: Bearer {{token}}`\n- `Content-Type: application/json`\n\n### Body notes\n- POST body should include the PR identifier and the fields to change (see **Body** tab for configured fields).\n"
@@ -4770,6 +5502,7 @@
 							"raw": "{\n  \"IsPO\": false,\n  \"DocNumber\": \"2200000309\",\n  \"Year\": \"2026\",\n  \"deleteParkInvoiceReturnSet\": []\n}",
 							"options": {
 								"raw": {
+									"headerFamily": "json",
 									"language": "json"
 								}
 							}
@@ -4866,7 +5599,7 @@
 						},
 						{
 							"id": "e42496b4-53d3-415a-a684-1b354f84a555",
-							"name": "Invoice Non PO",
+							"name": "Invoice PO",
 							"originalRequest": {
 								"method": "POST",
 								"header": [
@@ -4875,9 +5608,9 @@
 										"value": "application/json"
 									},
 									{
+										"description": "Added as a part of security scheme: bearer",
 										"key": "Authorization",
-										"value": "Bearer <token>",
-										"description": "Added as a part of security scheme: bearer"
+										"value": "Bearer <token>"
 									}
 								],
 								"body": {
@@ -4885,6 +5618,7 @@
 									"raw": "{\n  \"IsPO\": false,\n  \"DocNumber\": \"2200000309\",\n  \"Year\": \"2026\",\n  \"deleteParkInvoiceReturnSet\": []\n}",
 									"options": {
 										"raw": {
+											"headerFamily": "json",
 											"language": "json"
 										}
 									}
@@ -4896,58 +5630,114 @@
 							"_postman_previewlanguage": "text",
 							"header": [
 								{
+									"description": {
+										"content": "",
+										"type": "text/plain"
+									},
 									"key": "Server",
 									"value": "nginx/1.24.0 (Ubuntu)"
 								},
 								{
+									"description": {
+										"content": "",
+										"type": "text/plain"
+									},
 									"key": "Date",
 									"value": "Tue, 31 Mar 2026 15:43:12 GMT"
 								},
 								{
+									"description": {
+										"content": "",
+										"type": "text/plain"
+									},
 									"key": "Transfer-Encoding",
 									"value": "chunked"
 								},
 								{
+									"description": {
+										"content": "",
+										"type": "text/plain"
+									},
 									"key": "Connection",
 									"value": "keep-alive"
 								},
 								{
+									"description": {
+										"content": "",
+										"type": "text/plain"
+									},
 									"key": "X-Powered-By",
 									"value": "PHP/8.3.21"
 								},
 								{
+									"description": {
+										"content": "",
+										"type": "text/plain"
+									},
 									"key": "Cache-Control",
 									"value": "no-cache, private"
 								},
 								{
+									"description": {
+										"content": "",
+										"type": "text/plain"
+									},
 									"key": "Access-Control-Allow-Origin",
 									"value": "*"
 								},
 								{
+									"description": {
+										"content": "",
+										"type": "text/plain"
+									},
 									"key": "X-Frame-Options",
 									"value": "SAMEORIGIN"
 								},
 								{
+									"description": {
+										"content": "",
+										"type": "text/plain"
+									},
 									"key": "X-XSS-Protection",
 									"value": "1; mode=block"
 								},
 								{
+									"description": {
+										"content": "",
+										"type": "text/plain"
+									},
 									"key": "X-Content-Type-Options",
 									"value": "nosniff"
 								},
 								{
+									"description": {
+										"content": "",
+										"type": "text/plain"
+									},
 									"key": "X-Kong-Upstream-Latency",
 									"value": "477"
 								},
 								{
+									"description": {
+										"content": "",
+										"type": "text/plain"
+									},
 									"key": "X-Kong-Proxy-Latency",
 									"value": "0"
 								},
 								{
+									"description": {
+										"content": "",
+										"type": "text/plain"
+									},
 									"key": "Via",
 									"value": "1.1 kong/3.9.0"
 								},
 								{
+									"description": {
+										"content": "",
+										"type": "text/plain"
+									},
 									"key": "X-Kong-Request-Id",
 									"value": "b8814d08aa85961c42480c76c59ddd1a"
 								},
@@ -4968,6 +5758,7 @@
 						{
 							"listen": "test",
 							"script": {
+								"id": "1a84c36b-b616-49ee-997b-41e2e796b3a7",
 								"type": "text/javascript",
 								"exec": [
 									"### Purpose\nChange/update an existing Purchase Requisition (PR) via SRM.\n\n### Auth\n```http\nAuthorization: Bearer {{token}}\n```\n\n### Key headers\n- `Authorization: Bearer {{token}}`\n- `Content-Type: application/json`\n\n### Body notes\n- POST body should include the PR identifier and the fields to change (see **Body** tab for configured fields).\n"
@@ -4995,6 +5786,7 @@
 							"raw": "{\n  \"IsPO\": true,\n  \"DocumentNo\": \"5105623077\",\n  \"Year\": \"2026\",\n  \"PostingDate\": \"2026-03-27\",\n  \"ReversalReasonCode\": \"01\"\n}",
 							"options": {
 								"raw": {
+									"headerFamily": "json",
 									"language": "json"
 								}
 							}
@@ -5005,20 +5797,26 @@
 					"response": [
 						{
 							"id": "89c68209-71f5-479c-bc68-bc8b86b61d2c",
-							"name": "Success - PO",
+							"name": "Invoice PO",
 							"originalRequest": {
 								"method": "POST",
 								"header": [
 									{
 										"key": "Content-Type",
 										"value": "application/json"
+									},
+									{
+										"description": "Added as a part of security scheme: bearer",
+										"key": "Authorization",
+										"value": "Bearer <token>"
 									}
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n  \"IsPO\" : true,\n  \"DocumentNo\": \"5105623074\",\n  \"Year\": \"2026\",\n  \"PostingDate\": \"2026-03-30\",\n  \"ReversalReasonCode\":\"01\"\n}",
+									"raw": "{\n  \"IsPO\": true,\n  \"DocumentNo\": \"5105623074\",\n  \"Year\": \"2026\",\n  \"PostingDate\": \"2026-03-30\",\n  \"ReversalReasonCode\": \"01\"\n}",
 									"options": {
 										"raw": {
+											"headerFamily": "json",
 											"language": "json"
 										}
 									}
@@ -5030,64 +5828,120 @@
 							"_postman_previewlanguage": "text",
 							"header": [
 								{
+									"description": {
+										"content": "",
+										"type": "text/plain"
+									},
 									"key": "Server",
 									"value": "nginx/1.24.0 (Ubuntu)"
 								},
 								{
+									"description": {
+										"content": "",
+										"type": "text/plain"
+									},
 									"key": "Date",
 									"value": "Tue, 07 Apr 2026 05:54:40 GMT"
 								},
 								{
-									"key": "Content-Type",
-									"value": "application/json"
-								},
-								{
+									"description": {
+										"content": "",
+										"type": "text/plain"
+									},
 									"key": "Transfer-Encoding",
 									"value": "chunked"
 								},
 								{
+									"description": {
+										"content": "",
+										"type": "text/plain"
+									},
 									"key": "Connection",
 									"value": "keep-alive"
 								},
 								{
+									"description": {
+										"content": "",
+										"type": "text/plain"
+									},
 									"key": "X-Powered-By",
 									"value": "PHP/8.3.21"
 								},
 								{
+									"description": {
+										"content": "",
+										"type": "text/plain"
+									},
 									"key": "Cache-Control",
 									"value": "no-cache, private"
 								},
 								{
+									"description": {
+										"content": "",
+										"type": "text/plain"
+									},
 									"key": "Access-Control-Allow-Origin",
 									"value": "*"
 								},
 								{
+									"description": {
+										"content": "",
+										"type": "text/plain"
+									},
 									"key": "X-Frame-Options",
 									"value": "SAMEORIGIN"
 								},
 								{
+									"description": {
+										"content": "",
+										"type": "text/plain"
+									},
 									"key": "X-XSS-Protection",
 									"value": "1; mode=block"
 								},
 								{
+									"description": {
+										"content": "",
+										"type": "text/plain"
+									},
 									"key": "X-Content-Type-Options",
 									"value": "nosniff"
 								},
 								{
+									"description": {
+										"content": "",
+										"type": "text/plain"
+									},
 									"key": "X-Kong-Upstream-Latency",
 									"value": "1763"
 								},
 								{
+									"description": {
+										"content": "",
+										"type": "text/plain"
+									},
 									"key": "X-Kong-Proxy-Latency",
 									"value": "0"
 								},
 								{
+									"description": {
+										"content": "",
+										"type": "text/plain"
+									},
 									"key": "Via",
 									"value": "1.1 kong/3.9.0"
 								},
 								{
+									"description": {
+										"content": "",
+										"type": "text/plain"
+									},
 									"key": "X-Kong-Request-Id",
 									"value": "e476c340c07fb64b64b81a1cffeb7677"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
 								}
 							],
 							"cookie": [],
@@ -5260,6 +6114,7 @@
 						{
 							"listen": "test",
 							"script": {
+								"id": "a0192a43-619d-4ba6-9ac7-a987028afb36",
 								"type": "text/javascript",
 								"exec": [
 									"### Purpose\nCancel a previously submitted Down Payment (DP) request.\n\n### Auth\n```http\nAuthorization: Bearer {{token}}\n```\n\n### Key headers\n- `Authorization: Bearer {{token}}`\n- `Content-Type: application/json`\n\n### Body notes\n- POST body should identify which DP request to cancel (see **Body** tab).\n"
@@ -5287,6 +6142,7 @@
 							"raw": "{\n  \"postPVStatusSet\": [\n    {\n      \"IdentificationNo\": \"A666\",\n      \"Date\": \"2026-03-01\",\n      \"Status\": \"X\"\n    }\n  ]\n}",
 							"options": {
 								"raw": {
+									"headerFamily": "json",
 									"language": "json"
 								}
 							}
@@ -5305,9 +6161,9 @@
 										"value": "application/json"
 									},
 									{
+										"description": "Added as a part of security scheme: bearer",
 										"key": "Authorization",
-										"value": "Bearer <token>",
-										"description": "Added as a part of security scheme: bearer"
+										"value": "Bearer <token>"
 									}
 								],
 								"body": {
@@ -5315,6 +6171,7 @@
 									"raw": "{\n  \"postPVStatusSet\": [\n    {\n      \"IdentificationNo\": \"A666\",\n      \"Date\": \"2026-03-01\",\n      \"Status\": \"X\"\n    }\n  ]\n}",
 									"options": {
 										"raw": {
+											"headerFamily": "json",
 											"language": "json"
 										}
 									}
@@ -5326,58 +6183,114 @@
 							"_postman_previewlanguage": "text",
 							"header": [
 								{
+									"description": {
+										"content": "",
+										"type": "text/plain"
+									},
 									"key": "Server",
 									"value": "nginx/1.24.0 (Ubuntu)"
 								},
 								{
+									"description": {
+										"content": "",
+										"type": "text/plain"
+									},
 									"key": "Date",
 									"value": "Fri, 13 Mar 2026 08:48:15 GMT"
 								},
 								{
+									"description": {
+										"content": "",
+										"type": "text/plain"
+									},
 									"key": "Transfer-Encoding",
 									"value": "chunked"
 								},
 								{
+									"description": {
+										"content": "",
+										"type": "text/plain"
+									},
 									"key": "Connection",
 									"value": "keep-alive"
 								},
 								{
+									"description": {
+										"content": "",
+										"type": "text/plain"
+									},
 									"key": "X-Powered-By",
 									"value": "PHP/8.3.21"
 								},
 								{
+									"description": {
+										"content": "",
+										"type": "text/plain"
+									},
 									"key": "Cache-Control",
 									"value": "no-cache, private"
 								},
 								{
+									"description": {
+										"content": "",
+										"type": "text/plain"
+									},
 									"key": "Access-Control-Allow-Origin",
 									"value": "*"
 								},
 								{
+									"description": {
+										"content": "",
+										"type": "text/plain"
+									},
 									"key": "X-Frame-Options",
 									"value": "SAMEORIGIN"
 								},
 								{
+									"description": {
+										"content": "",
+										"type": "text/plain"
+									},
 									"key": "X-XSS-Protection",
 									"value": "1; mode=block"
 								},
 								{
+									"description": {
+										"content": "",
+										"type": "text/plain"
+									},
 									"key": "X-Content-Type-Options",
 									"value": "nosniff"
 								},
 								{
+									"description": {
+										"content": "",
+										"type": "text/plain"
+									},
 									"key": "X-Kong-Upstream-Latency",
 									"value": "408"
 								},
 								{
+									"description": {
+										"content": "",
+										"type": "text/plain"
+									},
 									"key": "X-Kong-Proxy-Latency",
 									"value": "0"
 								},
 								{
+									"description": {
+										"content": "",
+										"type": "text/plain"
+									},
 									"key": "Via",
 									"value": "1.1 kong/3.9.0"
 								},
 								{
+									"description": {
+										"content": "",
+										"type": "text/plain"
+									},
 									"key": "X-Kong-Request-Id",
 									"value": "0f4ecc5f08f07e25fbd73f0924e9392f"
 								},
@@ -5398,6 +6311,7 @@
 						{
 							"listen": "test",
 							"script": {
+								"id": "7f110f8a-6bc3-43a5-86cd-da1167c021b6",
 								"type": "text/javascript",
 								"exec": [
 									"### Purpose\nUpdate GR (Goods Receipt) quantity for an SRM document.\n\n### Auth\n```http\nAuthorization: Bearer {{token}}\n```\n\n### Key headers\n- `Authorization: Bearer {{token}}`\n- `Content-Type: application/json`\n\n### Body notes\n- POST body should include the document/item reference and the new GR quantity (see **Body** tab).\n"
@@ -5425,6 +6339,7 @@
 							"raw": "[\n  {\n    \"po_number\": \"410010048\",\n    \"po_item\": \"00010\",\n    \"material_code\": \"PGSP15000000026850\",\n    \"material_desc\": \"VALVE AUTO DRAIN\",\n    \"received_qty\": \"2\",\n    \"received_uom\": \"PC\"\n  },\n  {\n    \"po_number\": \"410010049\",\n    \"po_item\": \"00010\",\n    \"material_code\": \"PGSP15000000026850\",\n    \"material_desc\": \"VALVE AUTO DRAIN\",\n    \"received_qty\": \"2\",\n    \"received_uom\": \"PC\"\n  }\n]",
 							"options": {
 								"raw": {
+									"headerFamily": "json",
 									"language": "json"
 								}
 							}
@@ -5443,9 +6358,9 @@
 										"value": "application/json"
 									},
 									{
+										"description": "Added as a part of security scheme: bearer",
 										"key": "Authorization",
-										"value": "Bearer <token>",
-										"description": "Added as a part of security scheme: bearer"
+										"value": "Bearer <token>"
 									}
 								],
 								"body": {
@@ -5453,69 +6368,126 @@
 									"raw": "[\n  {\n    \"po_number\": \"410010048\",\n    \"po_item\": \"00010\",\n    \"material_code\": \"PGSP15000000026850\",\n    \"material_desc\": \"VALVE AUTO DRAIN\",\n    \"received_qty\": \"2\",\n    \"received_uom\": \"PC\"\n  },\n  {\n    \"po_number\": \"410010049\",\n    \"po_item\": \"00010\",\n    \"material_code\": \"PGSP15000000026850\",\n    \"material_desc\": \"VALVE AUTO DRAIN\",\n    \"received_qty\": \"2\",\n    \"received_uom\": \"PC\"\n  }\n]",
 									"options": {
 										"raw": {
+											"headerFamily": "json",
 											"language": "json"
 										}
 									}
 								},
-								"url": "{{dev}}/srm/gr-quantity-update"
+								"url": "{{baseUrl}}/srm/gr-quantity-update"
 							},
 							"status": "OK",
 							"code": 200,
 							"_postman_previewlanguage": "text",
 							"header": [
 								{
+									"description": {
+										"content": "",
+										"type": "text/plain"
+									},
 									"key": "Server",
 									"value": "nginx/1.24.0 (Ubuntu)"
 								},
 								{
+									"description": {
+										"content": "",
+										"type": "text/plain"
+									},
 									"key": "Date",
 									"value": "Wed, 04 Mar 2026 07:39:21 GMT"
 								},
 								{
+									"description": {
+										"content": "",
+										"type": "text/plain"
+									},
 									"key": "Transfer-Encoding",
 									"value": "chunked"
 								},
 								{
+									"description": {
+										"content": "",
+										"type": "text/plain"
+									},
 									"key": "Connection",
 									"value": "keep-alive"
 								},
 								{
+									"description": {
+										"content": "",
+										"type": "text/plain"
+									},
 									"key": "X-Powered-By",
 									"value": "PHP/8.3.21"
 								},
 								{
+									"description": {
+										"content": "",
+										"type": "text/plain"
+									},
 									"key": "Cache-Control",
 									"value": "no-cache, private"
 								},
 								{
+									"description": {
+										"content": "",
+										"type": "text/plain"
+									},
 									"key": "Access-Control-Allow-Origin",
 									"value": "*"
 								},
 								{
+									"description": {
+										"content": "",
+										"type": "text/plain"
+									},
 									"key": "X-Frame-Options",
 									"value": "SAMEORIGIN"
 								},
 								{
+									"description": {
+										"content": "",
+										"type": "text/plain"
+									},
 									"key": "X-XSS-Protection",
 									"value": "1; mode=block"
 								},
 								{
+									"description": {
+										"content": "",
+										"type": "text/plain"
+									},
 									"key": "X-Content-Type-Options",
 									"value": "nosniff"
 								},
 								{
+									"description": {
+										"content": "",
+										"type": "text/plain"
+									},
 									"key": "X-Kong-Upstream-Latency",
 									"value": "134"
 								},
 								{
+									"description": {
+										"content": "",
+										"type": "text/plain"
+									},
 									"key": "X-Kong-Proxy-Latency",
 									"value": "0"
 								},
 								{
+									"description": {
+										"content": "",
+										"type": "text/plain"
+									},
 									"key": "Via",
 									"value": "1.1 kong/3.9.0"
 								},
 								{
+									"description": {
+										"content": "",
+										"type": "text/plain"
+									},
 									"key": "X-Kong-Request-Id",
 									"value": "612d000dfbcddf3461b62344a6a98652"
 								},
@@ -5536,6 +6508,7 @@
 						{
 							"listen": "test",
 							"script": {
+								"id": "106e5f54-9645-41c4-b745-d9f845d22605",
 								"type": "text/javascript",
 								"exec": [
 									"### Purpose\nUpdate GR (Goods Receipt) quantity for an SRM document.\n\n### Auth\n```http\nAuthorization: Bearer {{token}}\n```\n\n### Key headers\n- `Authorization: Bearer {{token}}`\n- `Content-Type: application/json`\n\n### Body notes\n- POST body should include the document/item reference and the new GR quantity (see **Body** tab).\n"
@@ -5669,6 +6642,7 @@
 						{
 							"listen": "test",
 							"script": {
+								"id": "24457bff-e700-462f-a9f5-f77ed099a0ff",
 								"type": "text/javascript",
 								"exec": [
 									"### Purpose\nUpdate GR (Goods Receipt) quantity for an SRM document.\n\n### Auth\n```http\nAuthorization: Bearer {{token}}\n```\n\n### Key headers\n- `Authorization: Bearer {{token}}`\n- `Content-Type: application/json`\n\n### Body notes\n- POST body should include the document/item reference and the new GR quantity (see **Body** tab).\n"
@@ -5710,6 +6684,7 @@
 				{
 					"listen": "test",
 					"script": {
+						"id": "94aaee5a-96a4-411f-822d-bc3864fc7c63",
 						"type": "text/javascript",
 						"exec": [
 							"# POST Schema\n\nAction endpoints that **create/change/release/cancel/update** documents.\n\n## Typical usage order\n1. Run **Token** to obtain `{{token}}`.\n2. Execute action requests as needed (PR create/change, vendor create, DP request/cancel, PO release, GR quantity update).\n\n## Authentication\nUnless the endpoint is explicitly an auth endpoint, use:\n\n```http\nAuthorization: Bearer {{token}}\n```\n\n## Base URL\nAll requests use:\n\n- `https://{{dev}}`\n"
@@ -5728,6 +6703,7 @@
 	"variable": [
 		{
 			"key": "baseUrl",
+			"value": "{{dev}}",
 			"type": "string"
 		}
 	]
