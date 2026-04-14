@@ -7110,16 +7110,32 @@
 					]
 				},
 				{
-					"name": "Create QR Bon Service Copy",
+					"name": "Create QR Scrap Lokal",
 					"event": [
 						{
 							"listen": "test",
 							"script": {
 								"id": "106e5f54-9645-41c4-b745-d9f845d22605",
-								"type": "text/javascript",
 								"exec": [
-									"### Purpose\nUpdate GR (Goods Receipt) quantity for an SRM document.\n\n### Auth\n```http\nAuthorization: Bearer {{token}}\n```\n\n### Key headers\n- `Authorization: Bearer {{token}}`\n- `Content-Type: application/json`\n\n### Body notes\n- POST body should include the document/item reference and the new GR quantity (see **Body** tab).\n"
-								]
+									"### Purpose",
+									"Update GR (Goods Receipt) quantity for an SRM document.",
+									"",
+									"### Auth",
+									"```http",
+									"Authorization: Bearer {{token}}",
+									"```",
+									"",
+									"### Key headers",
+									"- `Authorization: Bearer {{token}}`",
+									"- `Content-Type: application/json`",
+									"",
+									"### Body notes",
+									"- POST body should include the document/item reference and the new GR quantity (see **Body** tab).",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {},
+								"requests": {}
 							}
 						}
 					],
@@ -7147,7 +7163,7 @@
 								}
 							}
 						},
-						"url": "{{baseUrl}}/srm/gr-quantity-update"
+						"url": "{{baseUrl}}/venpreg/create-qr-scrap"
 					},
 					"response": [
 						{
