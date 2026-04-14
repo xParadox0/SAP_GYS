@@ -532,6 +532,34 @@
 					"response": []
 				},
 				{
+					"name": "Payment Method",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "5abc37a4-9427-4ba7-ba5c-ddb97a770fd8",
+								"type": "text/javascript",
+								"exec": [
+									"### Purpose\nFetch House Bank, Partner Bank Type, and Payment Method reference data.\n\n### Auth\n```http\nAuthorization: Bearer {{token}}\n```\n\n### Key headers\n- `Authorization: Bearer {{token}}`\n"
+								]
+							}
+						}
+					],
+					"id": "5c29d14f-25a1-45fc-8b39-a419ca125726",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "{{token}}"
+							}
+						},
+						"method": "GET",
+						"header": [],
+						"url": "{{baseUrl}}/sap/house-bank"
+					},
+					"response": []
+				},
+				{
 					"name": "PO Local Scrap​",
 					"event": [
 						{
