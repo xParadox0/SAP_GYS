@@ -4562,6 +4562,222 @@
 					]
 				},
 				{
+					"name": "Change Journal​ (Down Payment, Post Invoice Non PO, Park Invoice Non PO)",
+					"id": "73a3d48a-666f-4ce4-a8cd-3f0cfeef7592",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "{{token}}"
+							}
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"postChangeJournalItemSet\": [\n    {\n      \"DocumentNo\": \"2000000171\",\n      \"Year\": \"2026\",\n      \"LineItem\": \"1\",\n      \"DocumentHeaderText\": \"PERGUDANGAN PANTAI INDAH\",\n      \"Reference\": \"4300000678\",\n      \"DueOn\": \"2026-04-07\",\n      \"PaymentBlock\": \"B\",\n      \"PaymentCurrency\": \"\",\n      \"PaymentAmount\" : \"0\",\n      \"PaymentMethod\": \"U\",\n      \"Text\": \"ABCD\",\n      \"Assignment\": \"4300000663\",\n      \"LongText\": \"For Long Text\",\n      \"HouseBankKey\": \"BNI01\",\n      \"HouseBankAccount\": \"IDR01\",\n      \"HouseBankType\": \"ID01\"\n      }\n   ]\n}",
+							"options": {
+								"raw": {
+									"headerFamily": "json",
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{baseUrl}}/srm/change-journal"
+					},
+					"response": [
+						{
+							"id": "ebe36f9d-cbb4-48b1-85dd-c22bdd34a748",
+							"name": "Success",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"postChangeJournalItemSet\": [\n    {\n      \"DocumentNo\": \"2000000171\",\n      \"Year\": \"2026\",\n      \"LineItem\": \"1\",\n      \"DocumentHeaderText\": \"PERGUDANGAN PANTAI INDAH\",\n      \"Reference\": \"4300000678\",\n      \"DueOn\": \"2026-04-07\",\n      \"PaymentBlock\": \"B\",\n      \"PaymentCurrency\": \"\",\n      \"PaymentAmount\" : \"0\",\n      \"PaymentMethod\": \"U\",\n      \"Text\": \"ABCD\",\n      \"Assignment\": \"4300000663\",\n      \"LongText\": \"For Long Text\",\n      \"HouseBankKey\": \"BNI01\",\n      \"HouseBankAccount\": \"IDR01\",\n      \"HouseBankType\": \"ID01\"\n      }\n   ]\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{baseUrl}}/srm/change-journal"
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "",
+							"header": [
+								{
+									"key": "Server",
+									"value": "nginx/1.24.0 (Ubuntu)"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 14 Apr 2026 16:34:43 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.3.21"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1; mode=block"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-Kong-Upstream-Latency",
+									"value": "958"
+								},
+								{
+									"key": "X-Kong-Proxy-Latency",
+									"value": "0"
+								},
+								{
+									"key": "Via",
+									"value": "1.1 kong/3.9.0"
+								},
+								{
+									"key": "X-Kong-Request-Id",
+									"value": "d1c7f061a2df050c58756d5928b45378"
+								}
+							],
+							"cookie": [
+								{
+									"expires": "Invalid Date",
+									"domain": "",
+									"path": ""
+								}
+							],
+							"responseTime": null,
+							"body": "{\n    \"message\": \"Success\",\n    \"results\": {\n        \"d\": {\n            \"TrID\": \"\",\n            \"postChangeJournalItemSet\": {\n                \"results\": [\n                    {\n                        \"DocumentNo\": \"2000000171\",\n                        \"Year\": \"2026\",\n                        \"LineItem\": \"001\",\n                        \"DocumentHeaderText\": \"PERGUDANGAN PANTAI INDAH\",\n                        \"Reference\": \"4300000678\",\n                        \"DueOn\": \"2026-04-07\",\n                        \"PaymentBlock\": \"B\",\n                        \"PaymentCurrency\": \"\",\n                        \"PaymentAmount\": \"0.00\",\n                        \"PaymentMethod\": \"U\",\n                        \"Text\": \"ABCD\",\n                        \"Assignment\": \"4300000663\",\n                        \"LongText\": \"For Long Text\",\n                        \"HouseBankKey\": \"BNI01\",\n                        \"HouseBankAccount\": \"IDR01\",\n                        \"HouseBankType\": \"ID01\",\n                        \"Status\": \"S\",\n                        \"Msg\": \"Success\"\n                    }\n                ]\n            }\n        }\n    }\n}"
+						},
+						{
+							"id": "31daa03d-a796-4092-8328-8853c5d8e054",
+							"name": "Fail",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"postChangeJournalItemSet\": [\n    {\n      \"DocumentNo\": \"20000001712\",\n      \"Year\": \"2026\",\n      \"LineItem\": \"1\",\n      \"DocumentHeaderText\": \"PERGUDANGAN PANTAI INDAH\",\n      \"Reference\": \"4300000678\",\n      \"DueOn\": \"2026-04-07\",\n      \"PaymentBlock\": \"B\",\n      \"PaymentCurrency\": \"\",\n      \"PaymentAmount\" : \"0\",\n      \"PaymentMethod\": \"U\",\n      \"Text\": \"ABCD\",\n      \"Assignment\": \"4300000663\",\n      \"LongText\": \"For Long Text\",\n      \"HouseBankKey\": \"BNI01\",\n      \"HouseBankAccount\": \"IDR01\",\n      \"HouseBankType\": \"ID01\"\n      }\n   ]\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{baseUrl}}/srm/change-journal"
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "",
+							"header": [
+								{
+									"key": "Server",
+									"value": "nginx/1.24.0 (Ubuntu)"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 14 Apr 2026 16:35:17 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.3.21"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "X-Kong-Upstream-Latency",
+									"value": "456"
+								},
+								{
+									"key": "X-Kong-Proxy-Latency",
+									"value": "0"
+								},
+								{
+									"key": "Via",
+									"value": "1.1 kong/3.9.0"
+								},
+								{
+									"key": "X-Kong-Request-Id",
+									"value": "38202a7046b0526c06dbb45c082de37c"
+								}
+							],
+							"cookie": [
+								{
+									"expires": "Invalid Date",
+									"domain": "",
+									"path": ""
+								}
+							],
+							"responseTime": null,
+							"body": "{\n    \"message\": \"Error\",\n    \"results\": {\n        \"error\": {\n            \"code\": \"/IWCOR/CX_DS_EDM_FACET_ERROR/005056A509B11ED1BDCCCC5E8168819D\",\n            \"message\": {\n                \"lang\": \"en\",\n                \"value\": \"Property 'DocumentNo' at offset '81' has invalid value '20000001712'\"\n            },\n            \"innererror\": {\n                \"application\": {\n                    \"component_id\": \"\",\n                    \"service_namespace\": \"/SAP/\",\n                    \"service_id\": \"ZGW_SAP_SRM_SRV\",\n                    \"service_version\": \"0001\"\n                },\n                \"transactionid\": \"E899FBAA932F0180E0069DDF5172904E\",\n                \"timestamp\": \"20260414163517.2861920\",\n                \"Error_Resolution\": {\n                    \"SAP_Transaction\": \"For backend administrators: use ADT feed reader \\\"SAP Gateway Error Log\\\" or run transaction /IWFND/ERROR_LOG on SAP Gateway hub system and search for entries with the timestamp above for more details\",\n                    \"SAP_Note\": \"See SAP Note 1797736 for error analysis (https://service.sap.com/sap/support/notes/1797736)\"\n                },\n                \"errordetails\": []\n            }\n        }\n    },\n    \"source\": \"SAP response does not contain expected data\"\n}"
+						}
+					]
+				},
+				{
 					"name": "Create Park Invoice PO",
 					"event": [
 						{
