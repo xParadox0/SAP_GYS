@@ -6069,7 +6069,7 @@
 					"response": [
 						{
 							"id": "89c68209-71f5-479c-bc68-bc8b86b61d2c",
-							"name": "Invoice PO",
+							"name": "Success - Invoice PO",
 							"originalRequest": {
 								"method": "POST",
 								"header": [
@@ -6377,6 +6377,98 @@
 							"cookie": [],
 							"responseTime": null,
 							"body": "{\n    \"message\": \"Error\",\n    \"results\": {\n        \"d\": {\n            \"__metadata\": {\n                \"id\": \"http://sapdev.gyssteel.com:8000/sap/opu/odata/sap/ZGW_SAP_SRM_SRV/postCancelInvoiceSet(DocumentNo='',Year='0000')\",\n                \"uri\": \"http://sapdev.gyssteel.com:8000/sap/opu/odata/sap/ZGW_SAP_SRM_SRV/postCancelInvoiceSet(DocumentNo='',Year='0000')\",\n                \"type\": \"ZGW_SAP_SRM_SRV.postCancelInvoice\"\n            },\n            \"DocumentNo\": \"\",\n            \"Year\": \"0000\",\n            \"PostingDate\": \"0000-00-00\",\n            \"ReversalReasonCode\": \"\",\n            \"Status\": \"FAILED\",\n            \"Msg\": \"Document already reversed with document 5105623082 (fiscal year 2026)\",\n            \"IsPO\": false\n        }\n    },\n    \"source\": \"Failed upload SAP data\"\n}"
+						},
+						{
+							"id": "a59156be-5f48-4c55-9cea-9ffd4007f658",
+							"name": "Success - Invoice Non PO",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"IsPO\": false,\n    \"DocumentNo\": \"2200000337\",\n    \"Year\": \"2026\",\n    \"PostingDate\": \"2026-04-14\",\n    \"ReversalReasonCode\": \"01\"\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{baseUrl}}/srm/cancel-post-invoice"
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "Server",
+									"value": "nginx/1.24.0 (Ubuntu)"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 15 Apr 2026 08:29:43 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.3.21"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1; mode=block"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-Kong-Upstream-Latency",
+									"value": "961"
+								},
+								{
+									"key": "X-Kong-Proxy-Latency",
+									"value": "0"
+								},
+								{
+									"key": "Via",
+									"value": "1.1 kong/3.9.0"
+								},
+								{
+									"key": "X-Kong-Request-Id",
+									"value": "21f67c700251314cbdde827aba926366"
+								}
+							],
+							"cookie": [],
+							"responseTime": null,
+							"body": "{\n    \"message\": \"Success\",\n    \"results\": {\n        \"message\": {\n            \"DocumentNo\": \"1900000037\",\n            \"Year\": \"2026\",\n            \"PostingDate\": \"2026-04-14\",\n            \"ReversalReasonCode\": \"01\",\n            \"Status\": \"SUCCESS\",\n            \"Msg\": \"\",\n            \"IsPO\": false\n        }\n    }\n}"
 						}
 					]
 				},
