@@ -567,7 +567,7 @@
 						},
 						"method": "GET",
 						"header": [],
-						"url": "{{dev}}/sap/payment-method"
+						"url": "{{dev}}/srm/payment-method"
 					},
 					"response": []
 				},
