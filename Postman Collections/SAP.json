@@ -3140,10 +3140,26 @@
 							"listen": "test",
 							"script": {
 								"id": "62466cb9-d839-4777-aba2-5e46184579e3",
-								"type": "text/javascript",
 								"exec": [
-									"### Purpose\nChange/update an existing Purchase Requisition (PR) via SRM.\n\n### Auth\n```http\nAuthorization: Bearer {{token}}\n```\n\n### Key headers\n- `Authorization: Bearer {{token}}`\n- `Content-Type: application/json`\n\n### Body notes\n- POST body should include the PR identifier and the fields to change (see **Body** tab for configured fields).\n"
-								]
+									"### Purpose",
+									"Change/update an existing Purchase Requisition (PR) via SRM.",
+									"",
+									"### Auth",
+									"```http",
+									"Authorization: Bearer {{token}}",
+									"```",
+									"",
+									"### Key headers",
+									"- `Authorization: Bearer {{token}}`",
+									"- `Content-Type: application/json`",
+									"",
+									"### Body notes",
+									"- POST body should include the PR identifier and the fields to change (see **Body** tab for configured fields).",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {},
+								"requests": {}
 							}
 						}
 					],
@@ -3164,7 +3180,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n      \"PoNumber\":\"001\", //PO Number, otomatis generate dan akan error jika diisi\r\n      \"Zzspkno\":\"-\", // ?\r\n      \"Zzctrno\": \"002/SCRAP AGREEMENT/1/202\", // ?\r\n      \"Zzpurty\": \"RM\", // ?\r\n      \"postPOHeaderSet\":\r\n      {\r\n      \"DocType\": \"IMAT\",\r\n      \"Vendor\": \"2301000113\",\r\n      \"Pmnttrms\": \"Z007\",\r\n      \"PurchOrg\": \"PROC\",\r\n      \"PurGroup\": \"SM1\",\r\n      \"Currency\": \"IDR\",\r\n      \"ExchRate\": \"1\",\r\n      \"Incoterms1\": \"FRA\",\r\n      \"OurRef\": \"\", // ?\r\n      \"DownpayType\": \"M\", //DP Category\r\n      \"DownpayAmount\": \"12900000\",\r\n      \"DownpayPercent\": \"20\",\r\n      \"DownpayDuedate\": \"2026-03-26T00:00:00\",\r\n      \"DocDate\": \"2026-03-11T00:00:00\" // ?\r\n\r\n    },\r\n    \"postPOItemSet\": [\r\n    {\r\n      \"PoItem\": \"00010\",\r\n      \"Material\": \"RIDR11000000000036\",\r\n      \"ShortText\": \"\", //Derived from Reference Item\r\n      \"Quantity\": \"100\",\r\n      \"PoUnit\": \"KG\",\r\n      \"NetPrice\": \"6450\",\r\n      \"MatlGroup\": \"DI\",\r\n      \"Plant\": \"1SM0\",\r\n      \"StgeLoc\": \"S1R0\",\r\n      \"Trackingno\": \"\", // ?\r\n      \"TaxCode\": \"2C\",\r\n      \"PrntPrice\" : true,\r\n      \"OverDlvTol\": \"5\",\r\n      \"GrInd\": true, // ?\r\n      \"IrInd\": true, // ?\r\n      \"ConfCtrl\": \"0001\", // ?\r\n      \"Incoterms1\": \"FRA\", // ?\r\n      \"ItemCat\": \" \", // ?\r\n      \"Acctasscat\": \"\", // ?\r\n      \"PreqNo\": \"1100008061\", // ?\r\n      \"PreqItem\": \"00010\", // ?\r\n      \"PreqName\": \"Shiyan\", // ?\r\n      \"PckgNo\": \"0000000001\" // ?\r\n    }\r\n    ],\r\n    \"postPOScheduleSet\": [ // ?\r\n  {\r\n      \"PoItem\": \"00010\",\r\n      \"SchedLine\": \"0001\", // ?\r\n      \"DeliveryDate\": \"30.04.2026\",\r\n      \"Quantity\": \"100\", // ?\r\n      \"PreqNo\": \"1100008061\", // ?\r\n      \"PreqItem\": \"00010\" // ?\r\n  }\r\n],\r\n    \"postPOPartnerSet\": [ // ?\r\n        {\r\n        \"Partnerdesc\": \"Z2\",\r\n        \"Langu\": \"EN\",\r\n        \"Buspartno\": \"8888000284\"\r\n        }\r\n    ],\r\n    \"postPOAdditionalSet\": [ // ?\r\n        {\r\n            \"Ebelp\": \"00010\", // ?\r\n            \"Zzeta\": \"2026-03-12T00:00:00\" //YYYY-MM-DDThh-mm-ss DateTime Format | ?\r\n        }\r\n    ],\r\n    \"postPOAccountSet\": [],\r\n    \"postPOServiceSet\": [],\r\n    \"postPOAccessValuesSet\": [],\r\n    \"postPOReturnSet\": []\r\n}",
+							"raw": "{\r\n      \"PoNumber\":\"001\", //PO Number, otomatis generate dan akan error jika diisi\r\n      \"Zzspkno\":\"-\", // ?\r\n      \"Zzctrno\": \"002/SCRAP AGREEMENT/1/202\", // ?\r\n      \"Zzpurty\": \"RM\", // ?\r\n      \"postPOHeaderSet\":\r\n      {\r\n      \"DocType\": \"IMAT\",\r\n      \"Vendor\": \"2301000113\", // vendor\r\n      \"Pmnttrms\": \"Z007\", // payment term\r\n      \"PurchOrg\": \"PROC\", // purch org\r\n      \"PurGroup\": \"SM1\", // purch group\r\n      \"Currency\": \"IDR\", // currency\r\n      \"ExchRate\": \"1\", // Exchange Rate\r\n      \"Incoterms1\": \"FRA\",\r\n      \"OurRef\": \"\", // ?\r\n      \"DownpayType\": \"M\", //DP Category\r\n      \"DownpayAmount\": \"12900000\",\r\n      \"DownpayPercent\": \"20\",\r\n      \"DownpayDuedate\": \"2026-03-26T00:00:00\",\r\n      \"DocDate\": \"2026-03-11T00:00:00\" // ?\r\n\r\n    },\r\n    \"postPOItemSet\": [\r\n    {\r\n      \"PoItem\": \"00010\",\r\n      \"Material\": \"RIDR11000000000036\",\r\n      \"ShortText\": \"\", //Derived from Reference Item\r\n      \"Quantity\": \"100\",\r\n      \"PoUnit\": \"KG\",\r\n      \"NetPrice\": \"6450\",\r\n      \"MatlGroup\": \"DI\",\r\n      \"Plant\": \"1SM0\",\r\n      \"StgeLoc\": \"S1R0\",\r\n      \"Trackingno\": \"\", // ?\r\n      \"TaxCode\": \"2C\",\r\n      \"PrntPrice\" : true,\r\n      \"OverDlvTol\": \"5\",\r\n      \"GrInd\": true, // ?\r\n      \"IrInd\": true, // ?\r\n      \"ConfCtrl\": \"0001\", // ?\r\n      \"Incoterms1\": \"FRA\", // ?\r\n      \"ItemCat\": \" \", // ?\r\n      \"Acctasscat\": \"\", // ?\r\n      \"PreqNo\": \"1100008061\", // ?\r\n      \"PreqItem\": \"00010\", // ?\r\n      \"PreqName\": \"Shiyan\", // ?\r\n      \"PckgNo\": \"0000000001\" // ?\r\n    }\r\n    ],\r\n    \"postPOScheduleSet\": [ // ?\r\n  {\r\n      \"PoItem\": \"00010\",\r\n      \"SchedLine\": \"0001\", // ?\r\n      \"DeliveryDate\": \"30.04.2026\",\r\n      \"Quantity\": \"100\", // ?\r\n      \"PreqNo\": \"1100008061\", // ?\r\n      \"PreqItem\": \"00010\" // ?\r\n  }\r\n],\r\n    \"postPOPartnerSet\": [ // ?\r\n        {\r\n        \"Partnerdesc\": \"Z2\", // Partner Function\r\n        \"Langu\": \"EN\",\r\n        \"Buspartno\": \"8888000284\" // postPOPartnerSet\r\n        }\r\n    ],\r\n    \"postPOAdditionalSet\": [ // ?\r\n        {\r\n            \"Ebelp\": \"00010\", // ?\r\n            \"Zzeta\": \"2026-03-12T00:00:00\" //YYYY-MM-DDThh-mm-ss DateTime Format | ?\r\n        }\r\n    ],\r\n    \"postPOAccountSet\": [],\r\n    \"postPOServiceSet\": [],\r\n    \"postPOAccessValuesSet\": [],\r\n    \"postPOReturnSet\": []\r\n}",
 							"options": {
 								"raw": {
 									"headerFamily": "json",
