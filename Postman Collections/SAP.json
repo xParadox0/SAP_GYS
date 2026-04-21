@@ -6781,6 +6781,98 @@
 							],
 							"responseTime": null,
 							"body": "{\n    \"message\": \"Error\",\n    \"results\": null,\n    \"source\": \"Empty response upload SAP data\"\n}"
+						},
+						{
+							"id": "0b8c7aba-5109-4125-932a-9e440d2ba30f",
+							"name": "Success (For Just GL Account)",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"DocNumber\": \"5105623123\",\n  \"Year\": \"2026\",\n  \"Status\": \"\",\n  \"changeParkInvoiceHeader\":\n      {\n      \"DocType\": \"RE\",\n      \"DocDate\": \"2026-04-13T00:00:00\",\n      \"PstngDate\": \"2026-04-13T00:00:00\",\n      \"RefDocNo\" : \"OU15/04/2026\",\n      \"DiffInv\" : \"2101001735\",\n      \"GrossAmount\" : \"1021200\",\n      \"CalcTaxInd\" : true,\n      \"Currency\" : \"IDR\",\n      \"Pmnttrms\" : \"Z014\",\n      \"BlineDate\" : \"2026-04-13T00:00:00\",\n      \"HeaderTxt\" : \"Invoice GL Acc\",\n      \"PymtMeth\" : \"U\",\n      \"PartnerBk\" : \"ID01\",\n      \"Housebankid\" : \"BNI01\",\n      \"AllocNmbr\" : \"4300000649\",\n      \"ItemText\" : \"Pembayaran Outsouring\"\n      },\n  \"changeParkInvoiceGLAccSet\" : [\n      {\n      \"InvoiceDocItem\": \"1\",\n      \"GlAccount\": \"51300040\",\n      \"ItemAmount\": \"500000\",\n      \"DbCrInd\": \"S\",\n      \"CompCode\": \"1000\",\n      \"TaxCode\": \"2D\",\n      \"ItemText\" : \"\",\n      \"Costcenter\" : \"10101PP001\",\n      \"Orderid\" : \"\",\n      \"RefDate\" : \"2026-04-13T00:00:00\",\n      \"ProfitCtr\" : \"101010\",\n      \"Network\" : \"\",\n      \"WbsElem\" : \"\",\n      \"Quantity\" : \"0\",\n      \"BaseUom\" : \"\",\n      \"AllocNmbr\" : \"4300000649\"\n      },\n      {\n      \"InvoiceDocItem\": \"2\",\n      \"GlAccount\": \"51300040\",\n      \"ItemAmount\": \"400000\",\n      \"DbCrInd\": \"S\",\n      \"CompCode\": \"1000\",\n      \"TaxCode\": \"2D\",\n      \"ItemText\" : \"\",\n      \"Costcenter\" : \"10101PP001\",\n      \"Orderid\" : \"\",\n      \"RefDate\" : \"2026-04-13T00:00:00\",\n      \"ProfitCtr\" : \"101010\",\n      \"Network\" : \"\",\n      \"WbsElem\" : \"\",\n      \"Quantity\" : \"0\",\n      \"BaseUom\" : \"\",\n      \"AllocNmbr\" : \"4300000649\"\n      },\n      {\n      \"InvoiceDocItem\": \"3\",\n      \"GlAccount\": \"50500030\",\n      \"ItemAmount\": \"20000\",\n      \"DbCrInd\": \"S\",\n      \"CompCode\": \"1000\",\n      \"TaxCode\": \"2D\",\n      \"ItemText\" : \"Tambahan Custom 2\",\n      \"Costcenter\" : \"10103PS001\",\n      \"Orderid\" : \"\",\n      \"RefDate\" : \"2026-04-13T00:00:00\",\n      \"ProfitCtr\" : \"101010\",\n      \"Network\" : \"\",\n      \"WbsElem\" : \"\",\n      \"Quantity\" : \"0\",\n      \"BaseUom\" : \"\",\n      \"AllocNmbr\" : \"4300000649\"\n      }\n  ],\n  \"changeParkInvoiceItemSet\": [],\n  \"changeParkInvoiceTextSet\": [\n      {\n      \"Tdformat\" : \"*\",\n      \"Tdline\" : \"Pembayan Outsourcing Services\"\n      }\n  ],\n  \"changeParkInvoiceWHTSet\" : [],\n  \"changeParkInvoiceReturnSet\": []\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{baseUrl}}/srm/change-park-invoice"
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "Server",
+									"value": "nginx/1.24.0 (Ubuntu)"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 21 Apr 2026 02:52:56 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.3.21"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1; mode=block"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-Kong-Upstream-Latency",
+									"value": "4184"
+								},
+								{
+									"key": "X-Kong-Proxy-Latency",
+									"value": "0"
+								},
+								{
+									"key": "Via",
+									"value": "1.1 kong/3.9.0"
+								},
+								{
+									"key": "X-Kong-Request-Id",
+									"value": "1638fa23ddc3a47a1421f44d3d0ea66f"
+								}
+							],
+							"cookie": [],
+							"responseTime": null,
+							"body": "{\n    \"message\": \"Success\",\n    \"results\": {\n        \"message\": {\n            \"d\": {\n                \"DocNumber\": \"5105623123\",\n                \"Year\": \"2026\",\n                \"Status\": \"\",\n                \"Trndt\": \"/Date(1776729600000)/\",\n                \"ReturnType\": \"S\",\n                \"Msgtx\": \"Success\",\n                \"changeParkInvoiceHeader\": {\n                    \"DocType\": \"RE\",\n                    \"DocDate\": \"/Date(1776038400000)/\",\n                    \"PstngDate\": \"/Date(1776038400000)/\",\n                    \"RefDocNo\": \"OU15/04/2026\",\n                    \"DiffInv\": \"2101001735\",\n                    \"Currency\": \"IDR\",\n                    \"CurrencyIso\": \"\",\n                    \"ExchRate\": \"0.00000\",\n                    \"ExchRateV\": \"0.00000\",\n                    \"GrossAmount\": \"1021200.0000\",\n                    \"CalcTaxInd\": true,\n                    \"Pmnttrms\": \"Z014\",\n                    \"BlineDate\": \"/Date(1776038400000)/\",\n                    \"DsctDays1\": \"0\",\n                    \"DsctDays2\": \"0\",\n                    \"Netterms\": \"0\",\n                    \"DsctPct1\": \"0.000\",\n                    \"DsctPct2\": \"0.000\",\n                    \"HeaderTxt\": \"Invoice GL Acc\",\n                    \"PmntBlock\": \"\",\n                    \"DelCosts\": \"0.0000\",\n                    \"DelCostsTaxc\": \"\",\n                    \"DelCostsTaxj\": \"\",\n                    \"PersonExt\": \"\",\n                    \"PymtMeth\": \"U\",\n                    \"Pmtmthsupl\": \"\",\n                    \"InvDocNo\": \"\",\n                    \"ScbankInd\": \"\",\n                    \"Supcountry\": \"\",\n                    \"BllsrvInd\": \"\",\n                    \"RefDocNoLong\": \"\",\n                    \"DsctAmount\": \"0.0000\",\n                    \"PoSubNo\": \"\",\n                    \"PoCheckdg\": \"\",\n                    \"PoRefNo\": \"\",\n                    \"PayeePayer\": \"\",\n                    \"PartnerBk\": \"ID01\",\n                    \"Housebankid\": \"BNI01\",\n                    \"AllocNmbr\": \"4300000649\",\n                    \"PaymtRef\": \"\",\n                    \"InvRefNo\": \"\",\n                    \"InvYear\": \"0000\",\n                    \"InvRecDate\": null,\n                    \"PlanningLevel\": \"\",\n                    \"PlanningDate\": null,\n                    \"Fixedterms\": \"\",\n                    \"BusArea\": \"\",\n                    \"LotNumber\": \"\",\n                    \"ItemText\": \"Pembayaran Outsouring\",\n                    \"J1bnftype\": \"\",\n                    \"EuTriangDeal\": false,\n                    \"Repcountry\": \"\",\n                    \"VatRegNo\": \"\",\n                    \"BusinessPlace\": \"\",\n                    \"TaxExchRate\": \"0.00000\",\n                    \"GoodsAffected\": false,\n                    \"Vatdate\": null,\n                    \"TaxCalcDate\": null\n                },\n                \"changeParkInvoiceGLAccSet\": {\n                    \"results\": [\n                        {\n                            \"InvoiceDocItem\": \"000001\",\n                            \"GlAccount\": \"51300040\",\n                            \"ItemAmount\": \"500000.0000\",\n                            \"DbCrInd\": \"S\",\n                            \"NegPostng\": false,\n                            \"CompCode\": \"1000\",\n                            \"TaxCode\": \"2D\",\n                            \"Taxjurcode\": \"\",\n                            \"ItemText\": \"\",\n                            \"Costcenter\": \"10101PP001\",\n                            \"SdDoc\": \"\",\n                            \"SdocItem\": \"000000\",\n                            \"Orderid\": \"\",\n                            \"RefDate\": \"/Date(1776038400000)/\",\n                            \"CmmtItem\": \"\",\n                            \"FundsCtr\": \"\",\n                            \"FuncArea\": \"\",\n                            \"ProfitCtr\": \"101010\",\n                            \"Fund\": \"\",\n                            \"BusArea\": \"\",\n                            \"TrPartBa\": \"\",\n                            \"Costobject\": \"\",\n                            \"Network\": \"\",\n                            \"Activity\": \"\",\n                            \"WbsElem\": \"000000000000000000000000\",\n                            \"Acttype\": \"\",\n                            \"RlEstKey\": \"\",\n                            \"PersonNo\": \"00000000\",\n                            \"CoBusproc\": \"\",\n                            \"GrantNbr\": \"\",\n                            \"CmmtItemLong\": \"\",\n                            \"FuncAreaLong\": \"\",\n                            \"Quantity\": \"0.000\",\n                            \"BaseUom\": \"\",\n                            \"AllocNmbr\": \"4300000649\",\n                            \"CshdisInd\": false,\n                            \"TaxBaseAmount\": \"0.0000\",\n                            \"ProfitSegmNo\": \"0000000000\",\n                            \"Plant\": \"\",\n                            \"BudgetPeriod\": \"\",\n                            \"CoArea\": \"\",\n                            \"Recid\": \"\",\n                            \"WorkItemId\": \"\"\n                        },\n                        {\n                            \"InvoiceDocItem\": \"000002\",\n                            \"GlAccount\": \"51300040\",\n                            \"ItemAmount\": \"400000.0000\",\n                            \"DbCrInd\": \"S\",\n                            \"NegPostng\": false,\n                            \"CompCode\": \"1000\",\n                            \"TaxCode\": \"2D\",\n                            \"Taxjurcode\": \"\",\n                            \"ItemText\": \"\",\n                            \"Costcenter\": \"10101PP001\",\n                            \"SdDoc\": \"\",\n                            \"SdocItem\": \"000000\",\n                            \"Orderid\": \"\",\n                            \"RefDate\": \"/Date(1776038400000)/\",\n                            \"CmmtItem\": \"\",\n                            \"FundsCtr\": \"\",\n                            \"FuncArea\": \"\",\n                            \"ProfitCtr\": \"101010\",\n                            \"Fund\": \"\",\n                            \"BusArea\": \"\",\n                            \"TrPartBa\": \"\",\n                            \"Costobject\": \"\",\n                            \"Network\": \"\",\n                            \"Activity\": \"\",\n                            \"WbsElem\": \"000000000000000000000000\",\n                            \"Acttype\": \"\",\n                            \"RlEstKey\": \"\",\n                            \"PersonNo\": \"00000000\",\n                            \"CoBusproc\": \"\",\n                            \"GrantNbr\": \"\",\n                            \"CmmtItemLong\": \"\",\n                            \"FuncAreaLong\": \"\",\n                            \"Quantity\": \"0.000\",\n                            \"BaseUom\": \"\",\n                            \"AllocNmbr\": \"4300000649\",\n                            \"CshdisInd\": false,\n                            \"TaxBaseAmount\": \"0.0000\",\n                            \"ProfitSegmNo\": \"0000000000\",\n                            \"Plant\": \"\",\n                            \"BudgetPeriod\": \"\",\n                            \"CoArea\": \"\",\n                            \"Recid\": \"\",\n                            \"WorkItemId\": \"\"\n                        },\n                        {\n                            \"InvoiceDocItem\": \"000003\",\n                            \"GlAccount\": \"50500030\",\n                            \"ItemAmount\": \"20000.0000\",\n                            \"DbCrInd\": \"S\",\n                            \"NegPostng\": false,\n                            \"CompCode\": \"1000\",\n                            \"TaxCode\": \"2D\",\n                            \"Taxjurcode\": \"\",\n                            \"ItemText\": \"Tambahan Custom 2\",\n                            \"Costcenter\": \"10103PS001\",\n                            \"SdDoc\": \"\",\n                            \"SdocItem\": \"000000\",\n                            \"Orderid\": \"\",\n                            \"RefDate\": \"/Date(1776038400000)/\",\n                            \"CmmtItem\": \"\",\n                            \"FundsCtr\": \"\",\n                            \"FuncArea\": \"\",\n                            \"ProfitCtr\": \"101010\",\n                            \"Fund\": \"\",\n                            \"BusArea\": \"\",\n                            \"TrPartBa\": \"\",\n                            \"Costobject\": \"\",\n                            \"Network\": \"\",\n                            \"Activity\": \"\",\n                            \"WbsElem\": \"000000000000000000000000\",\n                            \"Acttype\": \"\",\n                            \"RlEstKey\": \"\",\n                            \"PersonNo\": \"00000000\",\n                            \"CoBusproc\": \"\",\n                            \"GrantNbr\": \"\",\n                            \"CmmtItemLong\": \"\",\n                            \"FuncAreaLong\": \"\",\n                            \"Quantity\": \"0.000\",\n                            \"BaseUom\": \"\",\n                            \"AllocNmbr\": \"4300000649\",\n                            \"CshdisInd\": false,\n                            \"TaxBaseAmount\": \"0.0000\",\n                            \"ProfitSegmNo\": \"0000000000\",\n                            \"Plant\": \"\",\n                            \"BudgetPeriod\": \"\",\n                            \"CoArea\": \"\",\n                            \"Recid\": \"\",\n                            \"WorkItemId\": \"\"\n                        }\n                    ]\n                },\n                \"changeParkInvoiceItemSet\": {\n                    \"results\": []\n                },\n                \"changeParkInvoiceReturnSet\": {\n                    \"results\": []\n                },\n                \"changeParkInvoiceTextSet\": {\n                    \"results\": [\n                        {\n                            \"Tdformat\": \"*\",\n                            \"Tdline\": \"Pembayan Outsourcing Services\"\n                        }\n                    ]\n                },\n                \"changeParkInvoiceWHTSet\": {\n                    \"results\": []\n                }\n            }\n        }\n    }\n}"
 						}
 					]
 				},
