@@ -7700,7 +7700,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"IsPO\": false,\n    \"DocNumber\": \"2100000133\",\n    \"Year\": \"2026\",\n    \"deleteParkInvoiceReturnSet\": []\n}",
+							"raw": "{\n    \"IsPO\": false,\n    \"DocNumber\": \"2200000394\",\n    \"Year\": \"2026\",\n    \"deleteParkInvoiceReturnSet\": []\n}",
 							"options": {
 								"raw": {
 									"headerFamily": "json",
@@ -7713,110 +7713,19 @@
 					},
 					"response": [
 						{
-							"id": "ed464c87-dcc1-4113-b1cd-3ddf961d36e6",
-							"name": "Invoice PO",
+							"id": "f209e99d-2a80-4bb3-9b83-483d4ab33b8f",
+							"name": "Success - Invoice PO",
 							"originalRequest": {
-								"method": "POST",
-								"header": [],
-								"body": {
-									"mode": "raw",
-									"raw": "{\r\n    \"IsPO\": true,\r\n    \"DocNumber\": \"5105623035\",\r\n    \"Year\": \"2026\",\r\n    \"deleteParkInvoiceReturnSet\": []\r\n}",
-									"options": {
-										"raw": {
-											"language": "json"
-										}
-									}
-								},
-								"url": "https://{{dev}}/srm/delete-park-invoice"
-							},
-							"status": "OK",
-							"code": 200,
-							"_postman_previewlanguage": "text",
-							"header": [
-								{
-									"key": "Server",
-									"value": "nginx/1.24.0 (Ubuntu)"
-								},
-								{
-									"key": "Date",
-									"value": "Fri, 13 Mar 2026 08:40:24 GMT"
-								},
-								{
-									"key": "Content-Type",
-									"value": "application/json"
-								},
-								{
-									"key": "Transfer-Encoding",
-									"value": "chunked"
-								},
-								{
-									"key": "Connection",
-									"value": "keep-alive"
-								},
-								{
-									"key": "X-Powered-By",
-									"value": "PHP/8.3.21"
-								},
-								{
-									"key": "Cache-Control",
-									"value": "no-cache, private"
-								},
-								{
-									"key": "Access-Control-Allow-Origin",
-									"value": "*"
-								},
-								{
-									"key": "X-Frame-Options",
-									"value": "SAMEORIGIN"
-								},
-								{
-									"key": "X-XSS-Protection",
-									"value": "1; mode=block"
-								},
-								{
-									"key": "X-Content-Type-Options",
-									"value": "nosniff"
-								},
-								{
-									"key": "X-Kong-Upstream-Latency",
-									"value": "702"
-								},
-								{
-									"key": "X-Kong-Proxy-Latency",
-									"value": "0"
-								},
-								{
-									"key": "Via",
-									"value": "1.1 kong/3.9.0"
-								},
-								{
-									"key": "X-Kong-Request-Id",
-									"value": "159b6d4ffa314d2fd81c130390f7d338"
-								}
-							],
-							"cookie": [],
-							"responseTime": null,
-							"body": "{\n    \"message\": \"Success\",\n    \"results\": {\n        \"message\": {\n            \"__metadata\": {\n                \"id\": \"http://sapdev.gyssteel.com:8000/sap/opu/odata/sap/ZGW_SAP_SRM_SRV/deleteParkInvoiceSet(DocNumber='5105623035',Year='2026')\",\n                \"uri\": \"http://sapdev.gyssteel.com:8000/sap/opu/odata/sap/ZGW_SAP_SRM_SRV/deleteParkInvoiceSet(DocNumber='5105623035',Year='2026')\",\n                \"type\": \"ZGW_SAP_SRM_SRV.deleteParkInvoice\"\n            },\n            \"DocNumber\": \"5105623035\",\n            \"Year\": \"2026\",\n            \"IsPO\": true,\n            \"Trndt\": \"/Date(1773360000000)/\",\n            \"ReturnType\": \"S\",\n            \"Msgtx\": \"Success\",\n            \"deleteParkInvoiceReturnSet\": {\n                \"results\": []\n            }\n        }\n    }\n}"
-						},
-						{
-							"id": "e42496b4-53d3-415a-a684-1b354f84a555",
-							"name": "Invoice PO",
-							"originalRequest": {
-								"method": "POST",
+								"method": "DELETE",
 								"header": [
 									{
 										"key": "Content-Type",
 										"value": "application/json"
-									},
-									{
-										"description": "Added as a part of security scheme: bearer",
-										"key": "Authorization",
-										"value": "Bearer <token>"
 									}
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n  \"IsPO\": false,\n  \"DocNumber\": \"2200000309\",\n  \"Year\": \"2026\",\n  \"deleteParkInvoiceReturnSet\": []\n}",
+									"raw": "{\n    \"IsPO\": true,\n    \"DocNumber\": \"5105623153\",\n    \"Year\": \"2026\",\n    \"deleteParkInvoiceReturnSet\": []\n}",
 									"options": {
 										"raw": {
 											"headerFamily": "json",
@@ -7824,132 +7733,168 @@
 										}
 									}
 								},
-								"url": "{{baseUrl}}/srm/delete-park-invoice"
+								"url": "{{dev}}/srm/delete-park-invoice"
 							},
 							"status": "OK",
 							"code": 200,
-							"_postman_previewlanguage": "text",
+							"_postman_previewlanguage": null,
 							"header": [
 								{
-									"description": {
-										"content": "",
-										"type": "text/plain"
-									},
 									"key": "Server",
 									"value": "nginx/1.24.0 (Ubuntu)"
 								},
 								{
-									"description": {
-										"content": "",
-										"type": "text/plain"
-									},
 									"key": "Date",
-									"value": "Tue, 31 Mar 2026 15:43:12 GMT"
-								},
-								{
-									"description": {
-										"content": "",
-										"type": "text/plain"
-									},
-									"key": "Transfer-Encoding",
-									"value": "chunked"
-								},
-								{
-									"description": {
-										"content": "",
-										"type": "text/plain"
-									},
-									"key": "Connection",
-									"value": "keep-alive"
-								},
-								{
-									"description": {
-										"content": "",
-										"type": "text/plain"
-									},
-									"key": "X-Powered-By",
-									"value": "PHP/8.3.21"
-								},
-								{
-									"description": {
-										"content": "",
-										"type": "text/plain"
-									},
-									"key": "Cache-Control",
-									"value": "no-cache, private"
-								},
-								{
-									"description": {
-										"content": "",
-										"type": "text/plain"
-									},
-									"key": "Access-Control-Allow-Origin",
-									"value": "*"
-								},
-								{
-									"description": {
-										"content": "",
-										"type": "text/plain"
-									},
-									"key": "X-Frame-Options",
-									"value": "SAMEORIGIN"
-								},
-								{
-									"description": {
-										"content": "",
-										"type": "text/plain"
-									},
-									"key": "X-XSS-Protection",
-									"value": "1; mode=block"
-								},
-								{
-									"description": {
-										"content": "",
-										"type": "text/plain"
-									},
-									"key": "X-Content-Type-Options",
-									"value": "nosniff"
-								},
-								{
-									"description": {
-										"content": "",
-										"type": "text/plain"
-									},
-									"key": "X-Kong-Upstream-Latency",
-									"value": "477"
-								},
-								{
-									"description": {
-										"content": "",
-										"type": "text/plain"
-									},
-									"key": "X-Kong-Proxy-Latency",
-									"value": "0"
-								},
-								{
-									"description": {
-										"content": "",
-										"type": "text/plain"
-									},
-									"key": "Via",
-									"value": "1.1 kong/3.9.0"
-								},
-								{
-									"description": {
-										"content": "",
-										"type": "text/plain"
-									},
-									"key": "X-Kong-Request-Id",
-									"value": "b8814d08aa85961c42480c76c59ddd1a"
+									"value": "Tue, 28 Apr 2026 02:27:09 GMT"
 								},
 								{
 									"key": "Content-Type",
 									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.3.21"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1; mode=block"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-Kong-Upstream-Latency",
+									"value": "1282"
+								},
+								{
+									"key": "X-Kong-Proxy-Latency",
+									"value": "0"
+								},
+								{
+									"key": "Via",
+									"value": "1.1 kong/3.9.0"
+								},
+								{
+									"key": "X-Kong-Request-Id",
+									"value": "86961f1027560b2159d78f61be05f64b"
 								}
 							],
 							"cookie": [],
 							"responseTime": null,
-							"body": "{\n    \"message\": \"Success\",\n    \"results\": {\n        \"message\": {\n            \"__metadata\": {\n                \"id\": \"http://sapdev.gyssteel.com:8000/sap/opu/odata/sap/ZGW_SAP_SRM_SRV/deleteParkInvoiceSet(DocNumber='2200000309',Year='2026')\",\n                \"uri\": \"http://sapdev.gyssteel.com:8000/sap/opu/odata/sap/ZGW_SAP_SRM_SRV/deleteParkInvoiceSet(DocNumber='2200000309',Year='2026')\",\n                \"type\": \"ZGW_SAP_SRM_SRV.deleteParkInvoice\"\n            },\n            \"DocNumber\": \"2200000309\",\n            \"Year\": \"2026\",\n            \"IsPO\": false,\n            \"Trndt\": \"/Date(1774915200000)/\",\n            \"ReturnType\": \"S\",\n            \"Msgtx\": \"Success\",\n            \"deleteParkInvoiceReturnSet\": {\n                \"results\": []\n            }\n        }\n    }\n}"
+							"body": "{\n    \"message\": \"Success\",\n    \"results\": {\n        \"message\": {\n            \"DocNumber\": \"5105623153\",\n            \"Year\": \"2026\",\n            \"IsPO\": true,\n            \"Trndt\": \"/Date(1777334400000)/\",\n            \"ReturnType\": \"S\",\n            \"Msgtx\": \"Success\",\n            \"deleteParkInvoiceReturnSet\": {\n                \"results\": []\n            }\n        }\n    }\n}"
+						},
+						{
+							"id": "bdf0a175-a65c-4e10-b28b-01c7e49c865a",
+							"name": "Success - Invoice Non PO",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"IsPO\": false,\n    \"DocNumber\": \"2200000394\",\n    \"Year\": \"2026\",\n    \"deleteParkInvoiceReturnSet\": []\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{dev}}/srm/delete-park-invoice"
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "Server",
+									"value": "nginx/1.24.0 (Ubuntu)"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 28 Apr 2026 02:27:57 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.3.21"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1; mode=block"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-Kong-Upstream-Latency",
+									"value": "458"
+								},
+								{
+									"key": "X-Kong-Proxy-Latency",
+									"value": "0"
+								},
+								{
+									"key": "Via",
+									"value": "1.1 kong/3.9.0"
+								},
+								{
+									"key": "X-Kong-Request-Id",
+									"value": "c6d53467d40e07651d949b6631994860"
+								}
+							],
+							"cookie": [],
+							"responseTime": null,
+							"body": "{\n    \"message\": \"Success\",\n    \"results\": {\n        \"message\": {\n            \"DocNumber\": \"2200000394\",\n            \"Year\": \"2026\",\n            \"IsPO\": false,\n            \"Trndt\": \"/Date(1777334400000)/\",\n            \"ReturnType\": \"S\",\n            \"Msgtx\": \"Success\",\n            \"deleteParkInvoiceReturnSet\": {\n                \"results\": []\n            }\n        }\n    }\n}"
 						}
 					]
 				}
