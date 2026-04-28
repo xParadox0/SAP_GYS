@@ -7933,6 +7933,24 @@
 					}
 				}
 			]
+		},
+		{
+			"name": "DELETE Schema",
+			"item": [
+				{
+					"name": "New Request",
+					"id": "6c100651-4ac0-481b-ba5a-21a8d8a71f1c",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				}
+			],
+			"id": "73d25c6d-beda-4140-bfed-c2f2f27addfc"
 		}
 	],
 	"auth": {
