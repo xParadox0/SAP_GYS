@@ -572,6 +572,46 @@
 					"response": []
 				},
 				{
+					"name": "Payroll Journal",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "5abc37a4-9427-4ba7-ba5c-ddb97a770fd8",
+								"exec": [
+									"### Purpose",
+									"Fetch House Bank, Partner Bank Type, and Payment Method reference data.",
+									"",
+									"### Auth",
+									"```http",
+									"Authorization: Bearer {{token}}",
+									"```",
+									"",
+									"### Key headers",
+									"- `Authorization: Bearer {{token}}`",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {},
+								"requests": {}
+							}
+						}
+					],
+					"id": "c011f8d8-9015-45b6-948c-ddf53c91324b",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "{{token}}"
+							}
+						},
+						"method": "GET",
+						"header": [],
+						"url": "{{dev}}/srm/payment-method"
+					},
+					"response": []
+				},
+				{
 					"name": "PO Local Scrap​",
 					"event": [
 						{
