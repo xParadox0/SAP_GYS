@@ -5053,10 +5053,26 @@
 							"listen": "test",
 							"script": {
 								"id": "ecb4d559-f2a0-420b-a3c7-c95a6b443941",
-								"type": "text/javascript",
 								"exec": [
-									"### Purpose\nSubmit a Down Payment (DP) request via SRM.\n\n### Auth\n```http\nAuthorization: Bearer {{token}}\n```\n\n### Key headers\n- `Authorization: Bearer {{token}}`\n- `Content-Type: application/json`\n\n### Body notes\n- POST body contains the DP request payload (see **Body** tab).\n"
-								]
+									"### Purpose",
+									"Submit a Down Payment (DP) request via SRM.",
+									"",
+									"### Auth",
+									"```http",
+									"Authorization: Bearer {{token}}",
+									"```",
+									"",
+									"### Key headers",
+									"- `Authorization: Bearer {{token}}`",
+									"- `Content-Type: application/json`",
+									"",
+									"### Body notes",
+									"- POST body contains the DP request payload (see **Body** tab).",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {},
+								"requests": {}
 							}
 						}
 					],
@@ -5077,7 +5093,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n  \"Testrun\": \"\",\n  \"postDPHeaderSet\": {\n    \"HeaderTxt\": \"Testing 1\",\n    \"CompCode\": \"1000\",\n    \"DocDate\": \"2026-03-02T00:00:00\",\n    \"PstngDate\": \"2026-03-02T00:00:00\",\n    \"DocType\": \"VD\",\n    \"RefDocNo\": \"4100035208\"\n  },\n  \"postDPAccountPaySet\": [\n    {\n      \"ItemnoAcc\": \"0000000001\",\n      \"VendorNo\": \"2301000113\",\n      \"CompCode\": \"1000\",\n      \"BlineDate\": \"2026-03-02T00:00:00\",\n      \"AllocNmbr\": \"4100035208\",\n      \"ItemText\": \"ABCD\",\n      \"PoSubNo\": \"10\",\n      \"PoRefNo\": \"4100035208\",\n      \"TaxCode\": \"0D\"\n    }\n  ],\n  \"postDPCurrAmtSet\": [\n    {\n      \"ItemnoAcc\": \"0000000001\",\n      \"Currency\": \"IDR\",\n      \"CurrencyIso\": \"IDR\",\n      \"AmtDoccur\": \"125000\"\n    }\n  ],\n  \"postDPReturnSet\": []\n}",
+							"raw": "{\n    \"Testrun\": \"\",\n    \"postDPHeaderSet\": {\n        \"HeaderTxt\": \"DPR-2026-020\",\n        \"CompCode\": \"1000\",\n        \"DocDate\": \"2026-06-02T00:00:00\",\n        \"PstngDate\": \"2026-06-02T00:00:00\",\n        \"DocType\": \"VD\",\n        \"RefDocNo\": \"4100035260\"\n    },\n    \"postDPAccountPaySet\": [\n        {\n            \"ItemnoAcc\": \"0000000001\",\n            \"VendorNo\": \"2201000018\",\n            \"CompCode\": \"1000\",\n            \"BlineDate\": \"2026-06-02T00:00:00\",\n            \"AllocNmbr\": \"4100035260\",\n            \"ItemText\": \"OIL TURALIK T46 CURAH PERTAMINA\",\n            \"PoSubNo\": \"10\",\n            \"PoRefNo\": \"4100035260\",\n            \"TaxCode\": \"2C\",\n            \"PymtMeth\" : \"U\",\n            \"Housebankacctid\" : \"IDR01\",\n             \"BankId\" : \"BNI01\",\n             \"PartnerBk\" : \"CN01\"\n        },\n        {\n            \"ItemnoAcc\": \"0000000002\",\n            \"VendorNo\": \"2201000018\",\n            \"CompCode\": \"1000\",\n            \"BlineDate\": \"2026-06-02T00:00:00\",\n            \"AllocNmbr\": \"4100035260\",\n            \"ItemText\": \"OIL RORED HDA 90 @209LTR PERTAMINA\",\n            \"PoSubNo\": \"20\",\n            \"PoRefNo\": \"4100035260\",\n            \"TaxCode\": \"2C\",\n             \"PymtMeth\" : \"U\",\n             \"SpGlInd\" : \"F\",\n             \"Housebankacctid\" : \"IDR01\",\n             \"BankId\" : \"BNI01\",\n             \"PartnerBk\" : \"CN01\"\n        }\n    ],\n    \"postDPCurrAmtSet\": [\n        {\n            \"ItemnoAcc\": \"0000000001\",\n            \"Currency\": \"IDR\",\n            \"CurrencyIso\": \"IDR\",\n            \"AmtDoccur\": \"1000000.00\"\n        },\n        {\n            \"ItemnoAcc\": \"0000000002\",\n            \"Currency\": \"IDR\",\n            \"CurrencyIso\": \"IDR\",\n            \"AmtDoccur\": \"1699999.00\"\n        }\n    ],\n    \"postDPTextSet\": [],\n    \"postDPReturnSet\": []\n}",
 							"options": {
 								"raw": {
 									"headerFamily": "json",
