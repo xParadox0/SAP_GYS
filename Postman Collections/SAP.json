@@ -5621,7 +5621,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n  \"postChangeJournalItemSet\": [\n    {\n      \"DocumentNo\": \"2000000171\",\n      \"Year\": \"2026\",\n      \"LineItem\": \"1\",\n      \"DocumentHeaderText\": \"PERGUDANGAN PANTAI INDAH\",\n      \"Reference\": \"4300000678\",\n      \"DueOn\": \"2026-04-07\",\n      \"PaymentBlock\": \"B\",\n      \"PaymentCurrency\": \"\",\n      \"PaymentAmount\" : \"0\",\n      \"PaymentMethod\": \"U\",\n      \"Text\": \"ABCD\",\n      \"Assignment\": \"4300000663\",\n      \"LongText\": \"For Long Text\",\n      \"HouseBankKey\": \"BNI01\",\n      \"HouseBankAccount\": \"IDR01\",\n      \"HouseBankType\": \"ID01\"\n      }\n   ]\n}",
+							"raw": "{\n  \"postChangeJournalItemSet\": [\n    {\n      \"DocumentNo\": \"2000000171\",\n      \"Year\": \"2026\",\n      \"LineItem\": \"1\",\n      \"DocumentHeaderText\": \"PERGUDANGAN PANTAI INDAH\",\n      \"Reference\": \"4300000678\",\n      \"DueOn\": \"2026-04-07\", // input\n      \"PaymentBlock\": \"\", // backend \n      \"PaymentCurrency\": \"\", // input - master, tidak boleh sama dengan invoice currency\n      \"PaymentAmount\" : \"0\", // input\n      \"PaymentMethod\": \"U\", // input - master data\n      \"Text\": \"ABCD\", // input - free text\n      \"Assignment\": \"4300000663\", // no. po\n      \"LongText\": \"For Long Text\", // no. invoice (default) - editable\n      \"HouseBankKey\": \"BNI01\", // input - master (default BNI01)\n      \"HouseBankAccount\": \"IDR01\", // input - master (IDR01)\n      \"HouseBankType\": \"ID01\" // no. rekening vendor - master data no. bank\n      }\n   ]\n}",
 							"options": {
 								"raw": {
 									"headerFamily": "json",
