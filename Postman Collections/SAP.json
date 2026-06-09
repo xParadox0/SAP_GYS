@@ -8121,10 +8121,26 @@
 							"listen": "test",
 							"script": {
 								"id": "a0192a43-619d-4ba6-9ac7-a987028afb36",
-								"type": "text/javascript",
 								"exec": [
-									"### Purpose\nCancel a previously submitted Down Payment (DP) request.\n\n### Auth\n```http\nAuthorization: Bearer {{token}}\n```\n\n### Key headers\n- `Authorization: Bearer {{token}}`\n- `Content-Type: application/json`\n\n### Body notes\n- POST body should identify which DP request to cancel (see **Body** tab).\n"
-								]
+									"### Purpose",
+									"Cancel a previously submitted Down Payment (DP) request.",
+									"",
+									"### Auth",
+									"```http",
+									"Authorization: Bearer {{token}}",
+									"```",
+									"",
+									"### Key headers",
+									"- `Authorization: Bearer {{token}}`",
+									"- `Content-Type: application/json`",
+									"",
+									"### Body notes",
+									"- POST body should identify which DP request to cancel (see **Body** tab).",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {},
+								"requests": {}
 							}
 						}
 					],
@@ -8145,7 +8161,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n  \"postPVStatusSet\": [\n    {\n      \"IdentificationNo\": \"A666\",\n      \"Date\": \"2026-03-01\",\n      \"Status\": \"X\"\n    }\n  ]\n}",
+							"raw": "{\n    \"postSimulateInvoiceSet\": {\n        \"IsPO\": true,\n        \"CompanyCode\": \"1000\",\n        \"Vendor\": \"2201000458\",\n        \"DocumentDate\": \"2026-06-01T00:00:00\",\n        \"PostingDate\": \"2026-06-09T00:00:00\",\n        \"Reference\": \"024/PO/INV/06/26\",\n        \"Currency\": \"CNY\",\n        \"Amount\": \"2747412.06\",\n        \"TaxCode\": \"2D\",\n        \"ItemText\": \"SEGMENT FOR BBL1\",\n        \"DueOnDate\": \"2026-06-09T00:00:00\",\n        \"PaymentMethod\": \"U\",\n        \"PartnerBankType\": \"CN01\",\n        \"HouseBank\": \"BNI01\",\n        \"AccountId\": \"\",\n        \"Assignment\": \"4300000603\",\n        \"HeaderText\": \"024/PO/INV/06/26\"\n    },\n    \"postSimulateInvoiceGLSet\": [],\n    \"postSimulateInvoicePordSet\": [\n        {\n            \"PoNumber\": \"4300000603\",\n            \"PoItem\": \"00010\",\n            \"MaterialDocument\": \"5000069668\",\n            \"MaterialDocumentYear\": \"2026\",\n            \"MaterialDocumentItem\": \"0001\",\n            \"Amount\": \"1237573.00\",\n            \"Currency\": \"CNY\",\n            \"Quantity\": \"1\",\n            \"Uom\": \"UNT\"\n        },\n        {\n            \"PoNumber\": \"4300000603\",\n            \"PoItem\": \"00020\",\n            \"MaterialDocument\": \"5000069668\",\n            \"MaterialDocumentYear\": \"2026\",\n            \"MaterialDocumentItem\": \"0002\",\n            \"Amount\": \"1237573.00\",\n            \"Currency\": \"CNY\",\n            \"Quantity\": \"1\",\n            \"Uom\": \"UNT\"\n        }\n    ],\n    \"postSimulateInvoiceWithTaxSet\": [\n        {\n            \"WhtTaxType\": \"\",\n            \"WhtTaxCode\": \"\",\n            \"WhtBaseAmount\": \"0\",\n            \"WhtAmount\": \"0\"\n        }\n    ],\n    \"postSimulateInvoiceItemSet\": [],\n    \"postSimulateInvoiceReturnSet\": []\n}",
 							"options": {
 								"raw": {
 									"headerFamily": "json",
