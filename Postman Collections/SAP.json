@@ -8115,6 +8115,203 @@
 					]
 				},
 				{
+					"name": "Simulate Journal -  PO",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "a0192a43-619d-4ba6-9ac7-a987028afb36",
+								"type": "text/javascript",
+								"exec": [
+									"### Purpose\nCancel a previously submitted Down Payment (DP) request.\n\n### Auth\n```http\nAuthorization: Bearer {{token}}\n```\n\n### Key headers\n- `Authorization: Bearer {{token}}`\n- `Content-Type: application/json`\n\n### Body notes\n- POST body should identify which DP request to cancel (see **Body** tab).\n"
+								]
+							}
+						}
+					],
+					"id": "a4ac2d8a-80bf-4d3a-9aba-f738a8b774e3",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "{{token}}"
+							}
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"postPVStatusSet\": [\n    {\n      \"IdentificationNo\": \"A666\",\n      \"Date\": \"2026-03-01\",\n      \"Status\": \"X\"\n    }\n  ]\n}",
+							"options": {
+								"raw": {
+									"headerFamily": "json",
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{baseUrl}}/srm/approve-pv-status"
+					},
+					"response": [
+						{
+							"id": "2289f820-ee58-4e75-bdcd-4246547ee3e5",
+							"name": "Success",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"description": "Added as a part of security scheme: bearer",
+										"key": "Authorization",
+										"value": "Bearer <token>"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"postPVStatusSet\": [\n    {\n      \"IdentificationNo\": \"A666\",\n      \"Date\": \"2026-03-01\",\n      \"Status\": \"X\"\n    }\n  ]\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{baseUrl}}/srm/approve-pv-status"
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"description": {
+										"content": "",
+										"type": "text/plain"
+									},
+									"key": "Server",
+									"value": "nginx/1.24.0 (Ubuntu)"
+								},
+								{
+									"description": {
+										"content": "",
+										"type": "text/plain"
+									},
+									"key": "Date",
+									"value": "Fri, 13 Mar 2026 08:48:15 GMT"
+								},
+								{
+									"description": {
+										"content": "",
+										"type": "text/plain"
+									},
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"description": {
+										"content": "",
+										"type": "text/plain"
+									},
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"description": {
+										"content": "",
+										"type": "text/plain"
+									},
+									"key": "X-Powered-By",
+									"value": "PHP/8.3.21"
+								},
+								{
+									"description": {
+										"content": "",
+										"type": "text/plain"
+									},
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"description": {
+										"content": "",
+										"type": "text/plain"
+									},
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"description": {
+										"content": "",
+										"type": "text/plain"
+									},
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"description": {
+										"content": "",
+										"type": "text/plain"
+									},
+									"key": "X-XSS-Protection",
+									"value": "1; mode=block"
+								},
+								{
+									"description": {
+										"content": "",
+										"type": "text/plain"
+									},
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"description": {
+										"content": "",
+										"type": "text/plain"
+									},
+									"key": "X-Kong-Upstream-Latency",
+									"value": "408"
+								},
+								{
+									"description": {
+										"content": "",
+										"type": "text/plain"
+									},
+									"key": "X-Kong-Proxy-Latency",
+									"value": "0"
+								},
+								{
+									"description": {
+										"content": "",
+										"type": "text/plain"
+									},
+									"key": "Via",
+									"value": "1.1 kong/3.9.0"
+								},
+								{
+									"description": {
+										"content": "",
+										"type": "text/plain"
+									},
+									"key": "X-Kong-Request-Id",
+									"value": "0f4ecc5f08f07e25fbd73f0924e9392f"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"responseTime": null,
+							"body": "{\n    \"message\": \"Success\",\n    \"results\": {\n        \"message\": {\n            \"__metadata\": {\n                \"id\": \"http://sapdev.gyssteel.com:8000/sap/opu/odata/sap/ZGW_SAP_SRM_SRV/postPVStatusHeaderSet('')\",\n                \"uri\": \"http://sapdev.gyssteel.com:8000/sap/opu/odata/sap/ZGW_SAP_SRM_SRV/postPVStatusHeaderSet('')\",\n                \"type\": \"ZGW_SAP_SRM_SRV.postPVStatusHeader\"\n            },\n            \"IdPV\": \"\",\n            \"postPVStatusSet\": {\n                \"results\": [\n                    {\n                        \"__metadata\": {\n                            \"id\": \"http://sapdev.gyssteel.com:8000/sap/opu/odata/sap/ZGW_SAP_SRM_SRV/postPVStatusSet(IdentificationNo='A666',Date='2026-03-01')\",\n                            \"uri\": \"http://sapdev.gyssteel.com:8000/sap/opu/odata/sap/ZGW_SAP_SRM_SRV/postPVStatusSet(IdentificationNo='A666',Date='2026-03-01')\",\n                            \"type\": \"ZGW_SAP_SRM_SRV.postPVStatus\"\n                        },\n                        \"IdentificationNo\": \"A666\",\n                        \"Date\": \"2026-03-01\",\n                        \"Status\": \"X\",\n                        \"ReturnType\": \"S\",\n                        \"Msg\": \"Success\"\n                    }\n                ]\n            }\n        }\n    }\n}"
+						}
+					]
+				},
+				{
 					"name": "Clearing Down Payment to Invoice",
 					"event": [
 						{
