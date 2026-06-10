@@ -203,10 +203,22 @@
 							"listen": "test",
 							"script": {
 								"id": "4ebf288e-ecef-470a-82f0-650a246a29b4",
-								"type": "text/javascript",
 								"exec": [
-									"### Purpose\nFetch Cost Center master data.\n\n### Auth\n```http\nAuthorization: Bearer {{token}}\n```\n\n### Key headers\n- `Authorization: Bearer {{token}}`\n"
-								]
+									"### Purpose",
+									"Fetch Cost Center master data.",
+									"",
+									"### Auth",
+									"```http",
+									"Authorization: Bearer {{token}}",
+									"```",
+									"",
+									"### Key headers",
+									"- `Authorization: Bearer {{token}}`",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {},
+								"requests": {}
 							}
 						}
 					],
@@ -220,7 +232,7 @@
 						},
 						"method": "GET",
 						"header": [],
-						"url": "{{baseUrl}}/sap/cost-center"
+						"url": "{{baseUrl}}/srm/cost-center"
 					},
 					"response": []
 				},
