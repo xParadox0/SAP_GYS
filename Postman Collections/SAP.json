@@ -8336,6 +8336,86 @@
 							"cookie": [],
 							"responseTime": null,
 							"body": "{\n    \"message\": \"Success\",\n    \"results\": {\n        \"message\": {\n            \"__metadata\": {\n                \"id\": \"http://sapdev.gyssteel.com:8000/sap/opu/odata/sap/ZGW_SAP_SRM_SRV/postPVStatusHeaderSet('')\",\n                \"uri\": \"http://sapdev.gyssteel.com:8000/sap/opu/odata/sap/ZGW_SAP_SRM_SRV/postPVStatusHeaderSet('')\",\n                \"type\": \"ZGW_SAP_SRM_SRV.postPVStatusHeader\"\n            },\n            \"IdPV\": \"\",\n            \"postPVStatusSet\": {\n                \"results\": [\n                    {\n                        \"__metadata\": {\n                            \"id\": \"http://sapdev.gyssteel.com:8000/sap/opu/odata/sap/ZGW_SAP_SRM_SRV/postPVStatusSet(IdentificationNo='A666',Date='2026-03-01')\",\n                            \"uri\": \"http://sapdev.gyssteel.com:8000/sap/opu/odata/sap/ZGW_SAP_SRM_SRV/postPVStatusSet(IdentificationNo='A666',Date='2026-03-01')\",\n                            \"type\": \"ZGW_SAP_SRM_SRV.postPVStatus\"\n                        },\n                        \"IdentificationNo\": \"A666\",\n                        \"Date\": \"2026-03-01\",\n                        \"Status\": \"X\",\n                        \"ReturnType\": \"S\",\n                        \"Msg\": \"Success\"\n                    }\n                ]\n            }\n        }\n    }\n}"
+						},
+						{
+							"id": "24747b78-0e39-4328-80ea-8847227b8ad8",
+							"name": "Simulate Journal -  PO - Error",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"postSimulateInvoiceSet\": {\n        \"IsPO\": true,\n        \"CompanyCode\": \"1000\",\n        \"Vendor\": \"2104000009\",\n        \"DocumentDate\": \"2026-06-01T00:00:00\",\n        \"PostingDate\": \"2026-06-04T00:00:00\",\n        \"Reference\": \"002/PO/INV/06/26\",\n        \"Currency\": \"IDR\",\n        \"Amount\": \"63500000\",\n        \"TaxCode\": \"2C\",\n        \"ItemText\": \"Invoice PO 2\",\n        \"DueOnDate\": \"2026-06-04T00:00:00\",\n        \"PaymentMethod\": \"U\",\n        \"PartnerBankType\": \"ID02\",\n        \"HouseBank\": \"BNI01\",\n        \"AccountId\": \"\",\n        \"Assignment\": \"4100035296\",\n        \"HeaderText\": \"002/PO/INV/06/26\"\n    },\n    \"postSimulateInvoiceGLSet\": [\n        {\n            \"GLAccount\": \"60800010\",\n            \"DeCreInd\": \"S\",\n            \"Currency\": \"IDR\",\n            \"Amount\": \"1200000\",\n            \"TaxCode\": \"2D\",\n            \"Assignment\": \"NONPO-2026-963\",\n            \"ItemText\": \"Tes01\",\n            \"CostCenter\": \"10301GA001\",\n            \"Order\": \"GA001-10003\",\n            \"WBSElement\": \"\",\n            \"Network\": \"\",\n            \"Activity\": \"\",\n            \"ProfitCenter\": \"103010\"\n        }\n    ],\n    \"postSimulateInvoicePordSet\": [\n        {\n            \"PoNumber\": \"4100035296\",\n            \"PoItem\": \"00010\",\n            \"MaterialDocument\": \"5000069817\",\n            \"MaterialDocumentYear\": \"2026\",\n            \"MaterialDocumentItem\": \"0001\",\n            \"Amount\": \"635000\",\n            \"Currency\": \"IDR\",\n            \"Quantity\": \"10000\",\n            \"Uom\": \"KG\"\n        }\n    ],\n    \"postSimulateInvoiceWithTaxSet\": [],\n    \"postSimulateInvoiceItemSet\": []\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{baseUrl}}/srm/simulate-journal"
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "Server",
+									"value": "nginx/1.24.0 (Ubuntu)"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 11 Jun 2026 04:44:00 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.3.21"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "X-Kong-Upstream-Latency",
+									"value": "920"
+								},
+								{
+									"key": "X-Kong-Proxy-Latency",
+									"value": "0"
+								},
+								{
+									"key": "Via",
+									"value": "1.1 kong/3.9.0"
+								},
+								{
+									"key": "X-Kong-Request-Id",
+									"value": "3270760d7284e12ff5d6f91daa633f69"
+								}
+							],
+							"cookie": [],
+							"responseTime": null,
+							"body": "{\n    \"message\": \"Error\",\n    \"results\": {\n        \"d\": {\n            \"Id\": \"\",\n            \"Status\": \"E\",\n            \"Msg\": \"\",\n            \"postSimulateInvoiceGLSet\": {\n                \"results\": [\n                    {\n                        \"GLAccount\": \"60800010\",\n                        \"Order\": \"GA001-10003\",\n                        \"DeCreInd\": \"S\",\n                        \"WBSElement\": \"\",\n                        \"Currency\": \"IDR\",\n                        \"Network\": \"\",\n                        \"Amount\": \"120000000\",\n                        \"Activity\": \"\",\n                        \"TaxCode\": \"2D\",\n                        \"Assignment\": \"NONPO-2026-963\",\n                        \"ItemText\": \"Tes01\",\n                        \"CostCenter\": \"10301GA001\",\n                        \"ProfitCenter\": \"103010\"\n                    }\n                ]\n            },\n            \"postSimulateInvoiceSet\": {\n                \"IsPO\": true,\n                \"CompanyCode\": \"1000\",\n                \"Vendor\": \"2104000009\",\n                \"DocumentDate\": \"/Date(1780272000000)/\",\n                \"PostingDate\": \"/Date(1780531200000)/\",\n                \"Reference\": \"002/PO/INV/06/26\",\n                \"Currency\": \"IDR\",\n                \"Amount\": \"6350000000.000\",\n                \"TaxCode\": \"2C\",\n                \"ItemText\": \"Invoice PO 2\",\n                \"DueOnDate\": \"/Date(1780531200000)/\",\n                \"PaymentMethod\": \"U\",\n                \"PartnerBankType\": \"ID02\",\n                \"HouseBank\": \"BNI01\",\n                \"AccountId\": \"\",\n                \"Assignment\": \"4100035296\",\n                \"HeaderText\": \"002/PO/INV/06/26\"\n            },\n            \"postSimulateInvoicePordSet\": {\n                \"results\": [\n                    {\n                        \"PoNumber\": \"4100035296\",\n                        \"PoItem\": \"00010\",\n                        \"MaterialDocument\": \"5000069817\",\n                        \"MaterialDocumentYear\": \"2026\",\n                        \"MaterialDocumentItem\": \"0001\",\n                        \"Amount\": \"635000\",\n                        \"Currency\": \"IDR\",\n                        \"Quantity\": \"10000.000\",\n                        \"Uom\": \"KG\"\n                    }\n                ]\n            },\n            \"postSimulateInvoiceWithTaxSet\": {\n                \"results\": []\n            },\n            \"postSimulateInvoiceItemSet\": {\n                \"results\": []\n            },\n            \"postSimulateInvoiceReturnSet\": {\n                \"__deferred\": {\n                    \"uri\": \"http://sapdev.gyssteel.com:8000/sap/opu/odata/sap/ZGW_SAP_SRM_2_SRV/postSimulateInvoiceDataSet('')/postSimulateInvoiceReturnSet\"\n                }\n            }\n        }\n    },\n    \"source\": \"Failed upload SAP data\"\n}"
 						}
 					]
 				},
