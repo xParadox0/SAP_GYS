@@ -6248,6 +6248,86 @@
 							"cookie": [],
 							"responseTime": null,
 							"body": "{\n    \"message\": \"Success\",\n    \"results\": {\n        \"message\": {\n            \"DocNumber\": \"5105623124\",\n            \"Year\": \"2026\",\n            \"Trndt\": \"2026-04-21\",\n            \"ReturnType\": \"S\",\n            \"Msgtx\": \"Success\",\n            \"parkInvoiceWHTSet\": {\n                \"__deferred\": {\n                    \"uri\": \"http://sapdev.gyssteel.com:8000/sap/opu/odata/sap/ZGW_SAP_SRM_SRV/parkInvoiceDataSet('S')/parkInvoiceWHTSet\"\n                }\n            },\n            \"parkInvoiceTextSet\": {\n                \"__deferred\": {\n                    \"uri\": \"http://sapdev.gyssteel.com:8000/sap/opu/odata/sap/ZGW_SAP_SRM_SRV/parkInvoiceDataSet('S')/parkInvoiceTextSet\"\n                }\n            },\n            \"parkInvoiceReturnSet\": {\n                \"results\": []\n            },\n            \"parkInvoiceGLAccSet\": {\n                \"results\": [\n                    {\n                        \"InvoiceDocItem\": \"000002\",\n                        \"GlAccount\": \"51300040\",\n                        \"ItemAmount\": \"500000.0000\",\n                        \"DbCrInd\": \"S\",\n                        \"NegPostng\": false,\n                        \"CompCode\": \"1000\",\n                        \"TaxCode\": \"2D\",\n                        \"Taxjurcode\": \"\",\n                        \"ItemText\": \"Tambahan Custom\",\n                        \"Costcenter\": \"10101PP001\",\n                        \"SdDoc\": \"\",\n                        \"SdocItem\": \"000000\",\n                        \"Orderid\": \"\",\n                        \"RefDate\": null,\n                        \"CmmtItem\": \"\",\n                        \"FundsCtr\": \"\",\n                        \"FuncArea\": \"\",\n                        \"ProfitCtr\": \"101010\",\n                        \"Fund\": \"\",\n                        \"BusArea\": \"\",\n                        \"TrPartBa\": \"\",\n                        \"Costobject\": \"\",\n                        \"Network\": \"\",\n                        \"Activity\": \"\",\n                        \"WbsElem\": \"000000000000000000000000\",\n                        \"Acttype\": \"\",\n                        \"RlEstKey\": \"\",\n                        \"PersonNo\": \"00000000\",\n                        \"CoBusproc\": \"\",\n                        \"GrantNbr\": \"\",\n                        \"CmmtItemLong\": \"\",\n                        \"FuncAreaLong\": \"\",\n                        \"Quantity\": \"0.000\",\n                        \"BaseUom\": \"\",\n                        \"AllocNmbr\": \"4300000649\",\n                        \"CshdisInd\": false,\n                        \"TaxBaseAmount\": \"0.0000\",\n                        \"ProfitSegmNo\": \"0000000000\",\n                        \"Plant\": \"\",\n                        \"BudgetPeriod\": \"\",\n                        \"CoArea\": \"\",\n                        \"Recid\": \"\",\n                        \"WorkItemId\": \"\"\n                    }\n                ]\n            },\n            \"parkInvoiceItemSet\": {\n                \"results\": [\n                    {\n                        \"ItemAmount\": \"14300000.0000\",\n                        \"InvoiceDocItem\": \"000001\",\n                        \"PoNumber\": \"4300000649\",\n                        \"PoItem\": \"00010\",\n                        \"RefDoc\": \"5000069676\",\n                        \"RefDocYear\": \"2026\",\n                        \"RefDocIt\": \"0001\",\n                        \"DeCreInd\": \"\",\n                        \"TaxCode\": \"2D\",\n                        \"Taxjurcode\": \"\",\n                        \"Quantity\": \"80.000\",\n                        \"PoUnit\": \"HR\",\n                        \"PoUnitIso\": \"\",\n                        \"PoPrQnt\": \"0.000\",\n                        \"PoPrUom\": \"\",\n                        \"PoPrUomIso\": \"\",\n                        \"CondType\": \"\",\n                        \"CondStNo\": \"000\",\n                        \"CondCount\": \"00\",\n                        \"SheetNo\": \"\",\n                        \"ItemText\": \"\",\n                        \"FinalInv\": false,\n                        \"SheetItem\": \"0000000000\",\n                        \"GrirClearSrv\": false,\n                        \"FreightVen\": \"\",\n                        \"CshdisInd\": false,\n                        \"RetentionDocuCurrency\": \"0.000\",\n                        \"RetentionPercentage\": \"0.00\",\n                        \"RetentionDueDate\": null,\n                        \"NoRetention\": false,\n                        \"ValuationType\": \"\",\n                        \"InvRelation\": \"000000\",\n                        \"InvItmOrigin\": \"\",\n                        \"CondCountLong\": \"000\",\n                        \"DelCreateDate\": null\n                    }\n                ]\n            },\n            \"parkInvoiceHeader\": {\n                \"InvoiceInd\": \"X\",\n                \"DocType\": \"\",\n                \"DocDate\": \"/Date(1774915200000)/\",\n                \"PstngDate\": \"/Date(1774915200000)/\",\n                \"RefDocNo\": \"\",\n                \"CompCode\": \"1000\",\n                \"DiffInv\": \"\",\n                \"Currency\": \"IDR\",\n                \"CurrencyIso\": \"\",\n                \"ExchRate\": \"0.00000\",\n                \"ExchRateV\": \"0.00000\",\n                \"GrossAmount\": \"16428000.0000\",\n                \"CalcTaxInd\": false,\n                \"Pmnttrms\": \"\",\n                \"BlineDate\": null,\n                \"DsctDays1\": \"0\",\n                \"DsctDays2\": \"0\",\n                \"Netterms\": \"0\",\n                \"DsctPct1\": \"0.000\",\n                \"DsctPct2\": \"0.000\",\n                \"IvCategory\": \"\",\n                \"HeaderTxt\": \"\",\n                \"PmntBlock\": \"\",\n                \"DelCosts\": \"0.0000\",\n                \"DelCostsTaxc\": \"\",\n                \"DelCostsTaxj\": \"\",\n                \"PersonExt\": \"\",\n                \"PymtMeth\": \"\",\n                \"Pmtmthsupl\": \"\",\n                \"InvDocNo\": \"\",\n                \"ScbankInd\": \"\",\n                \"Supcountry\": \"\",\n                \"BllsrvInd\": \"\",\n                \"RefDocNoLong\": \"\",\n                \"DsctAmount\": \"0.0000\",\n                \"PoSubNo\": \"\",\n                \"PoCheckdg\": \"\",\n                \"PoRefNo\": \"\",\n                \"PayeePayer\": \"\",\n                \"PartnerBk\": \"\",\n                \"Housebankid\": \"\",\n                \"AllocNmbr\": \"\",\n                \"PaymtRef\": \"\",\n                \"InvRefNo\": \"\",\n                \"InvYear\": \"0000\",\n                \"InvRecDate\": null,\n                \"PlanningLevel\": \"\",\n                \"PlanningDate\": null,\n                \"Fixedterms\": \"\",\n                \"BusArea\": \"\",\n                \"LotNumber\": \"\",\n                \"ItemText\": \"\",\n                \"J1bnftype\": \"\",\n                \"EuTriangDeal\": false,\n                \"Repcountry\": \"\",\n                \"VatRegNo\": \"\",\n                \"BusinessPlace\": \"\",\n                \"TaxExchRate\": \"0.00000\",\n                \"GoodsAffected\": false,\n                \"RetDueProp\": null,\n                \"DelivPosting\": \"\",\n                \"ReturnPosting\": \"\",\n                \"InvTran\": \"\",\n                \"Simulation\": false,\n                \"J1tpbupl\": \"\",\n                \"Secco\": \"\",\n                \"Vatdate\": null,\n                \"DeCreInd\": \"\",\n                \"TransDate\": null,\n                \"TaxCalcDate\": null\n            }\n        }\n    }\n}"
+						},
+						{
+							"id": "85ae4fbf-cb7c-4134-9478-f48865937223",
+							"name": "Last - Error",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"parkInvoiceHeader\":{\n      \"InvoiceInd\": \"X\",\n      \"DocDate\": \"2026-05-31T00:00:00\",\n      \"PstngDate\": \"2026-05-31T00:00:00\",\n      \"RefDocNo\" : \"Testing 123\",\n      \"CompCode\": \"1000\",\n      \"DiffInv\" : \"2101001900\",\n      \"Currency\": \"IDR\",\n      \"GrossAmount\": \"16428000\",\n      \"CalcTaxInd\" : true,\n      \"Pmnttrms\" : \"Z030\",\n      \"BlineDate\" : \"2026-03-31T00:00:00\",\n      \"HeaderTxt\" : \"Invoice PO With GL\",\n      \"PymtMeth\" : \"U\",\n      \"PartnerBk\" : \"0031\",\n      \"Housebankid\" : \"BNI01\",\n      \"AllocNmbr\" : \"4100035192\",\n      \"ItemText\" : \"Testing\"\n    },\n    \"parkInvoiceItemSet\":[\n      {\n        \"InvoiceDocItem\": \"000001\",\n        \"PoNumber\": \"4100035192\",\n        \"PoItem\": \"00010\",\n        \"RefDoc\": \"5000069676\", //Material Document Number\n        \"RefDocYear\": \"2026\", //Material Document Year\n        \"RefDocIt\": \"1\", //Material Document Unit\n        \"ItemAmount\": \"14300000\",\n        \"Quantity\": \"80\",\n        \"PoUnit\": \"HR\",\n        \"TaxCode\": \"2D\"\n      },\n      {\n        \"Client\": \"130\",\n        \"CompanyCode\": \"1000\",\n        \"AccountingDocNumber\": \"$       1\",\n        \"FiscalYear\": \"2026\",\n        \"LineItem\": \"001\",\n        \"PostingKey\": \"31\",\n        \"AccountType\": \"K\",\n        \"SpecialGLInd\": \"\",\n        \"DebetCreditInd\": \"H\",\n        \"TaxOnSalesCode\": \"**\",\n        \"WitholdingTaxCode\": \"\",\n        \"Currency\": \"IDR\",\n        \"AmountInLocalCurrency\": \"987000\",\n        \"AmountInDocCurrency\": \"987000\",\n        \"TaxType\": \"\",\n        \"TransactionKey\": \"\",\n        \"WithholdingTaxBaseAmount\": \"0\",\n        \"AssignmentNumber\": \"4200006045\",\n        \"ItemText\": \"INVOICE NON PO 6\",\n        \"CostCenter\": \"\",\n        \"OrderNumber\": \"\",\n        \"ServiceDocType\": \"\",\n        \"ServiceDocId\": \"\",\n        \"ServiceDocItemId\": \"000000\",\n        \"MainAssetNumber\": \"\",\n        \"AssetSubnumber\": \"\",\n        \"AssetTransactionType\": \"\",\n        \"GeneralLedgerAccount\": \"20310300\",\n        \"VendorId\": \"8888000453\",\n        \"BaseDateforDueDateCalc\": \"/Date(1780876800000)/\",\n        \"TermOfPaymentKey\": \"\",\n        \"PaymentMethod\": \"U\",\n        \"PaymentBlockKey\": \"\",\n        \"HouseBank\": \"BNI01\",\n        \"PartnerBankType\": \"ID01\",\n        \"TaxCodeDistribution\": \"\",\n        \"MaterialNumber\": \"\",\n        \"Plant\": \"\",\n        \"Quantity\": \"0.000\",\n        \"BaseUom\": \"\",\n        \"QtyUnitEntry\": \"0.000\",\n        \"UnitOfEntry\": \"\",\n        \"PurchaseDocNumber\": \"\",\n        \"ItemNumberPurchaseDoc\": \"00000\",\n        \"AccountAssignmentNumber\": \"00\",\n        \"ProfitCenter\": \"\",\n        \"NetDueDate\": \"/Date(1780876800000)/\"\n        }\n      \n    ],\n    \"parkInvoiceGLAccSet\": [\n        {\n        \"InvoiceDocItem\": \"000002\",\n        \"GlAccount\": \"51300040\",\n        \"ItemAmount\": \"500000\",\n        \"DbCrInd\": \"S\",\n        \"CompCode\": \"1000\",\n        \"TaxCode\": \"2D\",\n        \"ItemText\" : \"Tambahan Custom\",\n        \"Costcenter\" : \"10101PP001\",\n        \"Orderid\" : \"\",\n        \"ProfitCtr\" : \"101010\",\n        \"Network\" : \"\",\n        \"WbsElem\" : \"\",\n        \"Quantity\" : \"0\",\n        \"BaseUom\" : \"\",\n        \"AllocNmbr\" : \"4300000649\"\n        }\n    ],\n    \"parkInvoiceTextSet\" : [\n        {\n        \"Tdformat\" : \"*\",\n        \"Tdline\" : \"Long Text PO With Account\"\n        }\n    ],\n    \"parkInvoiceReturnSet\": []\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{baseUrl}}/srm/create-park-invoice"
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "Server",
+									"value": "nginx/1.24.0 (Ubuntu)"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 17 Jun 2026 04:31:40 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.3.21"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "X-Kong-Upstream-Latency",
+									"value": "450"
+								},
+								{
+									"key": "X-Kong-Proxy-Latency",
+									"value": "0"
+								},
+								{
+									"key": "Via",
+									"value": "1.1 kong/3.9.0"
+								},
+								{
+									"key": "X-Kong-Request-Id",
+									"value": "d42b6f41444ec875394ac41e0d420c71"
+								}
+							],
+							"cookie": [],
+							"responseTime": null,
+							"body": "{\n    \"message\": \"Error\",\n    \"results\": {\n        \"error\": {\n            \"code\": \"/IWCOR/CX_DS_EP_PROPERTY_ERROR/00505692409C1ED6B8FE112855048EDA\",\n            \"message\": {\n                \"lang\": \"en\",\n                \"value\": \"Property 'Client' is invalid\"\n            },\n            \"innererror\": {\n                \"application\": {\n                    \"component_id\": \"\",\n                    \"service_namespace\": \"/SAP/\",\n                    \"service_id\": \"ZGW_SAP_SRM_SRV\",\n                    \"service_version\": \"0001\"\n                },\n                \"transactionid\": \"E899FBAA932F0240E006A315365E279E\",\n                \"timestamp\": \"20260617043140.5965040\",\n                \"Error_Resolution\": {\n                    \"SAP_Transaction\": \"For backend administrators: use ADT feed reader \\\"SAP Gateway Error Log\\\" or run transaction /IWFND/ERROR_LOG on SAP Gateway hub system and search for entries with the timestamp above for more details\",\n                    \"SAP_Note\": \"See SAP Note 1797736 for error analysis (https://service.sap.com/sap/support/notes/1797736)\"\n                },\n                \"errordetails\": []\n            }\n        }\n    },\n    \"source\": \"Empty response upload SAP data\"\n}"
 						}
 					]
 				},
