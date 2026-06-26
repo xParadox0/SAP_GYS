@@ -9530,7 +9530,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"vendor_name\": \"PT. Vendor Example\",\n    \"pic\": \"Yona\",\n    \"contact_phone\": \"081234567890\",\n    \"vendor_email\": \"vendor@example.com\",\n    \"plat_no\": \"B1234XYZ\",\n    \"nama_supir\": \"Driver Name\",\n    \"jenis_kendaraan\": \"Tronton\",\n    \"tanggal_kedatangan\": \"2026-03-15\",\n    \"filename_ktp\": \"ktp_filename.jpg\",\n    \"filename_stnk\": \"stnk_filename.jpg\",\n    \"remarks\": \"Service kendaraan\"\n}",
+							"raw": "{\n    \"qrcode\": \"252604002\", //diisi hanya untuk edit\n    \"vendor_name\": \"PT. Vendor Example\",\n    \"pic\": \"Yona\",\n    \"contact_phone\": \"081234567890\",\n    \"vendor_email\": \"vendor@example.com\",\n    \"plat_no\": \"B1234XYZ\",\n    \"nama_supir\": \"Driver Name\",\n    \"jenis_kendaraan\": \"Tronton\",\n    \"tanggal_kedatangan\": \"2026-03-15\",\n    \"filename_ktp\": \"ktp_filename.jpg\",\n    \"filename_stnk\": \"stnk_filename.jpg\",\n    \"remarks\": \"Service kendaraan\"\n}",
 							"options": {
 								"raw": {
 									"language": "json"
