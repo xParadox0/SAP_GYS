@@ -4871,10 +4871,26 @@
 							"listen": "test",
 							"script": {
 								"id": "02146361-3a1f-4a60-97f7-a248b53791f2",
-								"type": "text/javascript",
 								"exec": [
-									"### Purpose\nRelease a Purchase Order (PO) in SRM.\n\n### Auth\n```http\nAuthorization: Bearer {{token}}\n```\n\n### Key headers\n- `Authorization: Bearer {{token}}`\n- `Content-Type: application/json`\n\n### Body notes\n- POST body contains the release instruction/details (see **Body** tab).\n"
-								]
+									"### Purpose",
+									"Release a Purchase Order (PO) in SRM.",
+									"",
+									"### Auth",
+									"```http",
+									"Authorization: Bearer {{token}}",
+									"```",
+									"",
+									"### Key headers",
+									"- `Authorization: Bearer {{token}}`",
+									"- `Content-Type: application/json`",
+									"",
+									"### Body notes",
+									"- POST body contains the release instruction/details (see **Body** tab).",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {},
+								"requests": {}
 							}
 						}
 					],
@@ -4895,7 +4911,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n  \"Testrun\": \"\",\n  \"Purchaseorder\": \"4100035208\",\n  \"PoRelCode\": \"AA\",\n  \"PoRelInd\": \"X\",\n  \"ReturnType\": \"\",\n  \"Msgtx\": \"\",\n  \"releasePOReturnSet\": []\n}",
+							"raw": "{\n    \"Testrun\": \"\",\n    \"Purchaseorder\": \"4100035237\",\n    \"PoRelCode\": \"AA\",\n    \"PoRelInd\": \"\",\n    \"ReturnType\": \"\",\n    \"Msgtx\": \"\",\n    \"releasePOReturnSet\": []\n}",
 							"options": {
 								"raw": {
 									"headerFamily": "json",
