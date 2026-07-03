@@ -8866,6 +8866,311 @@
 					]
 				},
 				{
+					"name": "Clearing Down Payment to Invoice Copy (Test)",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "a0192a43-619d-4ba6-9ac7-a987028afb36",
+								"exec": [
+									"### Purpose",
+									"Cancel a previously submitted Down Payment (DP) request.",
+									"",
+									"### Auth",
+									"```http",
+									"Authorization: Bearer {{token}}",
+									"```",
+									"",
+									"### Key headers",
+									"- `Authorization: Bearer {{token}}`",
+									"- `Content-Type: application/json`",
+									"",
+									"### Body notes",
+									"- POST body should identify which DP request to cancel (see **Body** tab).",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {},
+								"requests": {}
+							}
+						}
+					],
+					"id": "4ab4009b-67df-441d-974c-b4ee8d61150b",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "{{token}}"
+							}
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"postDPClearingDataSet\": [\n        {\n            \"postDPClearingHeader\": {\n                \"CompanyCode\": \"1000\",\n                \"Currency\": \"IDR\",\n                \"DocumentType\": \"RE\",\n                \"PostingDate\": \"2026-05-11T00:00:00\",\n                \"DocumentDate\": \"2026-05-11T00:00:00\",\n                \"HeaderText\": \"Testing Header\",\n                \"Reference\": \"Test Ref\"\n            },\n            \"postDPClearingAccSet\": [\n                {\n                    \"AccountType\": \"K\",\n                    \"VendorCode\": \"2105000072\",\n                    \"CompCode\": \"1000\",\n                    \"OpenItemFlag\": true,\n                    \"ValueCriteriaFrom\": \"2100002675\",\n                    \"ValueCriteriaTo\": \"2100002675\"\n                },\n                {\n                    \"AccountType\": \"K\",\n                    \"VendorCode\": \"2105000072\",\n                    \"CompCode\": \"1000\",\n                    \"OpenItemFlag\": true,\n                    \"ValueCriteriaFrom\": \"2100002668\",\n                    \"ValueCriteriaTo\": \"2100002668\"\n                }\n            ],\n            \"postDPClearingRefSet\": [\n                {\n                    \"PostingKey\": \"50\",\n                    \"VendorCode\": \"11010010\",\n                    \"SpecialGLIndicator\": \"\",\n                    \"Amount\": \"76617470\", \n                    \"CostCenter\": \"\",\n                    \"Assignment\": \"4100035397\",\n                    \"ItemText\": \"TEST 1\",\n                    \"TaxCode\": \"0B\",\n                    \"ProfitCenter\": \"103010\"\n                }\n            ],\n            \"postDPClearingDocSet\": [\n                {\n                \"DocumentNo\": \"2100002675\",\n                \"FiscalYear\": \"2026\",\n                \"CompCode\": \"1000\"\n                },\n                {\n                \"DocumentNo\": \"2100002668\",\n                \"FiscalYear\": \"2026\",\n                \"CompCode\": \"1000\"\n                }\n            ]\n        }\n    ]\n}",
+							"options": {
+								"raw": {
+									"headerFamily": "json",
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{baseUrl}}/srm/clearing-dp"
+					},
+					"response": [
+						{
+							"id": "70ecf1cd-828b-461a-a1d6-e6d26839e9ee",
+							"name": "Success",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"description": "Added as a part of security scheme: bearer",
+										"key": "Authorization",
+										"value": "Bearer <token>"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"postPVStatusSet\": [\n    {\n      \"IdentificationNo\": \"A666\",\n      \"Date\": \"2026-03-01\",\n      \"Status\": \"X\"\n    }\n  ]\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{baseUrl}}/srm/approve-pv-status"
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"description": {
+										"content": "",
+										"type": "text/plain"
+									},
+									"key": "Server",
+									"value": "nginx/1.24.0 (Ubuntu)"
+								},
+								{
+									"description": {
+										"content": "",
+										"type": "text/plain"
+									},
+									"key": "Date",
+									"value": "Fri, 13 Mar 2026 08:48:15 GMT"
+								},
+								{
+									"description": {
+										"content": "",
+										"type": "text/plain"
+									},
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"description": {
+										"content": "",
+										"type": "text/plain"
+									},
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"description": {
+										"content": "",
+										"type": "text/plain"
+									},
+									"key": "X-Powered-By",
+									"value": "PHP/8.3.21"
+								},
+								{
+									"description": {
+										"content": "",
+										"type": "text/plain"
+									},
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"description": {
+										"content": "",
+										"type": "text/plain"
+									},
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"description": {
+										"content": "",
+										"type": "text/plain"
+									},
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"description": {
+										"content": "",
+										"type": "text/plain"
+									},
+									"key": "X-XSS-Protection",
+									"value": "1; mode=block"
+								},
+								{
+									"description": {
+										"content": "",
+										"type": "text/plain"
+									},
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"description": {
+										"content": "",
+										"type": "text/plain"
+									},
+									"key": "X-Kong-Upstream-Latency",
+									"value": "408"
+								},
+								{
+									"description": {
+										"content": "",
+										"type": "text/plain"
+									},
+									"key": "X-Kong-Proxy-Latency",
+									"value": "0"
+								},
+								{
+									"description": {
+										"content": "",
+										"type": "text/plain"
+									},
+									"key": "Via",
+									"value": "1.1 kong/3.9.0"
+								},
+								{
+									"description": {
+										"content": "",
+										"type": "text/plain"
+									},
+									"key": "X-Kong-Request-Id",
+									"value": "0f4ecc5f08f07e25fbd73f0924e9392f"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"responseTime": null,
+							"body": "{\n    \"message\": \"Success\",\n    \"results\": {\n        \"message\": {\n            \"__metadata\": {\n                \"id\": \"http://sapdev.gyssteel.com:8000/sap/opu/odata/sap/ZGW_SAP_SRM_SRV/postPVStatusHeaderSet('')\",\n                \"uri\": \"http://sapdev.gyssteel.com:8000/sap/opu/odata/sap/ZGW_SAP_SRM_SRV/postPVStatusHeaderSet('')\",\n                \"type\": \"ZGW_SAP_SRM_SRV.postPVStatusHeader\"\n            },\n            \"IdPV\": \"\",\n            \"postPVStatusSet\": {\n                \"results\": [\n                    {\n                        \"__metadata\": {\n                            \"id\": \"http://sapdev.gyssteel.com:8000/sap/opu/odata/sap/ZGW_SAP_SRM_SRV/postPVStatusSet(IdentificationNo='A666',Date='2026-03-01')\",\n                            \"uri\": \"http://sapdev.gyssteel.com:8000/sap/opu/odata/sap/ZGW_SAP_SRM_SRV/postPVStatusSet(IdentificationNo='A666',Date='2026-03-01')\",\n                            \"type\": \"ZGW_SAP_SRM_SRV.postPVStatus\"\n                        },\n                        \"IdentificationNo\": \"A666\",\n                        \"Date\": \"2026-03-01\",\n                        \"Status\": \"X\",\n                        \"ReturnType\": \"S\",\n                        \"Msg\": \"Success\"\n                    }\n                ]\n            }\n        }\n    }\n}"
+						},
+						{
+							"id": "3663b755-ec2f-43a3-857d-4373dacea2f7",
+							"name": "DP Reclass - Clearing",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"postDPClearingDataSet\": [\n        {\n            \"postDPClearingHeader\": {\n                \"CompanyCode\": \"1000\",\n                \"Currency\": \"IDR\",\n                \"DocumentType\": \"KA\",\n                \"PostingDate\": \"2026-06-08T00:00:00\",\n                \"DocumentDate\": \"2026-06-08T00:00:00\",\n                \"HeaderText\": \"DP Reclass 003/MM0/X/2026\",\n                \"Reference\": \"003/MM0/X/2026\"\n            },\n            \"postDPClearingAccSet\": [\n                {\n                    \"AccountType\": \"K\",\n                    \"VendorCode\": \"2104000005\",\n                    \"CompCode\": \"1000\",\n                    \"SpecialGLInd\": \"A\",\n                    \"OpenItemFlag\": true,\n                    \"ValueCriteriaFrom\": \"71000004292026\", // Old DP Number\n                    \"ValueCriteriaTo\": \"71000004292026\" // Old DP Number\n                }\n            ],\n            \"postDPClearingRefSet\": [\n                {\n                \"PostingKey\" : \"29\",\n                \"VendorCode\" : \"2104000005\", // vendor code\n                \"SpecialGLIndicator\" : \"A\",\n                \"Amount\" : \"560000\",\n                \"PurchaseOrderNum\" : \"4300000754\", // Number PO destination\n                \"PurchaseOrderItem\" : \"10\", // Number PO Line Item destination\n                \"CostCenter\" : \"\",\n                \"GLAccount\" : \"\",\n                \"Assignment\" : \"4300000754\", // ref PO Number\n                \"ItemText\" : \"TEST 8 June 2026\",\n                \"PaytMethod\" : \"\",\n                \"HouseBank\" : \"\",\n                \"PartBankType\" : \"\",\n                \"TaxCode\" : \"0B\",\n                \"PaymentTerm\" : \"\",\n                \"ProfitCenter\" : \"\",\n                \"BaselineDate\" : \"2026-06-08T00:00:00\" // payment date from document 71...\n                },\n                {\n                 \"PostingKey\" : \"29\",\n                \"VendorCode\" : \"2104000005\", // vendor code\n                \"SpecialGLIndicator\" : \"A\",\n                \"Amount\" : \"560000\",\n                \"PurchaseOrderNum\" : \"4300000754\", // Number PO destination\n                \"PurchaseOrderItem\" : \"20\", // Number PO Line Item destination\n                \"CostCenter\" : \"\",\n                \"GLAccount\" : \"\",\n                \"Assignment\" : \"4300000754\", // ref PO Number\n                \"ItemText\" : \"TEST 8 June 2026\",\n                \"PaytMethod\" : \"\",\n                \"HouseBank\" : \"\",\n                \"PartBankType\" : \"\",\n                \"TaxCode\" : \"0B\",\n                \"PaymentTerm\" : \"\",\n                \"ProfitCenter\" : \"\",\n                \"BaselineDate\" : \"2026-06-08T00:00:00\"\n                }\n            ]\n        }\n    ]\n}\n",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{baseUrl}}/srm/clearing-dp"
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "Server",
+									"value": "nginx/1.24.0 (Ubuntu)"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 08 Jun 2026 10:51:49 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.3.21"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1; mode=block"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-Kong-Upstream-Latency",
+									"value": "1030"
+								},
+								{
+									"key": "X-Kong-Proxy-Latency",
+									"value": "0"
+								},
+								{
+									"key": "Via",
+									"value": "1.1 kong/3.9.0"
+								},
+								{
+									"key": "X-Kong-Request-Id",
+									"value": "93991d4eb367611993857025dd19443f"
+								}
+							],
+							"cookie": [],
+							"responseTime": null,
+							"body": "{\n    \"message\": \"Success\",\n    \"results\": {\n        \"d\": {\n            \"Key\": \"\",\n            \"postDPClearingDataSet\": {\n                \"results\": [\n                    {\n                        \"Trndt\": \"/Date(1780876800000)/\",\n                        \"ReturnType\": \"S\",\n                        \"Msgtx\": \"Document 2900000044 was posted in company code 1000\",\n                        \"ClearCompCode\": \"1000\",\n                        \"ClearDocNo\": \"2900000044\",\n                        \"ClearDocYear\": \"2026\",\n                        \"postDPClearingAccSet\": {\n                            \"results\": [\n                                {\n                                    \"AccountType\": \"K\",\n                                    \"VendorCode\": \"2104000005\",\n                                    \"CompCode\": \"1000\",\n                                    \"OpenItemFlag\": true,\n                                    \"Xfifo\": false,\n                                    \"SpecialGLInd\": \"A\",\n                                    \"Avsid\": \"\",\n                                    \"Criteria\": \"BELNR\",\n                                    \"ValueCriteriaFrom\": \"71000004292026\",\n                                    \"ValueCriteriaTo\": \"71000004292026\"\n                                }\n                            ]\n                        },\n                        \"postDPClearingDocSet\": {\n                            \"__deferred\": {\n                                \"uri\": \"http://sapdev.gyssteel.com:8000/sap/opu/odata/sap/ZGW_SAP_SRM_SRV/postDPClearingDataSet('S')/postDPClearingDocSet\"\n                            }\n                        },\n                        \"postDPClearingHeader\": {\n                            \"CompanyCode\": \"1000\",\n                            \"Currency\": \"IDR\",\n                            \"DocumentType\": \"KA\",\n                            \"PostingDate\": \"/Date(1780876800000)/\",\n                            \"DocumentDate\": \"/Date(1780876800000)/\",\n                            \"HeaderText\": \"DP Reclass 003/MM0/X/2026\",\n                            \"Reference\": \"003/MM0/X/2026\"\n                        },\n                        \"postDPClearingRefSet\": {\n                            \"results\": [\n                                {\n                                    \"PostingKey\": \"29\",\n                                    \"VendorCode\": \"2104000005\",\n                                    \"SpecialGLIndicator\": \"A\",\n                                    \"Amount\": \"560000\",\n                                    \"PurchaseOrderNum\": \"4300000754\",\n                                    \"PurchaseOrderItem\": \"10\",\n                                    \"CostCenter\": \"\",\n                                    \"GLAccount\": \"\",\n                                    \"Assignment\": \"4300000754\",\n                                    \"ItemText\": \"TEST 8 June 2026\",\n                                    \"PaytMethod\": \"\",\n                                    \"HouseBank\": \"\",\n                                    \"PartBankType\": \"\",\n                                    \"TaxCode\": \"0B\",\n                                    \"PaymentTerm\": \"\",\n                                    \"ProfitCenter\": \"\",\n                                    \"BaselineDate\": \"/Date(1780876800000)/\"\n                                },\n                                {\n                                    \"PostingKey\": \"29\",\n                                    \"VendorCode\": \"2104000005\",\n                                    \"SpecialGLIndicator\": \"A\",\n                                    \"Amount\": \"560000\",\n                                    \"PurchaseOrderNum\": \"4300000754\",\n                                    \"PurchaseOrderItem\": \"20\",\n                                    \"CostCenter\": \"\",\n                                    \"GLAccount\": \"\",\n                                    \"Assignment\": \"4300000754\",\n                                    \"ItemText\": \"TEST 8 June 2026\",\n                                    \"PaytMethod\": \"\",\n                                    \"HouseBank\": \"\",\n                                    \"PartBankType\": \"\",\n                                    \"TaxCode\": \"0B\",\n                                    \"PaymentTerm\": \"\",\n                                    \"ProfitCenter\": \"\",\n                                    \"BaselineDate\": \"/Date(1780876800000)/\"\n                                }\n                            ]\n                        }\n                    }\n                ]\n            }\n        }\n    }\n}"
+						}
+					]
+				},
+				{
 					"name": "GR Quantity Update",
 					"event": [
 						{
