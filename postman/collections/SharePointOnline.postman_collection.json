@@ -1,0 +1,355 @@
+{
+  "info": {
+    "_postman_id": "00000000-0000-0000-0000-000000000001",
+    "name": "SharePoint Online Template",
+    "description": "Starter template for calling SharePoint Online via Microsoft Graph and the classic SharePoint REST API. Uses Azure AD app-only (client credentials) authentication. Fill in the paired environment template (`sharepoint-online.template.postman_environment.json`) before running.\n\nFolders:\n- Auth: get an OAuth2 access token and store it in {{access_token}}\n- Sites: resolve a site's id / metadata\n- Lists: list, get, and create SharePoint lists\n- List Items: CRUD operations on list items\n- Files: browse, upload, and download files in a document library\n- Users: site users and current user info",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "auth": {
+    "type": "bearer",
+    "bearer": [
+      { "key": "token", "value": "{{access_token}}", "type": "string" }
+    ]
+  },
+  "variable": [
+    { "key": "graph_base", "value": "https://graph.microsoft.com/v1.0" }
+  ],
+  "item": [
+    {
+      "name": "Auth",
+      "item": [
+        {
+          "name": "Get Access Token (Client Credentials)",
+          "request": {
+            "auth": { "type": "noauth" },
+            "method": "POST",
+            "header": [
+              { "key": "Content-Type", "value": "application/x-www-form-urlencoded" }
+            ],
+            "body": {
+              "mode": "urlencoded",
+              "urlencoded": [
+                { "key": "grant_type", "value": "client_credentials", "type": "text" },
+                { "key": "client_id", "value": "{{client_id}}", "type": "text" },
+                { "key": "client_secret", "value": "{{client_secret}}", "type": "text" },
+                { "key": "scope", "value": "https://graph.microsoft.com/.default", "type": "text" }
+              ]
+            },
+            "url": {
+              "raw": "https://login.microsoftonline.com/{{tenant_id}}/oauth2/v2.0/token",
+              "protocol": "https",
+              "host": ["login", "microsoftonline", "com"],
+              "path": ["{{tenant_id}}", "oauth2", "v2.0", "token"]
+            },
+            "description": "Requests an app-only Graph token via the client credentials flow. Requires an Azure AD app registration with an application permission such as Sites.Read.All or Sites.ReadWrite.All (admin consented)."
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "if (pm.response.code === 200) {",
+                  "    const body = pm.response.json();",
+                  "    pm.environment.set('access_token', body.access_token);",
+                  "    pm.test('access_token stored', () => pm.expect(body.access_token).to.be.a('string'));",
+                  "} else {",
+                  "    pm.test('token request failed', () => pm.expect.fail(pm.response.text()));",
+                  "}"
+                ]
+              }
+            }
+          ],
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Sites",
+      "item": [
+        {
+          "name": "Get Site (Graph, by server-relative path)",
+          "request": {
+            "method": "GET",
+            "header": [{ "key": "Accept", "value": "application/json" }],
+            "url": {
+              "raw": "{{graph_base}}/sites/{{tenant_name}}.sharepoint.com:/sites/{{site_name}}",
+              "host": ["{{graph_base}}"],
+              "path": ["sites", "{{tenant_name}}.sharepoint.com:", "sites", "{{site_name}}"]
+            },
+            "description": "Resolves the site id for {{site_url}}. Copy the returned `id` into the {{site_id}} environment variable for the Graph requests below."
+          },
+          "response": []
+        },
+        {
+          "name": "Get Site (REST)",
+          "request": {
+            "method": "GET",
+            "header": [{ "key": "Accept", "value": "application/json;odata=verbose" }],
+            "url": {
+              "raw": "{{site_url}}/_api/web?$select=Title,Id,Url,Description",
+              "host": ["{{site_url}}"],
+              "path": ["_api", "web"],
+              "query": [{ "key": "$select", "value": "Title,Id,Url,Description" }]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Lists",
+      "item": [
+        {
+          "name": "Get All Lists (Graph)",
+          "request": {
+            "method": "GET",
+            "header": [{ "key": "Accept", "value": "application/json" }],
+            "url": {
+              "raw": "{{graph_base}}/sites/{{site_id}}/lists",
+              "host": ["{{graph_base}}"],
+              "path": ["sites", "{{site_id}}", "lists"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get All Lists (REST)",
+          "request": {
+            "method": "GET",
+            "header": [{ "key": "Accept", "value": "application/json;odata=verbose" }],
+            "url": {
+              "raw": "{{site_url}}/_api/web/lists?$select=Title,Id,ItemCount",
+              "host": ["{{site_url}}"],
+              "path": ["_api", "web", "lists"],
+              "query": [{ "key": "$select", "value": "Title,Id,ItemCount" }]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get List by Title (REST)",
+          "request": {
+            "method": "GET",
+            "header": [{ "key": "Accept", "value": "application/json;odata=verbose" }],
+            "url": {
+              "raw": "{{site_url}}/_api/web/lists/getbytitle('{{list_title}}')",
+              "host": ["{{site_url}}"],
+              "path": ["_api", "web", "lists", "getbytitle('{{list_title}}')"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Create List (REST)",
+          "request": {
+            "method": "POST",
+            "header": [
+              { "key": "Accept", "value": "application/json;odata=verbose" },
+              { "key": "Content-Type", "value": "application/json;odata=verbose" }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"__metadata\": { \"type\": \"SP.List\" },\n  \"Title\": \"{{list_title}}\",\n  \"Description\": \"Created from Postman template\",\n  \"BaseTemplate\": 100\n}"
+            },
+            "url": {
+              "raw": "{{site_url}}/_api/web/lists",
+              "host": ["{{site_url}}"],
+              "path": ["_api", "web", "lists"]
+            },
+            "description": "BaseTemplate 100 = Generic (custom) list. See Microsoft docs for other template ids (Document Library = 101, Tasks = 107, etc)."
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "List Items",
+      "item": [
+        {
+          "name": "Get List Items (Graph)",
+          "request": {
+            "method": "GET",
+            "header": [{ "key": "Accept", "value": "application/json" }],
+            "url": {
+              "raw": "{{graph_base}}/sites/{{site_id}}/lists/{{list_id}}/items?expand=fields",
+              "host": ["{{graph_base}}"],
+              "path": ["sites", "{{site_id}}", "lists", "{{list_id}}", "items"],
+              "query": [{ "key": "expand", "value": "fields" }]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get List Items (REST)",
+          "request": {
+            "method": "GET",
+            "header": [{ "key": "Accept", "value": "application/json;odata=verbose" }],
+            "url": {
+              "raw": "{{site_url}}/_api/web/lists/getbytitle('{{list_title}}')/items?$top=50",
+              "host": ["{{site_url}}"],
+              "path": ["_api", "web", "lists", "getbytitle('{{list_title}}')", "items"],
+              "query": [{ "key": "$top", "value": "50" }]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Create List Item (REST)",
+          "request": {
+            "method": "POST",
+            "header": [
+              { "key": "Accept", "value": "application/json;odata=verbose" },
+              { "key": "Content-Type", "value": "application/json;odata=verbose" }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"__metadata\": { \"type\": \"{{list_item_entity_type}}\" },\n  \"Title\": \"New item from Postman\"\n}"
+            },
+            "url": {
+              "raw": "{{site_url}}/_api/web/lists/getbytitle('{{list_title}}')/items",
+              "host": ["{{site_url}}"],
+              "path": ["_api", "web", "lists", "getbytitle('{{list_title}}')", "items"]
+            },
+            "description": "{{list_item_entity_type}} is the list's ListItemEntityTypeFullName, e.g. SP.Data.MyListListItem. Fetch it from the list's metadata if unknown."
+          },
+          "response": []
+        },
+        {
+          "name": "Update List Item (REST)",
+          "request": {
+            "method": "POST",
+            "header": [
+              { "key": "Accept", "value": "application/json;odata=verbose" },
+              { "key": "Content-Type", "value": "application/json;odata=verbose" },
+              { "key": "X-HTTP-Method", "value": "MERGE" },
+              { "key": "IF-MATCH", "value": "*" }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"__metadata\": { \"type\": \"{{list_item_entity_type}}\" },\n  \"Title\": \"Updated from Postman\"\n}"
+            },
+            "url": {
+              "raw": "{{site_url}}/_api/web/lists/getbytitle('{{list_title}}')/items({{list_item_id}})",
+              "host": ["{{site_url}}"],
+              "path": ["_api", "web", "lists", "getbytitle('{{list_title}}')", "items({{list_item_id}})"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Delete List Item (REST)",
+          "request": {
+            "method": "POST",
+            "header": [
+              { "key": "Accept", "value": "application/json;odata=verbose" },
+              { "key": "X-HTTP-Method", "value": "DELETE" },
+              { "key": "IF-MATCH", "value": "*" }
+            ],
+            "url": {
+              "raw": "{{site_url}}/_api/web/lists/getbytitle('{{list_title}}')/items({{list_item_id}})",
+              "host": ["{{site_url}}"],
+              "path": ["_api", "web", "lists", "getbytitle('{{list_title}}')", "items({{list_item_id}})"]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Files",
+      "item": [
+        {
+          "name": "Get Files in Folder (REST)",
+          "request": {
+            "method": "GET",
+            "header": [{ "key": "Accept", "value": "application/json;odata=verbose" }],
+            "url": {
+              "raw": "{{site_url}}/_api/web/GetFolderByServerRelativeUrl('{{folder_relative_url}}')/Files",
+              "host": ["{{site_url}}"],
+              "path": ["_api", "web", "GetFolderByServerRelativeUrl('{{folder_relative_url}}')", "Files"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Upload File (REST)",
+          "request": {
+            "method": "POST",
+            "header": [
+              { "key": "Accept", "value": "application/json;odata=verbose" }
+            ],
+            "body": {
+              "mode": "file",
+              "file": {}
+            },
+            "url": {
+              "raw": "{{site_url}}/_api/web/GetFolderByServerRelativeUrl('{{folder_relative_url}}')/Files/add(url='{{upload_file_name}}',overwrite=true)",
+              "host": ["{{site_url}}"],
+              "path": ["_api", "web", "GetFolderByServerRelativeUrl('{{folder_relative_url}}')", "Files", "add(url='{{upload_file_name}}',overwrite=true)"]
+            },
+            "description": "In Postman, select the file to upload under Body > binary before sending."
+          },
+          "response": []
+        },
+        {
+          "name": "Download File (REST)",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{site_url}}/_api/web/GetFileByServerRelativeUrl('{{file_relative_url}}')/$value",
+              "host": ["{{site_url}}"],
+              "path": ["_api", "web", "GetFileByServerRelativeUrl('{{file_relative_url}}')", "$value"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get Drive Items (Graph)",
+          "request": {
+            "method": "GET",
+            "header": [{ "key": "Accept", "value": "application/json" }],
+            "url": {
+              "raw": "{{graph_base}}/sites/{{site_id}}/drive/root/children",
+              "host": ["{{graph_base}}"],
+              "path": ["sites", "{{site_id}}", "drive", "root", "children"]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Users",
+      "item": [
+        {
+          "name": "Get Site Users (REST)",
+          "request": {
+            "method": "GET",
+            "header": [{ "key": "Accept", "value": "application/json;odata=verbose" }],
+            "url": {
+              "raw": "{{site_url}}/_api/web/siteusers",
+              "host": ["{{site_url}}"],
+              "path": ["_api", "web", "siteusers"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get Current User (REST)",
+          "request": {
+            "method": "GET",
+            "header": [{ "key": "Accept", "value": "application/json;odata=verbose" }],
+            "url": {
+              "raw": "{{site_url}}/_api/web/currentuser",
+              "host": ["{{site_url}}"],
+              "path": ["_api", "web", "currentuser"]
+            }
+          },
+          "response": []
+        }
+      ]
+    }
+  ]
+}
