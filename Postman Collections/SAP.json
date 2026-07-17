@@ -1059,10 +1059,22 @@
 							"listen": "test",
 							"script": {
 								"id": "f6b640bb-634d-4bb5-b5df-16d00446355c",
-								"type": "text/javascript",
 								"exec": [
-									"### Purpose\nFetch local scrap reference data for Purchase Orders (PO).\n\n### Auth\n```http\nAuthorization: Bearer {{token}}\n```\n\n### Key headers\n- `Authorization: Bearer {{token}}`\n"
-								]
+									"### Purpose",
+									"Fetch local scrap reference data for Purchase Orders (PO).",
+									"",
+									"### Auth",
+									"```http",
+									"Authorization: Bearer {{token}}",
+									"```",
+									"",
+									"### Key headers",
+									"- `Authorization: Bearer {{token}}`",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {},
+								"requests": {}
 							}
 						}
 					],
@@ -1076,7 +1088,7 @@
 						},
 						"method": "GET",
 						"header": [],
-						"url": "{{baseUrl}}/sap/scrap-local"
+						"url": "{{dev}}/sap/scrap-local"
 					},
 					"response": [
 						{
@@ -1509,7 +1521,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n  \"username\": \"yona.intikom\",\n  \"password\": \"GYSVendor@2026$$\"\n}",
+							"raw": "{\n  \"username\": \"v1mobile\",\n  \"password\": \"mblAPI2023$\"\n}",
 							"options": {
 								"raw": {
 									"headerFamily": "json",
