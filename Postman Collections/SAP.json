@@ -7418,7 +7418,7 @@
 					]
 				},
 				{
-					"name": "Change Journal​ (Down Payment, Post Invoice Non PO, Park Invoice Non PO)",
+					"name": "Change Journal​ (Down Payment)",
 					"id": "73a3d48a-666f-4ce4-a8cd-3f0cfeef7592",
 					"request": {
 						"auth": {
