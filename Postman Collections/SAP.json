@@ -1705,6 +1705,234 @@
 					]
 				},
 				{
+					"name": "Token Yona",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "fe279af8-fe46-41e8-8db2-f155b24ae375",
+								"exec": [
+									"### Purpose",
+									"Obtain an authentication token from the GYS backend.",
+									"",
+									"### Auth",
+									"- **No Bearer token required** (this is the auth endpoint).",
+									"",
+									"### Key headers",
+									"- Typically `Content-Type: application/json` (depends on the request body configured).",
+									"",
+									"### Body notes",
+									"- Uses a **POST** body to submit credentials (fields are defined in the request body).",
+									"",
+									"### Output / variables",
+									"- This request should be run **first**.",
+									"- Expected behavior: stores the access token into the active environment variable `token` (used as `{{token}}` by other requests).",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {},
+								"requests": {}
+							}
+						}
+					],
+					"id": "84cb087c-2368-4497-b47e-c61ace738b64",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"username\": \"v1mobile\",\n  \"password\": \"mblAPI2023$\"\n}",
+							"options": {
+								"raw": {
+									"headerFamily": "json",
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{dev}}/auth-token"
+					},
+					"response": [
+						{
+							"id": "024591c9-9111-489d-99f4-8a8862e585ea",
+							"name": "Success",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"username\": \"yona.intikom\",\n  \"password\": \"GYSVendor@2026$\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{dev}}/auth-token"
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Server",
+									"value": "nginx/1.24.0 (Ubuntu)"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 04 Apr 2026 10:37:58 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.3.21"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1; mode=block"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-Kong-Upstream-Latency",
+									"value": "200"
+								},
+								{
+									"key": "X-Kong-Proxy-Latency",
+									"value": "0"
+								},
+								{
+									"key": "Via",
+									"value": "1.1 kong/3.9.0"
+								},
+								{
+									"key": "X-Kong-Request-Id",
+									"value": "df8b0d244661761c9f140f6789fcfa7f"
+								}
+							],
+							"cookie": [],
+							"responseTime": null,
+							"body": "{\n    \"status\": \"true\",\n    \"access_token\": \"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ5b25hLmludGlrb20iLCJpYXQiOjE3NzUyOTkwNzgsImV4cCI6MTc3NTM4NTQ3OH0=.1RX0dZ4ELTFU3sCPF6L0bnvBhsKy2ouV6fKaHqBgCXI=\"\n}"
+						},
+						{
+							"id": "9596201e-9d5e-4b10-9ca4-2dddf9b89c90",
+							"name": "Fail",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"username\": \"yona.intikom2\",\n  \"password\": \"GYSVendor@2026$\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{dev}}/auth-token"
+							},
+							"status": "Unauthorized",
+							"code": 401,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Server",
+									"value": "nginx/1.24.0 (Ubuntu)"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 04 Apr 2026 11:10:33 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.3.21"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "X-Kong-Upstream-Latency",
+									"value": "124"
+								},
+								{
+									"key": "X-Kong-Proxy-Latency",
+									"value": "1"
+								},
+								{
+									"key": "Via",
+									"value": "1.1 kong/3.9.0"
+								},
+								{
+									"key": "X-Kong-Request-Id",
+									"value": "7251bc519edda46a58b23a0e68b20a6f"
+								}
+							],
+							"cookie": [],
+							"responseTime": null,
+							"body": "{\n    \"status\": \"false\",\n    \"message\": \"Invalid credentials\",\n    \"source\": \"LDAP unauthorized\"\n}"
+						}
+					]
+				},
+				{
 					"name": "Create Vendor",
 					"id": "a0b7f6a0-8108-4387-af0c-0acf53919164",
 					"request": {
