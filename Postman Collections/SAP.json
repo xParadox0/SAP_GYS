@@ -7862,8 +7862,8 @@
 					]
 				},
 				{
-					"name": "Change Journal​ (Down Payment, Treasury) Copy",
-					"id": "c6427ae8-317d-4da0-a46b-a8e77f11ddbd",
+					"name": "Change Journal​ (Down Payment, Treasury) Test",
+					"id": "0cc220f8-8124-43ff-bdbc-969bed3e3812",
 					"request": {
 						"auth": {
 							"type": "bearer",
@@ -7892,7 +7892,7 @@
 					},
 					"response": [
 						{
-							"id": "76070a36-d26a-42fa-8622-012d47008d48",
+							"id": "6581e5e0-8ecd-4cde-9ca5-1c5e8b8d32f9",
 							"name": "Success",
 							"originalRequest": {
 								"method": "POST",
@@ -7990,7 +7990,7 @@
 							"body": "{\n    \"message\": \"Success\",\n    \"results\": {\n        \"d\": {\n            \"TrID\": \"\",\n            \"postChangeJournalItemSet\": {\n                \"results\": [\n                    {\n                        \"DocumentNo\": \"2000000171\",\n                        \"Year\": \"2026\",\n                        \"LineItem\": \"001\",\n                        \"DocumentHeaderText\": \"PERGUDANGAN PANTAI INDAH\",\n                        \"Reference\": \"4300000678\",\n                        \"DueOn\": \"2026-04-07\",\n                        \"PaymentBlock\": \"B\",\n                        \"PaymentCurrency\": \"\",\n                        \"PaymentAmount\": \"0.00\",\n                        \"PaymentMethod\": \"U\",\n                        \"Text\": \"ABCD\",\n                        \"Assignment\": \"4300000663\",\n                        \"LongText\": \"For Long Text\",\n                        \"HouseBankKey\": \"BNI01\",\n                        \"HouseBankAccount\": \"IDR01\",\n                        \"HouseBankType\": \"ID01\",\n                        \"Status\": \"S\",\n                        \"Msg\": \"Success\"\n                    }\n                ]\n            }\n        }\n    }\n}"
 						},
 						{
-							"id": "20eab107-55c4-4a9f-9d00-707ccecc7e18",
+							"id": "90d29344-8049-410d-b330-c86376c2430e",
 							"name": "Fail",
 							"originalRequest": {
 								"method": "POST",
