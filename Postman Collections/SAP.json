@@ -594,11 +594,92 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "2d51e5a9-ad80-4373-b11f-3e030d253bbe",
-								"type": "text/javascript",
+								"id": "e9ef1ec7-6949-46fc-98fb-584907e3609f",
 								"exec": [
-									"### Purpose\nFetch Master Bank Key data.\n\n### Auth\n```http\nAuthorization: Bearer {{token}}\n```\n\n### Key headers\n- `Authorization: Bearer {{token}}`\n"
-								]
+									"// Visualization Script",
+									"const template = `",
+									"<style>",
+									"  body { font-family: sans-serif; font-size: 13px; padding: 12px; }",
+									"  h3 { margin: 0 0 10px; font-size: 15px; }",
+									"  .search-bar { margin-bottom: 10px; }",
+									"  .search-bar input { padding: 6px 10px; width: 260px; border: 1px solid #ccc; border-radius: 4px; font-size: 13px; }",
+									"  table { width: 100%; border-collapse: collapse; }",
+									"  th { background: #f0f0f0; text-align: left; padding: 7px 10px; border-bottom: 2px solid #ccc; font-size: 12px; text-transform: uppercase; letter-spacing: 0.04em; }",
+									"  td { padding: 6px 10px; border-bottom: 1px solid #eee; }",
+									"  tr:hover td { background: #fafafa; }",
+									"  .badge { display: inline-block; padding: 2px 8px; border-radius: 10px; font-size: 11px; font-weight: 600; }",
+									"  .badge-active { background: #d1fae5; color: #065f46; }",
+									"  .badge-deleted { background: #fee2e2; color: #991b1b; }",
+									"  .total { font-size: 12px; color: #666; margin-bottom: 8px; }",
+									"</style>",
+									"<h3>Master Bank Key</h3>",
+									"<div class=\"search-bar\"><input id=\"search\" type=\"text\" placeholder=\"Search bank name or key...\" oninput=\"filterTable()\" /></div>",
+									"<div class=\"total\" id=\"total\"></div>",
+									"<table id=\"bankTable\">",
+									"  <thead>",
+									"    <tr>",
+									"      <th>#</th>",
+									"      <th>Country Key</th>",
+									"      <th>Bank Key</th>",
+									"      <th>Bank Name</th>",
+									"      <th>Status</th>",
+									"    </tr>",
+									"  </thead>",
+									"  <tbody id=\"tableBody\"></tbody>",
+									"</table>",
+									"<script>",
+									"  var allRows = [];",
+									"  pm.getData(function (err, value) {",
+									"    allRows = value.rows;",
+									"    renderRows(allRows);",
+									"    document.getElementById('total').textContent = 'Total: ' + allRows.length + ' records';",
+									"  });",
+									"",
+									"  function renderRows(rows) {",
+									"    var tbody = document.getElementById('tableBody');",
+									"    tbody.innerHTML = '';",
+									"    rows.forEach(function (r, i) {",
+									"      var tr = document.createElement('tr');",
+									"      tr.innerHTML =",
+									"        '<td>' + (i + 1) + '</td>' +",
+									"        '<td>' + r.countryKey + '</td>' +",
+									"        '<td>' + r.bankKey + '</td>' +",
+									"        '<td>' + r.bankName + '</td>' +",
+									"        '<td><span class=\"badge ' + (r.deleted ? 'badge-deleted' : 'badge-active') + '\">' + (r.deleted ? 'Deleted' : 'Active') + '</span></td>';",
+									"      tbody.appendChild(tr);",
+									"    });",
+									"    document.getElementById('total').textContent = 'Showing: ' + rows.length + ' of ' + allRows.length + ' records';",
+									"  }",
+									"",
+									"  function filterTable() {",
+									"    var q = document.getElementById('search').value.toLowerCase();",
+									"    var filtered = allRows.filter(function (r) {",
+									"      return r.bankName.toLowerCase().indexOf(q) !== -1 || r.bankKey.toLowerCase().indexOf(q) !== -1;",
+									"    });",
+									"    renderRows(filtered);",
+									"  }",
+									"<\\/script>`;",
+									"",
+									"function createPayload() {",
+									"  var body = pm.response.json();",
+									"  var results = body.results || [];",
+									"  return {",
+									"    rows: results.map(function (item) {",
+									"      return {",
+									"        countryKey: item.BankCountryKey || '',",
+									"        bankKey: item.BankKeys || '',",
+									"        bankName: item.BankName || '',",
+									"        deleted: item.DeletionIndicator === true",
+									"      };",
+									"    })",
+									"  };",
+									"}",
+									"",
+									"pm.visualizer.set(template, createPayload());"
+								],
+								"type": "text/javascript",
+								"packages": {},
+								"requests": {}
 							}
 						}
 					],
@@ -612,7 +693,22 @@
 						},
 						"method": "GET",
 						"header": [],
-						"url": "{{baseUrl}}/sap/bank-key"
+						"url": {
+							"raw": "{{baseUrl}}/sap/bank-key?Country=''",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"sap",
+								"bank-key"
+							],
+							"query": [
+								{
+									"key": "Country",
+									"value": "''"
+								}
+							]
+						}
 					},
 					"response": []
 				},
