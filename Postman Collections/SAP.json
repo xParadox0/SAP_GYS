@@ -13209,11 +13209,16 @@
 							{
 								"key": "Content-Type",
 								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
 							}
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "[\n    {\n        \"matdoc_year\": \"2026\",\n        \"matdoc_num\": \"5000069988\",\n        \"matdoc_item\": \"00010\",\n        \"movement_type\": \"102\",\n        \"post_date\": \"2026-06-26T00:00:00\",\n        \"doc_date\": \"2026-06-26T00:00:00\",\n        \"header_text\": \"\",\n        \"delivery_note\": \"\",\n        \"po_number\": \"4300000765\",\n        \"po_item\": \"00010\",\n        \"material_code\": \"\",\n        \"material_desc\": \"\",\n        \"received_qty\": \"7\",\n        \"received_uom\": \"PC\",\n        \"currency\": \"IDR\",\n        \"amount\": \"16.452.800\",\n        \"entry_sheet\": \"\",\n\t\t\"amount_po\":\"16.452.800\",\n\t\t\"currency_po\": \"IDR\"\n    }\n]",
+							"raw": "[\n  {\n    \"po_number\": \"4100035487\",\n    \"po_item\": \"00010\",\n    \"material_code\": \"SVC-001\",\n    \"material_desc\": \"Freight Service\",\n    \"received_qty\": \"1\",\n    \"received_uom\": \"AU\",\n    \"delivery_note\": \"7100001676\",\n    \"matdoc_num\": \"5000000001\",\n    \"matdoc_year\": \"2026\",\n    \"matdoc_item\": \"0001\",\n    \"movement_type\": \"101\",\n    \"post_date\": \"2026-06-25\",\n    \"doc_date\": \"2026-06-25\",\n    \"header_text\": \"Service receipt\",\n    \"currency\": \"IDR\",\n    \"amount\": \"5000000\",\n    \"entry_sheet\": \"1000001234\"\n  }\n]",
 							"options": {
 								"raw": {
 									"headerFamily": "json",
@@ -13221,7 +13226,7 @@
 								}
 							}
 						},
-						"url": "http://172.16.31.190:8080/api/srm/gr-quantity-update"
+						"url": "https://dev-srms.gyssteel.com/api/srm/gr-quantity-update"
 					},
 					"response": [
 						{
