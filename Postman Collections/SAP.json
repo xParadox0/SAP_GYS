@@ -13581,9 +13581,10 @@
 					"id": "aea0b482-a97e-4f82-bd9f-0053019493de",
 					"request": {
 						"auth": {
-							"type": "bearer",
-							"bearer": {
-								"token": "{{token}}"
+							"type": "apikey",
+							"apikey": {
+								"value": "{{auth_secret_0ic4}}",
+								"key": "X-SAP-Api-Key"
 							}
 						},
 						"method": "POST",
@@ -15088,8 +15089,11 @@
 	"variable": [
 		{
 			"key": "baseUrl",
-			"value": "{{dev}}",
-			"type": "string"
+			"value": "{{dev}}"
+		},
+		{
+			"key": "auth_secret_0ic4",
+			"secret": true
 		}
 	]
 }
