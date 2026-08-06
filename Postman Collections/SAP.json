@@ -13851,6 +13851,308 @@
 					]
 				},
 				{
+					"name": "GR Quantity Update - Production",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "7f110f8a-6bc3-43a5-86cd-da1167c021b6",
+								"exec": [
+									"### Purpose",
+									"Update GR (Goods Receipt) quantity for an SRM document.",
+									"",
+									"### Auth",
+									"```http",
+									"Authorization: Bearer {{token}}",
+									"```",
+									"",
+									"### Key headers",
+									"- `Authorization: Bearer {{token}}`",
+									"- `Content-Type: application/json`",
+									"",
+									"### Body notes",
+									"- POST body should include the document/item reference and the new GR quantity (see **Body** tab).",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {},
+								"requests": {}
+							}
+						}
+					],
+					"id": "14d4ffc1-c55e-4cd1-9844-afd787d069d6",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "{{token}}"
+							}
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "[\n  {\n    \"po_number\": \"4100035487\",\n    \"po_item\": \"00010\",\n    \"material_code\": \"SVC-001\",\n    \"material_desc\": \"Freight Service\",\n    \"received_qty\": \"1\",\n    \"received_uom\": \"AU\",\n    \"delivery_note\": \"7100001676\",\n    \"matdoc_num\": \"5000000001\",\n    \"matdoc_year\": \"2026\",\n    \"matdoc_item\": \"0001\",\n    \"movement_type\": \"101\",\n    \"post_date\": \"2026-06-25\",\n    \"doc_date\": \"2026-06-25\",\n    \"header_text\": \"Service receipt\",\n    \"currency\": \"IDR\",\n    \"amount\": \"5000000\",\n    \"entry_sheet\": \"1000001234\"\n  }\n]",
+							"options": {
+								"raw": {
+									"headerFamily": "json",
+									"language": "json"
+								}
+							}
+						},
+						"url": "https://dev-srms.gyssteel.com/api/srm/gr-quantity-update"
+					},
+					"response": [
+						{
+							"id": "c27040fb-8a4f-4f65-8b10-29191bde698b",
+							"name": "Success",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"description": "Added as a part of security scheme: bearer",
+										"key": "Authorization",
+										"value": "Bearer <token>"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "[\n  {\n    \"po_number\": \"410010048\",\n    \"po_item\": \"00010\",\n    \"material_code\": \"PGSP15000000026850\",\n    \"material_desc\": \"VALVE AUTO DRAIN\",\n    \"received_qty\": \"2\",\n    \"received_uom\": \"PC\"\n  },\n  {\n    \"po_number\": \"410010049\",\n    \"po_item\": \"00010\",\n    \"material_code\": \"PGSP15000000026850\",\n    \"material_desc\": \"VALVE AUTO DRAIN\",\n    \"received_qty\": \"2\",\n    \"received_uom\": \"PC\"\n  }\n]",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{baseUrl}}/srm/gr-quantity-update"
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"description": {
+										"content": "",
+										"type": "text/plain"
+									},
+									"key": "Server",
+									"value": "nginx/1.24.0 (Ubuntu)"
+								},
+								{
+									"description": {
+										"content": "",
+										"type": "text/plain"
+									},
+									"key": "Date",
+									"value": "Wed, 04 Mar 2026 07:39:21 GMT"
+								},
+								{
+									"description": {
+										"content": "",
+										"type": "text/plain"
+									},
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"description": {
+										"content": "",
+										"type": "text/plain"
+									},
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"description": {
+										"content": "",
+										"type": "text/plain"
+									},
+									"key": "X-Powered-By",
+									"value": "PHP/8.3.21"
+								},
+								{
+									"description": {
+										"content": "",
+										"type": "text/plain"
+									},
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"description": {
+										"content": "",
+										"type": "text/plain"
+									},
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"description": {
+										"content": "",
+										"type": "text/plain"
+									},
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"description": {
+										"content": "",
+										"type": "text/plain"
+									},
+									"key": "X-XSS-Protection",
+									"value": "1; mode=block"
+								},
+								{
+									"description": {
+										"content": "",
+										"type": "text/plain"
+									},
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"description": {
+										"content": "",
+										"type": "text/plain"
+									},
+									"key": "X-Kong-Upstream-Latency",
+									"value": "134"
+								},
+								{
+									"description": {
+										"content": "",
+										"type": "text/plain"
+									},
+									"key": "X-Kong-Proxy-Latency",
+									"value": "0"
+								},
+								{
+									"description": {
+										"content": "",
+										"type": "text/plain"
+									},
+									"key": "Via",
+									"value": "1.1 kong/3.9.0"
+								},
+								{
+									"description": {
+										"content": "",
+										"type": "text/plain"
+									},
+									"key": "X-Kong-Request-Id",
+									"value": "612d000dfbcddf3461b62344a6a98652"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"responseTime": null,
+							"body": "{\n    \"message\": \"Success\",\n    \"results\": {\n        \"message\": [\n            {\n                \"po_number\": \"410010048\",\n                \"po_item\": \"00010\",\n                \"material_code\": \"PGSP15000000026850\",\n                \"material_desc\": \"VALVE AUTO DRAIN\",\n                \"received_qty\": \"2\",\n                \"received_uom\": \"PC\"\n            },\n            {\n                \"po_number\": \"410010049\",\n                \"po_item\": \"00010\",\n                \"material_code\": \"PGSP15000000026850\",\n                \"material_desc\": \"VALVE AUTO DRAIN\",\n                \"received_qty\": \"2\",\n                \"received_uom\": \"PC\"\n            }\n        ]\n    }\n}"
+						},
+						{
+							"id": "8fff700a-5395-4876-ae23-75566be079bd",
+							"name": "Test Blank",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "[\n\t{\n\t    \"matdoc_year\": \"\", //RefDocYear untuk park invoice\n        \"matdoc_num\": \"\", //RefDoc untuk park invoice\n\t\t\"matdoc_item\": \"\", //RefDocIt untuk park invoice\n\t\t\"movement_type\": \"\", //102 bertambah 101 berkurang\n\t\t\"post_date\": \"\", //auto from gr post\n\t\t\"doc_date\": \"\", //from gr\n\t\t\"header_text\": \"\",\n\t\t\"delivery_note\": \"\", //deliverry note number\n\t\t\"po_number\": \"\", //purchase order number\n        \"po_item\": \"\", //purchase order line item number (10, 20, 30)\n        \"material_code\": \"\", //Material code based on po_item\n        \"material_desc\": \"\", //Material desc based on material_code\n        \"received_qty\": \"\", \n        \"received_uom\": \"\",\n\t\t\"currency\": \"\",\n\t\t\"amount\": \"\"\n    }\n]",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": "http://172.16.31.190:8080/api/srm/gr-quantity-update"
+							},
+							"status": "Unprocessable Content",
+							"code": 422,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "Server",
+									"value": "nginx/1.25.5"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 20 May 2026 13:55:53 GMT"
+								},
+								{
+									"key": "X-Correlation-ID",
+									"value": "5423da26-23ee-4863-83e0-6eddcb3b1d61"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "59"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1; mode=block"
+								}
+							],
+							"cookie": [],
+							"responseTime": null,
+							"body": "{\n    \"success\": false,\n    \"message\": \"The 0.po_number field is required. (and 5 more errors)\",\n    \"errors\": {\n        \"0.po_number\": [\n            \"The 0.po_number field is required.\"\n        ],\n        \"0.po_item\": [\n            \"The 0.po_item field is required.\"\n        ],\n        \"0.material_code\": [\n            \"The 0.material_code field is required.\"\n        ],\n        \"0.material_desc\": [\n            \"The 0.material_desc field is required.\"\n        ],\n        \"0.received_qty\": [\n            \"The 0.received_qty field is required.\"\n        ],\n        \"0.received_uom\": [\n            \"The 0.received_uom field is required.\"\n        ]\n    }\n}"
+						}
+					]
+				},
+				{
 					"name": "Create QR Bon Service",
 					"event": [
 						{
