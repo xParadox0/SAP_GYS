@@ -13515,6 +13515,336 @@
 					]
 				},
 				{
+					"name": "Simulate Journal - Prod",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "a0192a43-619d-4ba6-9ac7-a987028afb36",
+								"exec": [
+									"### Purpose",
+									"Cancel a previously submitted Down Payment (DP) request.",
+									"",
+									"### Auth",
+									"```http",
+									"Authorization: Bearer {{token}}",
+									"```",
+									"",
+									"### Key headers",
+									"- `Authorization: Bearer {{token}}`",
+									"- `Content-Type: application/json`",
+									"",
+									"### Body notes",
+									"- POST body should identify which DP request to cancel (see **Body** tab).",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {},
+								"requests": {}
+							}
+						}
+					],
+					"id": "56e2eadc-e4c6-4c3a-976f-dfedf237141c",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "{{token}}"
+							}
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\n\n    \n    \"postSimulateInvoiceSet\": {\n        \"IsPO\": true,\n        \"CompanyCode\": \"1000\",\n        \"Vendor\": \"2103000065\",\n        \"DocumentDate\": \"2026-07-09T00:00:00\",\n        \"PostingDate\": \"2026-07-09T00:00:00\",\n        \"Reference\": \"CSS\\/2026\\/06\\/122\",\n        \"Currency\": \"IDR\",\n        \"Amount\": \"863167968.00\",\n        \"TaxCode\": \"2D\",\n        \"ItemText\": \"PO Local Scrap Sample\",\n        \"BaselineDate\": \"2026-07-09T00:00:00\",\n        \"PaymentMethod\": \"M\",\n        \"PartnerBankType\": \"ID01\",\n        \"HouseBank\": \"BNI01\",\n        \"AccountId\": \"IDR01\",\n        \"Assignment\": \"4100035403\",\n        \"HeaderText\": \"1234491301037834\\/090726\"\n    },\n    \"postSimulateInvoiceGLSet\": [],\n    \"postSimulateInvoicePordSet\": [\n        {\n            \"PoNumber\": \"4100035403\",\n            \"PoItem\": \"10\",\n            \"MaterialDocument\": \"5000070049\",\n            \"MaterialDocumentYear\": \"2026\",\n            \"MaterialDocumentItem\": \"1\",\n            \"Amount\": \"777628800.00\",\n            \"Currency\": \"IDR\",\n            \"Quantity\": \"11963.520\",\n            \"Uom\": \"KG\"\n        }\n    ],\n    \"postSimulateInvoiceWithTaxSet\": [\n        {\n            \"WhtTaxType\": \"\",\n            \"WhtTaxCode\": \"\",\n            \"WhtBaseAmount\": \"0\",\n            \"WhtAmount\": \"0\"\n        }\n    ],\n    \"postSimulateInvoiceItemSet\": [],\n    \"postSimulateInvoiceReturnSet\": []\n}",
+							"options": {
+								"raw": {
+									"headerFamily": "json",
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{baseUrl}}/srm/simulate-journal"
+					},
+					"response": [
+						{
+							"id": "acd2f9cd-a43d-4021-9117-5d201400c176",
+							"name": "Simulate Journal -  PO - Error",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"postSimulateInvoiceSet\": {\n        \"IsPO\": true,\n        \"CompanyCode\": \"1000\",\n        \"Vendor\": \"2104000009\",\n        \"DocumentDate\": \"2026-06-01T00:00:00\",\n        \"PostingDate\": \"2026-06-04T00:00:00\",\n        \"Reference\": \"002/PO/INV/06/26\",\n        \"Currency\": \"IDR\",\n        \"Amount\": \"63500000\",\n        \"TaxCode\": \"2C\",\n        \"ItemText\": \"Invoice PO 2\",\n        \"DueOnDate\": \"2026-06-04T00:00:00\",\n        \"PaymentMethod\": \"U\",\n        \"PartnerBankType\": \"ID02\",\n        \"HouseBank\": \"BNI01\",\n        \"AccountId\": \"\",\n        \"Assignment\": \"4100035296\",\n        \"HeaderText\": \"002/PO/INV/06/26\"\n    },\n    \"postSimulateInvoiceGLSet\": [\n        {\n            \"GLAccount\": \"60800010\",\n            \"DeCreInd\": \"S\",\n            \"Currency\": \"IDR\",\n            \"Amount\": \"1200000\",\n            \"TaxCode\": \"2D\",\n            \"Assignment\": \"NONPO-2026-963\",\n            \"ItemText\": \"Tes01\",\n            \"CostCenter\": \"10301GA001\",\n            \"Order\": \"GA001-10003\",\n            \"WBSElement\": \"\",\n            \"Network\": \"\",\n            \"Activity\": \"\",\n            \"ProfitCenter\": \"103010\"\n        }\n    ],\n    \"postSimulateInvoicePordSet\": [\n        {\n            \"PoNumber\": \"4100035296\",\n            \"PoItem\": \"00010\",\n            \"MaterialDocument\": \"5000069817\",\n            \"MaterialDocumentYear\": \"2026\",\n            \"MaterialDocumentItem\": \"0001\",\n            \"Amount\": \"635000\",\n            \"Currency\": \"IDR\",\n            \"Quantity\": \"10000\",\n            \"Uom\": \"KG\"\n        }\n    ],\n    \"postSimulateInvoiceWithTaxSet\": [],\n    \"postSimulateInvoiceItemSet\": []\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{baseUrl}}/srm/simulate-journal"
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "Server",
+									"value": "nginx/1.24.0 (Ubuntu)"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 11 Jun 2026 04:44:00 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.3.21"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "X-Kong-Upstream-Latency",
+									"value": "920"
+								},
+								{
+									"key": "X-Kong-Proxy-Latency",
+									"value": "0"
+								},
+								{
+									"key": "Via",
+									"value": "1.1 kong/3.9.0"
+								},
+								{
+									"key": "X-Kong-Request-Id",
+									"value": "3270760d7284e12ff5d6f91daa633f69"
+								}
+							],
+							"cookie": [],
+							"responseTime": null,
+							"body": "{\n    \"message\": \"Error\",\n    \"results\": {\n        \"d\": {\n            \"Id\": \"\",\n            \"Status\": \"E\",\n            \"Msg\": \"\",\n            \"postSimulateInvoiceGLSet\": {\n                \"results\": [\n                    {\n                        \"GLAccount\": \"60800010\",\n                        \"Order\": \"GA001-10003\",\n                        \"DeCreInd\": \"S\",\n                        \"WBSElement\": \"\",\n                        \"Currency\": \"IDR\",\n                        \"Network\": \"\",\n                        \"Amount\": \"120000000\",\n                        \"Activity\": \"\",\n                        \"TaxCode\": \"2D\",\n                        \"Assignment\": \"NONPO-2026-963\",\n                        \"ItemText\": \"Tes01\",\n                        \"CostCenter\": \"10301GA001\",\n                        \"ProfitCenter\": \"103010\"\n                    }\n                ]\n            },\n            \"postSimulateInvoiceSet\": {\n                \"IsPO\": true,\n                \"CompanyCode\": \"1000\",\n                \"Vendor\": \"2104000009\",\n                \"DocumentDate\": \"/Date(1780272000000)/\",\n                \"PostingDate\": \"/Date(1780531200000)/\",\n                \"Reference\": \"002/PO/INV/06/26\",\n                \"Currency\": \"IDR\",\n                \"Amount\": \"6350000000.000\",\n                \"TaxCode\": \"2C\",\n                \"ItemText\": \"Invoice PO 2\",\n                \"DueOnDate\": \"/Date(1780531200000)/\",\n                \"PaymentMethod\": \"U\",\n                \"PartnerBankType\": \"ID02\",\n                \"HouseBank\": \"BNI01\",\n                \"AccountId\": \"\",\n                \"Assignment\": \"4100035296\",\n                \"HeaderText\": \"002/PO/INV/06/26\"\n            },\n            \"postSimulateInvoicePordSet\": {\n                \"results\": [\n                    {\n                        \"PoNumber\": \"4100035296\",\n                        \"PoItem\": \"00010\",\n                        \"MaterialDocument\": \"5000069817\",\n                        \"MaterialDocumentYear\": \"2026\",\n                        \"MaterialDocumentItem\": \"0001\",\n                        \"Amount\": \"635000\",\n                        \"Currency\": \"IDR\",\n                        \"Quantity\": \"10000.000\",\n                        \"Uom\": \"KG\"\n                    }\n                ]\n            },\n            \"postSimulateInvoiceWithTaxSet\": {\n                \"results\": []\n            },\n            \"postSimulateInvoiceItemSet\": {\n                \"results\": []\n            },\n            \"postSimulateInvoiceReturnSet\": {\n                \"__deferred\": {\n                    \"uri\": \"http://sapdev.gyssteel.com:8000/sap/opu/odata/sap/ZGW_SAP_SRM_2_SRV/postSimulateInvoiceDataSet('')/postSimulateInvoiceReturnSet\"\n                }\n            }\n        }\n    },\n    \"source\": \"Failed upload SAP data\"\n}"
+						},
+						{
+							"id": "365b0667-e897-4d1c-b756-6f890ce8355e",
+							"name": "Simulate Journal -  Non PO",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"postSimulateInvoiceSet\": {\n        \"IsPO\": false,\n        \"CompanyCode\": \"1000\",\n        \"Vendor\": \"8888000453\",\n        \"DocumentDate\": \"2026-06-01T00:00:00\",\n        \"PostingDate\": \"2026-06-08T00:00:00\",\n        \"Reference\": \"011NP/INV/06/26\",\n        \"Currency\": \"IDR\",\n        \"Amount\": \"9870\",\n        \"TaxCode\": \"3D\",\n        \"ItemText\": \"INVOICE NON PO 6\",\n        \"DueOnDate\": \"2026-06-08T00:00:00\",\n        \"PaymentMethod\": \"U\",\n        \"PartnerBankType\": \"ID01\",\n        \"HouseBank\": \"BNI01\",\n        \"AccountId\": \"IDR01\",\n        \"Assignment\": \"4200006045\",\n        \"HeaderText\": \"011/NP/INV/06/26\"\n    },\n    \"postSimulateInvoiceGLSet\": [\n        {\n            \"GLAccount\": \"60800060\",\n            \"DeCreInd\": \"S\",\n            \"Currency\": \"IDR\",\n            \"Amount\": \"1000\",\n            \"TaxCode\": \"2D\",\n            \"Assignment\": \"4200006045\",\n            \"ItemText\": \"1\",\n            \"CostCenter\": \"10301IT001\",\n            \"Order\": \"IT001-10001\",\n            \"WBSElement\": \"\",\n            \"Network\": \"\",\n            \"Activity\": \"\",\n            \"ProfitCenter\": \"103010\"\n        },\n        {\n            \"GLAccount\": \"60800060\",\n            \"DeCreInd\": \"S\",\n            \"Currency\": \"IDR\",\n            \"Amount\": \"3000\",\n            \"TaxCode\": \"3D\",\n            \"Assignment\": \"4200006045\",\n            \"ItemText\": \"2\",\n            \"CostCenter\": \"10301IT001\",\n            \"Order\": \"IT001-10001\",\n            \"WBSElement\": \"\",\n            \"Network\": \"\",\n            \"Activity\": \"\",\n            \"ProfitCenter\": \"103010\"\n        },\n        {\n            \"GLAccount\": \"60800060\",\n            \"DeCreInd\": \"S\",\n            \"Currency\": \"IDR\",\n            \"Amount\": \"5000\",\n            \"TaxCode\": \"2D\",\n            \"Assignment\": \"4200006045\",\n            \"ItemText\": \"2\",\n            \"CostCenter\": \"10301IT001\",\n            \"Order\": \"IT001-10001\",\n            \"WBSElement\": \"\",\n            \"Network\": \"\",\n            \"Activity\": \"\",\n            \"ProfitCenter\": \"103010\"\n        }\n    ],\n    \"postSimulateInvoicePordSet\": [\n\n    ],\n    \"postSimulateInvoiceWithTaxSet\": [\n        {\n            \"WhtTaxType\": \"\",\n            \"WhtTaxCode\": \"\",\n            \"WhtBaseAmount\": \"0\",\n            \"WhtAmount\": \"0\"\n        }\n    ],\n    \"postSimulateInvoiceItemSet\": [],\n    \"postSimulateInvoiceReturnSet\": []\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{baseUrl}}/srm/simulate-journal"
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "Server",
+									"value": "nginx/1.24.0 (Ubuntu)"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 13 Jun 2026 19:18:02 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.3.21"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1; mode=block"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-Kong-Upstream-Latency",
+									"value": "884"
+								},
+								{
+									"key": "X-Kong-Proxy-Latency",
+									"value": "0"
+								},
+								{
+									"key": "Via",
+									"value": "1.1 kong/3.9.0"
+								},
+								{
+									"key": "X-Kong-Request-Id",
+									"value": "1994dc74aa0cb770e3509e5cdae28622"
+								}
+							],
+							"cookie": [],
+							"responseTime": null,
+							"body": "{\n    \"message\": \"Success\",\n    \"results\": {\n        \"message\": {\n            \"d\": {\n                \"Id\": \"\",\n                \"Status\": \"S\",\n                \"Msg\": \"\",\n                \"postSimulateInvoiceGLSet\": {\n                    \"results\": [\n                        {\n                            \"GLAccount\": \"60800060\",\n                            \"Order\": \"IT001-10001\",\n                            \"DeCreInd\": \"S\",\n                            \"WBSElement\": \"\",\n                            \"Currency\": \"IDR\",\n                            \"Network\": \"\",\n                            \"Amount\": \"1000\",\n                            \"Activity\": \"\",\n                            \"TaxCode\": \"2D\",\n                            \"Assignment\": \"4200006045\",\n                            \"ItemText\": \"1\",\n                            \"CostCenter\": \"10301IT001\",\n                            \"ProfitCenter\": \"103010\"\n                        },\n                        {\n                            \"GLAccount\": \"60800060\",\n                            \"Order\": \"IT001-10001\",\n                            \"DeCreInd\": \"S\",\n                            \"WBSElement\": \"\",\n                            \"Currency\": \"IDR\",\n                            \"Network\": \"\",\n                            \"Amount\": \"3000\",\n                            \"Activity\": \"\",\n                            \"TaxCode\": \"3D\",\n                            \"Assignment\": \"4200006045\",\n                            \"ItemText\": \"2\",\n                            \"CostCenter\": \"10301IT001\",\n                            \"ProfitCenter\": \"103010\"\n                        },\n                        {\n                            \"GLAccount\": \"60800060\",\n                            \"Order\": \"IT001-10001\",\n                            \"DeCreInd\": \"S\",\n                            \"WBSElement\": \"\",\n                            \"Currency\": \"IDR\",\n                            \"Network\": \"\",\n                            \"Amount\": \"5000\",\n                            \"Activity\": \"\",\n                            \"TaxCode\": \"2D\",\n                            \"Assignment\": \"4200006045\",\n                            \"ItemText\": \"2\",\n                            \"CostCenter\": \"10301IT001\",\n                            \"ProfitCenter\": \"103010\"\n                        }\n                    ]\n                },\n                \"postSimulateInvoiceSet\": {\n                    \"IsPO\": false,\n                    \"CompanyCode\": \"1000\",\n                    \"Vendor\": \"8888000453\",\n                    \"DocumentDate\": \"/Date(1780272000000)/\",\n                    \"PostingDate\": \"/Date(1780876800000)/\",\n                    \"Reference\": \"011NP/INV/06/26\",\n                    \"Currency\": \"IDR\",\n                    \"Amount\": \"9870.000\",\n                    \"TaxCode\": \"3D\",\n                    \"ItemText\": \"INVOICE NON PO 6\",\n                    \"DueOnDate\": \"/Date(1780876800000)/\",\n                    \"PaymentMethod\": \"U\",\n                    \"PartnerBankType\": \"ID01\",\n                    \"HouseBank\": \"BNI01\",\n                    \"AccountId\": \"IDR01\",\n                    \"Assignment\": \"4200006045\",\n                    \"HeaderText\": \"011/NP/INV/06/26\"\n                },\n                \"postSimulateInvoicePordSet\": {\n                    \"results\": []\n                },\n                \"postSimulateInvoiceWithTaxSet\": {\n                    \"results\": [\n                        {\n                            \"WhtTaxType\": \"\",\n                            \"WhtTaxCode\": \"\",\n                            \"WhtBaseAmount\": \"0.0000\",\n                            \"WhtAmount\": \"0.0000\"\n                        }\n                    ]\n                },\n                \"postSimulateInvoiceItemSet\": {\n                    \"results\": [\n                        {\n                            \"Client\": \"130\",\n                            \"CompanyCode\": \"1000\",\n                            \"AccountingDocNumber\": \"$       1\",\n                            \"FiscalYear\": \"2026\",\n                            \"LineItem\": \"001\",\n                            \"PostingKey\": \"31\",\n                            \"AccountType\": \"K\",\n                            \"SpecialGLInd\": \"\",\n                            \"DebetCreditInd\": \"H\",\n                            \"TaxOnSalesCode\": \"**\",\n                            \"WitholdingTaxCode\": \"\",\n                            \"Currency\": \"IDR\",\n                            \"AmountInLocalCurrency\": \"987000\",\n                            \"AmountInDocCurrency\": \"987000\",\n                            \"TaxType\": \"\",\n                            \"TransactionKey\": \"\",\n                            \"WithholdingTaxBaseAmount\": \"0\",\n                            \"AssignmentNumber\": \"4200006045\",\n                            \"ItemText\": \"INVOICE NON PO 6\",\n                            \"CostCenter\": \"\",\n                            \"OrderNumber\": \"\",\n                            \"ServiceDocType\": \"\",\n                            \"ServiceDocId\": \"\",\n                            \"ServiceDocItemId\": \"000000\",\n                            \"MainAssetNumber\": \"\",\n                            \"AssetSubnumber\": \"\",\n                            \"AssetTransactionType\": \"\",\n                            \"GeneralLedgerAccount\": \"20310300\",\n                            \"VendorId\": \"8888000453\",\n                            \"BaseDateforDueDateCalc\": \"/Date(1780876800000)/\",\n                            \"TermOfPaymentKey\": \"\",\n                            \"PaymentMethod\": \"U\",\n                            \"PaymentBlockKey\": \"\",\n                            \"HouseBank\": \"BNI01\",\n                            \"PartnerBankType\": \"ID01\",\n                            \"TaxCodeDistribution\": \"\",\n                            \"MaterialNumber\": \"\",\n                            \"Plant\": \"\",\n                            \"Quantity\": \"0.000\",\n                            \"BaseUom\": \"\",\n                            \"QtyUnitEntry\": \"0.000\",\n                            \"UnitOfEntry\": \"\",\n                            \"PurchaseDocNumber\": \"\",\n                            \"ItemNumberPurchaseDoc\": \"00000\",\n                            \"AccountAssignmentNumber\": \"00\",\n                            \"ProfitCenter\": \"\",\n                            \"NetDueDate\": \"/Date(1780876800000)/\"\n                        },\n                        {\n                            \"Client\": \"130\",\n                            \"CompanyCode\": \"1000\",\n                            \"AccountingDocNumber\": \"$       1\",\n                            \"FiscalYear\": \"2026\",\n                            \"LineItem\": \"002\",\n                            \"PostingKey\": \"40\",\n                            \"AccountType\": \"S\",\n                            \"SpecialGLInd\": \"\",\n                            \"DebetCreditInd\": \"S\",\n                            \"TaxOnSalesCode\": \"2D\",\n                            \"WitholdingTaxCode\": \"\",\n                            \"Currency\": \"IDR\",\n                            \"AmountInLocalCurrency\": \"100000\",\n                            \"AmountInDocCurrency\": \"100000\",\n                            \"TaxType\": \"\",\n                            \"TransactionKey\": \"\",\n                            \"WithholdingTaxBaseAmount\": \"0\",\n                            \"AssignmentNumber\": \"4200006045\",\n                            \"ItemText\": \"1\",\n                            \"CostCenter\": \"10301IT001\",\n                            \"OrderNumber\": \"IT001-10001\",\n                            \"ServiceDocType\": \"\",\n                            \"ServiceDocId\": \"\",\n                            \"ServiceDocItemId\": \"000000\",\n                            \"MainAssetNumber\": \"\",\n                            \"AssetSubnumber\": \"\",\n                            \"AssetTransactionType\": \"\",\n                            \"GeneralLedgerAccount\": \"60800060\",\n                            \"VendorId\": \"\",\n                            \"BaseDateforDueDateCalc\": null,\n                            \"TermOfPaymentKey\": \"\",\n                            \"PaymentMethod\": \"\",\n                            \"PaymentBlockKey\": \"\",\n                            \"HouseBank\": \"\",\n                            \"PartnerBankType\": \"\",\n                            \"TaxCodeDistribution\": \"\",\n                            \"MaterialNumber\": \"\",\n                            \"Plant\": \"\",\n                            \"Quantity\": \"0.000\",\n                            \"BaseUom\": \"\",\n                            \"QtyUnitEntry\": \"0.000\",\n                            \"UnitOfEntry\": \"\",\n                            \"PurchaseDocNumber\": \"\",\n                            \"ItemNumberPurchaseDoc\": \"00000\",\n                            \"AccountAssignmentNumber\": \"00\",\n                            \"ProfitCenter\": \"103010\",\n                            \"NetDueDate\": null\n                        },\n                        {\n                            \"Client\": \"130\",\n                            \"CompanyCode\": \"1000\",\n                            \"AccountingDocNumber\": \"$       1\",\n                            \"FiscalYear\": \"2026\",\n                            \"LineItem\": \"003\",\n                            \"PostingKey\": \"40\",\n                            \"AccountType\": \"S\",\n                            \"SpecialGLInd\": \"\",\n                            \"DebetCreditInd\": \"S\",\n                            \"TaxOnSalesCode\": \"2D\",\n                            \"WitholdingTaxCode\": \"\",\n                            \"Currency\": \"IDR\",\n                            \"AmountInLocalCurrency\": \"11000\",\n                            \"AmountInDocCurrency\": \"11000\",\n                            \"TaxType\": \"V\",\n                            \"TransactionKey\": \"VST\",\n                            \"WithholdingTaxBaseAmount\": \"0\",\n                            \"AssignmentNumber\": \"\",\n                            \"ItemText\": \"\",\n                            \"CostCenter\": \"\",\n                            \"OrderNumber\": \"\",\n                            \"ServiceDocType\": \"\",\n                            \"ServiceDocId\": \"\",\n                            \"ServiceDocItemId\": \"000000\",\n                            \"MainAssetNumber\": \"\",\n                            \"AssetSubnumber\": \"\",\n                            \"AssetTransactionType\": \"\",\n                            \"GeneralLedgerAccount\": \"11010010\",\n                            \"VendorId\": \"\",\n                            \"BaseDateforDueDateCalc\": null,\n                            \"TermOfPaymentKey\": \"\",\n                            \"PaymentMethod\": \"\",\n                            \"PaymentBlockKey\": \"\",\n                            \"HouseBank\": \"\",\n                            \"PartnerBankType\": \"\",\n                            \"TaxCodeDistribution\": \"\",\n                            \"MaterialNumber\": \"\",\n                            \"Plant\": \"\",\n                            \"Quantity\": \"0.000\",\n                            \"BaseUom\": \"\",\n                            \"QtyUnitEntry\": \"0.000\",\n                            \"UnitOfEntry\": \"\",\n                            \"PurchaseDocNumber\": \"\",\n                            \"ItemNumberPurchaseDoc\": \"00000\",\n                            \"AccountAssignmentNumber\": \"00\",\n                            \"ProfitCenter\": \"\",\n                            \"NetDueDate\": null\n                        },\n                        {\n                            \"Client\": \"130\",\n                            \"CompanyCode\": \"1000\",\n                            \"AccountingDocNumber\": \"$       1\",\n                            \"FiscalYear\": \"2026\",\n                            \"LineItem\": \"004\",\n                            \"PostingKey\": \"40\",\n                            \"AccountType\": \"S\",\n                            \"SpecialGLInd\": \"\",\n                            \"DebetCreditInd\": \"S\",\n                            \"TaxOnSalesCode\": \"3D\",\n                            \"WitholdingTaxCode\": \"\",\n                            \"Currency\": \"IDR\",\n                            \"AmountInLocalCurrency\": \"300000\",\n                            \"AmountInDocCurrency\": \"300000\",\n                            \"TaxType\": \"\",\n                            \"TransactionKey\": \"\",\n                            \"WithholdingTaxBaseAmount\": \"0\",\n                            \"AssignmentNumber\": \"4200006045\",\n                            \"ItemText\": \"2\",\n                            \"CostCenter\": \"10301IT001\",\n                            \"OrderNumber\": \"IT001-10001\",\n                            \"ServiceDocType\": \"\",\n                            \"ServiceDocId\": \"\",\n                            \"ServiceDocItemId\": \"000000\",\n                            \"MainAssetNumber\": \"\",\n                            \"AssetSubnumber\": \"\",\n                            \"AssetTransactionType\": \"\",\n                            \"GeneralLedgerAccount\": \"60800060\",\n                            \"VendorId\": \"\",\n                            \"BaseDateforDueDateCalc\": null,\n                            \"TermOfPaymentKey\": \"\",\n                            \"PaymentMethod\": \"\",\n                            \"PaymentBlockKey\": \"\",\n                            \"HouseBank\": \"\",\n                            \"PartnerBankType\": \"\",\n                            \"TaxCodeDistribution\": \"\",\n                            \"MaterialNumber\": \"\",\n                            \"Plant\": \"\",\n                            \"Quantity\": \"0.000\",\n                            \"BaseUom\": \"\",\n                            \"QtyUnitEntry\": \"0.000\",\n                            \"UnitOfEntry\": \"\",\n                            \"PurchaseDocNumber\": \"\",\n                            \"ItemNumberPurchaseDoc\": \"00000\",\n                            \"AccountAssignmentNumber\": \"00\",\n                            \"ProfitCenter\": \"103010\",\n                            \"NetDueDate\": null\n                        },\n                        {\n                            \"Client\": \"130\",\n                            \"CompanyCode\": \"1000\",\n                            \"AccountingDocNumber\": \"$       1\",\n                            \"FiscalYear\": \"2026\",\n                            \"LineItem\": \"005\",\n                            \"PostingKey\": \"40\",\n                            \"AccountType\": \"S\",\n                            \"SpecialGLInd\": \"\",\n                            \"DebetCreditInd\": \"S\",\n                            \"TaxOnSalesCode\": \"3D\",\n                            \"WitholdingTaxCode\": \"\",\n                            \"Currency\": \"IDR\",\n                            \"AmountInLocalCurrency\": \"33000\",\n                            \"AmountInDocCurrency\": \"33000\",\n                            \"TaxType\": \"V\",\n                            \"TransactionKey\": \"VST\",\n                            \"WithholdingTaxBaseAmount\": \"0\",\n                            \"AssignmentNumber\": \"\",\n                            \"ItemText\": \"\",\n                            \"CostCenter\": \"\",\n                            \"OrderNumber\": \"\",\n                            \"ServiceDocType\": \"\",\n                            \"ServiceDocId\": \"\",\n                            \"ServiceDocItemId\": \"000000\",\n                            \"MainAssetNumber\": \"\",\n                            \"AssetSubnumber\": \"\",\n                            \"AssetTransactionType\": \"\",\n                            \"GeneralLedgerAccount\": \"11010010\",\n                            \"VendorId\": \"\",\n                            \"BaseDateforDueDateCalc\": null,\n                            \"TermOfPaymentKey\": \"\",\n                            \"PaymentMethod\": \"\",\n                            \"PaymentBlockKey\": \"\",\n                            \"HouseBank\": \"\",\n                            \"PartnerBankType\": \"\",\n                            \"TaxCodeDistribution\": \"\",\n                            \"MaterialNumber\": \"\",\n                            \"Plant\": \"\",\n                            \"Quantity\": \"0.000\",\n                            \"BaseUom\": \"\",\n                            \"QtyUnitEntry\": \"0.000\",\n                            \"UnitOfEntry\": \"\",\n                            \"PurchaseDocNumber\": \"\",\n                            \"ItemNumberPurchaseDoc\": \"00000\",\n                            \"AccountAssignmentNumber\": \"00\",\n                            \"ProfitCenter\": \"\",\n                            \"NetDueDate\": null\n                        },\n                        {\n                            \"Client\": \"130\",\n                            \"CompanyCode\": \"1000\",\n                            \"AccountingDocNumber\": \"$       1\",\n                            \"FiscalYear\": \"2026\",\n                            \"LineItem\": \"006\",\n                            \"PostingKey\": \"50\",\n                            \"AccountType\": \"S\",\n                            \"SpecialGLInd\": \"\",\n                            \"DebetCreditInd\": \"H\",\n                            \"TaxOnSalesCode\": \"3D\",\n                            \"WitholdingTaxCode\": \"\",\n                            \"Currency\": \"IDR\",\n                            \"AmountInLocalCurrency\": \"12000\",\n                            \"AmountInDocCurrency\": \"12000\",\n                            \"TaxType\": \"V\",\n                            \"TransactionKey\": \"ZW6\",\n                            \"WithholdingTaxBaseAmount\": \"0\",\n                            \"AssignmentNumber\": \"\",\n                            \"ItemText\": \"\",\n                            \"CostCenter\": \"\",\n                            \"OrderNumber\": \"\",\n                            \"ServiceDocType\": \"\",\n                            \"ServiceDocId\": \"\",\n                            \"ServiceDocItemId\": \"000000\",\n                            \"MainAssetNumber\": \"\",\n                            \"AssetSubnumber\": \"\",\n                            \"AssetTransactionType\": \"\",\n                            \"GeneralLedgerAccount\": \"20700040\",\n                            \"VendorId\": \"\",\n                            \"BaseDateforDueDateCalc\": null,\n                            \"TermOfPaymentKey\": \"\",\n                            \"PaymentMethod\": \"\",\n                            \"PaymentBlockKey\": \"\",\n                            \"HouseBank\": \"\",\n                            \"PartnerBankType\": \"\",\n                            \"TaxCodeDistribution\": \"\",\n                            \"MaterialNumber\": \"\",\n                            \"Plant\": \"\",\n                            \"Quantity\": \"0.000\",\n                            \"BaseUom\": \"\",\n                            \"QtyUnitEntry\": \"0.000\",\n                            \"UnitOfEntry\": \"\",\n                            \"PurchaseDocNumber\": \"\",\n                            \"ItemNumberPurchaseDoc\": \"00000\",\n                            \"AccountAssignmentNumber\": \"00\",\n                            \"ProfitCenter\": \"103010\",\n                            \"NetDueDate\": null\n                        },\n                        {\n                            \"Client\": \"130\",\n                            \"CompanyCode\": \"1000\",\n                            \"AccountingDocNumber\": \"$       1\",\n                            \"FiscalYear\": \"2026\",\n                            \"LineItem\": \"007\",\n                            \"PostingKey\": \"40\",\n                            \"AccountType\": \"S\",\n                            \"SpecialGLInd\": \"\",\n                            \"DebetCreditInd\": \"S\",\n                            \"TaxOnSalesCode\": \"2D\",\n                            \"WitholdingTaxCode\": \"\",\n                            \"Currency\": \"IDR\",\n                            \"AmountInLocalCurrency\": \"500000\",\n                            \"AmountInDocCurrency\": \"500000\",\n                            \"TaxType\": \"\",\n                            \"TransactionKey\": \"\",\n                            \"WithholdingTaxBaseAmount\": \"0\",\n                            \"AssignmentNumber\": \"4200006045\",\n                            \"ItemText\": \"2\",\n                            \"CostCenter\": \"10301IT001\",\n                            \"OrderNumber\": \"IT001-10001\",\n                            \"ServiceDocType\": \"\",\n                            \"ServiceDocId\": \"\",\n                            \"ServiceDocItemId\": \"000000\",\n                            \"MainAssetNumber\": \"\",\n                            \"AssetSubnumber\": \"\",\n                            \"AssetTransactionType\": \"\",\n                            \"GeneralLedgerAccount\": \"60800060\",\n                            \"VendorId\": \"\",\n                            \"BaseDateforDueDateCalc\": null,\n                            \"TermOfPaymentKey\": \"\",\n                            \"PaymentMethod\": \"\",\n                            \"PaymentBlockKey\": \"\",\n                            \"HouseBank\": \"\",\n                            \"PartnerBankType\": \"\",\n                            \"TaxCodeDistribution\": \"\",\n                            \"MaterialNumber\": \"\",\n                            \"Plant\": \"\",\n                            \"Quantity\": \"0.000\",\n                            \"BaseUom\": \"\",\n                            \"QtyUnitEntry\": \"0.000\",\n                            \"UnitOfEntry\": \"\",\n                            \"PurchaseDocNumber\": \"\",\n                            \"ItemNumberPurchaseDoc\": \"00000\",\n                            \"AccountAssignmentNumber\": \"00\",\n                            \"ProfitCenter\": \"103010\",\n                            \"NetDueDate\": null\n                        },\n                        {\n                            \"Client\": \"130\",\n                            \"CompanyCode\": \"1000\",\n                            \"AccountingDocNumber\": \"$       1\",\n                            \"FiscalYear\": \"2026\",\n                            \"LineItem\": \"008\",\n                            \"PostingKey\": \"40\",\n                            \"AccountType\": \"S\",\n                            \"SpecialGLInd\": \"\",\n                            \"DebetCreditInd\": \"S\",\n                            \"TaxOnSalesCode\": \"2D\",\n                            \"WitholdingTaxCode\": \"\",\n                            \"Currency\": \"IDR\",\n                            \"AmountInLocalCurrency\": \"55000\",\n                            \"AmountInDocCurrency\": \"55000\",\n                            \"TaxType\": \"V\",\n                            \"TransactionKey\": \"VST\",\n                            \"WithholdingTaxBaseAmount\": \"0\",\n                            \"AssignmentNumber\": \"\",\n                            \"ItemText\": \"\",\n                            \"CostCenter\": \"\",\n                            \"OrderNumber\": \"\",\n                            \"ServiceDocType\": \"\",\n                            \"ServiceDocId\": \"\",\n                            \"ServiceDocItemId\": \"000000\",\n                            \"MainAssetNumber\": \"\",\n                            \"AssetSubnumber\": \"\",\n                            \"AssetTransactionType\": \"\",\n                            \"GeneralLedgerAccount\": \"11010010\",\n                            \"VendorId\": \"\",\n                            \"BaseDateforDueDateCalc\": null,\n                            \"TermOfPaymentKey\": \"\",\n                            \"PaymentMethod\": \"\",\n                            \"PaymentBlockKey\": \"\",\n                            \"HouseBank\": \"\",\n                            \"PartnerBankType\": \"\",\n                            \"TaxCodeDistribution\": \"\",\n                            \"MaterialNumber\": \"\",\n                            \"Plant\": \"\",\n                            \"Quantity\": \"0.000\",\n                            \"BaseUom\": \"\",\n                            \"QtyUnitEntry\": \"0.000\",\n                            \"UnitOfEntry\": \"\",\n                            \"PurchaseDocNumber\": \"\",\n                            \"ItemNumberPurchaseDoc\": \"00000\",\n                            \"AccountAssignmentNumber\": \"00\",\n                            \"ProfitCenter\": \"\",\n                            \"NetDueDate\": null\n                        }\n                    ]\n                },\n                \"postSimulateInvoiceReturnSet\": {\n                    \"results\": [\n                        {\n                            \"Type\": \"S\",\n                            \"Id\": \"RW\",\n                            \"Number\": \"614\",\n                            \"Message\": \"Document check - no errors: BKPFF $ S4DCLNT130\",\n                            \"LogNo\": \"\",\n                            \"LogMsgNo\": \"000000\",\n                            \"MessageV1\": \"BKPFF\",\n                            \"MessageV2\": \"$\",\n                            \"MessageV3\": \"S4DCLNT130\",\n                            \"MessageV4\": \"\",\n                            \"Parameter\": \"\",\n                            \"Row\": 0,\n                            \"Field\": \"\",\n                            \"System\": \"S4DCLNT130\"\n                        }\n                    ]\n                }\n            }\n        }\n    }\n}"
+						},
+						{
+							"id": "0d36d947-4b3f-481c-9716-cdbc5d1c46fb",
+							"name": "Simulate Journal -  PO",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"postSimulateInvoiceSet\": {\n        \"IsPO\": true,\n        \"CompanyCode\": \"1000\",\n        \"Vendor\": \"2104000009\",\n        \"DocumentDate\": \"2026-06-01T00:00:00\",\n        \"PostingDate\": \"2026-06-08T00:00:00\",\n        \"Reference\": \"011NP/INV/06/26\",\n        \"Currency\": \"IDR\",\n        \"Amount\": \"16050000\",\n        \"TaxCode\": \"3D\",\n        \"ItemText\": \"INVOICE NON PO 6\",\n        \"DueOnDate\": \"2026-06-08T00:00:00\",\n        \"PaymentMethod\": \"U\",\n        \"PartnerBankType\": \"ID01\",\n        \"HouseBank\": \"BNI01\",\n        \"AccountId\": \"IDR01\",\n        \"Assignment\": \"4100035297\",\n        \"HeaderText\": \"011/NP/INV/06/26\"\n    },\n    \"postSimulateInvoiceGLSet\": [\n        \n    ],\n    \"postSimulateInvoicePordSet\": [\n        {\n            \"PoNumber\": \"4100035297\",\n            \"PoItem\": \"00010\",\n            \"MaterialDocument\": \"5000069908\",\n            \"MaterialDocumentYear\": \"2026\",\n            \"MaterialDocumentItem\": \"0001\",\n            \"Amount\": \"15000000\",\n            \"Currency\": \"IDR\",\n            \"Quantity\": \"5\",\n            \"Uom\": \"DR\"\n        }\n    ],\n    \"postSimulateInvoiceWithTaxSet\": [\n        {\n            \"WhtTaxType\": \"\",\n            \"WhtTaxCode\": \"\",\n            \"WhtBaseAmount\": \"0\",\n            \"WhtAmount\": \"0\"\n        }\n    ],\n    \"postSimulateInvoiceItemSet\": [],\n    \"postSimulateInvoiceReturnSet\": []\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{baseUrl}}/srm/simulate-journal"
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "",
+							"header": [
+								{
+									"key": "Server",
+									"value": "nginx/1.24.0 (Ubuntu)"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 14 Jun 2026 08:17:25 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.3.21"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1; mode=block"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-Kong-Upstream-Latency",
+									"value": "762"
+								},
+								{
+									"key": "X-Kong-Proxy-Latency",
+									"value": "1"
+								},
+								{
+									"key": "Via",
+									"value": "1.1 kong/3.9.0"
+								},
+								{
+									"key": "X-Kong-Request-Id",
+									"value": "00453429c93a86235c81271c0016cd7a"
+								}
+							],
+							"cookie": [
+								{
+									"expires": "Invalid Date",
+									"domain": "",
+									"path": ""
+								}
+							],
+							"responseTime": null,
+							"body": "{\n    \"message\": \"Success\",\n    \"results\": {\n        \"message\": {\n            \"d\": {\n                \"Id\": \"\",\n                \"Status\": \"S\",\n                \"Msg\": \"\",\n                \"postSimulateInvoiceGLSet\": {\n                    \"results\": []\n                },\n                \"postSimulateInvoiceSet\": {\n                    \"IsPO\": true,\n                    \"CompanyCode\": \"1000\",\n                    \"Vendor\": \"2104000009\",\n                    \"DocumentDate\": \"/Date(1780272000000)/\",\n                    \"PostingDate\": \"/Date(1780876800000)/\",\n                    \"Reference\": \"011NP/INV/06/26\",\n                    \"Currency\": \"IDR\",\n                    \"Amount\": \"16050000.000\",\n                    \"TaxCode\": \"3D\",\n                    \"ItemText\": \"INVOICE NON PO 6\",\n                    \"DueOnDate\": \"/Date(1780876800000)/\",\n                    \"PaymentMethod\": \"U\",\n                    \"PartnerBankType\": \"ID01\",\n                    \"HouseBank\": \"BNI01\",\n                    \"AccountId\": \"IDR01\",\n                    \"Assignment\": \"4100035297\",\n                    \"HeaderText\": \"011/NP/INV/06/26\"\n                },\n                \"postSimulateInvoicePordSet\": {\n                    \"results\": [\n                        {\n                            \"PoNumber\": \"4100035297\",\n                            \"PoItem\": \"00010\",\n                            \"MaterialDocument\": \"5000069908\",\n                            \"MaterialDocumentYear\": \"2026\",\n                            \"MaterialDocumentItem\": \"0001\",\n                            \"Amount\": \"150000\",\n                            \"Currency\": \"IDR\",\n                            \"Quantity\": \"5\",\n                            \"Uom\": \"DR\"\n                        }\n                    ]\n                },\n                \"postSimulateInvoiceWithTaxSet\": {\n                    \"results\": [\n                        {\n                            \"WhtTaxType\": \"\",\n                            \"WhtTaxCode\": \"\",\n                            \"WhtBaseAmount\": \"0.0000\",\n                            \"WhtAmount\": \"0.0000\"\n                        }\n                    ]\n                },\n                \"postSimulateInvoiceItemSet\": {\n                    \"results\": [\n                        {\n                            \"Client\": \"130\",\n                            \"CompanyCode\": \"1000\",\n                            \"AccountingDocNumber\": \"$       1\",\n                            \"FiscalYear\": \"2026\",\n                            \"LineItem\": \"001\",\n                            \"PostingKey\": \"31\",\n                            \"AccountType\": \"K\",\n                            \"SpecialGLInd\": \"\",\n                            \"DebetCreditInd\": \"H\",\n                            \"TaxOnSalesCode\": \"**\",\n                            \"WitholdingTaxCode\": \"XX\",\n                            \"Currency\": \"IDR\",\n                            \"AmountInLocalCurrency\": \"1605000000\",\n                            \"AmountInDocCurrency\": \"1605000000\",\n                            \"TaxType\": \"\",\n                            \"TransactionKey\": \"KBS\",\n                            \"WithholdingTaxBaseAmount\": \"0\",\n                            \"AssignmentNumber\": \"\",\n                            \"ItemText\": \"INVOICE NON PO 6\",\n                            \"CostCenter\": \"\",\n                            \"OrderNumber\": \"\",\n                            \"ServiceDocType\": \"\",\n                            \"ServiceDocId\": \"\",\n                            \"ServiceDocItemId\": \"000000\",\n                            \"MainAssetNumber\": \"\",\n                            \"AssetSubnumber\": \"\",\n                            \"AssetTransactionType\": \"\",\n                            \"GeneralLedgerAccount\": \"20100100\",\n                            \"VendorId\": \"2104000005\",\n                            \"BaseDateforDueDateCalc\": \"/Date(1780876800000)/\",\n                            \"TermOfPaymentKey\": \"Z007\",\n                            \"PaymentMethod\": \"U\",\n                            \"PaymentBlockKey\": \"R\",\n                            \"HouseBank\": \"BNI01\",\n                            \"PartnerBankType\": \"ID01\",\n                            \"TaxCodeDistribution\": \"\",\n                            \"MaterialNumber\": \"\",\n                            \"Plant\": \"\",\n                            \"Quantity\": \"0.000\",\n                            \"BaseUom\": \"\",\n                            \"QtyUnitEntry\": \"0.000\",\n                            \"UnitOfEntry\": \"\",\n                            \"PurchaseDocNumber\": \"\",\n                            \"ItemNumberPurchaseDoc\": \"00000\",\n                            \"AccountAssignmentNumber\": \"00\",\n                            \"ProfitCenter\": \"103010\",\n                            \"NetDueDate\": \"/Date(1781481600000)/\"\n                        },\n                        {\n                            \"Client\": \"130\",\n                            \"CompanyCode\": \"1000\",\n                            \"AccountingDocNumber\": \"$       1\",\n                            \"FiscalYear\": \"2026\",\n                            \"LineItem\": \"002\",\n                            \"PostingKey\": \"86\",\n                            \"AccountType\": \"S\",\n                            \"SpecialGLInd\": \"\",\n                            \"DebetCreditInd\": \"S\",\n                            \"TaxOnSalesCode\": \"3D\",\n                            \"WitholdingTaxCode\": \"\",\n                            \"Currency\": \"IDR\",\n                            \"AmountInLocalCurrency\": \"75000000\",\n                            \"AmountInDocCurrency\": \"75000000\",\n                            \"TaxType\": \"\",\n                            \"TransactionKey\": \"WRX\",\n                            \"WithholdingTaxBaseAmount\": \"0\",\n                            \"AssignmentNumber\": \"\",\n                            \"ItemText\": \"\",\n                            \"CostCenter\": \"\",\n                            \"OrderNumber\": \"\",\n                            \"ServiceDocType\": \"\",\n                            \"ServiceDocId\": \"\",\n                            \"ServiceDocItemId\": \"000000\",\n                            \"MainAssetNumber\": \"\",\n                            \"AssetSubnumber\": \"\",\n                            \"AssetTransactionType\": \"\",\n                            \"GeneralLedgerAccount\": \"20200100\",\n                            \"VendorId\": \"\",\n                            \"BaseDateforDueDateCalc\": null,\n                            \"TermOfPaymentKey\": \"\",\n                            \"PaymentMethod\": \"\",\n                            \"PaymentBlockKey\": \"\",\n                            \"HouseBank\": \"\",\n                            \"PartnerBankType\": \"\",\n                            \"TaxCodeDistribution\": \"\",\n                            \"MaterialNumber\": \"CCHC12000000000145\",\n                            \"Plant\": \"1SM0\",\n                            \"Quantity\": \"5\",\n                            \"BaseUom\": \"DR\",\n                            \"QtyUnitEntry\": \"5\",\n                            \"UnitOfEntry\": \"DR\",\n                            \"PurchaseDocNumber\": \"4100035297\",\n                            \"ItemNumberPurchaseDoc\": \"00010\",\n                            \"AccountAssignmentNumber\": \"00\",\n                            \"ProfitCenter\": \"101010\",\n                            \"NetDueDate\": null\n                        },\n                        {\n                            \"Client\": \"130\",\n                            \"CompanyCode\": \"1000\",\n                            \"AccountingDocNumber\": \"$       1\",\n                            \"FiscalYear\": \"2026\",\n                            \"LineItem\": \"003\",\n                            \"PostingKey\": \"89\",\n                            \"AccountType\": \"M\",\n                            \"SpecialGLInd\": \"\",\n                            \"DebetCreditInd\": \"S\",\n                            \"TaxOnSalesCode\": \"\",\n                            \"WitholdingTaxCode\": \"\",\n                            \"Currency\": \"IDR\",\n                            \"AmountInLocalCurrency\": \"1425000000\",\n                            \"AmountInDocCurrency\": \"1425000000\",\n                            \"TaxType\": \"\",\n                            \"TransactionKey\": \"BSX\",\n                            \"WithholdingTaxBaseAmount\": \"0\",\n                            \"AssignmentNumber\": \"\",\n                            \"ItemText\": \"\",\n                            \"CostCenter\": \"\",\n                            \"OrderNumber\": \"\",\n                            \"ServiceDocType\": \"\",\n                            \"ServiceDocId\": \"\",\n                            \"ServiceDocItemId\": \"000000\",\n                            \"MainAssetNumber\": \"\",\n                            \"AssetSubnumber\": \"\",\n                            \"AssetTransactionType\": \"\",\n                            \"GeneralLedgerAccount\": \"10550000\",\n                            \"VendorId\": \"\",\n                            \"BaseDateforDueDateCalc\": null,\n                            \"TermOfPaymentKey\": \"\",\n                            \"PaymentMethod\": \"\",\n                            \"PaymentBlockKey\": \"\",\n                            \"HouseBank\": \"\",\n                            \"PartnerBankType\": \"\",\n                            \"TaxCodeDistribution\": \"\",\n                            \"MaterialNumber\": \"CCHC12000000000145\",\n                            \"Plant\": \"1SM0\",\n                            \"Quantity\": \"5\",\n                            \"BaseUom\": \"DR\",\n                            \"QtyUnitEntry\": \"5\",\n                            \"UnitOfEntry\": \"DR\",\n                            \"PurchaseDocNumber\": \"4100035297\",\n                            \"ItemNumberPurchaseDoc\": \"00010\",\n                            \"AccountAssignmentNumber\": \"00\",\n                            \"ProfitCenter\": \"101010\",\n                            \"NetDueDate\": null\n                        },\n                        {\n                            \"Client\": \"130\",\n                            \"CompanyCode\": \"1000\",\n                            \"AccountingDocNumber\": \"$       1\",\n                            \"FiscalYear\": \"2026\",\n                            \"LineItem\": \"004\",\n                            \"PostingKey\": \"93\",\n                            \"AccountType\": \"S\",\n                            \"SpecialGLInd\": \"\",\n                            \"DebetCreditInd\": \"H\",\n                            \"TaxOnSalesCode\": \"\",\n                            \"WitholdingTaxCode\": \"\",\n                            \"Currency\": \"IDR\",\n                            \"AmountInLocalCurrency\": \"0\",\n                            \"AmountInDocCurrency\": \"0\",\n                            \"TaxType\": \"\",\n                            \"TransactionKey\": \"KDM\",\n                            \"WithholdingTaxBaseAmount\": \"0\",\n                            \"AssignmentNumber\": \"\",\n                            \"ItemText\": \"\",\n                            \"CostCenter\": \"10301FA999\",\n                            \"OrderNumber\": \"\",\n                            \"ServiceDocType\": \"\",\n                            \"ServiceDocId\": \"\",\n                            \"ServiceDocItemId\": \"000000\",\n                            \"MainAssetNumber\": \"\",\n                            \"AssetSubnumber\": \"\",\n                            \"AssetTransactionType\": \"\",\n                            \"GeneralLedgerAccount\": \"70500010\",\n                            \"VendorId\": \"\",\n                            \"BaseDateforDueDateCalc\": null,\n                            \"TermOfPaymentKey\": \"\",\n                            \"PaymentMethod\": \"\",\n                            \"PaymentBlockKey\": \"\",\n                            \"HouseBank\": \"\",\n                            \"PartnerBankType\": \"\",\n                            \"TaxCodeDistribution\": \"\",\n                            \"MaterialNumber\": \"CCHC12000000000145\",\n                            \"Plant\": \"1SM0\",\n                            \"Quantity\": \"5\",\n                            \"BaseUom\": \"DR\",\n                            \"QtyUnitEntry\": \"5\",\n                            \"UnitOfEntry\": \"DR\",\n                            \"PurchaseDocNumber\": \"4100035297\",\n                            \"ItemNumberPurchaseDoc\": \"00010\",\n                            \"AccountAssignmentNumber\": \"00\",\n                            \"ProfitCenter\": \"103010\",\n                            \"NetDueDate\": null\n                        },\n                        {\n                            \"Client\": \"130\",\n                            \"CompanyCode\": \"1000\",\n                            \"AccountingDocNumber\": \"$       1\",\n                            \"FiscalYear\": \"2026\",\n                            \"LineItem\": \"005\",\n                            \"PostingKey\": \"40\",\n                            \"AccountType\": \"S\",\n                            \"SpecialGLInd\": \"\",\n                            \"DebetCreditInd\": \"S\",\n                            \"TaxOnSalesCode\": \"3D\",\n                            \"WitholdingTaxCode\": \"\",\n                            \"Currency\": \"IDR\",\n                            \"AmountInLocalCurrency\": \"165000000\",\n                            \"AmountInDocCurrency\": \"165000000\",\n                            \"TaxType\": \"V\",\n                            \"TransactionKey\": \"VST\",\n                            \"WithholdingTaxBaseAmount\": \"0\",\n                            \"AssignmentNumber\": \"\",\n                            \"ItemText\": \"\",\n                            \"CostCenter\": \"\",\n                            \"OrderNumber\": \"\",\n                            \"ServiceDocType\": \"\",\n                            \"ServiceDocId\": \"\",\n                            \"ServiceDocItemId\": \"000000\",\n                            \"MainAssetNumber\": \"\",\n                            \"AssetSubnumber\": \"\",\n                            \"AssetTransactionType\": \"\",\n                            \"GeneralLedgerAccount\": \"11010010\",\n                            \"VendorId\": \"\",\n                            \"BaseDateforDueDateCalc\": null,\n                            \"TermOfPaymentKey\": \"\",\n                            \"PaymentMethod\": \"\",\n                            \"PaymentBlockKey\": \"\",\n                            \"HouseBank\": \"\",\n                            \"PartnerBankType\": \"\",\n                            \"TaxCodeDistribution\": \"\",\n                            \"MaterialNumber\": \"\",\n                            \"Plant\": \"\",\n                            \"Quantity\": \"0.000\",\n                            \"BaseUom\": \"\",\n                            \"QtyUnitEntry\": \"0.000\",\n                            \"UnitOfEntry\": \"\",\n                            \"PurchaseDocNumber\": \"\",\n                            \"ItemNumberPurchaseDoc\": \"00000\",\n                            \"AccountAssignmentNumber\": \"00\",\n                            \"ProfitCenter\": \"\",\n                            \"NetDueDate\": null\n                        },\n                        {\n                            \"Client\": \"130\",\n                            \"CompanyCode\": \"1000\",\n                            \"AccountingDocNumber\": \"$       1\",\n                            \"FiscalYear\": \"2026\",\n                            \"LineItem\": \"006\",\n                            \"PostingKey\": \"50\",\n                            \"AccountType\": \"S\",\n                            \"SpecialGLInd\": \"\",\n                            \"DebetCreditInd\": \"H\",\n                            \"TaxOnSalesCode\": \"3D\",\n                            \"WitholdingTaxCode\": \"\",\n                            \"Currency\": \"IDR\",\n                            \"AmountInLocalCurrency\": \"60000000\",\n                            \"AmountInDocCurrency\": \"60000000\",\n                            \"TaxType\": \"V\",\n                            \"TransactionKey\": \"ZW6\",\n                            \"WithholdingTaxBaseAmount\": \"0\",\n                            \"AssignmentNumber\": \"\",\n                            \"ItemText\": \"\",\n                            \"CostCenter\": \"\",\n                            \"OrderNumber\": \"\",\n                            \"ServiceDocType\": \"\",\n                            \"ServiceDocId\": \"\",\n                            \"ServiceDocItemId\": \"000000\",\n                            \"MainAssetNumber\": \"\",\n                            \"AssetSubnumber\": \"\",\n                            \"AssetTransactionType\": \"\",\n                            \"GeneralLedgerAccount\": \"20700040\",\n                            \"VendorId\": \"\",\n                            \"BaseDateforDueDateCalc\": null,\n                            \"TermOfPaymentKey\": \"\",\n                            \"PaymentMethod\": \"\",\n                            \"PaymentBlockKey\": \"\",\n                            \"HouseBank\": \"\",\n                            \"PartnerBankType\": \"\",\n                            \"TaxCodeDistribution\": \"\",\n                            \"MaterialNumber\": \"\",\n                            \"Plant\": \"\",\n                            \"Quantity\": \"0.000\",\n                            \"BaseUom\": \"\",\n                            \"QtyUnitEntry\": \"0.000\",\n                            \"UnitOfEntry\": \"\",\n                            \"PurchaseDocNumber\": \"\",\n                            \"ItemNumberPurchaseDoc\": \"00000\",\n                            \"AccountAssignmentNumber\": \"00\",\n                            \"ProfitCenter\": \"103010\",\n                            \"NetDueDate\": null\n                        }\n                    ]\n                },\n                \"postSimulateInvoiceReturnSet\": {\n                    \"results\": [\n                        {\n                            \"Type\": \"W\",\n                            \"Id\": \"M8\",\n                            \"Number\": \"082\",\n                            \"Message\": \"Price too high (tolerance limit of 0 IDR exceeded)\",\n                            \"LogNo\": \"\",\n                            \"LogMsgNo\": \"000000\",\n                            \"MessageV1\": \"0\",\n                            \"MessageV2\": \"IDR\",\n                            \"MessageV3\": \"\",\n                            \"MessageV4\": \"\",\n                            \"Parameter\": \"\",\n                            \"Row\": 0,\n                            \"Field\": \"\",\n                            \"System\": \"S4DCLNT130\"\n                        }\n                    ]\n                }\n            }\n        }\n    }\n}"
+						}
+					]
+				},
+				{
 					"name": "Clearing Down Payment to Invoice",
 					"event": [
 						{
