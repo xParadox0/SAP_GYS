@@ -14991,27 +14991,10 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "a0192a43-619d-4ba6-9ac7-a987028afb36",
-								"exec": [
-									"### Purpose",
-									"Cancel a previously submitted Down Payment (DP) request.",
-									"",
-									"### Auth",
-									"```http",
-									"Authorization: Bearer {{token}}",
-									"```",
-									"",
-									"### Key headers",
-									"- `Authorization: Bearer {{token}}`",
-									"- `Content-Type: application/json`",
-									"",
-									"### Body notes",
-									"- POST body should identify which DP request to cancel (see **Body** tab).",
-									""
-								],
 								"type": "text/javascript",
-								"packages": {},
-								"requests": {}
+								"exec": [
+									"### Purpose\nCancel a previously submitted Down Payment (DP) request.\n\n### Auth\n```http\nAuthorization: Bearer {{token}}\n```\n\n### Key headers\n- `Authorization: Bearer {{token}}`\n- `Content-Type: application/json`\n\n### Body notes\n- POST body should identify which DP request to cancel (see **Body** tab).\n"
+								]
 							}
 						}
 					],
@@ -15032,10 +15015,9 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"postDPClearingDataSet\": [\n        {\n            \"postDPClearingHeader\": {\n                \"CompanyCode\": \"1000\",\n                \"Currency\": \"IDR\",\n                \"DocumentType\": \"KA\",\n                \"PostingDate\": \"2026-07-07T00:00:00\",\n                \"DocumentDate\": \"2026-07-07T00:00:00\",\n                \"HeaderText\": \"INV-PO-370\",\n                \"Reference\": \"INV-PO-370\",\n                \"PartialSettlement\": true,\n                \"PartialAmount\": \"5550000\"\n            },\n            \"postDPClearingAccSet\": [\n                {\n                    \"AccountType\": \"K\",\n                    \"VendorCode\": \"2104000005\",\n                    \"CompCode\": \"1000\",\n                    \"OpenItemFlag\": true,\n                    \"ValueCriteriaFrom\": \"21000004062026\",\n                    \"ValueCriteriaTo\": \"21000004062026\"\n                }\n            ],\n            \"postDPClearingRefSet\": [\n                {\n                    \"PostingKey\": \"39\",\n                    \"VendorCode\": \"2104000005\",\n                    \"SpecialGLIndicator\": \"A\",\n                    \"Amount\": \"5550000\",\n                    \"PurchaseOrderNum\": \"\",\n                    \"PurchaseOrderItem\": \"\",\n                    \"CostCenter\": \"\",\n                    \"GLAccount\": \"\",\n                    \"Assignment\": \"4100035370\",\n                    \"ItemText\": \"dp 50% PO 4100035370\",\n                    \"PaytMethod\": \"M\",\n                    \"HouseBank\": \"\",\n                    \"PartBankType\": \"\",\n                    \"TaxCode\": \"0B\",\n                    \"PaymentTerm\": \"\",\n                    \"ProfitCenter\": \"\",\n                    \"BaselineDate\": \"2026-07-07T00:00:00\"\n                }\n            ]\n        }\n    ],\n    \"postDPClearingItemSet\": []\n}",
+							"raw": "{\n    \"postDPClearingDataSet\": [\n        {\n            \"postDPClearingHeader\": {\n                \"CompanyCode\": \"1000\",\n                \"Currency\": \"IDR\",\n                \"DocumentType\": \"KA\",\n                \"PostingDate\": \"2026-09-02T00:00:00\",\n                \"DocumentDate\": \"2026-09-02T00:00:00\",\n                \"HeaderText\": \"DP Settlement\",\n                \"Reference\": \"7100000496\"\n            },\n            \"postDPClearingAccSet\": [\n                {\n                    \"AccountType\": \"K\",\n                    \"VendorCode\": \"2104000005\",\n                    \"CompCode\": \"1000\",\n                    \"OpenItemFlag\": true,\n                    \"SpecialGLInd\": \"A\",\n                    \"ValueCriteriaFrom\": \"7100000496\",\n                    \"ValueCriteriaTo\": \"7100000496\"\n                }\n            ],\n            \"postDPClearingRefSet\": [\n                {\n                    \"PostingKey\": \"29\",\n                    \"VendorCode\": \"2104000005\",\n                    \"SpecialGLIndicator\": \"A\",\n                    \"Amount\": \"20000\",\n                    \"PurchaseOrderNum\": \"4100035241\",\n                    \"PurchaseOrderItem\": \"10\",\n                    \"CostCenter\": \"\",\n                    \"Assignment\": \"7100000090\",\n                    \"ItemText\": \"TEST 1\",\n                    \"TaxCode\": \"0B\",\n                    \"ProfitCenter\": \"103010\",\n                    \"BaselineDate\": \"2026-09-02T00:00:00\"\n                }\n            ],\n            \"postDPClearingDocSet\": []\n        }\n    ],\n    \"postDPClearingItemSet\": []\n}",
 							"options": {
 								"raw": {
-									"headerFamily": "json",
 									"language": "json"
 								}
 							}
