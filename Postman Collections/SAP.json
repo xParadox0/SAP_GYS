@@ -1158,7 +1158,22 @@
 						},
 						"method": "GET",
 						"header": [],
-						"url": "{{dev}}/sap/scrap-local"
+						"url": {
+							"raw": "{{dev}}/sap/scrap-local?ChangeOn=20260809",
+							"host": [
+								"{{dev}}"
+							],
+							"path": [
+								"sap",
+								"scrap-local"
+							],
+							"query": [
+								{
+									"key": "ChangeOn",
+									"value": "20260809"
+								}
+							]
+						}
 					},
 					"response": [
 						{
