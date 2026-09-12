@@ -1159,7 +1159,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{dev}}/sap/scrap-local?ChangeOn=20260809",
+							"raw": "{{dev}}/sap/scrap-local?ChangedOn=20260112",
 							"host": [
 								"{{dev}}"
 							],
@@ -1169,8 +1169,8 @@
 							],
 							"query": [
 								{
-									"key": "ChangeOn",
-									"value": "20260809"
+									"key": "ChangedOn",
+									"value": "20260112"
 								}
 							]
 						}
