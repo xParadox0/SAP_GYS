@@ -10875,27 +10875,10 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "a987acdc-9a28-45fd-89c5-fb31acce185b",
-								"exec": [
-									"### Purpose",
-									"Cancel a previously submitted Down Payment (DP) request.",
-									"",
-									"### Auth",
-									"```http",
-									"Authorization: Bearer {{token}}",
-									"```",
-									"",
-									"### Key headers",
-									"- `Authorization: Bearer {{token}}`",
-									"- `Content-Type: application/json`",
-									"",
-									"### Body notes",
-									"- POST body should identify which DP request to cancel (see **Body** tab).",
-									""
-								],
 								"type": "text/javascript",
-								"packages": {},
-								"requests": {}
+								"exec": [
+									"### Purpose\nCancel a previously submitted Down Payment (DP) request.\n\n### Auth\n```http\nAuthorization: Bearer {{token}}\n```\n\n### Key headers\n- `Authorization: Bearer {{token}}`\n- `Content-Type: application/json`\n\n### Body notes\n- POST body should identify which DP request to cancel (see **Body** tab).\n"
+								]
 							}
 						}
 					],
@@ -10916,10 +10899,9 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"parkInvoiceHeader\": {\n        \"InvoiceInd\": \"X\",\n        \"DocType\": \"RE\",\n        \"DocDate\": \"2026-07-20T00:00:00\",\n        \"PstngDate\": \"2026-07-20T00:00:00\",\n        \"CompCode\": \"1000\",\n        \"Currency\": \"IDR\",\n        \"GrossAmount\": \"3054831244\",\n        \"RefDocNo\": \"CSS\\/2026\\/04\\/084-\",\n        \"HeaderTxt\": \"36482748284834930\\/200726\",\n        \"Pmnttrms\": \"Z007\",\n        \"BlineDate\": \"2026-07-20T00:00:00\",\n        \"PymtMeth\": \"M\",\n        \"PartnerBk\": \"ID01\",\n        \"AllocNmbr\": \"4100035402\",\n        \"ItemText\": \"Text\",\n        \"DiffInv\": \"2103000065\",\n        \"CalcTaxInd\": true\n    },\n    \"parkInvoiceItemSet\": [\n        {\n            \"InvoiceDocItem\": \"000001\",\n            \"PoNumber\": \"4100035402\",\n            \"PoItem\": \"00010\",\n            \"RefDoc\": \"5000070048\",\n            \"RefDocYear\": \"2026\",\n            \"RefDocIt\": \"0001\",\n            \"ItemAmount\": \"2659502300\",\n            \"Quantity\": \"40915\",\n            \"PoUnit\": \"KG\",\n            \"TaxCode\": \"2D\",\n            \"ItemText\": \"4100035402-00010\"\n        },\n        {\n            \"InvoiceDocItem\": \"000002\",\n            \"PoNumber\": \"4100035402\",\n            \"PoItem\": \"00010\",\n            \"RefDoc\": \"5000070048\",\n            \"RefDocYear\": \"2026\",\n            \"RefDocIt\": \"0001\",\n            \"ItemAmount\": \"92597920\",\n            \"Quantity\": \"2153\",\n            \"PoUnit\": \"KG\",\n            \"TaxCode\": \"2D\",\n            \"ItemText\": \"4100035402-00010\"\n        }\n    ],\n    \"parkInvoiceGLAccSet\": [],\n    \"parkInvoiceTextSet\": [\n        {\n            \"Tdformat\": \"*\",\n            \"Tdline\": \"CSS\\/2026\\/04\\/084-44\"\n        }\n    ],\n    \"parkInvoiceWHTSet\": [\n        {\n            \"WiTaxType\": \"23\",\n            \"WiTaxCode\": \"\",\n            \"WiTaxBase\": \"0\",\n            \"WiTaxAmt\": \"0\"\n        }\n    ],\n    \"parkInvoiceReturnSet\": []\n}",
+							"raw": "{\n    \"parkInvoiceHeader\": {\n        \"InvoiceInd\": \"X\",\n        \"DocType\": \"RE\",\n        \"DocDate\": \"2026-07-20T00:00:00\",\n        \"PstngDate\": \"2026-07-20T00:00:00\",\n        \"CompCode\": \"1000\",\n        \"Currency\": \"IDR\",\n        \"GrossAmount\": \"3054831244\",\n        \"RefDocNo\": \"CSS\\/2026\\/04\\/084-\",\n        \"HeaderTxt\": \"36482748284834930\\/200726\",\n        \"Pmnttrms\": \"Z007\",\n        \"BlineDate\": \"2026-07-20T00:00:00\",\n        \"PymtMeth\": \"M\",\n        \"PartnerBk\": \"ID01\",\n        \"AllocNmbr\": \"4100035402\",\n        \"ItemText\": \"Text\",\n        \"DiffInv\": \"2103000065\",\n        \"CalcTaxInd\": true\n    },\n    \"parkInvoiceItemSet\": [\n        {\n            \"InvoiceDocItem\": \"000001\",\n            \"PoNumber\": \"4100035402\",\n            \"PoItem\": \"00010\",\n            \"RefDoc\": \"5000070048\",\n            \"RefDocYear\": \"2026\",\n            \"RefDocIt\": \"0001\",\n            \"ItemAmount\": \"2659502300\",\n            \"Quantity\": \"40915\",\n            \"PoUnit\": \"KG\",\n            \"TaxCode\": \"2D\",\n            \"ItemText\": \"4100035402-00010\"\n        },\n        {\n            \"InvoiceDocItem\": \"000002\",\n            \"PoNumber\": \"4100035402\",\n            \"PoItem\": \"00010\",\n            \"RefDoc\": \"5000070048\",\n            \"RefDocYear\": \"2026\",\n            \"RefDocIt\": \"0001\",\n            \"ItemAmount\": \"92597920\",\n            \"Quantity\": \"2153\",\n            \"PoUnit\": \"KG\",\n            \"TaxCode\": \"2D\",\n            \"ItemText\": \"4100035402-00010\"\n        }\n    ],\n    \"parkInvoiceGLAccSet\": [],\n    \"parkInvoiceTextSet\": [\n        {\n            \"Tdformat\": \"*\",\n            \"Tdline\": \"CSS\\/2026\\/04\\/084-44\"\n        }\n    ],\n    \"parkInvoiceWHTSet\": [\n        {\n            \"SplitKey\": \"000001\",\n            \"WiTaxType\": \"23\",\n            \"WiTaxCode\": \"\",\n            \"WiTaxBase\": \"0\",\n            \"WiTaxAmt\": \"0\"\n        }\n    ],\n    \"parkInvoiceReturnSet\": []\n}",
 							"options": {
 								"raw": {
-									"headerFamily": "json",
 									"language": "json"
 								}
 							}
