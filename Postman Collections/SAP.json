@@ -1159,7 +1159,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{dev}}/sap/scrap-local?ChangedOn=20260112",
+							"raw": "{{dev}}/sap/scrap-local?ChangedOn='20260108-20260109'",
 							"host": [
 								"{{dev}}"
 							],
@@ -1170,7 +1170,7 @@
 							"query": [
 								{
 									"key": "ChangedOn",
-									"value": "20260112"
+									"value": "'20260108-20260109'"
 								}
 							]
 						}
@@ -1399,7 +1399,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{dev}}/sap/po-service-logistic?DocCategory='F'&DocType='ZFSD'&Plant='1HO0'",
+							"raw": "{{dev}}/sap/po-service-logistic?DocCategory='F'&DocType='ZFSD'&Plant='1HO0'&ChangedOn='20260101-20260109'",
 							"host": [
 								"{{dev}}"
 							],
@@ -1419,6 +1419,10 @@
 								{
 									"key": "Plant",
 									"value": "'1HO0'"
+								},
+								{
+									"key": "ChangedOn",
+									"value": "'20260101-20260109'"
 								}
 							]
 						}
@@ -1551,26 +1555,18 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{dev}}/sap/po-service-logistic?DocCategory='F'&DocType='ZFSD'&Plant='1HO0'",
+							"raw": "{{dev}}/sap/gr-quantity?EnteredOn=20260108-20260109",
 							"host": [
 								"{{dev}}"
 							],
 							"path": [
 								"sap",
-								"po-service-logistic"
+								"gr-quantity"
 							],
 							"query": [
 								{
-									"key": "DocCategory",
-									"value": "'F'"
-								},
-								{
-									"key": "DocType",
-									"value": "'ZFSD'"
-								},
-								{
-									"key": "Plant",
-									"value": "'1HO0'"
+									"key": "EnteredOn",
+									"value": "20260108-20260109"
 								}
 							]
 						}
@@ -11436,7 +11432,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"parkInvoiceHeader\": {\r\n        \"InvoiceInd\": \"X\",\r\n        \"DocType\": \"RE\",\r\n        \"DocDate\": \"2026-08-27T00:00:00\",\r\n        \"PstngDate\": \"2026-08-27T00:00:00\",\r\n        \"CompCode\": \"1000\",\r\n        \"Currency\": \"IDR\",\r\n        \"GrossAmount\": \"6242250\",\r\n        \"RefDocNo\": \"INV-LSVC-001\",\r\n        \"ExchRate\": \"1.00000\",\r\n        \"HeaderTxt\": \"VAT-LSVC-001\\/270826\",\r\n        \"Pmnttrms\": \"Z003\",\r\n        \"BlineDate\": \"2026-08-27T00:00:00\",\r\n        \"PymtMeth\": \"M\",\r\n        \"PartnerBk\": \"ID01\",\r\n        \"AllocNmbr\": \"4200006521\",\r\n        \"ItemText\": \"Test Service\",\r\n        \"DiffInv\": \"2112000013\",\r\n        \"CalcTaxInd\": true\r\n    },\r\n    \"parkInvoiceItemSet\": [\r\n        {\r\n            \"InvoiceDocItem\": \"000001\",\r\n            \"PoNumber\": \"4200006521\",\r\n            \"PoItem\": \"00010\",\r\n            \"ItemAmount\": \"1845000\",\r\n            \"Quantity\": \"1\",\r\n            \"PoUnit\": \"AU\",\r\n            \"TaxCode\": \"2D\",\r\n            \"RefDoc\": \"5000070166\",\r\n            \"RefDocYear\": \"2026\",\r\n            \"RefDocIt\": \"0001\",\r\n            \"ItemText\": \"4200006521-00010\"\r\n        },\r\n        {\r\n            \"InvoiceDocItem\": \"000002\",\r\n            \"PoNumber\": \"4200006521\",\r\n            \"PoItem\": \"00010\",\r\n            \"ItemAmount\": \"1350000\",\r\n            \"Quantity\": \"1\",\r\n            \"PoUnit\": \"AU\",\r\n            \"TaxCode\": \"2D\",\r\n            \"RefDoc\": \"5000070166\",\r\n            \"RefDocYear\": \"2026\",\r\n            \"RefDocIt\": \"0003\",\r\n            \"ItemText\": \"4200006521-00010\"\r\n        },\r\n        {\r\n            \"InvoiceDocItem\": \"000003\",\r\n            \"PoNumber\": \"4200006521\",\r\n            \"PoItem\": \"00010\",\r\n            \"ItemAmount\": \"2430000\",\r\n            \"Quantity\": \"1\",\r\n            \"PoUnit\": \"AU\",\r\n            \"TaxCode\": \"2D\",\r\n            \"RefDoc\": \"5000070166\",\r\n            \"RefDocYear\": \"2026\",\r\n            \"RefDocIt\": \"0002\",\r\n            \"ItemText\": \"4200006521-00010\"\r\n        }\r\n    ],\r\n    \"parkInvoiceGLAccSet\": [\r\n        {\r\n            \"InvoiceDocItem\": \"000001\",\r\n            \"GlAccount\": \"0051300010\",\r\n            \"ItemAmount\": \"100000\",\r\n            \"DbCrInd\": \"S\",\r\n            \"CompCode\": \"1000\",\r\n            \"TaxCode\": \"2D\",\r\n            \"ItemText\": \"\",\r\n            \"Costcenter\": \"10101PP001\",\r\n            \"Orderid\": \"\",\r\n            \"ProfitCtr\": \"101010\",\r\n            \"Network\": \"\",\r\n            \"WbsElem\": \"\",\r\n            \"Quantity\": \"0\",\r\n            \"BaseUom\": \"\",\r\n            \"AllocNmbr\": \"4200006521\",\r\n            \"RefDate\": \"2026-08-27T00:00:00\"\r\n        }\r\n    ],\r\n    \"parkInvoiceTextSet\": [\r\n        {\r\n            \"Tdformat\": \"*\",\r\n            \"Tdline\": \"INV-LSVC-001\"\r\n        }\r\n    ],\r\n    \"parkInvoiceWHTSet\": [\r\n        {\r\n            \"WiTaxType\": \"23\",\r\n            \"WiTaxCode\": \"3F\",\r\n            \"WiTaxBase\": \"5625000\",\r\n            \"WiTaxAmt\": \"112500\"\r\n        }\r\n    ],\r\n    \"parkInvoiceReturnSet\": []\r\n}",
+							"raw": "{\r\n    \"Testrun\": \"\",\r\n    \"postDPHeaderSet\": {\r\n        \"HeaderTxt\": \"INV-DP-Monitor\",\r\n        \"CompCode\": \"1000\",\r\n        \"DocDate\": \"2026-09-21T00:00:00\",\r\n        \"PstngDate\": \"2026-09-21T00:00:00\",\r\n        \"DocType\": \"VD\",\r\n        \"RefDocNo\": \"1123\"\r\n    },\r\n    \"postDPAccountPaySet\": [\r\n        {\r\n            \"ItemnoAcc\": \"1\",\r\n            \"VendorNo\": \"2201000018\",\r\n            \"CompCode\": \"1000\",\r\n            \"BlineDate\": \"2026-09-21T00:00:00\",\r\n            \"AllocNmbr\": \"4100035565\",\r\n            \"ItemText\": \"DP Monitor\",\r\n            \"PymtMeth\": \"M\",\r\n            \"PoSubNo\": \"10\",\r\n            \"PoRefNo\": \"4100035565\",\r\n            \"TaxCode\": \"2C\",\r\n            \"BankId\": \"\",\r\n            \"Housebankacctid\": \"\",\r\n            \"PartnerBk\": \"\"\r\n        }\r\n    ],\r\n    \"postDPCurrAmtSet\": [\r\n        {\r\n            \"ItemnoAcc\": \"1\",\r\n            \"Currency\": \"USD\",\r\n            \"AmtDoccur\": \"200000\"\r\n        }\r\n    ],\r\n    \"postDPTextSet\": [\r\n        {\r\n            \"Itemno\": \"1\",\r\n            \"Tdformat\": \"*\",\r\n            \"Tdline\": \"1123-1\"\r\n        }\r\n    ],\r\n    \"postDPWtSet\": [\r\n        {\r\n            \"ItemnoAcc\": \"1\",\r\n            \"WtType\": \"42\",\r\n            \"WtCode\": \"4C\",\r\n            \"ManAmtTc\": \"200000\", //Amount\r\n            \"BasAmtTc\": \"20000\" //ini baseline\r\n        }\r\n    ],\r\n    \"postDPItemSet\": [],\r\n    \"postDPReturnSet\": []\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
