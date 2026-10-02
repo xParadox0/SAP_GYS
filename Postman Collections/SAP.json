@@ -1676,7 +1676,7 @@
 					]
 				},
 				{
-					"name": "GR Quantity Sync Copy",
+					"name": "GR Delivery Cost",
 					"event": [
 						{
 							"listen": "test",
