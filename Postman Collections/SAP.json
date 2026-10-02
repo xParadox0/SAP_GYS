@@ -1699,18 +1699,31 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{dev}}/sap/gr-quantity?EnteredOn=20260108-20260109",
+							"raw": "{{dev}}/sap/gr-delivery-cost?PurchaseOrder=&PurchaseOrderItem=&EnteredOn=20240701-20240730&EnteredAt=15-16",
 							"host": [
 								"{{dev}}"
 							],
 							"path": [
 								"sap",
-								"gr-quantity"
+								"gr-delivery-cost"
 							],
 							"query": [
 								{
+									"key": "PurchaseOrder",
+									"value": ""
+								},
+								{
+									"key": "PurchaseOrderItem",
+									"value": "",
+									"description": "00010"
+								},
+								{
 									"key": "EnteredOn",
-									"value": "20260108-20260109"
+									"value": "20240701-20240730"
+								},
+								{
+									"key": "EnteredAt",
+									"value": "15-16"
 								}
 							]
 						}
