@@ -13682,27 +13682,10 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "1a84c36b-b616-49ee-997b-41e2e796b3a7",
-								"exec": [
-									"### Purpose",
-									"Change/update an existing Purchase Requisition (PR) via SRM.",
-									"",
-									"### Auth",
-									"```http",
-									"Authorization: Bearer {{token}}",
-									"```",
-									"",
-									"### Key headers",
-									"- `Authorization: Bearer {{token}}`",
-									"- `Content-Type: application/json`",
-									"",
-									"### Body notes",
-									"- POST body should include the PR identifier and the fields to change (see **Body** tab for configured fields).",
-									""
-								],
 								"type": "text/javascript",
-								"packages": {},
-								"requests": {}
+								"exec": [
+									"### Purpose\nChange/update an existing Purchase Requisition (PR) via SRM.\n\n### Auth\n```http\nAuthorization: Bearer {{token}}\n```\n\n### Key headers\n- `Authorization: Bearer {{token}}`\n- `Content-Type: application/json`\n\n### Body notes\n- POST body should include the PR identifier and the fields to change (see **Body** tab for configured fields).\n"
+								]
 							}
 						}
 					],
@@ -13723,10 +13706,9 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n  \"DocNumber\": \"5105623124\",\n  \"Year\": \"2026\",\n  \"Status\": \"\",\n  \"changeParkInvoiceHeader\":\n      {\n      \"DocType\" : \"RE\",\n      \"DocDate\": \"2026-04-15T00:00:00\",\n      \"PstngDate\": \"2026-04-15T00:00:00\",\n      \"RefDocNo\" : \"SC10/04/2026\",\n      \"DiffInv\" : \"2104000008\",\n      \"GrossAmount\" : \"10642500\",\n      \"CalcTaxInd\" : true,\n      \"Currency\" : \"IDR\",\n      \"Pmnttrms\" : \"Z007\",\n      \"BlineDate\" : \"2026-04-15T00:00:00\",\n      \"HeaderTxt\" : \"RIDR11000000000036/2026\",\n      \"PymtMeth\" : \"U\",\n      \"PartnerBk\" : \"ID01\",\n      \"Housebankid\" : \"BNI01\",\n      \"AllocNmbr\" : \" 4100035214\",\n      \"ItemText\" : \"Pembayaran Heavy Scrap\"\n      },\n  \"changeParkInvoiceGLAccSet\" : [],\n  \"changeParkInvoiceItemSet\": [\n      {\n      \"InvoiceDocItem\": \"1\",\n      \"PoNumber\": \"4100035214\",\n      \"PoItem\": \"10\",\n      \"RefDoc\": \"5000069681\",\n      \"RefDocYear\": \"2026\",\n      \"RefDocIt\": \"1\",\n      \"TaxCode\": \"2D\",\n      \"ItemAmount\" : \"1290000\",\n      \"Quantity\" : \"200\",\n      \"PoUnit\" : \"KG\",\n      \"ItemText\" : \"\"\n      },\n      {\n      \"InvoiceDocItem\": \"2\",\n      \"PoNumber\": \"4100035214\",\n      \"PoItem\": \"10\",\n      \"RefDoc\": \"5000069682\",\n      \"RefDocYear\": \"2026\",\n      \"RefDocIt\": \"1\",\n      \"TaxCode\": \"2D\",\n      \"ItemAmount\" : \"2257500\",\n      \"Quantity\" : \"350\",\n      \"PoUnit\" : \"KG\",\n      \"ItemText\" : \"\"\n      },\n      {\n      \"InvoiceDocItem\": \"3\",\n      \"PoNumber\": \"4100035214\",\n      \"PoItem\": \"10\",\n      \"RefDoc\": \"5000069683\",\n      \"RefDocYear\": \"2026\",\n      \"RefDocIt\": \"1\",\n      \"TaxCode\": \"2D\",\n      \"ItemAmount\" : \"967500\",\n      \"Quantity\" : \"150\",\n      \"PoUnit\" : \"KG\",\n      \"ItemText\" : \"\"\n      },\n      {\n      \"InvoiceDocItem\": \"4\",\n      \"PoNumber\": \"4100035214\",\n      \"PoItem\": \"10\",\n      \"RefDoc\": \"5000069684\",\n      \"RefDocYear\": \"2026\",\n      \"RefDocIt\": \"1\",\n      \"TaxCode\": \"2D\",\n      \"ItemAmount\" : \"2902500\",\n      \"Quantity\" : \"450\",\n      \"PoUnit\" : \"KG\",\n      \"ItemText\" : \"\"\n      },\n      {\n      \"InvoiceDocItem\": \"5\",\n      \"PoNumber\": \"4100035214\",\n      \"PoItem\": \"10\",\n      \"RefDoc\": \"5000069685\",\n      \"RefDocYear\": \"2026\",\n      \"RefDocIt\": \"1\",\n      \"TaxCode\": \"2D\",\n      \"ItemAmount\" : \"3225000\",\n      \"Quantity\" : \"500\",\n      \"PoUnit\" : \"KG\",\n      \"ItemText\" : \"\"\n      }\n  ],\n  \"changeParkInvoiceTextSet\": [\n      {\n      \"Tdformat\" : \"*\",\n      \"Tdline\" : \"Pembayaran Heavy Scrap - SC10/04/2026\"\n      }\n  ],\n  \"changeParkInvoiceWHTSet\" : [],\n  \"changeParkInvoiceReturnSet\": []\n}",
+							"raw": "{\n  \"DocNumber\": \"5105623124\",\n  \"Year\": \"2026\",\n  \"Status\": \"\",\n  \"changeParkInvoiceHeader\":\n      {\n      \"DocType\" : \"RE\",\n      \"DocDate\": \"2026-04-15T00:00:00\",\n      \"PstngDate\": \"2026-04-15T00:00:00\",\n      \"RefDocNo\" : \"SC10/04/2026\",\n      \"DiffInv\" : \"2104000008\",\n      \"GrossAmount\" : \"10642500\",\n      \"CalcTaxInd\" : true,\n      \"Currency\" : \"IDR\",\n      \"Pmnttrms\" : \"Z007\",\n      \"BlineDate\" : \"2026-04-15T00:00:00\",\n      \"HeaderTxt\" : \"RIDR11000000000036/2026\",\n      \"PymtMeth\" : \"U\",\n      \"PartnerBk\" : \"ID01\",\n      \"Housebankid\" : \"BNI01\",\n      \"AllocNmbr\" : \" 4100035214\",\n      \"ItemText\" : \"Pembayaran Heavy Scrap\"\n      },\n  \"changeParkInvoiceGLAccSet\" : [],\n  \"changeParkInvoiceItemSet\": [\n      {\n      \"InvoiceDocItem\": \"1\",\n      \"PoNumber\": \"4100035214\",\n      \"PoItem\": \"10\",\n      \"RefDoc\": \"5000069681\",\n      \"RefDocYear\": \"2026\",\n      \"RefDocIt\": \"1\",\n      \"TaxCode\": \"2D\",\n      \"ItemAmount\" : \"1290000\",\n      \"Quantity\" : \"200\",\n      \"PoUnit\" : \"KG\",\n      \"ItemText\" : \"\",\n      \"CondType\": \"\"\n      },\n      {\n      \"InvoiceDocItem\": \"2\",\n      \"PoNumber\": \"4100035214\",\n      \"PoItem\": \"10\",\n      \"RefDoc\": \"5000069682\",\n      \"RefDocYear\": \"2026\",\n      \"RefDocIt\": \"1\",\n      \"TaxCode\": \"2D\",\n      \"ItemAmount\" : \"2257500\",\n      \"Quantity\" : \"350\",\n      \"PoUnit\" : \"KG\",\n      \"ItemText\" : \"\"\n      },\n      {\n      \"InvoiceDocItem\": \"3\",\n      \"PoNumber\": \"4100035214\",\n      \"PoItem\": \"10\",\n      \"RefDoc\": \"5000069683\",\n      \"RefDocYear\": \"2026\",\n      \"RefDocIt\": \"1\",\n      \"TaxCode\": \"2D\",\n      \"ItemAmount\" : \"967500\",\n      \"Quantity\" : \"150\",\n      \"PoUnit\" : \"KG\",\n      \"ItemText\" : \"\"\n      },\n      {\n      \"InvoiceDocItem\": \"4\",\n      \"PoNumber\": \"4100035214\",\n      \"PoItem\": \"10\",\n      \"RefDoc\": \"5000069684\",\n      \"RefDocYear\": \"2026\",\n      \"RefDocIt\": \"1\",\n      \"TaxCode\": \"2D\",\n      \"ItemAmount\" : \"2902500\",\n      \"Quantity\" : \"450\",\n      \"PoUnit\" : \"KG\",\n      \"ItemText\" : \"\"\n      },\n      {\n      \"InvoiceDocItem\": \"5\",\n      \"PoNumber\": \"4100035214\",\n      \"PoItem\": \"10\",\n      \"RefDoc\": \"5000069685\",\n      \"RefDocYear\": \"2026\",\n      \"RefDocIt\": \"1\",\n      \"TaxCode\": \"2D\",\n      \"ItemAmount\" : \"3225000\",\n      \"Quantity\" : \"500\",\n      \"PoUnit\" : \"KG\",\n      \"ItemText\" : \"\"\n      }\n  ],\n  \"changeParkInvoiceTextSet\": [\n      {\n      \"Tdformat\" : \"*\",\n      \"Tdline\" : \"Pembayaran Heavy Scrap - SC10/04/2026\"\n      }\n  ],\n  \"changeParkInvoiceWHTSet\" : [],\n  \"changeParkInvoiceReturnSet\": []\n}",
 							"options": {
 								"raw": {
-									"headerFamily": "json",
 									"language": "json"
 								}
 							}
