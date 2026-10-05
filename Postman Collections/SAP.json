@@ -17479,27 +17479,10 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "e6f4e0cf-0774-44f5-a7d5-c7800a4a408d",
-								"exec": [
-									"### Purpose",
-									"Change/update an existing Purchase Requisition (PR) via SRM.",
-									"",
-									"### Auth",
-									"```http",
-									"Authorization: Bearer {{token}}",
-									"```",
-									"",
-									"### Key headers",
-									"- `Authorization: Bearer {{token}}`",
-									"- `Content-Type: application/json`",
-									"",
-									"### Body notes",
-									"- POST body should include the PR identifier and the fields to change (see **Body** tab for configured fields).",
-									""
-								],
 								"type": "text/javascript",
-								"packages": {},
-								"requests": {}
+								"exec": [
+									"### Purpose\nChange/update an existing Purchase Requisition (PR) via SRM.\n\n### Auth\n```http\nAuthorization: Bearer {{token}}\n```\n\n### Key headers\n- `Authorization: Bearer {{token}}`\n- `Content-Type: application/json`\n\n### Body notes\n- POST body should include the PR identifier and the fields to change (see **Body** tab for configured fields).\n"
+								]
 							}
 						}
 					],
@@ -17520,10 +17503,9 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"IsPO\": false,\n    \"DocNumber\": \"2200000394\",\n    \"Year\": \"2026\",\n    \"deleteParkInvoiceReturnSet\": []\n}",
+							"raw": "{\n    \"DocNumber\": \"2200000394\",\n    \"Year\": \"2026\",\n    \"deleteParkInvoiceReturnSet\": []\n}",
 							"options": {
 								"raw": {
-									"headerFamily": "json",
 									"language": "json"
 								}
 							}
